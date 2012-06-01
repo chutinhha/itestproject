@@ -1,0 +1,5 @@
+C:\Users\KENVIN\documents\visual studio 2010\Projects\iTest2012\iTest2012\bin\iTest2012.dll
+C:\Users\KENVIN\documents\visual studio 2010\Projects\iTest2012\iTest2012\bin\iTest2012.pdb
+C:\Users\KENVIN\documents\visual studio 2010\Projects\iTest2012\iTest2012\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\KENVIN\documents\visual studio 2010\Projects\iTest2012\iTest2012\obj\Debug\iTest2012.dll
+C:\Users\KENVIN\documents\visual studio 2010\Projects\iTest2012\iTest2012\obj\Debug\iTest2012.pdb
