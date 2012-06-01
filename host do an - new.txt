@@ -1,0 +1,27 @@
+*** acc ftp : (FileZilla)
+
+host :  www.itest.somee.com
+user : ngthebao90
+pass : BaoBao0703
+
+host : www.e-itest.somee.com
+user : ngthebao
+pass : BaoBao0703
+
+ 
+*** acc sql server (SQL server)
+
+host : 			myitest.mssql.somee.com
+Login name:		itestdata
+Login password:		BaoBao0703
+
+
+*** svn account
+check out : https://itestproject.googlecode.com/svn/trunk/
+user name login : la email duoc moi`
+pass login : ca5dF4Ur8js3
+
+
+***
+Connection string:	workstation id=myitest.mssql.somee.com;packet size=4096;user id=itestdata;pwd=BaoBao0703;data source=myitest.mssql.somee.com;persist security info=False;initial catalog=myitest
+// cai nay dung de vao file webconfig, hoac de trong cac chuoi ket noi database
