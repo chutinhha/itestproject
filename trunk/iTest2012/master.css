@@ -1,12 +1,12 @@
-﻿a:link 
+ a:link 
         {
-            color:Green;
+            color:Orange;
             text-decoration:none;
         }
         
         a:visited
         {
-            color:Purple;
+            color:Orange;
             text-decoration:none;
         }
         
