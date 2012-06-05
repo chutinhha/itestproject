@@ -7,257 +7,70 @@
     <title>Welcome to iTest Website</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">        
-        a:link 
-        {
-            color:Purple;
-            text-decoration:none;
-        }
-        
-        a:visited
-        {
-            color:Purple;
-            text-decoration:none;
-        }
-        
-        a:hover 
-        {
-            color:Green;
-            text-decoration:none;
-            font-weight:bolder;
-            background-image: url(../image/etc/comayman.gif);           
-        }  
-          
-        a:active
-        {
-            color:Red;
-            text-decoration:none;
-            font-weight:700;
-        }
-        
-                 
-        .stylem1
-        {
-            width: 1005px;
-        }
-        .stylem5
-        {
-            width: 334px;
-            text-align: center;
-        }
-        .stylem6
-        {
-            width: 335px;
-            text-align: center;
-        }
-        .stylem7
-        {
-            font-size: xx-large;
-            color: #660066;
-        }
-        .stylem8
-        {
-            width: 335px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .stylem9
-        {
-            width: 334px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .stylem10
-        {
-            text-align: right;
-        }
-        .stylem11
-        {
-            font-size: large;
-            text-align: center;
-            color: #FF0000;
-        }
-        .stylem12
-        {
-            width: 999px;
-        }
-        .stylem13
-        {
-            width: 498px;
-            text-align: center;
-        }
-        .stylem14
-        {
-            width: 499px;
-            text-align: center;
-        }
-        .background
-        {
-            background-image:url("../image/background/Christmas_Wallpaper_Snowman.jpg");
-            background-attachment:fixed;            
-            background-position: bottom center;
-            background-repeat:no-repeat;
-        }
-                 
-        .stylem2
-        {
-            text-align: right;
-            font-family: "Book Antiqua";
-            color: #0000FF;
-        }
-                 
-        .stylem15
-        {
-            width: 249px;
-            text-align: center;
-        }
-        .stylem16
-        {
-            width: 250px;
-            text-align: center;
-        }
-                 
-        
-                 
-       </style>
+    <link rel="stylesheet" type="text/css" href="master.css" />    
 </head>
-<body class="background">
-    <form id="form1" runat="server">
-    <div>
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/image/banner/welcome.gif" />
-        <br />
-    </div>
-    <div>
-        <table style="background-color: #FFFFFF;" class="stylem1" align="center">
+<body class="bg_Image">
+    <form id="form1" runat="server">   
+    <div style="display: block;"> 
+    <table style="padding: 0px; margin: 0px; width: 100%; height: 35px; z-index: 9999999; background-repeat: repeat-x; background-image: url('/image/background/line.gif');">            
             <tr>
-                <td class="stylem9" style="background-color: #D9EBEC">
-                                <asp:HyperLink ID="HyperLinkHome" runat="server" 
-                                    NavigateUrl="~/Default.aspx" CssClass="stylem7">Home</asp:HyperLink>
-                            </td>
-                <td class="stylem9" style="background-color: #D9EBEC">
-                                <asp:HyperLink ID="HyperLinkIntro" runat="server" CssClass="stylem7">Introdution</asp:HyperLink>
-                            </td>
-                <td class="stylem8" style="background-color: #D9EBEC">
-                                <asp:HyperLink ID="HyperLinkAbout" runat="server" 
-                                    NavigateUrl="~/About.aspx" CssClass="stylem7">About</asp:HyperLink>
-                            </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                
-                    <asp:Panel ID="Panel_UnLogin" runat="server">
-                        <table style="width:100%;">
-                            <tr>
-                                <td style="text-align: right">
-                                    <asp:HyperLink ID="hplLogin0" runat="server"  
-                                        ForeColor="Blue" NavigateUrl="~/LogIn.aspx" 
-                                        style="font-weight: 700">Login</asp:HyperLink>
-                                    &nbsp;&nbsp;&nbsp;
-                                    <asp:HyperLink ID="HyperLink1" runat="server"  
-                                        ForeColor="Red" NavigateUrl="~/SignUp.aspx" 
-                                        style="font-weight: 700">Sign Up</asp:HyperLink>
-                                    </td>
-                            </tr>
-                        </table>
-                    </asp:Panel>
-                
-                                </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                
-                    <asp:Panel ID="Panel_UserLogin" runat="server">
-                        <div class="stylem10" style="background-color: #D9EBEC">
-                            Hi
+            <td>           
+            <asp:Panel ID="Panel_UnLogin" runat="server">                       
+                   <div class="stylem10">
+                       <asp:HyperLink ID="hplLogin0" runat="server" ForeColor="#E4E4E4" 
+                           NavigateUrl="~/LogIn.aspx" style="font-weight: 700; color: #E4E4E4;">Login</asp:HyperLink>
+                       &nbsp;&nbsp;&nbsp;
+                       <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#FF9900" 
+                           NavigateUrl="~/SignUp.aspx" style="font-weight: 700">Sign Up</asp:HyperLink>
+                   </div>
+            </asp:Panel>
+            </td>
+            <td>
+            <asp:Panel ID="Panel_UserLogin" runat="server">
+                        <div class="stylem10" >
+                            <span style="color: White">Hi </span>
                             <asp:Label ID="lbUserName" runat="server" 
-                                style="color: #0000FF; font-weight: 700"></asp:Label>
-                            ,
-                            <asp:HyperLink ID="hplChangePass" runat="server" style="color: #0000FF" 
-                                NavigateUrl="~/ChangePass.aspx">Change Pass</asp:HyperLink>
-                            &nbsp;<span >( </span>
+                                style="color: #E4E4E4; font-weight: 700"></asp:Label>
+                            ,&nbsp;<span >( </span>
                             <asp:HyperLink ID="hplSignOut" runat="server" 
-                                NavigateUrl="~/LogOut.aspx">Log Out</asp:HyperLink>
+                                NavigateUrl="~/LogOut.aspx">Logout</asp:HyperLink>
                             &nbsp;<span style="text-align: right" >)</span></div>
-                    </asp:Panel>
-                
-                </td>
+                    </asp:Panel> 
+            </td>           
             </tr>
-            <tr>
-                <td colspan="3">
-                    <asp:Panel ID="Panel_Admin" runat="server">
-                        <table class="stylem12">
-                            <tr>
-                                <td colspan="3" class="stylem11">
-                                    <asp:Image ID="Image_Admin_Icon" runat="server" 
-                                        ImageUrl="~/image/icon/edit-icon.jpg" />
-                                    <strong>Admin Chanel<asp:Image ID="Image_Admin_Icon0" runat="server" 
-                                        ImageUrl="~/image/icon/edit-icon.jpg" />
-                                    </strong></td>
-                            </tr>
-                            <tr>
-                                <td  style="background-color: #FCE1D6" class="stylem5">
-                                    <asp:HyperLink ID="hyperAddRemovePermission" runat="server" ForeColor="Blue" 
-                                        NavigateUrl="~/ManagePermission.aspx" 
-                                        style="font-weight: 700; "> Set/Remove Permission</asp:HyperLink>
-                                </td>
-                                <td  style="background-color: #FCE1D6" class="stylem5">
-                                    <asp:HyperLink ID="hplEditSubject" runat="server" ForeColor="Blue" 
-                                        NavigateUrl="~/ManageSubject.aspx" style="font-weight: 700">Subject Management</asp:HyperLink>
-                                </td>
-                                <td  style="background-color: #FCE1D6" class="stylem5">
-                                    <asp:HyperLink ID="hplDelUser" runat="server" 
-                                        style="color: #0000FF; font-weight: 700" 
-                                        NavigateUrl="~/DeleteUser.aspx">Delete Users</asp:HyperLink>
-                                </td>
-                            </tr>
-                        </table>
-                    </asp:Panel>
+     </table>   
+     </div> 
+    <div id="menu-banner" align="right">        
+        <table style="width: 1005px; height: 150px" align="center">
+            <tr>                
+                <td align="center">
+                    <a href="Default.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/image/logo/logo01.png"/></a>
                 </td>
-                  
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <asp:Panel ID="Panel_HadLogin" runat="server">
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="stylem5" style="background-color: #D9EBEC">
-                                    <asp:HyperLink ID="hplTest" runat="server" 
-                                            style="color: #003300; font-size: large; font-weight: 700" 
-                                        NavigateUrl="~/Test.aspx">Test</asp:HyperLink>
-                                </td>
-                                <td class="stylem5" style="background-color: #D9EBEC">
-                                    <asp:HyperLink ID="hplAddQuest" runat="server" 
-                                            NavigateUrl="~/AddQuestions.aspx" 
-                                            
-                        style="font-weight: 700; font-size: large; color: #003300">Add New Questions</asp:HyperLink>
-                                </td>
-                                <td class="stylem5" style="background-color: #D9EBEC">
-                                    <asp:HyperLink ID="HyperLink4" runat="server" 
-                                            NavigateUrl="~/ViewQuestions.aspx" 
-                                            
-                        style="font-weight: 700; font-size: large; color: #003300">View Questions</asp:HyperLink>
-                                </td>
-                            </tr>
-                        </table>
-                    </asp:Panel>
-                </td>
-                  
-            </tr>
+                <td align="right">
+                    <iframe src="/menu/Untitled.htm"
+                    width="575" height="150" scrolling="no" border="0" frameborder="0"></iframe>
+                </td>                
+            </tr>            
+        </table>
+    </div>           
+    <div id="body_content">
+        <table id="round" style="background-color: #FFFFFF;" class="round-content" align="center">
             <tr>
                 <td colspan="3">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    &nbsp;
                     </asp:ContentPlaceHolder>
                 </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td colspan="3" class="stylem2" style="background-color: #D9EBEC">
-                    <em>Design by Ken</em></td>
-            </tr>
-        </table>
+            </tr>                      
+        </table>    
+    </div>
+    <div id="footer" align="center">
+    &nbsp;
+    <table style="height: 20px" align="center"> 
+    <tr>
+    <td align="center"><strong>Design by Ken</strong>
+    </td></tr>
+    </table>
     </div>
     </form>
     

@@ -6,7 +6,7 @@
         {
             font-size: x-large;
             font-family: "Times New Roman", Times, serif;
-            color: #0000FF;
+            color: #006600;
         }
     </style>
 </asp:Content>

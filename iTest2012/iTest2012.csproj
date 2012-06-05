@@ -61,8 +61,10 @@
     <Content Include="DeleteUser.aspx" />
     <Content Include="EditSubject.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="image\background\bg01.jpg" />
     <Content Include="image\background\christmas_snow.jpg" />
     <Content Include="image\background\Christmas_Wallpaper_Snowman.jpg" />
+    <Content Include="image\background\line.gif" />
     <Content Include="image\banner\bannerhalloween.jpg" />
     <Content Include="image\banner\welcome.gif" />
     <Content Include="image\banner\welcome2.gif" />
@@ -103,10 +105,29 @@
     <Content Include="image\icon\search-icon.jpg" />
     <Content Include="image\icon\test-1.jpg" />
     <Content Include="image\icon\warning-icon.jpg" />
+    <Content Include="image\logo\logo01.png" />
     <Content Include="LogIn.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="ManagePermission.aspx" />
     <Content Include="ManageSubject.aspx" />
+    <Content Include="master.css" />
+    <Content Include="menu\menu.swf" />
+    <Content Include="menu\menu_data.xml" />
+    <Content Include="menu\menu_data\arrow.swf" />
+    <Content Include="menu\menu_data\inv.gif" />
+    <Content Include="menu\menu_data\Nuvola_apps_kservices.png" />
+    <Content Include="menu\menu_data\Nuvola_apps_kteatime.png" />
+    <Content Include="menu\menu_data\Nuvola_apps_kuser.png" />
+    <Content Include="menu\menu_data\Nuvola_apps_kwrite.png" />
+    <Content Include="menu\menu_data\Nuvola_filesystems_folder_home.png" />
+    <Content Include="menu\menu_data\root_n.png" />
+    <Content Include="menu\menu_data\root_o.png" />
+    <Content Include="menu\menu_data\sub_b.png" />
+    <Content Include="menu\menu_data\sub_n.png" />
+    <Content Include="menu\menu_data\sub_t.png" />
+    <Content Include="menu\open_menu_data.xml" />
+    <Content Include="menu\swfobject.js" />
+    <Content Include="menu\Untitled.htm" />
     <Content Include="PermissionErroPage.aspx" />
     <Content Include="PlayTestOne.aspx" />
     <Content Include="Result.aspx" />
@@ -118,7 +139,9 @@
     <Content Include="UploadFiles\mummy.gif" />
     <Content Include="UploadFiles\TKB.jpg" />
     <Content Include="ViewQuestions.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

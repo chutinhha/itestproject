@@ -1,0 +1,137 @@
+﻿a:link 
+        {
+            color:Green;
+            text-decoration:none;
+        }
+        
+        a:visited
+        {
+            color:Purple;
+            text-decoration:none;
+        }
+        
+        a:hover 
+        {
+            color:Red;
+            text-decoration:none;                       
+        }  
+          
+        a:active
+        {
+            color:Red;
+            text-decoration:none;            
+        }
+        
+                 
+        .stylem1
+        {
+            width: 1005px;
+        }
+        .stylem5
+        {
+            width: 334px;
+            text-align: center;
+        }
+        .stylem6
+        {
+            width: 335px;
+            text-align: center;
+        }
+        .stylem7
+        {
+            font-size: xx-large;
+            color: #660066;
+        }
+        .stylem8
+        {
+            width: 335px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .stylem9
+        {
+            width: 334px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .stylem10
+        {
+            text-align: right;
+        }
+        .stylem11
+        {
+            font-size: large;
+            text-align: center;
+            color: #FF0000;
+        }
+        .stylem12
+        {
+            width: 999px;
+        }
+        .stylem13
+        {
+            width: 498px;
+            text-align: center;
+        }
+        .stylem14
+        {
+            width: 499px;
+            text-align: center;
+        }
+        .bg_Image
+        {
+            background-image:url("../image/background/bg01.jpg");
+            background-attachment:fixed;            
+            background-position: bottom center;
+            background-repeat:no-repeat;
+            margin-left:0;
+            margin-right:0;
+            margin-top:0;
+            margin-bottom:0;
+        }
+        .bg_noImage
+        {
+            background-color:white;
+            background-attachment:fixed;            
+            background-position: bottom center;
+            background-repeat:no-repeat;
+        }      
+                 
+        .stylem2
+        {
+            text-align: right;
+            font-family: "Book Antiqua";
+            color: #0000FF;
+        }
+                 
+        .stylem15
+        {
+            width: 249px;
+            text-align: center;
+        }
+        .stylem16
+        {
+            width: 250px;
+            text-align: center;
+        }
+        #round 
+        {
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            width:1005px;
+            background:white;
+            border-color:#DEDEDE;            
+        }
+        #round_02
+        {
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            width:200px;
+            background:white;
+            border-color:#DEDEDE;            
+        }
+        .round-content 
+        {
+            padding: 0px;
+        }         
+        
