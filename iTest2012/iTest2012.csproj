@@ -115,8 +115,8 @@
     <Content Include="menu\menu_data.xml" />
     <Content Include="menu\menu_data\arrow.swf" />
     <Content Include="menu\menu_data\inv.gif" />
+    <Content Include="menu\menu_data\Nuvola_apps_klipper.png" />
     <Content Include="menu\menu_data\Nuvola_apps_kservices.png" />
-    <Content Include="menu\menu_data\Nuvola_apps_kteatime.png" />
     <Content Include="menu\menu_data\Nuvola_apps_kuser.png" />
     <Content Include="menu\menu_data\Nuvola_apps_kwrite.png" />
     <Content Include="menu\menu_data\Nuvola_filesystems_folder_home.png" />
@@ -301,6 +301,7 @@
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="menu\itest_menu.fml" />
     <None Include="MyiTestData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>MyiTestData.designer.cs</LastGenOutput>
