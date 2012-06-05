@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="iTest2012.MasterPage" %>
+ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="iTest2012.MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -47,7 +47,7 @@
                     <a href="Default.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/image/logo/logo01.png"/></a>
                 </td>
                 <td align="right">
-                    <iframe src="/menu/Untitled.htm"
+                    <iframe src="http://itest.somee.com/menu/Untitled.htm"
                     width="575" height="150" scrolling="no" border="0" frameborder="0"></iframe>
                 </td>                
             </tr>            
