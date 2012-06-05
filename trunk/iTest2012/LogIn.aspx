@@ -36,7 +36,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table align="center">
             <tr>
                 <td colspan="2" style="font-weight: 700; text-align: center;" class="style6">
-                    Log In</td>
+                    Login</td>
             </tr>
             <tr>
                 <td class="style7" style="width: 100px">

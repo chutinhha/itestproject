@@ -9,7 +9,7 @@
         .style6
     {
             font-size: x-large;
-            color: #0000FF;
+            color: #006600;
             font-family: Snap ITC;
         }
     .style7

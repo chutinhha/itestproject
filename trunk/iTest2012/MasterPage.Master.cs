@@ -22,24 +22,24 @@ namespace iTest2012
 
             if (test == -1)
             {
-                Panel_Admin.Visible = false;
+                //Panel_Admin.Visible = false;
                 Panel_UnLogin.Visible = true;
                 Panel_UserLogin.Visible = false;
-                Panel_HadLogin.Visible = false;
+                //Panel_HadLogin.Visible = false;
 
             }
             else
             {
                 int iduser = (int)(Session["idlogin"]);
                 st_GetUserInfoResult user = data.st_GetUserInfo(iduser).FirstOrDefault();
-                Panel_HadLogin.Visible = true;
+                //Panel_HadLogin.Visible = true;
                 Panel_UserLogin.Visible = true;
                 Panel_UnLogin.Visible = false;
                 if (user != null)
                 {
                     lbUserName.Text = user.iUserName;
                 }
-
+                /*
                 int ad = data.st_CheckPermission(test, "Admin");
                 if (ad == 0)
                 {
@@ -48,7 +48,7 @@ namespace iTest2012
                 else
                 {
                     Panel_Admin.Visible = true;
-                }
+                }*/
             }
         }
     }
