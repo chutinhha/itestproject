@@ -47,7 +47,7 @@
                     <a href="Default.aspx"><asp:Image ID="Image1" runat="server" ImageUrl="~/image/logo/logo01.png"/></a>
                 </td>
                 <td align="right">
-                    <iframe src="http://itest.somee.com/menu/Untitled.htm"
+                    <iframe src="/menu/Untitled.htm"
                     width="575" height="150" scrolling="no" border="0" frameborder="0"></iframe>
                 </td>                
             </tr>            
