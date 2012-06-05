@@ -3,17 +3,17 @@
 	<media_to_load lev0_left_path="" lev0_mid_normal_path="menu_data/root_n.png" lev0_mid_mouseover_path="menu_data/root_o.png" lev0_mid_selected_path="menu_data/root_o.png" lev0_right_path="" lev0_arrow_path="menu_data/arrow.swf" lev1_top_path="menu_data/sub_t.png" lev1_mid_normal_path="menu_data/sub_n.png" lev1_mid_mouseover_path="menu_data/sub_n.png" lev1_mid_selected_path="menu_data/sub_n.png" lev1_bottom_path="menu_data/sub_b.png" lev1_arrow_path="menu_data/arrow.swf" search_button_path="menu_data/root_n.png" bg_path="menu_data/inv.gif" snd_level0_mouseover_path="" snd_level1_mouseover_path="" snd_click_path="" lev1_left_path="" lev1_right_path=""/>
 	<menu_structure>
 		<item>
-			<item text="Home" url="/Default.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_filesystems_folder_home.png" illustration_clip_pos_x="40" illustration_clip_pos_y="10" take_level_colorize_data="1"/>
-			<item text="Test" url="/Test.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kwrite.png" illustration_clip_pos_x="135" illustration_clip_pos_y="10" take_level_colorize_data="1"/>
-			<item text="Task" url="" icon="" open_window="" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kservices.png" illustration_clip_pos_x="230" illustration_clip_pos_y="10" take_level_colorize_data="1">
-				<item text="View questions" url="/ViewQuestions.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
-				<item text="Add new questions" url="/AddQuestons.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
+			<item text="Home" url="/Default.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_filesystems_folder_home.png" illustration_clip_pos_x="35" illustration_clip_pos_y="5" take_level_colorize_data="1"/>
+			<item text="Test" url="/Test.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kwrite.png" illustration_clip_pos_x="135" illustration_clip_pos_y="5" take_level_colorize_data="1"/>
+			<item text="Task" url="" icon="" open_window="" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kservices.png" illustration_clip_pos_x="230" illustration_clip_pos_y="5" take_level_colorize_data="1">
+				<item text="View Questions" url="/ViewQuestions.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
+				<item text="Add New Questions" url="/AddQuestions.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
 			</item>
-			<item text="Personal Chanel" url="" icon="" open_window="" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kuser.png" illustration_clip_pos_x="370" illustration_clip_pos_y="10" take_level_colorize_data="1">
-				<item text="My info" url="" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
-				<item text="Change password" url="/ChangePass.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
+			<item text="Persional Chanel" url="" icon="" open_window="" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kuser.png" illustration_clip_pos_x="370" illustration_clip_pos_y="5" take_level_colorize_data="1">
+				<item text="My info" url="" icon="" open_window="" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
+				<item text="Change Pass" url="/ChangePass.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" take_level_colorize_data="1"/>
 			</item>
-			<item text="About" url="/About.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_kteatime.png" illustration_clip_pos_x="515" illustration_clip_pos_y="10" take_level_colorize_data="1"/>
+			<item text="About" url="/About.aspx" icon="" open_window="_parent" call_function_name="" call_function_parameter="" illustration_clip_path="menu_data/Nuvola_apps_klipper.png" illustration_clip_pos_x="515" illustration_clip_pos_y="5" take_level_colorize_data="1"/>
 		</item>
 	</menu_structure>
 </menu>
