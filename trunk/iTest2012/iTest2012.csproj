@@ -56,16 +56,35 @@
     <Content Include="AddNewSubject.aspx" />
     <Content Include="AddQuestions.aspx" />
     <Content Include="ChangePass.aspx" />
+    <Content Include="css\taoxanh01.css" />
+    <Content Include="css\taoxanh02.css" />
     <Content Include="Default.aspx" />
     <Content Include="DeleteSubject.aspx" />
     <Content Include="DeleteUser.aspx" />
+    <Content Include="demo.aspx" />
     <Content Include="EditSubject.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="image\background\back69.jpg" />
+    <Content Include="image\background\bg001.png" />
+    <Content Include="image\background\bg01-a.jpg" />
     <Content Include="image\background\bg01.jpg" />
-    <Content Include="image\background\christmas_snow.jpg" />
-    <Content Include="image\background\Christmas_Wallpaper_Snowman.jpg" />
+    <Content Include="image\background\bg_flower_01.jpg" />
+    <Content Include="image\background\bg_green_01.jpg" />
+    <Content Include="image\background\bg_green_02.jpg" />
+    <Content Include="image\background\bg_green_03.jpg" />
+    <Content Include="image\background\bg_linexanh.png" />
+    <Content Include="image\background\bg_linexanh_2vien.png" />
+    <Content Include="image\background\bg_line_xanh_vienduoi.png" />
+    <Content Include="image\background\bg_paper_01.jpg" />
+    <Content Include="image\background\bg_paper_02.jpg" />
+    <Content Include="image\background\bg_paper_03.jpg" />
+    <Content Include="image\background\bg_paper_03_nor.jpg" />
+    <Content Include="image\background\bg_paper_03_trans.jpg" />
+    <Content Include="image\background\bg_paper_03_trans_fullwhite_sig.jpg" />
+    <Content Include="image\background\bg_paper_03_trans_sig.jpg" />
+    <Content Include="image\background\bg_paper_03_trans_fullwhite.jpg" />
+    <Content Include="image\background\bg_sky_01.jpg" />
     <Content Include="image\background\line.gif" />
-    <Content Include="image\banner\bannerhalloween.jpg" />
     <Content Include="image\banner\welcome.gif" />
     <Content Include="image\banner\welcome2.gif" />
     <Content Include="image\boder\border-bottom-Hoaxanh.jpg" />
@@ -110,7 +129,7 @@
     <Content Include="LogOut.aspx" />
     <Content Include="ManagePermission.aspx" />
     <Content Include="ManageSubject.aspx" />
-    <Content Include="master.css" />
+    <Content Include="css\master.css" />
     <Content Include="menu\menu.swf" />
     <Content Include="menu\menu_data.xml" />
     <Content Include="menu\menu_data\arrow.swf" />
@@ -205,6 +224,13 @@
     </Compile>
     <Compile Include="DeleteUser.aspx.designer.cs">
       <DependentUpon>DeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditSubject.aspx.cs">
       <DependentUpon>EditSubject.aspx</DependentUpon>
