@@ -7,30 +7,30 @@
     <title>Welcome to iTest Website</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" type="text/css" href="master.css" />    
+    <link rel="stylesheet" type="text/css" href="/css/master.css" />      
 </head>
 <body class="bg_Image">
     <form id="form1" runat="server">   
     <div style="display: block;"> 
-    <table style="padding: 0px; margin: 0px; width: 100%; height: 35px; z-index: 9999999; background-repeat: repeat-x; background-image: url('/image/background/line.gif');">            
+    <table class="bg_head_table">            
             <tr>
-            <td>           
+            <td >           
             <asp:Panel ID="Panel_UnLogin" runat="server">                       
                    <div class="stylem10">
-                       <asp:HyperLink ID="hplLogin0" runat="server" ForeColor="#E4E4E4" 
-                           NavigateUrl="~/LogIn.aspx" style="font-weight: 700; color: #E4E4E4;">Login</asp:HyperLink>
+                       <asp:HyperLink ID="hplLogin0" runat="server" ForeColor="white" 
+                           NavigateUrl="~/LogIn.aspx" style="font-weight: 700;">Login</asp:HyperLink>
                        &nbsp;&nbsp;&nbsp;
-                       <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#FF9900" 
+                       <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#003300" 
                            NavigateUrl="~/SignUp.aspx" style="font-weight: 700">Sign Up</asp:HyperLink>
                    </div>
             </asp:Panel>
             </td>
-            <td>
+            <td >
             <asp:Panel ID="Panel_UserLogin" runat="server">
                         <div class="stylem10" >
                             <span style="color: White">Hi </span>
                             <asp:Label ID="lbUserName" runat="server" 
-                                style="color: #E4E4E4; font-weight: 700"></asp:Label>
+                                style="color: white; font-weight: 700"></asp:Label>
                             ,&nbsp;<span >( </span>
                             <asp:HyperLink ID="hplSignOut" runat="server" 
                                 NavigateUrl="~/LogOut.aspx">Logout</asp:HyperLink>
@@ -40,7 +40,7 @@
             </tr>
      </table>   
      </div> 
-    <div id="menu-banner" align="right">        
+    <div id="menu-banner"  align="right">        
         <table style="width: 1005px; height: 150px" align="center">
             <tr>                
                 <td align="center">
@@ -62,17 +62,9 @@
                     </asp:ContentPlaceHolder>
                 </td>
             </tr>                      
-        </table>    
-    </div>
-    <div id="footer" align="center">
-    &nbsp;
-    <table style="height: 20px" align="center"> 
-    <tr>
-    <td align="center"><strong>Design by Ken</strong>
-    </td></tr>
-    </table>
-    </div>
-    </form>
-    
+        </table>  
+         
+    </div>       
+    </form>      
 </body>
 </html>
