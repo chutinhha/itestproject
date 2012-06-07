@@ -8,3 +8,8 @@ C:\Users\KENVIN\Documents\Visual Studio 2010\Projects\iTest2012 - Share\itestpro
 C:\Users\KENVIN\Documents\Visual Studio 2010\Projects\iTest2012 - Share\itestproject\iTest2012\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\KENVIN\Documents\Visual Studio 2010\Projects\iTest2012 - Share\itestproject\iTest2012\obj\Debug\iTest2012.dll
 C:\Users\KENVIN\Documents\Visual Studio 2010\Projects\iTest2012 - Share\itestproject\iTest2012\obj\Debug\iTest2012.pdb
+D:\THANH\Nam IV\HK3\Do_An\itestproject\iTest2012\bin\iTest2012.dll
+D:\THANH\Nam IV\HK3\Do_An\itestproject\iTest2012\bin\iTest2012.pdb
+D:\THANH\Nam IV\HK3\Do_An\itestproject\iTest2012\obj\Debug\ResolveAssemblyReference.cache
+D:\THANH\Nam IV\HK3\Do_An\itestproject\iTest2012\obj\Debug\iTest2012.dll
+D:\THANH\Nam IV\HK3\Do_An\itestproject\iTest2012\obj\Debug\iTest2012.pdb
