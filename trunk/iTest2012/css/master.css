@@ -23,20 +23,16 @@
         }
         
                  
-        .stylem1
+        .stylem1, .stylem12
         {
-            width: 950px;
+            width: 900px;            
         }
-        .stylem5
+        .stylem5, .stylem6
         {
-            width: 316px;
+            width: 300px;
             text-align: center;
         }
-        .stylem6
-        {
-            width: 316px;
-            text-align: center;
-        }
+        
         .stylem7
         {
             font-size: xx-large;
@@ -44,13 +40,13 @@
         }
         .stylem8
         {
-            width: 317px;
+            width: 300px;
             text-align: center;
             font-weight: bold;
         }
         .stylem9
         {
-            width: 317px;
+            width: 300px;
             text-align: center;
             font-weight: bold;
         }
@@ -63,19 +59,10 @@
             font-size: large;
             text-align: center;
             color: #FF0000;
-        }
-        .stylem12
+        }        
+        .stylem13 .stylem14
         {
-            width: 950px;
-        }
-        .stylem13
-        {
-            width: 475px;
-            text-align: center;
-        }
-        .stylem14
-        {
-            width: 475px;
+            width: 450px;
             text-align: center;
         }
         .bg_Image
@@ -151,12 +138,25 @@
             width:129px;
             height:29px;
             margin:0;
-            color:#999999;
+            color:#003300;
             -moz-border-radius: 7px;
             -webkit-border-radius: 7px;
-            background: white;
+            background-color : #FFFFCC;
             font-size: 14px;
-            border-color: #003300;            
+            border-color: #003300;  
+            border-style:solid;  
+              
+        }
+        .txtbox_nor
+        {         
+            color:Black;
+            background: White;
+            font-size: 14px;
+            border-width:thin;
+            border-color: #999999;
+            border-style:solid;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
         }
         .btn_master
         {
@@ -166,12 +166,46 @@
             font-weight:700;
             font-size: 12px;          
         }
-        .font-headerstyle
+        .font_all
         {
-            font: tahoma 700 12px;
-            color: White;
+            font: tahoma;
+            color:black;            
         }
+        .border_tableheadline
+        {
+            border: thin solid #999999;                     
+            width: 900px; height: 31px;                       
+            background-repeat: repeat-x; 
+            background-image: url('/image/background/bg_linexanh_2vien_31px.png');
+            font-family:Tahoma;
+            font-size:16px;
+            font-weight:700;             
+            text-align:left; 
+            color:white; 
+            /*bo tron goc trai tren*/
+            -moz-border-radius-topleft:5px;
+            -webkit-border-top-left-radius:5px;      
+            /*bo tron goc phai tren*/   
+            -moz-border-radius-topright:5px;
+            -webkit-border-top-right-radius:5px;  
+            padding: 0px; margin: 0px;                 
+        }
+        .border_menuheadline
+        {
+            width: 900px; height: 50px;                       
+            background-repeat: repeat-x; 
+            bottom:0px;
+            background-image: url('/image/background/menu_normal01.png');                                       
+        }
+        .border_alltable
+        {
+            padding: 0px; margin: 0px;
+            width: 900px;
             
+            border-width:thin;
+            border-color: #999999;
+            border-style:solid;            
+        }
             
             
           

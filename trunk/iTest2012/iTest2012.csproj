@@ -665,6 +665,8 @@
     <Content Include="image\background\bg_paper_03_trans_fullwhite.jpg" />
     <Content Include="image\background\bg_sky_01.jpg" />
     <Content Include="image\background\line.gif" />
+    <Content Include="image\background\menu_normal.png" />
+    <Content Include="image\background\menu_normal01.png" />
     <Content Include="image\banner\welcome.gif" />
     <Content Include="image\banner\welcome2.gif" />
     <Content Include="image\boder\border-bottom-Hoaxanh.jpg" />
