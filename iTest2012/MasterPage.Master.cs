@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace iTest2012
 {
@@ -12,11 +13,12 @@ namespace iTest2012
         MyiTestDataDataContext data = new MyiTestDataDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
+            txtUsername.Focus();
             int test = (int)Session["idlogin"];
             string a = Request.ServerVariables["URL"];
-            if (test == -1 && a.IndexOf("LogIn.aspx") < 0 && a.IndexOf("SignUp.aspx") < 0 && a.IndexOf("About.aspx") < 0)
+            if (test == -1 && a.IndexOf("LogIn.aspx") < 0 && a.IndexOf("SignUp.aspx") < 0 && a.IndexOf("About.aspx") < 0 && a.IndexOf("Default.aspx") < 0)
             {
-                Response.Redirect("LogIn.aspx");
+                Response.Redirect("Default.aspx");
                 return;
             }
 
@@ -49,6 +51,21 @@ namespace iTest2012
                 {
                     Panel_Admin.Visible = true;
                 }*/
+            }
+        }
+
+        protected void btnlogin_Click(object sender, EventArgs e)
+        {
+            MyiTestDataDataContext db = new MyiTestDataDataContext();
+            int id = db.st_Login(txtUsername.Text.Trim(), FormsAuthentication.HashPasswordForStoringInConfigFile(txtPass.Text.Trim(), "MD5"));
+            if (id > 0)
+            {
+                Session["idlogin"] = id;
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Login unsuccessful ! Please try again');</script>");
             }
         }
     }
