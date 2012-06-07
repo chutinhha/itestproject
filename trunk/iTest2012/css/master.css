@@ -25,16 +25,16 @@
                  
         .stylem1
         {
-            width: 960px;
+            width: 950px;
         }
         .stylem5
         {
-            width: 320px;
+            width: 316px;
             text-align: center;
         }
         .stylem6
         {
-            width: 320px;
+            width: 316px;
             text-align: center;
         }
         .stylem7
@@ -44,13 +44,13 @@
         }
         .stylem8
         {
-            width: 320px;
+            width: 317px;
             text-align: center;
             font-weight: bold;
         }
         .stylem9
         {
-            width: 320px;
+            width: 317px;
             text-align: center;
             font-weight: bold;
         }
@@ -66,16 +66,16 @@
         }
         .stylem12
         {
-            width: 930px;
+            width: 950px;
         }
         .stylem13
         {
-            width: 465px;
+            width: 475px;
             text-align: center;
         }
         .stylem14
         {
-            width: 465px;
+            width: 475px;
             text-align: center;
         }
         .bg_Image
@@ -99,10 +99,10 @@
         .bg_head_table
         {
             padding: 0px; margin: 0px; 
-            width: 100%; height: 35px; 
+            width: 100%; height: 42px; 
             z-index: 9999999; 
             background-repeat: repeat-x; 
-            background-image: url('/image/background/bg_linexanh_2vien.png');
+            background-image: url('/image/background/bg_linexanh_2vien_42px.png');
         }
                  
         .stylem2
@@ -146,3 +146,32 @@
         {
             border: 1px solid #003300;            
         }
+        .txtbox_login
+        {
+            width:129px;
+            height:29px;
+            margin:0;
+            color:#999999;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            background: white;
+            font-size: 14px;
+            border-color: #003300;            
+        }
+        .btn_master
+        {
+            height: 25px;
+            width: 100px;
+            font-family: #003300;               
+            font-weight:700;
+            font-size: 12px;          
+        }
+        .font-headerstyle
+        {
+            font: tahoma 700 12px;
+            color: White;
+        }
+            
+            
+            
+          
