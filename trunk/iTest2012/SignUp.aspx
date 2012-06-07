@@ -30,11 +30,11 @@
             style="border: medium ridge #008000; width: 408px; color: #003300; ">
             <tr>
                 <td colspan="2" style="font-weight: 700; text-align: center" class="style2">
-                    Sign Up</td>
+                    Đăng Ký</td>
             </tr>
             <tr>
                 <td class="style3">
-                    User name<br />
+                    Tên đăng nhập<br />
                     <br />
                 </td>
                 <td style="text-align: left">
@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td class="style3">
-                    Password<br />
+                    Mật khẩu<br />
                     <br />
                 </td>
                 <td style="text-align: left">
@@ -72,7 +72,7 @@
             </tr>
             <tr>
                 <td class="style3">
-                    Re-enter Password<br />
+                    Nhập lại Mật khẩu<br />
                     <br />
                 </td>
                 <td style="text-align: left">
