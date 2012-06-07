@@ -11,16 +11,10 @@
 </head>
 <body class="bg_Image">
     <form id="form1" runat="server">    
-    <div style="display: block;"> 
+    <div>
     <table class="bg_head_table">            
-            <tr>
-            <td id="awm_menu">            
-                    <ul id="awmULLI-menu"  style="display:none; position:fixed;"  >
-                        <li title='Đến trang chủ'><a href="/Default.aspx">Trang chủ</a></li>
-                        <li title='Bắt đầu làm bài trắc nghiệm'><a href="/Test.aspx">Test Now</a></li>
-                    </ul>       
-            </td>
-            <td >           
+           <tr>   
+           <td>     
             <asp:Panel ID="Panel_UnLogin" runat="server">                       
                    <div class="stylem10">
                        Tên thành viên :
@@ -29,8 +23,7 @@
                        <asp:TextBox ID="txtPass" runat="server" class="txtbox_login" 
                            TextMode="Password">Mật khẩu</asp:TextBox>
                        &nbsp;&nbsp;<asp:Button ID="btnlogin" class="btn_master" runat="server" 
-                           Text="Đăng nhập" onclick="btnlogin_Click" />
-&nbsp;
+                           Text="Đăng nhập" onclick="btnlogin_Click" />&nbsp;
                        <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#003300" 
                            NavigateUrl="~/SignUp.aspx" style="font-weight: 700">Đăng ký</asp:HyperLink>
                    </div>
@@ -53,6 +46,24 @@
             </tr>
      </table>   
      </div>
+     <div align="center">
+     <table class="border_alltable" style="height:300px">
+        <tr>
+            <td>
+                Đây là banner or slide ảnh</td>
+        </tr>
+    </table>
+    <table class="border_menuheadline">
+        <tr>
+            <td id="awm_menu" align="right">                         
+                    <ul id="awmULLI-menu"  style="display:none; "  >
+                        <li title='Đến trang chủ'><a href="/Default.aspx">Trang chủ</a></li>
+                        <li title='Bắt đầu làm bài trắc nghiệm'><a href="/Test.aspx">Test Now</a></li>
+                    </ul>                       
+            </td>
+        </tr>
+    </table>
+     </div>
      
     <!----<div id="menu-banner"  align="right">        
         <table style="width: 1005px; height: 150px" align="center">
@@ -67,17 +78,10 @@
             </tr>            
         </table>
     </div>       ---->    
-    <div id="body_content">
-        <table id="round" style="background-color: #FFFFFF;" class="round-content" align="center">
-            <tr>
-                <td colspan="3">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    <div id="body_content">        
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     &nbsp;
-                    </asp:ContentPlaceHolder>
-                </td>
-            </tr>                      
-        </table>  
-         
+    </asp:ContentPlaceHolder>          
     </div>       
     </form>  
         
