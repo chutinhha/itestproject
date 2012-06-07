@@ -134,7 +134,9 @@
     <Content Include="menu_awm\awmdata\awmlib0.js" />
     <Content Include="menu_awm\awmdata\awmlib1.js" />
     <Content Include="menu_awm\awmdata\awmlib2.js" />
+    <Content Include="menu_awm\awmdata\awmlib3.js" />
     <Content Include="menu_awm\awmdata\awmlib4.js" />
+    <Content Include="menu_awm\awmdata\awmlib5.js" />
     <Content Include="menu_awm\awmdata\awmlib7.js" />
     <Content Include="menu_awm\awmdata\dot.gif" />
     <Content Include="menu_awm\awmdata\menu\arrow.png" />
