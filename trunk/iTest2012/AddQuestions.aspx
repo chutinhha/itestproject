@@ -38,26 +38,30 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div style="text-align: center; background-color: #FFFFFF;">
+    <div align="center">
         <br />
         <br />
         <asp:Image ID="Image_Add_Icon" runat="server" ImageUrl="~/image/icon/add-quest-icon.jpg" />
         <br />
         <br />
-        <table align="center" style="border: medium ridge #008000; width: 550px; color: #003300;">
-            <tr>
-                <td colspan="2" style="font-weight: 700; font-size: x-large;">
+        <table class="border_tableheadline">
+        <tr>
+                <td>
                     Thêm Câu hỏi
                 </td>
             </tr>
+        </table>
+        <table align="center" class="border_alltable">            
             <tr>
                 <td class="style1">
                     Môn học
                 </td>
                 <td class="style2">
                     <asp:DropDownList ID="ddlSubName" runat="server" BackColor="White" Style="margin-left: 0px"
-                        Width="350px" AutoPostBack="True" DataSourceID="LinqDataSource1" DataTextField="iSubjectName"
-                        DataValueField="iSubjectName" AppendDataBoundItems="True" OnSelectedIndexChanged="ddlSubName_SelectedIndexChanged">
+                        Width="350px" DataSourceID="LinqDataSource1" DataTextField="iSubjectName"
+                        DataValueField="iSubjectName" AppendDataBoundItems="True" 
+                        OnSelectedIndexChanged="ddlSubName_SelectedIndexChanged" 
+                        AutoPostBack="True">
                         <asp:ListItem Value="-1">---- Chọn môn học ----</asp:ListItem>
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="iTest2012.MyiTestDataDataContext"
@@ -86,8 +90,9 @@
                     Chọn chương
                 </td>
                 <td class="style2">
-                    <asp:DropDownList ID="ddlChapNum" runat="server" AppendDataBoundItems="True" Width="350px"
-                        AutoPostBack="True" OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlChapNum" runat="server" AppendDataBoundItems="True" 
+                        Width="350px" OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged" 
+                        AutoPostBack="True">
                         <asp:ListItem Value="-1">---- Chọn Chương ---- </asp:ListItem>
                     </asp:DropDownList>
                 </td>
@@ -112,8 +117,8 @@
                 <td class="style1">
                     Nội Dung :
                 </td>
-                    <td style="width: 650px; float: left">
-                        <textarea name="txt_noidung" id="txtnoidung" rows="10" cols="40"> </textarea>
+                    <td style="width: 650px; float:left">
+                        <textarea name="txt_noidung" id="txtnoidung" runat="server" rows="10" cols="40"> </textarea>
                     </td>
                
                 <script type="text/javascript" language="javascript">
@@ -140,7 +145,9 @@
                     Loại câu hỏi
                 </td>
                 <td class="style2">
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="DropDownList1" runat="server" 
+                        OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" 
+                        AutoPostBack="True">
                         <asp:ListItem Value="-1">Chọn Loại Câu Hỏi</asp:ListItem>
                         <asp:ListItem Value="1">Một lựa chọn</asp:ListItem>
                         <asp:ListItem Value="2">Nhiều lựa chọn</asp:ListItem>
