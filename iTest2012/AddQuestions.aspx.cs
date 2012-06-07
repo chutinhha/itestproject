@@ -74,7 +74,7 @@ namespace iTest2012
         protected void btnEnterAgain_Click(object sender, EventArgs e)
         {
 
-            txtnoidung = string.Empty;
+            txtnoidung.Value = string.Empty;
             txtAns1.Text = string.Empty;
             txtAns2.Text = string.Empty;
             txtAns3.Text = string.Empty;
