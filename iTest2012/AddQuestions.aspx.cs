@@ -74,13 +74,13 @@ namespace iTest2012
         protected void btnEnterAgain_Click(object sender, EventArgs e)
         {
 
-            txtBodyQuest.Text = string.Empty;
+            txtnoidung = string.Empty;
             txtAns1.Text = string.Empty;
             txtAns2.Text = string.Empty;
             txtAns3.Text = string.Empty;
             txtAns4.Text = string.Empty;
 
-            txtBodyQuest.Focus();
+            txtnoidung.Focus();
         }
 
         protected void btnAddQuest_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace iTest2012
             if (DropDownList1.SelectedValue == "2")
             {
                 if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
-                    && txtBodyQuest.Text.Length > 0
+                    && txtnoidung.Value.Length > 0
                     && txtAns1.Text.Length > 0 && txtAns2.Text.Length > 0
                     && txtAns3.Text.Length > 0 && txtAns4.Text.Length > 0)
                 {
@@ -151,7 +151,7 @@ namespace iTest2012
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
                     qs.iType = "Multi-Choices";
                     qs.iLevel = ddlLevel.Text.ToString();
-                    qs.iBodyQuest = txtBodyQuest.Text.ToString();
+                    qs.iBodyQuest = txtnoidung.Value.ToString();
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
                     else
@@ -234,7 +234,7 @@ namespace iTest2012
                     Response.Write("<script>alert('This question was added');</script>");
 
 
-                    txtBodyQuest.Text = string.Empty;
+                    txtnoidung.Value = string.Empty;
                     txtAns1.Text = string.Empty;
                     txtAns2.Text = string.Empty;
                     txtAns3.Text = string.Empty;
@@ -246,14 +246,14 @@ namespace iTest2012
                     cb3.Checked = false;
                     cb4.Checked = false;
 
-                    txtBodyQuest.Focus();
+                    txtnoidung.Focus();
                     DropDownList1.SelectedValue = "-1";
                 }
             }
             else if (DropDownList1.SelectedValue == "1")
             {
                 if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
-            && txtBodyQuest.Text.Length > 0
+            && txtnoidung.Value.Length > 0
             && txtAns5.Text.Length > 0 && txtAns6.Text.Length > 0
             && txtAns7.Text.Length > 0 && txtAns8.Text.Length > 0)
                 {
@@ -314,7 +314,7 @@ namespace iTest2012
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
                     qs.iType = "One-Choice";
                     qs.iLevel = ddlLevel.Text.ToString();
-                    qs.iBodyQuest = txtBodyQuest.Text.ToString();
+                    qs.iBodyQuest = txtnoidung.Value.ToString();
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
                     else
@@ -397,7 +397,7 @@ namespace iTest2012
                     Response.Write("<script>alert('This question was added');</script>");
 
 
-                    txtBodyQuest.Text = string.Empty;
+                    txtnoidung.Value = string.Empty;
                     txtAns5.Text = string.Empty;
                     txtAns6.Text = string.Empty;
                     txtAns7.Text = string.Empty;
@@ -409,7 +409,7 @@ namespace iTest2012
                     RadioButtonListAns.Items[2].Selected = false;
                     RadioButtonListAns.Items[3].Selected = false;
 
-                    txtBodyQuest.Focus();
+                    txtnoidung.Focus();
                     DropDownList1.SelectedValue = "-1";
                 }
             }
