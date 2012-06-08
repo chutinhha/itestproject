@@ -3,7 +3,7 @@
 
 
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%--<title>Demo CKeditor by Jimmy Van</title>--%>
     <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
     <style type="text/css">
