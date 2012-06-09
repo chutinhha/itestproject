@@ -2,7 +2,7 @@
     CodeBehind="AddQuestions.aspx.cs" Inherits="iTest2012.AddQuestions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" id="meta" runat="server" content="text/html; charset=utf-8" />
     <%--<script src="ckeditor/ckeditor.js" type="text/javascript"></script>--%>
     <script src="ckeditor/ckeditor_basic.js" type="text/javascript"></script>
     <style type="text/css">
@@ -114,9 +114,7 @@
                 <td>
                     Nội Dung :
                 </td>
-                <td>
-                    <textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="40"></textarea>
-                </td>
+                <td><textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="40"></textarea></td>
             </tr>
             <script type="text/javascript" language="javascript">
 

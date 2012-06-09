@@ -36,11 +36,11 @@
             style="border: medium ridge #008000; width: 400px; color: #003300;">
             <tr>
                 <td colspan="2" style="font-weight: 700; text-align: center" class="style5">
-                    Change Password</td>
+                    Đổi mật khẩu</td>
             </tr>
             <tr>
                 <td class="style3">
-                    User name</td>
+                   Tên đăng nhập</td>
                 <td style="text-align: right">
                     <asp:TextBox ID="txtUsername" runat="server" Width="200px" CssClass="style4" 
                         BackColor="White"></asp:TextBox>
@@ -48,8 +48,7 @@
             </tr>
             <tr>
                 <td class="style3">
-                    Old
-                    Password</td>
+                    Mật khẩu cũ</td>
                 <td style="text-align: right">
                     <asp:TextBox ID="txtOldPass" runat="server" Width="200px" CssClass="style4" 
                         TextMode="Password" BackColor="White"></asp:TextBox>
@@ -57,7 +56,7 @@
             </tr>
             <tr>
                 <td class="style3">
-                    New Password</td>
+                    Mật khẩu mới</td>
                 <td style="text-align: right">
                     <asp:TextBox ID="txtNewPass" runat="server" Width="200px" CssClass="style4" 
                         TextMode="Password" BackColor="White"></asp:TextBox>
@@ -65,7 +64,7 @@
             </tr>
             <tr>
                 <td class="style3">
-                    Re-enter New Password</td>
+                    Nhập lại Mật khẩu mới</td>
                 <td style="text-align: right">
                     <asp:TextBox ID="txtReEnterNewPass" runat="server" Width="200px" 
                         CssClass="style4" TextMode="Password" BackColor="White"></asp:TextBox>
@@ -74,10 +73,10 @@
             <tr>
                 <td colspan="2" style="text-align: center">
 &nbsp;<asp:Button ID="btnChangePass" runat="server" onclick="btnLogin_Click" style="text-align: center; font-weight: 700; color: #FFFFFF;" 
-                        Text="Change Pass" CssClass="style2" />
+                        Text="Lưu lại" CssClass="style2" />
                     <br />
                     <asp:HyperLink ID="hplReturnHome" runat="server" 
-                        NavigateUrl="~/Default.aspx">Return Home Page ?</asp:HyperLink>
+                        NavigateUrl="~/Default.aspx">Quay về Trang chủ ?</asp:HyperLink>
                     <br />
                 </td>
             </tr>
