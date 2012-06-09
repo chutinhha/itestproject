@@ -48,7 +48,7 @@
         </tr>
         <tr>
             <td colspan="2" style="text-align: center">
-                <asp:Button ID="btnDel" runat="server" onclick="btnDel_Click" Text="Delete" 
+                <asp:Button ID="btnDel" runat="server" onclick="btnDel_Click" Text="Thực hiện" 
                     Width="100px" />
             </td>
         </tr>

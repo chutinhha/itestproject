@@ -3,8 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <p style="background-color: #FFFFFF">
-        <em>You had logged out... To continue, please
+        <em>Bạn đã Đăng To continue, please
         <asp:HyperLink ID="HyperLink9" runat="server" ForeColor="Red" 
-            NavigateUrl="~/LogIn.aspx">Login</asp:HyperLink>
+            NavigateUrl="~/LogIn.aspx">Đăng nhập</asp:HyperLink>
 &nbsp;! </em></p>
 </asp:Content>

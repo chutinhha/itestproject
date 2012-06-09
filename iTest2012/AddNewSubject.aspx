@@ -29,11 +29,11 @@
                 <table style="width: 350px;" align="center">
                     <tr>
                         <td class="style1" colspan="2">
-                            <strong>Add New Subject</strong></td>
+                            <strong>Thêm môn học</strong></td>
                     </tr>
                     <tr>
                         <td class="style2">
-                            Subject ID</td>
+                            Mã môn học</td>
                         <td>
                             <asp:TextBox ID="txtSubID" runat="server" Width="200px" 
                                 onkeyup="valid(this,'numbers')" onblur="valid(this,'numbers')" MaxLength="7"></asp:TextBox>
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <td class="style2">
-                            Subject Name :</td>
+                            Tên môn học :</td>
                         <td>
                             <asp:TextBox ID="txtSubName" runat="server" Width="200px" MaxLength="250"></asp:TextBox>
                         </td>
@@ -54,7 +54,7 @@
                     <tr>
                         <td colspan="2">
                                 <asp:Button ID="btnAddNewSub" runat="server" 
-                                    Text="Add" onclick="btnAddNewSub_Click" 
+                                    Text="Thêm" onclick="btnAddNewSub_Click" 
                                 style="color: #0000FF; font-weight: 700" Width="100px" />
                         </td>
                     </tr>

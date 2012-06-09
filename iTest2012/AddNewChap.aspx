@@ -71,9 +71,9 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" Width="100px" />
+                        <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Thêm" Width="100px" />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnAgain" runat="server" OnClick="btnAgain_Click" Text="Enter Again"
+                        <asp:Button ID="btnAgain" runat="server" OnClick="btnAgain_Click" Text="Nhập lại"
                             Width="100px" />
                         <br />
                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Quay về Trang chủ</asp:HyperLink>
