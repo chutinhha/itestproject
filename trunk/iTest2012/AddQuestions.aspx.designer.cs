@@ -409,12 +409,12 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Button btnEnterAgain;
         
         /// <summary>
-        /// HyperLink1 control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
     }
 }

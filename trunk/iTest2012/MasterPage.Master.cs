@@ -16,7 +16,7 @@ namespace iTest2012
             txtUsername.Focus();
             int test = (int)Session["idlogin"];
             string a = Request.ServerVariables["URL"];
-            if (test == -1 && a.IndexOf("LogIn.aspx") < 0 && a.IndexOf("SignUp.aspx") < 0 && a.IndexOf("About.aspx") < 0 && a.IndexOf("Default.aspx") < 0)
+            if (test == -1 && a.IndexOf("LogIn.aspx") < 0 && a.IndexOf("SignUp1.aspx") < 0 && a.IndexOf("About.aspx") < 0 && a.IndexOf("Default.aspx") < 0)
             {
                 Response.Redirect("Default.aspx");
                 return;
@@ -65,7 +65,7 @@ namespace iTest2012
             }
             else
             {
-                Response.Write("<script>alert('Login unsuccessful ! Please try again');</script>");
+                Response.Write("<script>alert('Đăng nhập thất bạn. Vui lòng Nhập lại');</script>");
             }
         }
     }

@@ -29,11 +29,11 @@
     <table class="style2" align="center" >
         <tr>
             <td class="style1" colspan="2" style="text-align: center">
-                <strong>Delete User</strong></td>
+                <strong>Xóa Tài khoản</strong></td>
         </tr>
         <tr>
             <td class="style3">
-                User Name :</td>
+                Tên đăng nhập :</td>
             <td class="style5">
                 <asp:DropDownList ID="ddlUserName" runat="server" 
                     DataSourceID="LinqDataSource1" DataTextField="iUserName" 

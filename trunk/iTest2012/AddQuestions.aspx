@@ -1,31 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="AddQuestions.aspx.cs" Inherits="iTest2012.AddQuestions" %>
 
-
-    <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <%--<title>Demo CKeditor by Jimmy Van</title>--%>
-    <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%--<script src="ckeditor/ckeditor.js" type="text/javascript"></script>--%>
+    <script src="ckeditor/ckeditor_basic.js" type="text/javascript"></script>
     <style type="text/css">
         .style1
         {
-            width: 293px;
+            width: 200px;
             text-align: left;
             font-weight: 700;
-            float:left;
+            float: left;
         }
         .style2
         {
-            width: 531px ;
+            width: 531px;
             text-align: left;
-            float:left
+            float: left;
         }
         .style3
         {
             color: #FFFFFF;
             width: 119px;
             background-color: #003300;
-            float:left
+            float: left;
         }
     </style>
     <script type="text/javascript">        // tao script chi cho nhap so
@@ -37,30 +36,29 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div align="center">
         <br />
         <br />
         <asp:Image ID="Image_Add_Icon" runat="server" ImageUrl="~/image/icon/add-quest-icon.jpg" />
         <br />
         <br />
-        <table class="border_tableheadline">
-        <tr>
+        <table style="text-align: center" class="border_tableheadline">
+            <tr>
                 <td>
                     Thêm Câu hỏi
                 </td>
             </tr>
         </table>
-        <table align="center" class="border_alltable">            
-            <tr>
+        <table align="center" class="border_alltable">
+            <tr style="float: left">
                 <td class="style1">
                     Môn học
                 </td>
                 <td class="style2">
                     <asp:DropDownList ID="ddlSubName" runat="server" BackColor="White" Style="margin-left: 0px"
-                        Width="350px" DataSourceID="LinqDataSource1" DataTextField="iSubjectName"
-                        DataValueField="iSubjectName" AppendDataBoundItems="True" 
-                        OnSelectedIndexChanged="ddlSubName_SelectedIndexChanged" 
+                        Width="350px" DataSourceID="LinqDataSource1" DataTextField="iSubjectName" DataValueField="iSubjectName"
+                        AppendDataBoundItems="True" OnSelectedIndexChanged="ddlSubName_SelectedIndexChanged"
                         AutoPostBack="True">
                         <asp:ListItem Value="-1">---- Chọn môn học ----</asp:ListItem>
                     </asp:DropDownList>
@@ -90,9 +88,8 @@
                     Chọn chương
                 </td>
                 <td class="style2">
-                    <asp:DropDownList ID="ddlChapNum" runat="server" AppendDataBoundItems="True" 
-                        Width="350px" OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged" 
-                        AutoPostBack="True">
+                    <asp:DropDownList ID="ddlChapNum" runat="server" AppendDataBoundItems="True" Width="350px"
+                        OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem Value="-1">---- Chọn Chương ---- </asp:ListItem>
                     </asp:DropDownList>
                 </td>
@@ -114,20 +111,18 @@
                 </td>
             </tr>
             <tr>
-                <td class="style1">
+                <td>
                     Nội Dung :
                 </td>
-                    <td style="width: 650px; float:left">
-                        <textarea name="txt_noidung" id="txtnoidung" runat="server" rows="10" cols="40"> </textarea>
-                    </td>
-               
-                <script type="text/javascript" language="javascript">
-
-                    CKEDITOR.replace('txtnoidung');
- 
-                </script>
+                <td>
+                    <textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="40"></textarea>
+                </td>
             </tr>
-            
+            <script type="text/javascript" language="javascript">
+
+                CKEDITOR.replace('txtnoidung');
+ 
+            </script>
             <tr>
                 <td class="style1">
                     Chèn Hình ảnh
@@ -145,8 +140,7 @@
                     Loại câu hỏi
                 </td>
                 <td class="style2">
-                    <asp:DropDownList ID="DropDownList1" runat="server" 
-                        OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" 
+                    <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"
                         AutoPostBack="True">
                         <asp:ListItem Value="-1">Chọn Loại Câu Hỏi</asp:ListItem>
                         <asp:ListItem Value="1">Một lựa chọn</asp:ListItem>
@@ -244,16 +238,19 @@
                     <br />
                 </td>
             </tr>
-            <tr>
-                <td colspan="2">
+            <tr >
+                <td colspan="2" style="text-align: center; float:left">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnAddQuest" runat="server" CssClass="style3" Text="Thêm"
-                        Width="120px" OnClick="btnAddQuest_Click" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnEnterAgain" runat="server" CssClass="style3" Text="Nhập lại"
-                        Width="120px" OnClick="btnEnterAgain_Click" />
+                    <asp:Button ID="btnAddQuest" runat="server" CssClass="style3" Text="Thêm" Width="120px"
+                        OnClick="btnAddQuest_Click" />
+                    
+                    <asp:Button ID="btnEnterAgain" runat="server" CssClass="style3" Text="Nhập lại" Width="120px"
+                        OnClick="btnEnterAgain_Click" />
                     <br />
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Quay về Trang chủ</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Default.aspx">Quay về Trang chủ</asp:HyperLink>
+                </td>
+                <td style="float: left" colspan="2">
                 </td>
             </tr>
         </table>
