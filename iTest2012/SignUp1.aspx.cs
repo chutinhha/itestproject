@@ -55,7 +55,7 @@ namespace iTest2012
                         labRePass.Text = "";
                         labEmail.Text = "";
 
-                        labRePass.Text = "Incorrect Password ! Please enter again";
+                        labRePass.Text = "Tài khoản bạn vừa đăng nhập không đúng, vui lòng nhập lại.";
                         txtReEnterPass.Text = string.Empty;
                     }
                     else
@@ -80,7 +80,7 @@ namespace iTest2012
                 }
                 else
                 {
-                    Response.Write("<script>alert('Please enter all infomation')</script>");
+                    Response.Write("<script>alert('Vui lòng điền đầy đủ thông tin. ')</script>");
 
                 }
             }

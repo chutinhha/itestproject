@@ -24,8 +24,9 @@
                            TextMode="Password">Mật khẩu</asp:TextBox>
                        &nbsp;&nbsp;<asp:Button ID="btnlogin" class="btn_master" runat="server" 
                            Text="Đăng nhập" onclick="btnlogin_Click" />&nbsp;
-                       <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#003300" 
-                           NavigateUrl="~/SignUp.aspx" style="font-weight: 700">Đăng ký</asp:HyperLink>
+                      <asp:HyperLink ID="HyperLink1" style=" font-weight:700;" runat="server" 
+                                NavigateUrl="~/SignUp1.aspx">Đăng ký</asp:HyperLink>
+                      
                    </div>
             </asp:Panel>
             </td>

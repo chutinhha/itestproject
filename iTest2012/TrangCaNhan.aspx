@@ -22,14 +22,18 @@
             ImageUrl="~/image/icon/add-user-icon.jpg" />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <table align="center" 
-            
-            
-            
-            style="border: medium ridge #008000; width: 408px; color: #003300; ">
-            <tr>
+        
+         <div align="center">   
+    <table style=" text-align:center" class="border_tableheadline">
+        <tr >
+            <td>
+                Thông Tin Tài Khoản của Bạn</td>
+        </tr>
+    </table>
+    <table class="border_alltable">
+        <tr>
                 <td colspan="2" style="font-weight: 700; text-align: center" class="style2">
-                    Thông Tin Tài Khoản của Bạn</td>
+                   </td>
             </tr>
             <tr>
                 <td class="style3">
@@ -68,12 +72,13 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
-
+                <br />
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Default.aspx">Quay lại Trang chủ</asp:HyperLink>
                     <br />
                 </td>
             </tr>
-        </table>
+    </table>
+   </div>
     
     </div>
     <br />

@@ -36,11 +36,11 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table align="center">
             <tr>
                 <td colspan="2" style="font-weight: 700; text-align: center;" class="style6">
-                    Login</td>
+                    Đăng Nhập</td>
             </tr>
             <tr>
                 <td class="style7" style="width: 100px">
-                    User name</td>
+                    Tên Đăng nhập</td>
                 <td style="text-align: right; width: 250px;">
                     <asp:TextBox ID="txtUsername" runat="server" Width="200px" 
                         style="background-color :White" BackColor="White"></asp:TextBox>
@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td class="style7" style="width: 100px">
-                    Password</td>
+                    Mật khẩu</td>
                 <td style="text-align: right; width: 250px;">
                     <asp:TextBox ID="txtPass" runat="server" Width="200px" TextMode="Password" 
                         style="background-color:White" BackColor="White"></asp:TextBox>
@@ -59,11 +59,11 @@
 &nbsp;<asp:Button ID="btnLogin" runat="server" onclick="btnLogin_Click" style="text-align: center; font-weight: 700; color: #FFFFFF; background-color: #003300;" 
                         Text="Login" />
                     <br />
-                    <span class="style8">Create New Account?</span>&nbsp;
+                    <span class="style8">Đăng ký?</span>&nbsp;
                     <asp:HyperLink ID="hplCreateUser" runat="server" 
-                        NavigateUrl="~/MasterPageContent/SignUp.aspx">Click Here !</asp:HyperLink>
+                        NavigateUrl="~/SignUp1.aspx">Đăng nhập !</asp:HyperLink>
                     <br />
-                    <span class="style8">Forget Your Password ?
+                    <span class="style8">Quên mật khẩu ?
                     </span>
                     <asp:HyperLink ID="HyperLink1" runat="server">Click Here !</asp:HyperLink>
                 </td>
