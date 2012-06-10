@@ -30,27 +30,27 @@ namespace iTest2012
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertiAnswer(iAnswer instance);
-    partial void UpdateiAnswer(iAnswer instance);
-    partial void DeleteiAnswer(iAnswer instance);
     partial void InsertiUserPermission(iUserPermission instance);
     partial void UpdateiUserPermission(iUserPermission instance);
     partial void DeleteiUserPermission(iUserPermission instance);
-    partial void InsertiChapter(iChapter instance);
-    partial void UpdateiChapter(iChapter instance);
-    partial void DeleteiChapter(iChapter instance);
     partial void InsertiFunction(iFunction instance);
     partial void UpdateiFunction(iFunction instance);
     partial void DeleteiFunction(iFunction instance);
-    partial void InsertiQuestion(iQuestion instance);
-    partial void UpdateiQuestion(iQuestion instance);
-    partial void DeleteiQuestion(iQuestion instance);
-    partial void InsertiSubject(iSubject instance);
-    partial void UpdateiSubject(iSubject instance);
-    partial void DeleteiSubject(iSubject instance);
     partial void InsertiUser(iUser instance);
     partial void UpdateiUser(iUser instance);
     partial void DeleteiUser(iUser instance);
+    partial void InsertiSubject(iSubject instance);
+    partial void UpdateiSubject(iSubject instance);
+    partial void DeleteiSubject(iSubject instance);
+    partial void InsertiChapter(iChapter instance);
+    partial void UpdateiChapter(iChapter instance);
+    partial void DeleteiChapter(iChapter instance);
+    partial void InsertiQuestion(iQuestion instance);
+    partial void UpdateiQuestion(iQuestion instance);
+    partial void DeleteiQuestion(iQuestion instance);
+    partial void InsertiAnswer(iAnswer instance);
+    partial void UpdateiAnswer(iAnswer instance);
+    partial void DeleteiAnswer(iAnswer instance);
     #endregion
 		
 		public MyiTestDataDataContext() : 
@@ -83,27 +83,11 @@ namespace iTest2012
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<iAnswer> iAnswers
-		{
-			get
-			{
-				return this.GetTable<iAnswer>();
-			}
-		}
-		
 		public System.Data.Linq.Table<iUserPermission> iUserPermissions
 		{
 			get
 			{
 				return this.GetTable<iUserPermission>();
-			}
-		}
-		
-		public System.Data.Linq.Table<iChapter> iChapters
-		{
-			get
-			{
-				return this.GetTable<iChapter>();
 			}
 		}
 		
@@ -115,11 +99,11 @@ namespace iTest2012
 			}
 		}
 		
-		public System.Data.Linq.Table<iQuestion> iQuestions
+		public System.Data.Linq.Table<iUser> iUsers
 		{
 			get
 			{
-				return this.GetTable<iQuestion>();
+				return this.GetTable<iUser>();
 			}
 		}
 		
@@ -131,11 +115,27 @@ namespace iTest2012
 			}
 		}
 		
-		public System.Data.Linq.Table<iUser> iUsers
+		public System.Data.Linq.Table<iChapter> iChapters
 		{
 			get
 			{
-				return this.GetTable<iUser>();
+				return this.GetTable<iChapter>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iQuestion> iQuestions
+		{
+			get
+			{
+				return this.GetTable<iQuestion>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iAnswer> iAnswers
+		{
+			get
+			{
+				return this.GetTable<iAnswer>();
 			}
 		}
 		
@@ -258,10 +258,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetImageByID")]
-		public void st_GetImageByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_pk)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetImageByID", IsComposable=true)]
+		public object st_GetImageByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_pk)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_pk);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_pk).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetUserInfo")]
@@ -369,16 +369,16 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllChapter")]
-		public void st_SelectAllChapter([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllChapter", IsComposable=true)]
+		public object st_SelectAllChapter([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel")]
-		public void st_SelectAllLevel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel", IsComposable=true)]
+		public object st_SelectAllLevel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllQuest")]
@@ -402,209 +402,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel")]
-		public void st_SelectAllLevel1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel", IsComposable=true)]
+		public object st_SelectAllLevel1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter);
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iAnswer")]
-	public partial class iAnswer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iAnsID;
-		
-		private int _iQuestID;
-		
-		private char _iProperty;
-		
-		private string _iBodyAns;
-		
-		private string _iImageAName;
-		
-		private EntityRef<iQuestion> _iQuestion;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniAnsIDChanging(int value);
-    partial void OniAnsIDChanged();
-    partial void OniQuestIDChanging(int value);
-    partial void OniQuestIDChanged();
-    partial void OniPropertyChanging(char value);
-    partial void OniPropertyChanged();
-    partial void OniBodyAnsChanging(string value);
-    partial void OniBodyAnsChanged();
-    partial void OniImageANameChanging(string value);
-    partial void OniImageANameChanged();
-    #endregion
-		
-		public iAnswer()
-		{
-			this._iQuestion = default(EntityRef<iQuestion>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iAnsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iAnsID
-		{
-			get
-			{
-				return this._iAnsID;
-			}
-			set
-			{
-				if ((this._iAnsID != value))
-				{
-					this.OniAnsIDChanging(value);
-					this.SendPropertyChanging();
-					this._iAnsID = value;
-					this.SendPropertyChanged("iAnsID");
-					this.OniAnsIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int iQuestID
-		{
-			get
-			{
-				return this._iQuestID;
-			}
-			set
-			{
-				if ((this._iQuestID != value))
-				{
-					if (this._iQuestion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OniQuestIDChanging(value);
-					this.SendPropertyChanging();
-					this._iQuestID = value;
-					this.SendPropertyChanged("iQuestID");
-					this.OniQuestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iProperty", DbType="Char(1) NOT NULL")]
-		public char iProperty
-		{
-			get
-			{
-				return this._iProperty;
-			}
-			set
-			{
-				if ((this._iProperty != value))
-				{
-					this.OniPropertyChanging(value);
-					this.SendPropertyChanging();
-					this._iProperty = value;
-					this.SendPropertyChanged("iProperty");
-					this.OniPropertyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string iBodyAns
-		{
-			get
-			{
-				return this._iBodyAns;
-			}
-			set
-			{
-				if ((this._iBodyAns != value))
-				{
-					this.OniBodyAnsChanging(value);
-					this.SendPropertyChanging();
-					this._iBodyAns = value;
-					this.SendPropertyChanged("iBodyAns");
-					this.OniBodyAnsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iImageAName", DbType="NVarChar(MAX)")]
-		public string iImageAName
-		{
-			get
-			{
-				return this._iImageAName;
-			}
-			set
-			{
-				if ((this._iImageAName != value))
-				{
-					this.OniImageANameChanging(value);
-					this.SendPropertyChanging();
-					this._iImageAName = value;
-					this.SendPropertyChanged("iImageAName");
-					this.OniImageANameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iQuestion", ThisKey="iQuestID", OtherKey="iQuestID", IsForeignKey=true)]
-		public iQuestion iQuestion
-		{
-			get
-			{
-				return this._iQuestion.Entity;
-			}
-			set
-			{
-				iQuestion previousValue = this._iQuestion.Entity;
-				if (((previousValue != value) 
-							|| (this._iQuestion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._iQuestion.Entity = null;
-						previousValue.iAnswers.Remove(this);
-					}
-					this._iQuestion.Entity = value;
-					if ((value != null))
-					{
-						value.iAnswers.Add(this);
-						this._iQuestID = value.iQuestID;
-					}
-					else
-					{
-						this._iQuestID = default(int);
-					}
-					this.SendPropertyChanged("iQuestion");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter).ReturnValue));
 		}
 	}
 	
@@ -797,6 +598,396 @@ namespace iTest2012
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iFunction")]
+	public partial class iFunction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iFuncID;
+		
+		private string _iFuncName;
+		
+		private EntitySet<iUserPermission> _iUserPermissions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniFuncIDChanging(int value);
+    partial void OniFuncIDChanged();
+    partial void OniFuncNameChanging(string value);
+    partial void OniFuncNameChanged();
+    #endregion
+		
+		public iFunction()
+		{
+			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iFuncID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iFuncID
+		{
+			get
+			{
+				return this._iFuncID;
+			}
+			set
+			{
+				if ((this._iFuncID != value))
+				{
+					this.OniFuncIDChanging(value);
+					this.SendPropertyChanging();
+					this._iFuncID = value;
+					this.SendPropertyChanged("iFuncID");
+					this.OniFuncIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iFuncName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string iFuncName
+		{
+			get
+			{
+				return this._iFuncName;
+			}
+			set
+			{
+				if ((this._iFuncName != value))
+				{
+					this.OniFuncNameChanging(value);
+					this.SendPropertyChanging();
+					this._iFuncName = value;
+					this.SendPropertyChanged("iFuncName");
+					this.OniFuncNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iFunction_iUserPermission", Storage="_iUserPermissions", ThisKey="iFuncID", OtherKey="iFuncID")]
+		public EntitySet<iUserPermission> iUserPermissions
+		{
+			get
+			{
+				return this._iUserPermissions;
+			}
+			set
+			{
+				this._iUserPermissions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iUserPermissions(iUserPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.iFunction = this;
+		}
+		
+		private void detach_iUserPermissions(iUserPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.iFunction = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iUser")]
+	public partial class iUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iUserID;
+		
+		private string _iUserName;
+		
+		private string _iPass;
+		
+		private string _iEmailUser;
+		
+		private EntitySet<iUserPermission> _iUserPermissions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniUserIDChanging(int value);
+    partial void OniUserIDChanged();
+    partial void OniUserNameChanging(string value);
+    partial void OniUserNameChanged();
+    partial void OniPassChanging(string value);
+    partial void OniPassChanged();
+    partial void OniEmailUserChanging(string value);
+    partial void OniEmailUserChanged();
+    #endregion
+		
+		public iUser()
+		{
+			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iUserID
+		{
+			get
+			{
+				return this._iUserID;
+			}
+			set
+			{
+				if ((this._iUserID != value))
+				{
+					this.OniUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._iUserID = value;
+					this.SendPropertyChanged("iUserID");
+					this.OniUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserName", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
+		public string iUserName
+		{
+			get
+			{
+				return this._iUserName;
+			}
+			set
+			{
+				if ((this._iUserName != value))
+				{
+					this.OniUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._iUserName = value;
+					this.SendPropertyChanged("iUserName");
+					this.OniUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iPass", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string iPass
+		{
+			get
+			{
+				return this._iPass;
+			}
+			set
+			{
+				if ((this._iPass != value))
+				{
+					this.OniPassChanging(value);
+					this.SendPropertyChanging();
+					this._iPass = value;
+					this.SendPropertyChanged("iPass");
+					this.OniPassChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iEmailUser", DbType="NVarChar(250)")]
+		public string iEmailUser
+		{
+			get
+			{
+				return this._iEmailUser;
+			}
+			set
+			{
+				if ((this._iEmailUser != value))
+				{
+					this.OniEmailUserChanging(value);
+					this.SendPropertyChanging();
+					this._iEmailUser = value;
+					this.SendPropertyChanged("iEmailUser");
+					this.OniEmailUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iUser_iUserPermission", Storage="_iUserPermissions", ThisKey="iUserID", OtherKey="iUserID")]
+		public EntitySet<iUserPermission> iUserPermissions
+		{
+			get
+			{
+				return this._iUserPermissions;
+			}
+			set
+			{
+				this._iUserPermissions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iUserPermissions(iUserPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.iUser = this;
+		}
+		
+		private void detach_iUserPermissions(iUserPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.iUser = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSubject")]
+	public partial class iSubject : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iSubjectID;
+		
+		private string _iSubjectName;
+		
+		private EntitySet<iChapter> _iChapters;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniSubjectIDChanging(int value);
+    partial void OniSubjectIDChanged();
+    partial void OniSubjectNameChanging(string value);
+    partial void OniSubjectNameChanged();
+    #endregion
+		
+		public iSubject()
+		{
+			this._iChapters = new EntitySet<iChapter>(new Action<iChapter>(this.attach_iChapters), new Action<iChapter>(this.detach_iChapters));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int iSubjectID
+		{
+			get
+			{
+				return this._iSubjectID;
+			}
+			set
+			{
+				if ((this._iSubjectID != value))
+				{
+					this.OniSubjectIDChanging(value);
+					this.SendPropertyChanging();
+					this._iSubjectID = value;
+					this.SendPropertyChanged("iSubjectID");
+					this.OniSubjectIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string iSubjectName
+		{
+			get
+			{
+				return this._iSubjectName;
+			}
+			set
+			{
+				if ((this._iSubjectName != value))
+				{
+					this.OniSubjectNameChanging(value);
+					this.SendPropertyChanging();
+					this._iSubjectName = value;
+					this.SendPropertyChanged("iSubjectName");
+					this.OniSubjectNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSubject_iChapter", Storage="_iChapters", ThisKey="iSubjectID", OtherKey="iSubjectID")]
+		public EntitySet<iChapter> iChapters
+		{
+			get
+			{
+				return this._iChapters;
+			}
+			set
+			{
+				this._iChapters.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iChapters(iChapter entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSubject = this;
+		}
+		
+		private void detach_iChapters(iChapter entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSubject = null;
 		}
 	}
 	
@@ -1003,120 +1194,6 @@ namespace iTest2012
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iFunction")]
-	public partial class iFunction : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iFuncID;
-		
-		private string _iFuncName;
-		
-		private EntitySet<iUserPermission> _iUserPermissions;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniFuncIDChanging(int value);
-    partial void OniFuncIDChanged();
-    partial void OniFuncNameChanging(string value);
-    partial void OniFuncNameChanged();
-    #endregion
-		
-		public iFunction()
-		{
-			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iFuncID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iFuncID
-		{
-			get
-			{
-				return this._iFuncID;
-			}
-			set
-			{
-				if ((this._iFuncID != value))
-				{
-					this.OniFuncIDChanging(value);
-					this.SendPropertyChanging();
-					this._iFuncID = value;
-					this.SendPropertyChanged("iFuncID");
-					this.OniFuncIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iFuncName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string iFuncName
-		{
-			get
-			{
-				return this._iFuncName;
-			}
-			set
-			{
-				if ((this._iFuncName != value))
-				{
-					this.OniFuncNameChanging(value);
-					this.SendPropertyChanging();
-					this._iFuncName = value;
-					this.SendPropertyChanged("iFuncName");
-					this.OniFuncNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iFunction_iUserPermission", Storage="_iUserPermissions", ThisKey="iFuncID", OtherKey="iFuncID")]
-		public EntitySet<iUserPermission> iUserPermissions
-		{
-			get
-			{
-				return this._iUserPermissions;
-			}
-			set
-			{
-				this._iUserPermissions.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_iUserPermissions(iUserPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.iFunction = this;
-		}
-		
-		private void detach_iUserPermissions(iUserPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.iFunction = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iQuestion")]
 	public partial class iQuestion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1125,15 +1202,13 @@ namespace iTest2012
 		
 		private int _iQuestID;
 		
-		private string _iLevel;
+		private int _iLevel;
 		
 		private int _iChapID;
 		
 		private string _iBodyQuest;
 		
 		private string _iImageQName;
-		
-		private string _iType;
 		
 		private EntitySet<iAnswer> _iAnswers;
 		
@@ -1145,7 +1220,7 @@ namespace iTest2012
     partial void OnCreated();
     partial void OniQuestIDChanging(int value);
     partial void OniQuestIDChanged();
-    partial void OniLevelChanging(string value);
+    partial void OniLevelChanging(int value);
     partial void OniLevelChanged();
     partial void OniChapIDChanging(int value);
     partial void OniChapIDChanged();
@@ -1153,8 +1228,6 @@ namespace iTest2012
     partial void OniBodyQuestChanged();
     partial void OniImageQNameChanging(string value);
     partial void OniImageQNameChanged();
-    partial void OniTypeChanging(string value);
-    partial void OniTypeChanged();
     #endregion
 		
 		public iQuestion()
@@ -1184,8 +1257,8 @@ namespace iTest2012
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iLevel", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string iLevel
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iLevel", DbType="Int NOT NULL")]
+		public int iLevel
 		{
 			get
 			{
@@ -1264,26 +1337,6 @@ namespace iTest2012
 					this._iImageQName = value;
 					this.SendPropertyChanged("iImageQName");
 					this.OniImageQNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string iType
-		{
-			get
-			{
-				return this._iType;
-			}
-			set
-			{
-				if ((this._iType != value))
-				{
-					this.OniTypeChanging(value);
-					this.SendPropertyChanging();
-					this._iType = value;
-					this.SendPropertyChanged("iType");
-					this.OniTypeChanged();
 				}
 			}
 		}
@@ -1368,84 +1421,157 @@ namespace iTest2012
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSubject")]
-	public partial class iSubject : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iAnswer")]
+	public partial class iAnswer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _iSubjectID;
+		private int _iAnsID;
 		
-		private string _iSubjectName;
+		private int _iQuestID;
 		
-		private EntitySet<iChapter> _iChapters;
+		private char _iProperty;
+		
+		private string _iBodyAns;
+		
+		private EntityRef<iQuestion> _iQuestion;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OniSubjectIDChanging(int value);
-    partial void OniSubjectIDChanged();
-    partial void OniSubjectNameChanging(string value);
-    partial void OniSubjectNameChanged();
+    partial void OniAnsIDChanging(int value);
+    partial void OniAnsIDChanged();
+    partial void OniQuestIDChanging(int value);
+    partial void OniQuestIDChanged();
+    partial void OniPropertyChanging(char value);
+    partial void OniPropertyChanged();
+    partial void OniBodyAnsChanging(string value);
+    partial void OniBodyAnsChanged();
     #endregion
 		
-		public iSubject()
+		public iAnswer()
 		{
-			this._iChapters = new EntitySet<iChapter>(new Action<iChapter>(this.attach_iChapters), new Action<iChapter>(this.detach_iChapters));
+			this._iQuestion = default(EntityRef<iQuestion>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int iSubjectID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iAnsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iAnsID
 		{
 			get
 			{
-				return this._iSubjectID;
+				return this._iAnsID;
 			}
 			set
 			{
-				if ((this._iSubjectID != value))
+				if ((this._iAnsID != value))
 				{
-					this.OniSubjectIDChanging(value);
+					this.OniAnsIDChanging(value);
 					this.SendPropertyChanging();
-					this._iSubjectID = value;
-					this.SendPropertyChanged("iSubjectID");
-					this.OniSubjectIDChanged();
+					this._iAnsID = value;
+					this.SendPropertyChanged("iAnsID");
+					this.OniAnsIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string iSubjectName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int iQuestID
 		{
 			get
 			{
-				return this._iSubjectName;
+				return this._iQuestID;
 			}
 			set
 			{
-				if ((this._iSubjectName != value))
+				if ((this._iQuestID != value))
 				{
-					this.OniSubjectNameChanging(value);
+					if (this._iQuestion.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OniQuestIDChanging(value);
 					this.SendPropertyChanging();
-					this._iSubjectName = value;
-					this.SendPropertyChanged("iSubjectName");
-					this.OniSubjectNameChanged();
+					this._iQuestID = value;
+					this.SendPropertyChanged("iQuestID");
+					this.OniQuestIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSubject_iChapter", Storage="_iChapters", ThisKey="iSubjectID", OtherKey="iSubjectID")]
-		public EntitySet<iChapter> iChapters
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iProperty", DbType="Char(1) NOT NULL")]
+		public char iProperty
 		{
 			get
 			{
-				return this._iChapters;
+				return this._iProperty;
 			}
 			set
 			{
-				this._iChapters.Assign(value);
+				if ((this._iProperty != value))
+				{
+					this.OniPropertyChanging(value);
+					this.SendPropertyChanging();
+					this._iProperty = value;
+					this.SendPropertyChanged("iProperty");
+					this.OniPropertyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string iBodyAns
+		{
+			get
+			{
+				return this._iBodyAns;
+			}
+			set
+			{
+				if ((this._iBodyAns != value))
+				{
+					this.OniBodyAnsChanging(value);
+					this.SendPropertyChanging();
+					this._iBodyAns = value;
+					this.SendPropertyChanged("iBodyAns");
+					this.OniBodyAnsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iQuestion", ThisKey="iQuestID", OtherKey="iQuestID", IsForeignKey=true)]
+		public iQuestion iQuestion
+		{
+			get
+			{
+				return this._iQuestion.Entity;
+			}
+			set
+			{
+				iQuestion previousValue = this._iQuestion.Entity;
+				if (((previousValue != value) 
+							|| (this._iQuestion.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._iQuestion.Entity = null;
+						previousValue.iAnswers.Remove(this);
+					}
+					this._iQuestion.Entity = value;
+					if ((value != null))
+					{
+						value.iAnswers.Add(this);
+						this._iQuestID = value.iQuestID;
+					}
+					else
+					{
+						this._iQuestID = default(int);
+					}
+					this.SendPropertyChanged("iQuestion");
+				}
 			}
 		}
 		
@@ -1467,180 +1593,6 @@ namespace iTest2012
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_iChapters(iChapter entity)
-		{
-			this.SendPropertyChanging();
-			entity.iSubject = this;
-		}
-		
-		private void detach_iChapters(iChapter entity)
-		{
-			this.SendPropertyChanging();
-			entity.iSubject = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iUser")]
-	public partial class iUser : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iUserID;
-		
-		private string _iUserName;
-		
-		private string _iPass;
-		
-		private string _iEmailUser;
-		
-		private EntitySet<iUserPermission> _iUserPermissions;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniUserIDChanging(int value);
-    partial void OniUserIDChanged();
-    partial void OniUserNameChanging(string value);
-    partial void OniUserNameChanged();
-    partial void OniPassChanging(string value);
-    partial void OniPassChanged();
-    partial void OniEmailUserChanging(string value);
-    partial void OniEmailUserChanged();
-    #endregion
-		
-		public iUser()
-		{
-			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iUserID
-		{
-			get
-			{
-				return this._iUserID;
-			}
-			set
-			{
-				if ((this._iUserID != value))
-				{
-					this.OniUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._iUserID = value;
-					this.SendPropertyChanged("iUserID");
-					this.OniUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserName", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
-		public string iUserName
-		{
-			get
-			{
-				return this._iUserName;
-			}
-			set
-			{
-				if ((this._iUserName != value))
-				{
-					this.OniUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._iUserName = value;
-					this.SendPropertyChanged("iUserName");
-					this.OniUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iPass", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string iPass
-		{
-			get
-			{
-				return this._iPass;
-			}
-			set
-			{
-				if ((this._iPass != value))
-				{
-					this.OniPassChanging(value);
-					this.SendPropertyChanging();
-					this._iPass = value;
-					this.SendPropertyChanged("iPass");
-					this.OniPassChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iEmailUser", DbType="NVarChar(250)")]
-		public string iEmailUser
-		{
-			get
-			{
-				return this._iEmailUser;
-			}
-			set
-			{
-				if ((this._iEmailUser != value))
-				{
-					this.OniEmailUserChanging(value);
-					this.SendPropertyChanging();
-					this._iEmailUser = value;
-					this.SendPropertyChanged("iEmailUser");
-					this.OniEmailUserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iUser_iUserPermission", Storage="_iUserPermissions", ThisKey="iUserID", OtherKey="iUserID")]
-		public EntitySet<iUserPermission> iUserPermissions
-		{
-			get
-			{
-				return this._iUserPermissions;
-			}
-			set
-			{
-				this._iUserPermissions.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_iUserPermissions(iUserPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.iUser = this;
-		}
-		
-		private void detach_iUserPermissions(iUserPermission entity)
-		{
-			this.SendPropertyChanging();
-			entity.iUser = null;
 		}
 	}
 	

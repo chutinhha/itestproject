@@ -1,6 +1,6 @@
  a:link 
         {
-            color:#003300;
+            color:Red;
             text-decoration:none;
         }
         
@@ -12,7 +12,7 @@
         
         a:hover 
         {
-            color:Red;
+            color:#003300;
             text-decoration:none;                       
         }  
           

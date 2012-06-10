@@ -27,8 +27,8 @@ namespace iTest2012
                 }
                 return;
             }
-            Panel_MutiChoices.Visible = false;
-            Panel_OneChoice.Visible = false;
+            //Panel_MutiChoices.Visible = false;
+            //Panel_OneChoice.Visible = true;
         }
 
         /** edit by lightmoon7 - 20/10/2011 */
@@ -75,10 +75,10 @@ namespace iTest2012
         {
 
             txtnoidung.Value = string.Empty;
-            txtAns1.Text = string.Empty;
-            txtAns2.Text = string.Empty;
-            txtAns3.Text = string.Empty;
-            txtAns4.Text = string.Empty;
+            txtAns5.Text = string.Empty;
+            txtAns6.Text = string.Empty;
+            txtAns7.Text = string.Empty;
+            txtAns8.Text = string.Empty;
 
             txtnoidung.Focus();
         }
@@ -87,12 +87,12 @@ namespace iTest2012
         {
             MyiTestDataDataContext db = new MyiTestDataDataContext();
             iQuestion qs = new iQuestion();
-            if (DropDownList1.SelectedValue == "2")
-            {
+            //if (DropDownList1.SelectedValue == "2")
+            { /*
+                
                 if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
                     && txtnoidung.Value.Length > 0
-                    && txtAns1.Text.Length > 0 && txtAns2.Text.Length > 0
-                    && txtAns3.Text.Length > 0 && txtAns4.Text.Length > 0)
+                    && FileUploadAns1.HasFile==true)
                 {
                     iAnswer ans1 = new iAnswer();
                     iAnswer ans2 = new iAnswer();
@@ -107,11 +107,10 @@ namespace iTest2012
                         dInfo.Create();
                     }
 
-                    //check file browsed or not
+                    //check question file browsed or not
                     if (FileUploadQuest.HasFile)
                     {
                         FileUploadQuest.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadQuest.FileName));
-
                     }
 
                     // image ans1
@@ -121,36 +120,21 @@ namespace iTest2012
 
                     }
 
-                    // image ans2
-                    if (FileUploadAns2.HasFile)
-                    {
-                        FileUploadAns2.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns2.FileName));
-
-                    }
-
-                    // image ans3
-                    if (FileUploadAns3.HasFile)
-                    {
-                        FileUploadAns3.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns3.FileName));
-
-                    }
-
-                    // image ans4
-                    if (FileUploadAns4.HasFile)
-                    {
-                        FileUploadAns4.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns4.FileName));
-
-                    }
-
-
                     // add question and answers into database
 
                     int subid = db.st_LoadSubjectID(ddlSubName.Text.Trim());
                     int chapid = data.st_LoadChapID(TextBox1.Text.Trim(), subid);
 
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
-                    qs.iType = "Multi-Choices";
-                    qs.iLevel = ddlLevel.Text.ToString();
+                    qs.iType = "1"; // 0 = binh thuong. 1= hinh anh
+                    qs.iLevel = ddlLevel.SelectedValue;
+                    //**************Level***********
+                    //   0 = chua xac dinh         /  
+                    //   1 = dễ                    /      
+                    //   2 = binh thuong           / 
+                    //   3 = kho                   /  
+                    //   4= thong minh (rat kho)   /  
+                    //******************************
                     qs.iBodyQuest = txtnoidung.Value.ToString();
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
@@ -164,7 +148,7 @@ namespace iTest2012
                     int qsid = qs.iQuestID;
 
                     ans1.iQuestID = qsid;
-                    ans1.iBodyAns = txtAns1.Text.ToString();
+                    ans1.iBodyAns = " ";
                     if (!FileUploadAns1.HasFile)
                         ans1.iImageAName = null;
                     else
@@ -247,11 +231,11 @@ namespace iTest2012
                     cb4.Checked = false;
 
                     txtnoidung.Focus();
-                    DropDownList1.SelectedValue = "-1";
-                }
-            }
-            else if (DropDownList1.SelectedValue == "1")
-            {
+                    DropDownList1.SelectedValue = "-1";*/
+
+                //}
+                //else if (DropDownList1.SelectedValue == "1")
+                //{
                 if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
             && txtnoidung.Value.Length > 0
             && txtAns5.Text.Length > 0 && txtAns6.Text.Length > 0
@@ -277,43 +261,14 @@ namespace iTest2012
 
                     }
 
-                    // image ans1
-                    if (FileUploadAns5.HasFile)
-                    {
-                        FileUploadAns5.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns5.FileName));
-
-                    }
-
-                    // image ans2
-                    if (FileUploadAns6.HasFile)
-                    {
-                        FileUploadAns6.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns6.FileName));
-
-                    }
-
-                    // image ans3
-                    if (FileUploadAns7.HasFile)
-                    {
-                        FileUploadAns7.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns7.FileName));
-
-                    }
-
-                    // image ans4
-                    if (FileUploadAns8.HasFile)
-                    {
-                        FileUploadAns8.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadAns8.FileName));
-
-                    }
-
-
                     // add question and answers into database
 
                     int subid = db.st_LoadSubjectID(ddlSubName.Text.Trim());
                     int chapid = data.st_LoadChapID(TextBox1.Text.Trim(), subid);
 
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
-                    qs.iType = "One-Choice";
-                    qs.iLevel = ddlLevel.Text.ToString();
+                    //qs.iType = Convert.ToInt32(ddlLevel.SelectedValue);
+                    qs.iLevel = Convert.ToInt32(ddlLevel.SelectedValue);
                     qs.iBodyQuest = txtnoidung.Value.ToString();
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
@@ -328,63 +283,51 @@ namespace iTest2012
 
                     ans5.iQuestID = qsid;
                     ans5.iBodyAns = txtAns5.Text.ToString();
-                    if (!FileUploadAns5.HasFile)
-                        ans5.iImageAName = null;
-                    else
-                        ans5.iImageAName = FileUploadAns5.FileName.ToString();
-
+                    
                     //////ans2
                     ans6.iQuestID = qsid;
                     ans6.iBodyAns = txtAns6.Text.ToString();
-                    if (!FileUploadAns6.HasFile)
-                        ans6.iImageAName = null;
-                    else
-                        ans6.iImageAName = FileUploadAns6.FileName.ToString();
-
+                    
                     /////ans3
                     ans7.iQuestID = qsid;
                     ans7.iBodyAns = txtAns7.Text.ToString();
-                    if (!FileUploadAns7.HasFile)
-                        ans7.iImageAName = null;
-                    else
-                        ans7.iImageAName = FileUploadAns7.FileName.ToString();
-
+                    
                     /////ans4
                     ans8.iQuestID = qsid;
                     ans8.iBodyAns = txtAns8.Text.ToString();
-                    if (!FileUploadAns8.HasFile)
-                        ans8.iImageAName = null;
-                    else
-                        ans8.iImageAName = FileUploadAns8.FileName.ToString();
-
+                    
+                    /// xet default dap an dung
                     ans5.iProperty = '1';
                     ans6.iProperty = '0';
                     ans7.iProperty = '0';
                     ans8.iProperty = '0';
-                    if (RadioButtonListAns.SelectedValue == "0")
+
+                    /// xet dap an dung theo tuy chon cua nguoi nhap
+                    if (rbA.Checked == true)
                     {
                         ans5.iProperty = '1';
                     }
                     else ans5.iProperty = '0';
 
-                    if (RadioButtonListAns.SelectedValue == "1")
+                    if (rbB.Checked == true)
                     {
                         ans6.iProperty = '1';
                     }
                     else ans6.iProperty = '0';
 
-                    if (RadioButtonListAns.SelectedValue == "2")
+                    if (rbC.Checked == true)
                     {
                         ans7.iProperty = '1';
                     }
                     else ans7.iProperty = '0';
 
-                    if (RadioButtonListAns.SelectedValue == "3")
+                    if (rbD.Checked == true)
                     {
                         ans8.iProperty = '1';
                     }
                     else ans8.iProperty = '0';
 
+                    // insert vao database
                     db.iAnswers.InsertOnSubmit(ans5);
                     db.SubmitChanges();
                     db.iAnswers.InsertOnSubmit(ans6);
@@ -394,53 +337,54 @@ namespace iTest2012
                     db.iAnswers.InsertOnSubmit(ans8);
                     db.SubmitChanges();
 
+                    // Thong bao thanh cong
                     Response.Write("<script>alert('This question was added');</script>");
 
-
+                    // Tra form ve gia tri mac dinh
                     txtnoidung.Value = string.Empty;
                     txtAns5.Text = string.Empty;
                     txtAns6.Text = string.Empty;
                     txtAns7.Text = string.Empty;
                     txtAns8.Text = string.Empty;
-
-
-                    RadioButtonListAns.Items[0].Selected = true;
-                    RadioButtonListAns.Items[1].Selected = false;
-                    RadioButtonListAns.Items[2].Selected = false;
-                    RadioButtonListAns.Items[3].Selected = false;
+                    
+                    rbA.Checked = true;
+                    rbB.Checked = false;
+                    rbC.Checked = false;
+                    rbD.Checked = false;
 
                     txtnoidung.Focus();
-                    DropDownList1.SelectedValue = "-1";
+                    //DropDownList1.SelectedValue = "-1";
+                }
+                //}
+                else // Chua nhap du thong tin
+                {
+                    Response.Write("<script>alert('Vui lòng nhập thông tin đầy đủ');</script>");
+                    //DropDownList1.SelectedValue = "-1";
                 }
             }
-            else
+            /*
+            protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
             {
-                Response.Write("<script>alert('Please enter all infomation of this question');</script>");
-                DropDownList1.SelectedValue = "-1";
-            }
-        }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (DropDownList1.SelectedValue == "1")
-            {
-                Panel_OneChoice.Visible = true;
-                Panel_MutiChoices.Visible = false;
-                return;
-            }
-            else if (DropDownList1.SelectedValue == "2")
-            {
-                Panel_MutiChoices.Visible = true;
-                Panel_OneChoice.Visible = false;
-                return;
-            }
-            else
-            {
-                Panel_MutiChoices.Visible = false;
-                Panel_OneChoice.Visible = false;
-                return;
-            }
+                if (DropDownList1.SelectedValue == "1")
+                {
+                    Panel_OneChoice.Visible = true;
+                    Panel_MutiChoices.Visible = false;
+                    return;
+                }
+                else if (DropDownList1.SelectedValue == "2")
+                {
+                    Panel_MutiChoices.Visible = true;
+                    Panel_OneChoice.Visible = false;
+                    return;
+                }
+                else
+                {
+                    Panel_MutiChoices.Visible = false;
+                    Panel_OneChoice.Visible = false;
+                    return;
+                }
+            }*/
         }
     }
 }
