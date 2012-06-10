@@ -165,6 +165,13 @@
             font-family: #003300;
             font-size: 12px;          
         }
+        .btn_body
+        {
+            height: 25px;
+            width: 100px;
+            background-color:#003300;
+            color:White;            
+        }
         .font_all
         {
             font: tahoma;

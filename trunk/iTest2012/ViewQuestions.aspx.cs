@@ -27,10 +27,8 @@ namespace iTest2012
                 }
                 return;
             }
-
-
+            panelView.Visible = false;
         }
-
 
         protected void ddlChooseSub_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,7 +43,6 @@ namespace iTest2012
             int subid = db.st_LoadSubjectID(ddlChooseSub.Text.Trim());
             //----------------------------------------------------------------
 
-
             var query = from c in data.iChapters
                         where c.iSubjectID == subid
                         select new { c.iChapID, c.iChapterName, c.iChapterNum };
@@ -55,7 +52,6 @@ namespace iTest2012
             ddlChapIndex.DataBind();
 
         }
-
 
         protected void ddlChapIndex_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -82,6 +78,7 @@ namespace iTest2012
                 { lbGridLoad.Text = "No Result !"; }
                 else lbGridLoad.Text = string.Empty;
             }
+            
             /*   if (ddlChooseSub.Text.Trim() != "All" && ddlLevel.Text.Trim() != "All" && ddlChapIndex.Text.Trim()=="All")//không chạy
               {
               
