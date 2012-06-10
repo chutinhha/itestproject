@@ -275,13 +275,6 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadBodyAnswers")]
-		public ISingleResult<st_LoadBodyAnswersResult> st_LoadBodyAnswers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), questid);
-			return ((ISingleResult<st_LoadBodyAnswersResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadBodyQuestOfSub")]
 		public ISingleResult<st_LoadBodyQuestOfSubResult> st_LoadBodyQuestOfSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid)
 		{
@@ -431,6 +424,34 @@ namespace iTest2012
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetUserInfo")]
+		public ISingleResult<st_GetUserInfoResult> st_GetUserInfo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<st_GetUserInfoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadImageName")]
+		public int st_LoadImageName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idquest)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idquest);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_getImageQuest")]
+		public ISingleResult<st_getImageQuestResult> st_getImageQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idquest)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idquest);
+			return ((ISingleResult<st_getImageQuestResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadBodyAnswers")]
+		public ISingleResult<st_LoadBodyAnswersResult> st_LoadBodyAnswers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), questid);
+			return ((ISingleResult<st_LoadBodyAnswersResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1824,32 +1845,6 @@ namespace iTest2012
 		}
 	}
 	
-	public partial class st_LoadBodyAnswersResult
-	{
-		
-		private string _iBodyAns;
-		
-		public st_LoadBodyAnswersResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string iBodyAns
-		{
-			get
-			{
-				return this._iBodyAns;
-			}
-			set
-			{
-				if ((this._iBodyAns != value))
-				{
-					this._iBodyAns = value;
-				}
-			}
-		}
-	}
-	
 	public partial class st_LoadBodyQuestOfSubResult
 	{
 		
@@ -2209,6 +2204,138 @@ namespace iTest2012
 				if ((this._Image != value))
 				{
 					this._Image = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_GetUserInfoResult
+	{
+		
+		private int _iUserID;
+		
+		private string _iUserName;
+		
+		private string _iPass;
+		
+		private string _iEmailUser;
+		
+		public st_GetUserInfoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserID", DbType="Int NOT NULL")]
+		public int iUserID
+		{
+			get
+			{
+				return this._iUserID;
+			}
+			set
+			{
+				if ((this._iUserID != value))
+				{
+					this._iUserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserName", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
+		public string iUserName
+		{
+			get
+			{
+				return this._iUserName;
+			}
+			set
+			{
+				if ((this._iUserName != value))
+				{
+					this._iUserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iPass", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string iPass
+		{
+			get
+			{
+				return this._iPass;
+			}
+			set
+			{
+				if ((this._iPass != value))
+				{
+					this._iPass = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iEmailUser", DbType="NVarChar(250)")]
+		public string iEmailUser
+		{
+			get
+			{
+				return this._iEmailUser;
+			}
+			set
+			{
+				if ((this._iEmailUser != value))
+				{
+					this._iEmailUser = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_getImageQuestResult
+	{
+		
+		private string _iImageQName;
+		
+		public st_getImageQuestResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iImageQName", DbType="NVarChar(MAX)")]
+		public string iImageQName
+		{
+			get
+			{
+				return this._iImageQName;
+			}
+			set
+			{
+				if ((this._iImageQName != value))
+				{
+					this._iImageQName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadBodyAnswersResult
+	{
+		
+		private string _iBodyAns;
+		
+		public st_LoadBodyAnswersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string iBodyAns
+		{
+			get
+			{
+				return this._iBodyAns;
+			}
+			set
+			{
+				if ((this._iBodyAns != value))
+				{
+					this._iBodyAns = value;
 				}
 			}
 		}

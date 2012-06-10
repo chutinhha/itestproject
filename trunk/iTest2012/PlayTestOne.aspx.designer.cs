@@ -49,6 +49,24 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.GridView GridViewBody;
         
         /// <summary>
+        /// Panel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// GridViewQuest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewQuest;
+        
+        /// <summary>
         /// imgQuest control.
         /// </summary>
         /// <remarks>

@@ -28,12 +28,13 @@ namespace iTest2012
             {
                 GridViewBody.DataSource = data.st_LoadBodyQuestOfSub(questid);
                 GridViewBody.DataBind();
-
                 
+                GridViewQuest.DataSource=data.st_getImageQuest(questid);
+                GridViewQuest.DataBind();
 
-                
-                imgQuest.ImageUrl = "/UploadFiles/"+q;
-                GridViewAnswer.DataSource = data.st_LoadBodyAnswers(questid); // visible = false de giau grid di, load du lieu vao radio list
+                imgQuest.ImageUrl = "/UploadFiles/" + GridViewQuest.Rows[0].Cells[1].Text;
+                GridViewAnswer.DataSource = data.st_LoadBodyAnswers(questid);
+                // visible = false de giau grid di, load du lieu vao radio list
                 GridViewAnswer.DataBind();
 
                 Panel_OneChoice.Visible = true;
@@ -66,11 +67,11 @@ namespace iTest2012
                 }
                  * */
 
-            }
+            }/*
             if (Convert.ToInt32(Session["Question"]) > Convert.ToInt32(Session["Num"]))
             {
                 Response.Redirect("Result.aspx");
-            }
+            }*/
         }
         protected void btnNext_Click(object sender, EventArgs e)
         {
@@ -80,7 +81,7 @@ namespace iTest2012
                 Session["Correct"] = (int)Session["Correct"] + 1;
                 Response.Redirect("PlayTestOne.aspx");
                 //testthu.Text = data.st_Test(questid, rdans1.Text.Trim()).ToString()+" - choice 1";
-                //testthu2.Text = correct.ToString();
+                //testthu2.Text = GridViewAnswer.Rows[0].Cells[1].Text;
             }
             else if (rdans2.Checked && data.st_Test(questid, rdans2.Text.Trim()) == 1)
             {
@@ -110,6 +111,7 @@ namespace iTest2012
             {
                 Session["Question"] = (int)Session["Question"] + 1;
                 Session["Correct"] = (int)Session["Correct"] - 10;
+                //testthu.Text = data.st_Test(questid, rdans1.Text.Trim()).ToString();
                 Response.Redirect("PlayTestOne.aspx");
                 //testthu.Text = choice4.ToString()+" -  else cuoi";
 
