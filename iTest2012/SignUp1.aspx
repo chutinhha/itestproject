@@ -1,24 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="SignUp1.aspx.cs" Inherits="iTest2012.SignUp1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <style type="text/css">
-        .style2
-        {
-            font-size: x-large;
-        }
-        
-        .style3
-        {
-            text-align: left;
-            width: 366px;
-            font-size:medium;
-        }
-        .style4
-        {
-            width: 285px;
-        }
-    </style>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div align="center">
@@ -40,7 +23,7 @@
             <table class="border_alltable">
             
             <tr>
-                    <td class="style3">
+                    <td >
                         
                     </td>
                     <td style="text-align: left">
@@ -48,7 +31,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td >
                         Tên đăng nhập<br />
                         <br />
                     </td>
@@ -77,7 +60,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td >
                         Nhập lại Mật khẩu<br />
                         <br />
                     </td>
@@ -91,7 +74,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td >
                         Email <br />
                         <br />
                     </td>
@@ -107,12 +90,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td >
                         Câu hỏi bí mật<br />
                         <br />
                     </td>
                     <td style="text-align: left">
-                    <asp:DropDownList ID="dropCauHoiBiMat" runat="server" Width="200px"></asp:DropDownList>
+                    <asp:DropDownList ID="dropCauHoiBiMat" runat="server" Width="200px" 
+                            onselectedindexchanged="dropCauHoiBiMat_SelectedIndexChanged"></asp:DropDownList>
                         
                         <asp:Label Font-Size="Small" ForeColor="Gray" ID="lblTen2" runat="server">Chọn câu hỏi bí mật.</asp:Label>
                         <br />
@@ -120,12 +104,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td>
                        Câu trả lời<br />
                         <br />
                     </td>
                     <td style="text-align: left">
-                        <asp:TextBox ID="TextBox3" runat="server" Width="200px" BackColor="White" 
+                        <asp:TextBox ID="txtAnswer" runat="server" Width="200px" BackColor="White" 
                             Height="22px"></asp:TextBox>
                         <asp:Label Font-Size="Small" ForeColor="Gray" ID="Label4" runat="server">Nhập Câu trả lời của bạn.</asp:Label>
                         <br />
@@ -135,7 +119,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td >
                         
                     </td>
                     <td style="text-align: left">
@@ -143,11 +127,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3" style="text-align: center">
+                    <td  style="text-align: center">
                         <br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
-                    <td style="text-align: left" class="style4">
+                    <td style="text-align: left" >
                         <asp:Label ID="Label1" runat="server" Width="159%" ForeColor="Blue">Bạn cần đọc và chấp nhận đồng ý theo Điều Khoản khi đăng ký</asp:Label><br />
                         <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" BackColor="White"
                             Width="700px">1. ưhkwì</asp:TextBox>
@@ -155,7 +139,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3" style="text-align: center">
+                    <td  style="text-align: center">
                         <br />
                     </td>
                     <td style="text-align: left">

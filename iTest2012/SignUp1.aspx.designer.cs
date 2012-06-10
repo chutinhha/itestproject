@@ -166,13 +166,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Label lblTen2;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txtAnswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtAnswer;
         
         /// <summary>
         /// Label4 control.
