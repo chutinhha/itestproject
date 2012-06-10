@@ -151,15 +151,6 @@
     <Parameter Name="img_pk" Type="System.Int32" DbType="Int" />
     <Return Type="object" />
   </Function>
-  <Function Name="dbo.st_GetUserInfo" Method="st_GetUserInfo">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="st_GetUserInfoResult">
-      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.st_LoadAnsID" Method="st_LoadAnsID">
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
     <Parameter Name="bodyans" Type="System.String" DbType="NVarChar(MAX)" />
@@ -296,8 +287,5 @@
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
     <Parameter Name="level" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.st_getImageQuest" Method="st_getImageQuest">
-    <Parameter Name="idquest" Type="System.Int32" DbType="Int" />
   </Function>
 </Database>
