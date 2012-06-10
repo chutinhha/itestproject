@@ -46,7 +46,7 @@
         <elementListCompartment Id="2f4b235c-2ad6-4223-84df-a7ae5241b0ac" absoluteBounds="0.515, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.5 : 2.44399251302083); (1.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.5 : 2.44399251302083); (1.5 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iSubject/iSubject_iChapter" />
       <nodes>
         <classShapeMoniker Id="ce469e1c-e16d-47e5-a2a2-eb9f4a970f20" />
@@ -59,7 +59,7 @@
         <elementListCompartment Id="46c46c22-bbc4-4c85-a8b7-4a9f10427b42" absoluteBounds="0.515, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.5 : 4.45359537760417); (1.5 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.5 : 4.45359537760417); (1.5 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iChapter/iChapter_iQuestion" />
       <nodes>
         <classShapeMoniker Id="0e814046-c700-428c-92dc-0cadada69684" />
@@ -72,7 +72,7 @@
         <elementListCompartment Id="7b7f672c-9e91-489b-8209-482f1656a96c" absoluteBounds="0.515, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.5 : 6.77089680989583); (1.5 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.5 : 6.77089680989583); (1.5 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iQuestion/iQuestion_iAnswer" />
       <nodes>
         <classShapeMoniker Id="878ca7f0-85a3-43f0-8aaa-9d38f0e99f9a" />

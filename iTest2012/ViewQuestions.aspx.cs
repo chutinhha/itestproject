@@ -74,8 +74,11 @@ namespace iTest2012
                 int chapid = data.st_LoadChapID(TextBox1.Text.Trim(), subid);
                 GridQuestion.DataSource = data.st_SelectQuest(subid, ddlLevel.Text.Trim(), chapid);
                 GridQuestion.DataBind();
+                panelView.Visible = true;
                 if (GridQuestion.Rows.Count == 0)
-                { lbGridLoad.Text = "No Result !"; }
+                { lbGridLoad.Text = "No Result !";
+                panelView.Visible = false;
+                }
                 else lbGridLoad.Text = string.Empty;
             }
             
@@ -114,8 +117,11 @@ namespace iTest2012
             lbGridLoad.Text = "No Result !";
             GridQuestion.DataSource = data.st_ViewQuestOfAllSub();
             GridQuestion.DataBind();
+            panelView.Visible = true;
             if (GridQuestion.Rows.Count == 0)
-            { lbGridLoad.Text = "No Result !"; }
+            { lbGridLoad.Text = "No Result !";
+            panelView.Visible = false;
+            }
             else lbGridLoad.Text = string.Empty;
         }
         private void DeleteMultipleRecords(StringCollection idCollection)
