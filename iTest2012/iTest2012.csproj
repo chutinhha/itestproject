@@ -663,6 +663,7 @@
     <Content Include="image\background\bg_paper_03_trans_fullwhite_sig.jpg" />
     <Content Include="image\background\bg_paper_03_trans_sig.jpg" />
     <Content Include="image\background\bg_paper_03_trans_fullwhite.jpg" />
+    <Content Include="image\background\bg_paper_800_transfull.jpg" />
     <Content Include="image\background\bg_sky_01.jpg" />
     <Content Include="image\background\line.gif" />
     <Content Include="image\background\menu_normal.png" />
