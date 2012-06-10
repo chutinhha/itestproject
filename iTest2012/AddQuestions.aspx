@@ -142,10 +142,10 @@
             <tr >
                 <td colspan="2" style="text-align: center;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnAddQuest" runat="server" CssClass="btn_master" Text="Thêm" 
+                    <asp:Button ID="btnAddQuest" runat="server" CssClass="btn_body" style="width:100px; height:25px" Text="Thêm" 
                         OnClick="btnAddQuest_Click" />
                     
-                    <asp:Button ID="btnEnterAgain" runat="server" CssClass="btn_master" Text="Nhập lại" 
+                    <asp:Button ID="btnEnterAgain" runat="server" CssClass="btn_body" style="width:100px; height:25px" Text="Nhập lại" 
                         OnClick="btnEnterAgain_Click" />
                     <br />
                     <br />
