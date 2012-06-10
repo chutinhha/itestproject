@@ -94,10 +94,11 @@
                 <tr>
                     <td class="style2" colspan="2">
                         <asp:GridView ID="GridQuestion" runat="server" AllowPaging="True" 
-                        BackColor="White" BorderColor="#999999" BorderStyle="Ridge" BorderWidth="3px" 
-                        CellPadding="3" HorizontalAlign="Justify" 
-                        onpageindexchanging="GridQuestion_PageIndexChanging">
-                            <AlternatingRowStyle BackColor="Gainsboro" />
+                        BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" 
+                        CellPadding="4" HorizontalAlign="Justify" 
+                        onpageindexchanging="GridQuestion_PageIndexChanging" ForeColor="Black" 
+                            GridLines="Vertical">
+                            <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:TemplateField HeaderText="Check">
                                     <EditItemTemplate>
@@ -108,21 +109,23 @@
                                         oncheckedchanged="CheckBox1_CheckedChanged" />
                                     </ItemTemplate>
                                     <ControlStyle Width="20px" />
+                                    <ControlStyle Width="20px" />
                                 </asp:TemplateField>
                             </Columns>
-                            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                            <FooterStyle BackColor="#CCCC99" />
+                            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                            <RowStyle BackColor="#F7F7DE" />
+                            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
                             <SortedAscendingCellStyle BackColor="#F1F1F1" />
                             <SortedAscendingHeaderStyle BackColor="#0000A9" />
                             <SortedDescendingCellStyle BackColor="#CAC9C9" />
                             <SortedDescendingHeaderStyle BackColor="#000065" />
-                        </asp:GridView>
-                        <br />
-                        <asp:Label ID="lbGridLoad" runat="server" ForeColor="Red"></asp:Label>
-                        <br />
+                            <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                            <SortedAscendingHeaderStyle BackColor="#848384" />
+                            <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                            <SortedDescendingHeaderStyle BackColor="#575357" />
+                        </asp:GridView>                        
                     </td>
                 </tr>
                 <tr>
@@ -139,7 +142,10 @@
                 </tr>                
             </table>
         </asp:Panel>
-       <br />
+        <div align="center">
+        <asp:Label ID="lbGridLoad" runat="server" ForeColor="Red"></asp:Label>
+        </div>       
+    </div>    
     </div>
-    </div>
+    <br /><br /><br />
 </asp:Content>

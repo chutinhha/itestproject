@@ -146,13 +146,6 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_ViewQuestOfAllSub")]
-		public ISingleResult<st_ViewQuestOfAllSubResult> st_ViewQuestOfAllSub()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<st_ViewQuestOfAllSubResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_AllSub_Type_Num")]
 		public int st_Check_AllSub_Type_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
 		{
@@ -388,13 +381,6 @@ namespace iTest2012
 			return ((ISingleResult<st_SelectAllQuestResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectQuest")]
-		public ISingleResult<st_SelectQuestResult> st_SelectQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> chapter)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level, chapter);
-			return ((ISingleResult<st_SelectQuestResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Test")]
 		public int st_Test([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string bodyans)
 		{
@@ -406,6 +392,20 @@ namespace iTest2012
 		public object st_SelectAllLevel1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
 		{
 			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_ViewQuestOfAllSub")]
+		public ISingleResult<st_ViewQuestOfAllSubResult> st_ViewQuestOfAllSub()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<st_ViewQuestOfAllSubResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectQuest")]
+		public ISingleResult<st_SelectQuestResult> st_SelectQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> chapter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level, chapter);
+			return ((ISingleResult<st_SelectQuestResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1596,140 +1596,6 @@ namespace iTest2012
 		}
 	}
 	
-	public partial class st_ViewQuestOfAllSubResult
-	{
-		
-		private string _Questions;
-		
-		private string _Level;
-		
-		private string _Subject_Name;
-		
-		private string _Chapter_Index;
-		
-		private string _Chapter_Name;
-		
-		private string _Image;
-		
-		private string _Type;
-		
-		public st_ViewQuestOfAllSubResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Questions", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Questions
-		{
-			get
-			{
-				return this._Questions;
-			}
-			set
-			{
-				if ((this._Questions != value))
-				{
-					this._Questions = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string Level
-		{
-			get
-			{
-				return this._Level;
-			}
-			set
-			{
-				if ((this._Level != value))
-				{
-					this._Level = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Subject Name]", Storage="_Subject_Name", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string Subject_Name
-		{
-			get
-			{
-				return this._Subject_Name;
-			}
-			set
-			{
-				if ((this._Subject_Name != value))
-				{
-					this._Subject_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Index]", Storage="_Chapter_Index", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Chapter_Index
-		{
-			get
-			{
-				return this._Chapter_Index;
-			}
-			set
-			{
-				if ((this._Chapter_Index != value))
-				{
-					this._Chapter_Index = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Name]", Storage="_Chapter_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Chapter_Name
-		{
-			get
-			{
-				return this._Chapter_Name;
-			}
-			set
-			{
-				if ((this._Chapter_Name != value))
-				{
-					this._Chapter_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(MAX)")]
-		public string Image
-		{
-			get
-			{
-				return this._Image;
-			}
-			set
-			{
-				if ((this._Image != value))
-				{
-					this._Image = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-	}
-	
 	public partial class st_GetUserInfoResult
 	{
 		
@@ -1968,6 +1834,122 @@ namespace iTest2012
 		}
 	}
 	
+	public partial class st_ViewQuestOfAllSubResult
+	{
+		
+		private string _Questions;
+		
+		private int _Level;
+		
+		private string _Subject_Name;
+		
+		private string _Chapter_Index;
+		
+		private string _Chapter_Name;
+		
+		private string _Image;
+		
+		public st_ViewQuestOfAllSubResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Questions", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Questions
+		{
+			get
+			{
+				return this._Questions;
+			}
+			set
+			{
+				if ((this._Questions != value))
+				{
+					this._Questions = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Subject Name]", Storage="_Subject_Name", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string Subject_Name
+		{
+			get
+			{
+				return this._Subject_Name;
+			}
+			set
+			{
+				if ((this._Subject_Name != value))
+				{
+					this._Subject_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Index]", Storage="_Chapter_Index", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Chapter_Index
+		{
+			get
+			{
+				return this._Chapter_Index;
+			}
+			set
+			{
+				if ((this._Chapter_Index != value))
+				{
+					this._Chapter_Index = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Name]", Storage="_Chapter_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Chapter_Name
+		{
+			get
+			{
+				return this._Chapter_Name;
+			}
+			set
+			{
+				if ((this._Chapter_Name != value))
+				{
+					this._Chapter_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(MAX)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this._Image = value;
+				}
+			}
+		}
+	}
+	
 	public partial class st_SelectQuestResult
 	{
 		
@@ -1979,11 +1961,9 @@ namespace iTest2012
 		
 		private string _Chapter_Name;
 		
-		private string _Level;
+		private int _Level;
 		
 		private string _Image;
-		
-		private string _Type;
 		
 		public st_SelectQuestResult()
 		{
@@ -2053,8 +2033,8 @@ namespace iTest2012
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string Level
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
 		{
 			get
 			{
@@ -2081,22 +2061,6 @@ namespace iTest2012
 				if ((this._Image != value))
 				{
 					this._Image = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
 				}
 			}
 		}
