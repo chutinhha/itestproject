@@ -25,11 +25,11 @@
                  
         .stylem1, .stylem12
         {
-            width: 900px;            
+            width: 800px;            
         }
         .stylem5, .stylem6
         {
-            width: 300px;
+            width: 200px;
             text-align: center;
         }
         
@@ -40,13 +40,13 @@
         }
         .stylem8
         {
-            width: 300px;
+            width: 200px;
             text-align: center;
             font-weight: bold;
         }
         .stylem9
         {
-            width: 300px;
+            width: 200px;
             text-align: center;
             font-weight: bold;
         }
@@ -67,9 +67,9 @@
         }
         .bg_Image
         {
-            background-image:url("../image/background/bg_paper_03_trans_fullwhite_sig.jpg");
+            background-image:url("../image/background/bg_paper_800_transfull.jpg");
             background-attachment:fixed;            
-            background-position: bottom center;
+            background-position: top center;
             background-repeat:no-repeat;
             margin-left:0;
             margin-right:0;
@@ -162,8 +162,7 @@
         {
             height: 25px;
             width: 100px;
-            font-family: #003300;               
-            font-weight:700;
+            font-family: #003300;
             font-size: 12px;          
         }
         .font_all
@@ -174,7 +173,7 @@
         .border_tableheadline
         {
             border: thin solid #999999;                     
-            width: 900px; height: 31px;                       
+            width: 800px; height: 31px;                       
             background-repeat: repeat-x; 
             background-image: url('/image/background/bg_linexanh_2vien_31px.png');
             font-family:Tahoma;
@@ -192,7 +191,7 @@
         }
         .border_menuheadline
         {
-            width: 900px; height: 50px;                       
+            width: 800px; height: 50px;                       
             background-repeat: repeat-x; 
             bottom:0px;
             background-image: url('/image/background/menu_normal01.png');                                       
@@ -200,7 +199,7 @@
         .border_alltable
         {
             padding: 0px; margin: 0px;
-            width: 900px;
+            width: 800px;
             
             border-width:thin;
             border-color: #999999;
