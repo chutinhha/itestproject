@@ -20,14 +20,14 @@
         <elementListCompartment Id="d176743c-0a2a-4bfa-b298-0f03a434da3d" absoluteBounds="3.8900000000000006, 5.4600000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.8125 : 2.44399251302083); (4.8125 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.8125 : 2.44399251302083); (4.8125 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iFunction/iFunction_iUserPermission" />
       <nodes>
         <classShapeMoniker Id="bf251029-fe71-4844-820e-ab0af5f0f7d8" />
         <classShapeMoniker Id="9ea0ec88-2546-45f1-b713-b5a2c4534b34" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.875 : 5); (4.875 : 4.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 5); (4.875 : 4.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iUser/iUser_iUserPermission" />
       <nodes>
         <classShapeMoniker Id="1d4a8931-23ef-416a-9776-6787b295f406" />
@@ -46,7 +46,7 @@
         <elementListCompartment Id="2f4b235c-2ad6-4223-84df-a7ae5241b0ac" absoluteBounds="0.515, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.5 : 2.44399251302083); (1.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.5 : 2.44399251302083); (1.5 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iSubject/iSubject_iChapter" />
       <nodes>
         <classShapeMoniker Id="ce469e1c-e16d-47e5-a2a2-eb9f4a970f20" />
@@ -85,7 +85,7 @@
         <elementListCompartment Id="e4027a8d-f861-48bc-a851-73b584e53ed5" absoluteBounds="4.265, 7.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.0625 : 6.57859537760417); (5.0625 : 7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.0625 : 6.57859537760417); (5.0625 : 7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iUser/iUser_iSecurityQuest" />
       <nodes>
         <classShapeMoniker Id="1d4a8931-23ef-416a-9776-6787b295f406" />

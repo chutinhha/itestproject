@@ -268,13 +268,6 @@ namespace iTest2012
 			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_pk).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetUserInfo")]
-		public ISingleResult<st_GetUserInfoResult> st_GetUserInfo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((ISingleResult<st_GetUserInfoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadAnsID")]
 		public int st_LoadAnsID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string bodyans)
 		{
@@ -438,12 +431,6 @@ namespace iTest2012
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_getImageQuest")]
-		public void st_getImageQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idquest)
-		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idquest);
 		}
 	}
 	
@@ -1833,86 +1820,6 @@ namespace iTest2012
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	public partial class st_GetUserInfoResult
-	{
-		
-		private int _iUserID;
-		
-		private string _iUserName;
-		
-		private string _iPass;
-		
-		private string _iEmailUser;
-		
-		public st_GetUserInfoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserID", DbType="Int NOT NULL")]
-		public int iUserID
-		{
-			get
-			{
-				return this._iUserID;
-			}
-			set
-			{
-				if ((this._iUserID != value))
-				{
-					this._iUserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iUserName", DbType="NVarChar(12) NOT NULL", CanBeNull=false)]
-		public string iUserName
-		{
-			get
-			{
-				return this._iUserName;
-			}
-			set
-			{
-				if ((this._iUserName != value))
-				{
-					this._iUserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iPass", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string iPass
-		{
-			get
-			{
-				return this._iPass;
-			}
-			set
-			{
-				if ((this._iPass != value))
-				{
-					this._iPass = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iEmailUser", DbType="NVarChar(250)")]
-		public string iEmailUser
-		{
-			get
-			{
-				return this._iEmailUser;
-			}
-			set
-			{
-				if ((this._iEmailUser != value))
-				{
-					this._iEmailUser = value;
-				}
 			}
 		}
 	}
