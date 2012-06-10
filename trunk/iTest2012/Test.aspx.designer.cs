@@ -13,15 +13,6 @@ namespace iTest2012 {
     public partial class Test {
         
         /// <summary>
-        /// Panel_How control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel_How;
-        
-        /// <summary>
         /// ddlSubject control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSource1;
         
         /// <summary>
-        /// ddlQuestType control.
+        /// ddlLevel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlQuestType;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLevel;
         
         /// <summary>
         /// ddlNumberofQuests control.
