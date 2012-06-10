@@ -20,7 +20,7 @@ namespace iTest2012
 
             MyiTestDataDataContext db = new MyiTestDataDataContext();
             iUser ius = new iUser();
-            iSercurityQuestion isq = new iSercurityQuestion();
+            //iSercurityQuestion isq = new iSercurityQuestion();
            
             if (chk_DongY.Checked == true)
             {
@@ -67,10 +67,10 @@ namespace iTest2012
                         ius.iPass = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPass.Text.Trim(), "MD5");
                         ius.iEmailUser = txtEmail.Text.ToString();
                        // ius.iSQuestionAnswer = txtAnswer.Text;
-                        isq.iSQuestionContent = dropCauHoiBiMat.Text;
+                        //isq.iSQuestionContent = dropCauHoiBiMat.Text;
 
                         db.iUsers.InsertOnSubmit(ius);
-                        db.iSercurityQuestions.InsertOnSubmit(isq);
+                        //db.iSercurityQuestions.InsertOnSubmit(isq);
                         db.SubmitChanges();
 
                         string strScript = "<script>";
@@ -97,7 +97,7 @@ namespace iTest2012
         }
 
         protected void dropCauHoiBiMat_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {/*
             MyiTestDataDataContext data = new MyiTestDataDataContext();
             DropDownList dd = (DropDownList)sender;
             if (dd.SelectedValue == "-1")
@@ -106,7 +106,7 @@ namespace iTest2012
             var currentChapter = (from c in data.iSercurityQuestions
                                   where c.iSQuestionID == value
                                   select c).Single();
-            TextBox1.Text = currentChapter.iSQuestionContent;
+            TextBox1.Text = currentChapter.iSQuestionContent;*/
         }
     }
 }

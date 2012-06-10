@@ -156,12 +156,6 @@
     <Parameter Name="bodyans" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_LoadBodyAnswers" Method="st_LoadBodyAnswers">
-    <Parameter Name="questid" Type="System.Int32" DbType="Int" />
-    <ElementType Name="st_LoadBodyAnswersResult">
-      <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.st_LoadBodyQuestOfSub" Method="st_LoadBodyQuestOfSub">
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
     <ElementType Name="st_LoadBodyQuestOfSubResult">
@@ -287,5 +281,30 @@
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
     <Parameter Name="level" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_GetUserInfo" Method="st_GetUserInfo">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_GetUserInfoResult">
+      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadImageName" Method="st_LoadImageName">
+    <Parameter Name="idquest" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_getImageQuest" Method="st_getImageQuest">
+    <Parameter Name="idquest" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_getImageQuestResult">
+      <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadBodyAnswers" Method="st_LoadBodyAnswers">
+    <Parameter Name="questid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadBodyAnswersResult">
+      <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

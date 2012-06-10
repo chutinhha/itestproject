@@ -22,21 +22,7 @@
         {
             width: 400px;
         }
-        .style14
-        {
-            width: 199px;
-        }
-        .style15
-        {
-            width: 199px;
-            text-align: left;
-        }
-        .style16
-        {
-            width: 199px;
-            text-align: left;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div style="text-align: center">
@@ -69,7 +55,21 @@
             </tr>
             <tr>
                 <td align="center">
-&nbsp;<asp:Image ID="imgQuest" runat="server" />
+                    <asp:Panel ID="Panel2" runat="server" Visible="false">
+                        <asp:GridView ID="GridViewQuest" runat="server"
+              
+              AlternatingRowStyle-BackColor="#006699"
+              AlternatingRowStyle-ForeColor="#FFFFFF" >
+                            <Columns>
+                                <asp:TemplateField HeaderText="Serial Number">
+                                    <ItemTemplate>
+                                        <%# Container.DataItemIndex + 1 %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </asp:Panel>
+                    <asp:Image ID="imgQuest" runat="server" />
                 &nbsp;</td>
             </tr>
             <tr>
