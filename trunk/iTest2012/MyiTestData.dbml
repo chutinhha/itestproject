@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="MyiTestDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=myitest.mssql.somee.com;Persist Security Info=True;User ID=itestdata" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.iAnswer" Member="iAnswers">
-    <Type Name="iAnswer">
-      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="iImageAName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.iUserPermission" Member="iUserPermissions">
     <Type Name="iUserPermission">
       <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -17,6 +7,29 @@
       <Column Name="iPermission" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="iFunction_iUserPermission" Member="iFunction" ThisKey="iFuncID" OtherKey="iFuncID" Type="iFunction" IsForeignKey="true" />
       <Association Name="iUser_iUserPermission" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iFunction" Member="iFunctions">
+    <Type Name="iFunction">
+      <Column Name="iFuncID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iFuncName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="iFunction_iUserPermission" Member="iUserPermissions" ThisKey="iFuncID" OtherKey="iFuncID" Type="iUserPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iUser" Member="iUsers">
+    <Type Name="iUser">
+      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iSubject" Member="iSubjects">
+    <Type Name="iSubject">
+      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
     </Type>
   </Table>
   <Table Name="dbo.iChapter" Member="iChapters">
@@ -29,39 +42,24 @@
       <Association Name="iSubject_iChapter" Member="iSubject" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iSubject" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.iFunction" Member="iFunctions">
-    <Type Name="iFunction">
-      <Column Name="iFuncID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iFuncName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Association Name="iFunction_iUserPermission" Member="iUserPermissions" ThisKey="iFuncID" OtherKey="iFuncID" Type="iUserPermission" />
-    </Type>
-  </Table>
   <Table Name="dbo.iQuestion" Member="iQuestions">
     <Type Name="iQuestion">
       <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iLevel" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="iLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="iBodyQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="iType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="iQuestion_iAnswer" Member="iAnswers" ThisKey="iQuestID" OtherKey="iQuestID" Type="iAnswer" />
       <Association Name="iChapter_iQuestion" Member="iChapter" ThisKey="iChapID" OtherKey="iChapID" Type="iChapter" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.iSubject" Member="iSubjects">
-    <Type Name="iSubject">
-      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
-    </Type>
-  </Table>
-  <Table Name="dbo.iUser" Member="iUsers">
-    <Type Name="iUser">
-      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
+  <Table Name="dbo.iAnswer" Member="iAnswers">
+    <Type Name="iAnswer">
+      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">
@@ -150,8 +148,9 @@
     <Parameter Name="func" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_GetImageByID" Method="st_GetImageByID">
+  <Function Name="dbo.st_GetImageByID" Method="st_GetImageByID" IsComposable="true">
     <Parameter Name="img_pk" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_GetUserInfo" Method="st_GetUserInfo">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
@@ -231,13 +230,15 @@
     <Parameter Name="newpass" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_SelectAllChapter" Method="st_SelectAllChapter">
+  <Function Name="dbo.st_SelectAllChapter" Method="st_SelectAllChapter" IsComposable="true">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
     <Parameter Name="level" Type="System.String" DbType="Char(10)" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel">
+  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel" IsComposable="true">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
     <Parameter Name="chapter" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_SelectAllQuest" Method="st_SelectAllQuest">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
@@ -267,8 +268,9 @@
     <Parameter Name="bodyans" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel1">
+  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel1" IsComposable="true">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
     <Parameter Name="chapter" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="object" />
   </Function>
 </Database>

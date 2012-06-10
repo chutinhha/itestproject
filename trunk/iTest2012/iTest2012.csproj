@@ -54,6 +54,7 @@
     <Content Include="About.aspx" />
     <Content Include="AddNewChap.aspx" />
     <Content Include="AddNewSubject.aspx" />
+    <Content Include="AddQuestion01.aspx" />
     <Content Include="AddQuestions.aspx" />
     <Content Include="ChangePass.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
@@ -800,6 +801,13 @@
     </Compile>
     <Compile Include="AddNewSubject.aspx.designer.cs">
       <DependentUpon>AddNewSubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddQuestion01.aspx.cs">
+      <DependentUpon>AddQuestion01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddQuestion01.aspx.designer.cs">
+      <DependentUpon>AddQuestion01.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddQuestions.aspx.cs">
       <DependentUpon>AddQuestions.aspx</DependentUpon>
