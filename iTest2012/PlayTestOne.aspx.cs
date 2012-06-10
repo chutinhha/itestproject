@@ -15,8 +15,10 @@ namespace iTest2012
         int correct, choice1, choice2, choice3, choice4;
         protected void Page_Load(object sender, EventArgs e)
         {
-            subid = data.st_LoadSubjectID(Session["Subject"].ToString());
-            questid = data.st_RandomIDofSub(subid, Session["Type"].ToString());
+            if (Session["Subject"].ToString().Length > 0)
+                subid = data.st_LoadSubjectID(Session["Subject"].ToString());
+            else subid = 1;
+            questid = data.st_RandomIDofSubByLevel(subid, Convert.ToInt32(Session["Level"]));
 
             lbNumberOfTest.Text = Session["Num"].ToString();
             lbNumber.Text = Session["Question"].ToString();
@@ -27,10 +29,21 @@ namespace iTest2012
                 GridViewBody.DataSource = data.st_LoadBodyQuestOfSub(questid);
                 GridViewBody.DataBind();
 
+                
+
+                
+                imgQuest.ImageUrl = "/UploadFiles/"+q;
                 GridViewAnswer.DataSource = data.st_LoadBodyAnswers(questid); // visible = false de giau grid di, load du lieu vao radio list
                 GridViewAnswer.DataBind();
 
+                Panel_OneChoice.Visible = true;
+                Panel_MultiChoices.Visible = false;
 
+                rdans1.Text = GridViewAnswer.Rows[0].Cells[1].Text;
+                rdans2.Text = GridViewAnswer.Rows[1].Cells[1].Text;
+                rdans3.Text = GridViewAnswer.Rows[2].Cells[1].Text;
+                rdans4.Text = GridViewAnswer.Rows[3].Cells[1].Text;
+                /*
                 if (Session["Type"].ToString() == "One-Choice")
                 {
                     Panel_OneChoice.Visible = true;
@@ -51,6 +64,7 @@ namespace iTest2012
                     CheckBox3.Text = GridViewAnswer.Rows[2].Cells[1].Text;
                     CheckBox4.Text = GridViewAnswer.Rows[3].Cells[1].Text;
                 }
+                 * */
 
             }
             if (Convert.ToInt32(Session["Question"]) > Convert.ToInt32(Session["Num"]))
@@ -95,6 +109,7 @@ namespace iTest2012
             else
             {
                 Session["Question"] = (int)Session["Question"] + 1;
+                Session["Correct"] = (int)Session["Correct"] - 10;
                 Response.Redirect("PlayTestOne.aspx");
                 //testthu.Text = choice4.ToString()+" -  else cuoi";
 
@@ -104,7 +119,6 @@ namespace iTest2012
         protected void btnFinish_Click(object sender, EventArgs e)
         {
             Response.Redirect("Result.aspx");
-
         }
     }
 }

@@ -25,18 +25,17 @@ namespace iTest2012
             {
                 int idsub = data.st_LoadSubjectID(ddlSubject.Text.Trim());
                 int num = Convert.ToInt32(ddlNumberofQuests.Text.Trim());
+                int lv = Convert.ToInt32(ddlLevel.SelectedValue);
                 int result;
-                result = data.st_Check_aSub_aType_Num(idsub, ddlQuestType.Text.Trim(), num);
-
+                result = data.st_Check_aSub_aLevel_Num(idsub, lv, num);
                 if (result == 1)
                 {
                     lbError.Text = "";
 
                     Session["Subject"] = ddlSubject.SelectedItem.Text;
                     Session["Num"] = ddlNumberofQuests.SelectedValue;
-                    Session["Type"] = ddlQuestType.SelectedValue;
-
-
+                    //Session["Type"] = ddlQuestType.SelectedValue;
+                    Session["Level"] = ddlLevel.SelectedValue;
 
                     if (Session["Question"] == null)
                     {
@@ -60,13 +59,14 @@ namespace iTest2012
             {
                 int num;
                 num = Convert.ToInt32(ddlNumberofQuests.Text.Trim());
-                int result = data.st_Check_AllSub_Type_Num(ddlQuestType.Text.Trim(), num);
+                int result = data.st_Check_AllSub_aLevel_Num(Convert.ToInt32(ddlLevel.SelectedValue), num);
 
                 if (result == 1)
                 {
                     lbError.Text = "";
                     Session["Num"] = ddlNumberofQuests.SelectedValue;
-                    Session["Type"] = ddlQuestType.SelectedValue;
+                    //Session["Type"] = ddlQuestType.SelectedValue;
+                    Session["Level"] = ddlLevel.SelectedValue;
                     if (Session["Question"] == null)
                     {
                         Session["Question"] = 1;
@@ -77,7 +77,7 @@ namespace iTest2012
                         Session["Correct"] = 0;
                     }
 
-                    Response.Redirect("PlayTestOneAll.aspx");
+                    Response.Redirect("PlayTestOne.aspx");
 
                 }
                 else

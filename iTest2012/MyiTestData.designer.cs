@@ -51,6 +51,9 @@ namespace iTest2012
     partial void InsertiAnswer(iAnswer instance);
     partial void UpdateiAnswer(iAnswer instance);
     partial void DeleteiAnswer(iAnswer instance);
+    partial void InsertiSecurityQuest(iSecurityQuest instance);
+    partial void UpdateiSecurityQuest(iSecurityQuest instance);
+    partial void DeleteiSecurityQuest(iSecurityQuest instance);
     #endregion
 		
 		public MyiTestDataDataContext() : 
@@ -136,6 +139,14 @@ namespace iTest2012
 			get
 			{
 				return this.GetTable<iAnswer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iSecurityQuest> iSecurityQuests
+		{
+			get
+			{
+				return this.GetTable<iSecurityQuest>();
 			}
 		}
 		
@@ -406,6 +417,33 @@ namespace iTest2012
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level, chapter);
 			return ((ISingleResult<st_SelectQuestResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_AllSub_aLevel_Num")]
+		public int st_Check_AllSub_aLevel_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), level, num);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_aSub_aLevel_Num")]
+		public int st_Check_aSub_aLevel_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub, level, num);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_RandomIDofSubByLevel")]
+		public int st_RandomIDofSubByLevel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> subid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_getImageQuest")]
+		public void st_getImageQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idquest)
+		{
+			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idquest);
 		}
 	}
 	
@@ -731,6 +769,8 @@ namespace iTest2012
 		
 		private EntitySet<iUserPermission> _iUserPermissions;
 		
+		private EntitySet<iSecurityQuest> _iSecurityQuests;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -748,6 +788,7 @@ namespace iTest2012
 		public iUser()
 		{
 			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
+			this._iSecurityQuests = new EntitySet<iSecurityQuest>(new Action<iSecurityQuest>(this.attach_iSecurityQuests), new Action<iSecurityQuest>(this.detach_iSecurityQuests));
 			OnCreated();
 		}
 		
@@ -844,6 +885,19 @@ namespace iTest2012
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iUser_iSecurityQuest", Storage="_iSecurityQuests", ThisKey="iUserID", OtherKey="iSUserID")]
+		public EntitySet<iSecurityQuest> iSecurityQuests
+		{
+			get
+			{
+				return this._iSecurityQuests;
+			}
+			set
+			{
+				this._iSecurityQuests.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -871,6 +925,18 @@ namespace iTest2012
 		}
 		
 		private void detach_iUserPermissions(iUserPermission entity)
+		{
+			this.SendPropertyChanging();
+			entity.iUser = null;
+		}
+		
+		private void attach_iSecurityQuests(iSecurityQuest entity)
+		{
+			this.SendPropertyChanging();
+			entity.iUser = this;
+		}
+		
+		private void detach_iSecurityQuests(iSecurityQuest entity)
 		{
 			this.SendPropertyChanging();
 			entity.iUser = null;
@@ -1571,6 +1637,181 @@ namespace iTest2012
 						this._iQuestID = default(int);
 					}
 					this.SendPropertyChanged("iQuestion");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSecurityQuest")]
+	public partial class iSecurityQuest : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iSID;
+		
+		private string _iSQuest;
+		
+		private string _iSAns;
+		
+		private int _iSUserID;
+		
+		private EntityRef<iUser> _iUser;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniSIDChanging(int value);
+    partial void OniSIDChanged();
+    partial void OniSQuestChanging(string value);
+    partial void OniSQuestChanged();
+    partial void OniSAnsChanging(string value);
+    partial void OniSAnsChanged();
+    partial void OniSUserIDChanging(int value);
+    partial void OniSUserIDChanged();
+    #endregion
+		
+		public iSecurityQuest()
+		{
+			this._iUser = default(EntityRef<iUser>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int iSID
+		{
+			get
+			{
+				return this._iSID;
+			}
+			set
+			{
+				if ((this._iSID != value))
+				{
+					this.OniSIDChanging(value);
+					this.SendPropertyChanging();
+					this._iSID = value;
+					this.SendPropertyChanged("iSID");
+					this.OniSIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSQuest", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string iSQuest
+		{
+			get
+			{
+				return this._iSQuest;
+			}
+			set
+			{
+				if ((this._iSQuest != value))
+				{
+					this.OniSQuestChanging(value);
+					this.SendPropertyChanging();
+					this._iSQuest = value;
+					this.SendPropertyChanged("iSQuest");
+					this.OniSQuestChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string iSAns
+		{
+			get
+			{
+				return this._iSAns;
+			}
+			set
+			{
+				if ((this._iSAns != value))
+				{
+					this.OniSAnsChanging(value);
+					this.SendPropertyChanging();
+					this._iSAns = value;
+					this.SendPropertyChanged("iSAns");
+					this.OniSAnsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSUserID", DbType="Int NOT NULL")]
+		public int iSUserID
+		{
+			get
+			{
+				return this._iSUserID;
+			}
+			set
+			{
+				if ((this._iSUserID != value))
+				{
+					if (this._iUser.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OniSUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._iSUserID = value;
+					this.SendPropertyChanged("iSUserID");
+					this.OniSUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iUser_iSecurityQuest", Storage="_iUser", ThisKey="iSUserID", OtherKey="iUserID", IsForeignKey=true)]
+		public iUser iUser
+		{
+			get
+			{
+				return this._iUser.Entity;
+			}
+			set
+			{
+				iUser previousValue = this._iUser.Entity;
+				if (((previousValue != value) 
+							|| (this._iUser.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._iUser.Entity = null;
+						previousValue.iSecurityQuests.Remove(this);
+					}
+					this._iUser.Entity = value;
+					if ((value != null))
+					{
+						value.iSecurityQuests.Add(this);
+						this._iSUserID = value.iUserID;
+					}
+					else
+					{
+						this._iSUserID = default(int);
+					}
+					this.SendPropertyChanged("iUser");
 				}
 			}
 		}
