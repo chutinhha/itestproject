@@ -17,7 +17,7 @@ namespace iTest2012
         {
             if (Session["Subject"].ToString().Length > 0)
                 subid = data.st_LoadSubjectID(Session["Subject"].ToString());
-            else subid = 1;
+            else subid = 111111;
             questid = data.st_RandomIDofSubByLevel(subid, Convert.ToInt32(Session["Level"]));
 
             lbNumberOfTest.Text = Session["Num"].ToString();
