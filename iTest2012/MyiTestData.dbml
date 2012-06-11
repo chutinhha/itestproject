@@ -106,10 +106,6 @@
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_CheckAvailableSubName" Method="st_CheckAvailableSubName">
-    <Parameter Name="subname" Type="System.String" DbType="NVarChar(250)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.st_CheckAvailableUser" Method="st_CheckAvailableUser">
     <Parameter Name="username" Type="System.String" DbType="NVarChar(12)" />
     <Return Type="System.Int32" />
@@ -305,6 +301,28 @@
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
     <ElementType Name="st_LoadBodyAnswersResult">
       <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadQuestRandom" Method="st_LoadQuestRandom">
+    <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chapter" Type="System.Int32" DbType="Int" />
+    <Parameter Name="level" Type="System.Int32" DbType="Int" />
+    <Parameter Name="num" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadQuestRandomResult">
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_CheckAvailableSubName" Method="st_CheckAvailableSubName">
+    <Parameter Name="subname" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_LoadListQuestID" Method="st_LoadListQuestID">
+    <Parameter Name="subid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="level" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadListQuestIDResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

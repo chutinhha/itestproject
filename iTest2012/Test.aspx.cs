@@ -47,7 +47,7 @@ namespace iTest2012
                         Session["Correct"] = 0;
                     }
 
-                    Response.Redirect("PlayTestOne.aspx");
+                    Response.Redirect("PlayDemo.aspx");
 
                 }
                 else

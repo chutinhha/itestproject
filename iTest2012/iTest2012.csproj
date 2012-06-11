@@ -758,6 +758,7 @@
     <Content Include="menu_flash\swfobject.js" />
     <Content Include="menu_flash\Untitled.htm" />
     <Content Include="PermissionErroPage.aspx" />
+    <Content Include="PlayDemo.aspx" />
     <Content Include="PlayTestOne.aspx" />
     <Content Include="Result.aspx" />
     <Content Include="SignUp.aspx" />
@@ -904,6 +905,13 @@
     </Compile>
     <Compile Include="PermissionErroPage.aspx.designer.cs">
       <DependentUpon>PermissionErroPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlayDemo.aspx.cs">
+      <DependentUpon>PlayDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlayDemo.aspx.designer.cs">
+      <DependentUpon>PlayDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="PlayTestOne.aspx.cs">
       <DependentUpon>PlayTestOne.aspx</DependentUpon>

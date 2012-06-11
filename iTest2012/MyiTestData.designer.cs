@@ -199,13 +199,6 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckAvailableSubName")]
-		public int st_CheckAvailableSubName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string subname)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subname);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckAvailableUser")]
 		public int st_CheckAvailableUser([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(12)")] string username)
 		{
@@ -452,6 +445,27 @@ namespace iTest2012
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), questid);
 			return ((ISingleResult<st_LoadBodyAnswersResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadQuestRandom")]
+		public ISingleResult<st_LoadQuestRandomResult> st_LoadQuestRandom([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> chapter, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter, level, num);
+			return ((ISingleResult<st_LoadQuestRandomResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckAvailableSubName")]
+		public int st_CheckAvailableSubName([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string subname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subname);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadListQuestID")]
+		public ISingleResult<st_LoadListQuestIDResult> st_LoadListQuestID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> subid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
+			return ((ISingleResult<st_LoadListQuestIDResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2336,6 +2350,94 @@ namespace iTest2012
 				if ((this._iBodyAns != value))
 				{
 					this._iBodyAns = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadQuestRandomResult
+	{
+		
+		private int _iQuestID;
+		
+		public st_LoadQuestRandomResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", DbType="Int NOT NULL")]
+		public int iQuestID
+		{
+			get
+			{
+				return this._iQuestID;
+			}
+			set
+			{
+				if ((this._iQuestID != value))
+				{
+					this._iQuestID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadListQuestIDResult
+	{
+		
+		private int _ID;
+		
+		private string _Body;
+		
+		private string _Image;
+		
+		public st_LoadListQuestIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Body", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Body
+		{
+			get
+			{
+				return this._Body;
+			}
+			set
+			{
+				if ((this._Body != value))
+				{
+					this._Body = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(MAX)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this._Image = value;
 				}
 			}
 		}
