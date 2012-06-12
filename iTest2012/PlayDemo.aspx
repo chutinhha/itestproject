@@ -23,8 +23,8 @@
                     <br />
                     <%
                         for (int i = 0; i < Convert.ToInt32(Session["Num"].ToString()); i++)%>  
-                        <%{%>                  
-                            <input type="button" value="button" name="button<%=i%>" />;
+                        <%{%>                                          
+                            <%--<input type="button" value="button" name="button<%=i%>" />;--%>
                         <%}%>
                     
                 </asp:Panel>

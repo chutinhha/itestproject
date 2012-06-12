@@ -714,6 +714,32 @@
     <Content Include="ManagePermission.aspx" />
     <Content Include="ManageSubject.aspx" />
     <Content Include="css\master.css" />
+    <Content Include="menu_awmbk\awmdata\awmlib0.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib1.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib2.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib3.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib4.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib5.js" />
+    <Content Include="menu_awmbk\awmdata\awmlib7.js" />
+    <Content Include="menu_awmbk\awmdata\dot.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\arrow.png" />
+    <Content Include="menu_awmbk\awmdata\menu\bg_linexanh.png" />
+    <Content Include="menu_awmbk\awmdata\menu\bg_linexanh_2vien.png" />
+    <Content Include="menu_awmbk\awmdata\menu\bg_linexanh_vien_over.png" />
+    <Content Include="menu_awmbk\awmdata\menu\indicator.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\indicator2.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\indicatorDown.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\menuItem-tile.jpg" />
+    <Content Include="menu_awmbk\awmdata\menu\menuItemOver-left.jpg" />
+    <Content Include="menu_awmbk\awmdata\menu\menuItemOver-right.jpg" />
+    <Content Include="menu_awmbk\awmdata\menu\menuItemOver-tile.jpg" />
+    <Content Include="menu_awmbk\awmdata\menu\menu_normal.png" />
+    <Content Include="menu_awmbk\awmdata\menu\v5_bullets_05.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\v5_bullets_05a.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\v5_bullets_06a.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\v5_bullets_60.gif" />
+    <Content Include="menu_awmbk\awmdata\menu\v5_bullets_90.gif" />
+    <Content Include="menu_awmbk\menu.js" />
     <Content Include="menu_flash\menu.swf" />
     <Content Include="menu_flash\menu_data.xml" />
     <Content Include="menu_flash\menu_data\arrow.swf" />
@@ -979,7 +1005,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="menu_awm\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
