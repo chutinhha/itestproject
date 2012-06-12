@@ -56,11 +56,9 @@
                         </td>
                         <td >
                             <asp:DropDownList ID="ddlNumberofQuests" runat="server" Width="200px" AppendDataBoundItems="True">
-                                <asp:ListItem Selected="True">1</asp:ListItem>
-                                <asp:ListItem>5</asp:ListItem>
-                                <asp:ListItem>10</asp:ListItem>
-                                <asp:ListItem>20</asp:ListItem>
+                                <asp:ListItem Selected="True">10</asp:ListItem>
                                 <asp:ListItem>30</asp:ListItem>
+                                <asp:ListItem>50</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                     </tr>
@@ -75,8 +73,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>            
-        </asp:Panel>
+            </div>          
     </div>
     <br />
     <br />

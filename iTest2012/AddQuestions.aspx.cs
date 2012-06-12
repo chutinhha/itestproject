@@ -254,12 +254,7 @@ namespace iTest2012
                         dInfo.Create();
                     }
 
-                    //check file browsed or not
-                    if (FileUploadQuest.HasFile)
-                    {
-                        FileUploadQuest.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + FileUploadQuest.FileName));
-
-                    }
+                    
 
                     // add question and answers into database
 
@@ -281,6 +276,12 @@ namespace iTest2012
                     //////ans1
                     int qsid = qs.iQuestID;
 
+                    //kiem tra xem fileupload co file hay ko, neu co thi add, + them id cau hoi phia truoc
+                    if (FileUploadQuest.HasFile)
+                    {
+                        FileUploadQuest.PostedFile.SaveAs(Server.MapPath("~/UploadFiles/" + qsid + FileUploadQuest.FileName));
+
+                    }
                     ans5.iQuestID = qsid;
                     ans5.iBodyAns = txtAns5.Text.ToString();
                     
