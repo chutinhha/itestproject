@@ -11,6 +11,7 @@ namespace iTest2012
     public partial class PlayDemo : System.Web.UI.Page
     {
         MyiTestDataDataContext data = new MyiTestDataDataContext();
+       
         int subid, level, numq;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,11 +54,8 @@ namespace iTest2012
                 //gridRandom.DataBind();  
               
                 //Tao cac control dong de load cau hoi len :D
-                for (int n = 1; n <= numq; n++)
-                {
-                    Label lbQuest = new Label();
-                    lbQuest.NamingContainer = "lbQuest" + n.ToString();
-                }
+                
+                
 
             }
             else
