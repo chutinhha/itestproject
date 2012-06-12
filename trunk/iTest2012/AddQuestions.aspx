@@ -92,7 +92,7 @@
                 <td>
                     Nội dung : 
                 </td>
-                <td><textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="40"></textarea></td>
+                <td><textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="50" style="width:350px; height:200px;"></textarea></td>
             </tr>
             <script type="text/javascript" language="javascript">
 
@@ -103,7 +103,7 @@
                 <td >
                    Chèn hình ảnh</td>
                 <td >
-                    <asp:FileUpload ID="FileUploadQuest" runat="server" />
+                    <asp:FileUpload ID="FileUploadQuest" runat="server" Width="245px" />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FileUploadQuest"
                         ErrorMessage="Incorrect Image !" ValidationExpression="^([0-9a-zA-Z_\-~ :\\])+(.jpg|.JPG|.jpeg|.JPEG|.bmp|.BMP|.gif|.GIF|.png|.PNG)$"
                         ForeColor="Red"></asp:RegularExpressionValidator>
@@ -118,22 +118,30 @@
                 <td >
                     
                         <strong>Câu A</strong><br />
-                        <asp:TextBox ID="txtAns5" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                        <asp:TextBox ID="txtAns5" runat="server" BackColor="White" TextMode="MultiLine" 
+                            Width="350px"></asp:TextBox>
                         <br />
-                        <asp:RadioButton ID="rbA" runat="server" GroupName="radioans" />
-                        &nbsp;Đây là câu trả lời đúng.<br /> <strong>Câu B</strong><br />
-                        <asp:TextBox ID="txtAns6" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                        <asp:RadioButton ID="rbA" runat="server" GroupName="radioans" 
+                            Text="Đây là câu trả lời đúng." />
+                        &nbsp;<br /> <strong>Câu B</strong><br />
+                        <asp:TextBox ID="txtAns6" runat="server" BackColor="White" TextMode="MultiLine" 
+                            Width="350px"></asp:TextBox>
                         <br />
-                        <asp:RadioButton ID="rbB" runat="server" GroupName="radioans" />
-                        &nbsp;Đây là câu trả lời đúng.<br /> <strong>Câu C</strong><br />
-                        <asp:TextBox ID="txtAns7" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                        <asp:RadioButton ID="rbB" runat="server" GroupName="radioans" 
+                            Text="Đây là câu trả lời đúng." />
+                        &nbsp;<br /> <strong>Câu C</strong><br />
+                        <asp:TextBox ID="txtAns7" runat="server" BackColor="White" TextMode="MultiLine" 
+                            Width="350px"></asp:TextBox>
                         <br />
-                        <asp:RadioButton ID="rbC" runat="server" GroupName="radioans" />
-                        &nbsp;Đây là câu trả lời đúng.<br /> <strong>Câu D</strong><br />
-                        <asp:TextBox ID="txtAns8" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                        <asp:RadioButton ID="rbC" runat="server" GroupName="radioans" 
+                            Text="Đây là câu trả lời đúng." />
+                        &nbsp;<br /> <strong>Câu D</strong><br />
+                        <asp:TextBox ID="txtAns8" runat="server" BackColor="White" TextMode="MultiLine" 
+                            Width="349px"></asp:TextBox>
                         <br />
-                        <asp:RadioButton ID="rbD" runat="server" GroupName="radioans" />
-                        &nbsp;Đây là câu trả lời đúng.<br />
+                        <asp:RadioButton ID="rbD" runat="server" GroupName="radioans" 
+                            Text="Đây là câu trả lời đúng." />
+                        &nbsp;<br />
                         <br />
                     
                     <br />
@@ -155,6 +163,7 @@
                 </td>
             </tr>
         </table>
+
         <br />
     </div>
 </asp:Content>

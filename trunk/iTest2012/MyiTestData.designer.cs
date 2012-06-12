@@ -467,6 +467,27 @@ namespace iTest2012
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
 			return ((ISingleResult<st_LoadListQuestIDResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadListQuestsRandom")]
+		public ISingleResult<st_LoadListQuestsRandomResult> st_LoadListQuestsRandom([global::System.Data.Linq.Mapping.ParameterAttribute(Name="string", DbType="NVarChar(MAX)")] string @string)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), @string);
+			return ((ISingleResult<st_LoadListQuestsRandomResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10Ans")]
+		public ISingleResult<st_LoadList10AnsResult> st_LoadList10Ans([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+			return ((ISingleResult<st_LoadList10AnsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10QuestsRandom")]
+		public ISingleResult<st_LoadList10QuestsRandomResult> st_LoadList10QuestsRandom([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+			return ((ISingleResult<st_LoadList10QuestsRandomResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iUserPermission")]
@@ -2438,6 +2459,210 @@ namespace iTest2012
 				if ((this._Image != value))
 				{
 					this._Image = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadListQuestsRandomResult
+	{
+		
+		private int _ID;
+		
+		private string _Body;
+		
+		private string _Img;
+		
+		public st_LoadListQuestsRandomResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Body", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Body
+		{
+			get
+			{
+				return this._Body;
+			}
+			set
+			{
+				if ((this._Body != value))
+				{
+					this._Body = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="NVarChar(MAX)")]
+		public string Img
+		{
+			get
+			{
+				return this._Img;
+			}
+			set
+			{
+				if ((this._Img != value))
+				{
+					this._Img = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadList10AnsResult
+	{
+		
+		private int _ID;
+		
+		private int _QID;
+		
+		private string _AnsBody;
+		
+		private char _Pro;
+		
+		public st_LoadList10AnsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QID", DbType="Int NOT NULL")]
+		public int QID
+		{
+			get
+			{
+				return this._QID;
+			}
+			set
+			{
+				if ((this._QID != value))
+				{
+					this._QID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnsBody", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string AnsBody
+		{
+			get
+			{
+				return this._AnsBody;
+			}
+			set
+			{
+				if ((this._AnsBody != value))
+				{
+					this._AnsBody = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pro", DbType="Char(1) NOT NULL")]
+		public char Pro
+		{
+			get
+			{
+				return this._Pro;
+			}
+			set
+			{
+				if ((this._Pro != value))
+				{
+					this._Pro = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadList10QuestsRandomResult
+	{
+		
+		private int _ID;
+		
+		private string _Body;
+		
+		private string _Img;
+		
+		public st_LoadList10QuestsRandomResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Body", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Body
+		{
+			get
+			{
+				return this._Body;
+			}
+			set
+			{
+				if ((this._Body != value))
+				{
+					this._Body = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="NVarChar(MAX)")]
+		public string Img
+		{
+			get
+			{
+				return this._Img;
+			}
+			set
+			{
+				if ((this._Img != value))
+				{
+					this._Img = value;
 				}
 			}
 		}

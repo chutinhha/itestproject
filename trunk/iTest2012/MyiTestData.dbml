@@ -325,4 +325,47 @@
       <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.st_LoadListQuestsRandom" Method="st_LoadListQuestsRandom">
+    <Parameter Name="string" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="st_LoadListQuestsRandomResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadList10Ans" Method="st_LoadList10Ans">
+    <Parameter Name="q1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q6" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q7" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q8" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q9" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q10" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadList10AnsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnsBody" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Pro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadList10QuestsRandom" Method="st_LoadList10QuestsRandom">
+    <Parameter Name="q1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q6" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q7" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q8" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q9" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q10" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadList10QuestsRandomResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
