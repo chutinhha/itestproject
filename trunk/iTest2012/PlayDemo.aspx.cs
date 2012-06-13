@@ -136,15 +136,25 @@ namespace iTest2012
                     for (p=0; p < 4; p++)
                     {
                         rd10Test1.Items[p].Text = gridLoadAns.Rows[p].Cells[2].Text;
+                        rd10Test1.Items[p].Value = gridLoadAns.Rows[p].Cells[1].Text;
                         rd10Test2.Items[p].Text = gridLoadAns.Rows[p+4].Cells[2].Text;
+                        rd10Test2.Items[p].Value = gridLoadAns.Rows[p+4].Cells[1].Text;
                         rd10Test3.Items[p].Text = gridLoadAns.Rows[p+8].Cells[2].Text;
+                        rd10Test3.Items[p].Value = gridLoadAns.Rows[p+8].Cells[1].Text;
                         rd10Test4.Items[p].Text = gridLoadAns.Rows[p+12].Cells[2].Text;
+                        rd10Test4.Items[p].Value = gridLoadAns.Rows[p+12].Cells[1].Text;
                         rd10Test5.Items[p].Text = gridLoadAns.Rows[p+16].Cells[2].Text;
+                        rd10Test5.Items[p].Value = gridLoadAns.Rows[p+16].Cells[1].Text;
                         rd10Test6.Items[p].Text = gridLoadAns.Rows[p+20].Cells[2].Text;
+                        rd10Test6.Items[p].Value = gridLoadAns.Rows[p+20].Cells[1].Text;
                         rd10Test7.Items[p].Text = gridLoadAns.Rows[p+24].Cells[2].Text;
+                        rd10Test7.Items[p].Value = gridLoadAns.Rows[p+24].Cells[1].Text;
                         rd10Test8.Items[p].Text = gridLoadAns.Rows[p+28].Cells[2].Text;
+                        rd10Test8.Items[p].Value = gridLoadAns.Rows[p+28].Cells[1].Text;
                         rd10Test9.Items[p].Text = gridLoadAns.Rows[p+32].Cells[2].Text;
+                        rd10Test9.Items[p].Value = gridLoadAns.Rows[p+32].Cells[1].Text;
                         rd10Test10.Items[p].Text = gridLoadAns.Rows[p+36].Cells[2].Text;
+                        rd10Test10.Items[p].Value = gridLoadAns.Rows[p+36].Cells[1].Text;
                     }                    
                 }
                 else if (numq == 30)
@@ -169,31 +179,51 @@ namespace iTest2012
         protected void btn10Test_Click(object sender, EventArgs e)
         {
             //dem so radio dc check, neu thieu thi thong bao thieu            
-            float score = 0; int correct = 0;
+            float score = 0; int correct = 0;// string item="";
             for (int p = 0; p < 4; p++)
             {
-                if (rd10Test1.Items[p].Selected ==true && gridLoadAns.Rows[p].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test2.Items[p].Selected == true && gridLoadAns.Rows[p + 4].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test3.Items[p].Selected == true && gridLoadAns.Rows[p + 8].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test4.Items[p].Selected == true && gridLoadAns.Rows[p + 12].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test5.Items[p].Selected == true && gridLoadAns.Rows[p + 16].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test6.Items[p].Selected == true && gridLoadAns.Rows[p + 20].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test7.Items[p].Selected == true && gridLoadAns.Rows[p + 24].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test8.Items[p].Selected == true && gridLoadAns.Rows[p + 28].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test9.Items[p].Selected == true && gridLoadAns.Rows[p + 32].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }
-                if (rd10Test10.Items[p].Selected == true && gridLoadAns.Rows[p + 36].Cells[3].Text == "1")
-                { score += (float)(10 / (float)numq); correct += 1; }                
+                if (rd10Test1.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test1.SelectedValue),rd10Test1.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test2.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test2.SelectedValue), rd10Test2.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test3.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test3.SelectedValue), rd10Test3.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test4.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test4.SelectedValue), rd10Test4.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test5.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test5.SelectedValue), rd10Test5.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test6.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test6.SelectedValue), rd10Test6.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test7.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test7.SelectedValue), rd10Test7.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test8.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test8.SelectedValue), rd10Test8.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test9.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test9.SelectedValue), rd10Test9.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test10.Items[p].Selected && data.st_Test(Convert.ToInt32(rd10Test10.SelectedValue), rd10Test10.Items[p].Text) == 1)
+                { score = score + (float)(10 / (float)numq); correct += 1; }     
+                //if (rd10Test1.Items[p].Selected && )
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test2.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test3.Items[p].Selected)
+                //{ correct += 1; score+= (10/(float)numq);}
+                //if (rd10Test4.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test5.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test6.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test7.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test8.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test9.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); }
+                //if (rd10Test10.Items[p].Selected)
+                //{ correct += 1; score += (10 / (float)numq); item = rd10Test10.SelectedItem.Text; }
             }            
-            //score = (float)Math.Round(score, 2);          
+            score = (float)Math.Round(score, 2);          
             
             DateTime date = DateTime.Now;
             
@@ -202,7 +232,8 @@ namespace iTest2012
             else if(score>=9.00 && score<10.00){rate=2;}
             else if(score==10.00){rate=4;}
 
-            score = 10; score = 10; rate = 10; correct = 10;
+            //string item = gridLoadAns.Rows[0].Cells[2].Text;
+            //score = 10; score = 10; rate = 10; correct = 10;
             Session["Correct"] = correct;
             Session["Date"] = date;
             Session["Score"] = score;
