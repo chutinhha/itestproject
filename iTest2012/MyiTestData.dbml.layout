@@ -14,7 +14,7 @@
         <elementListCompartment Id="e05a8d5f-050e-4b74-add1-7aef03c2bfda" absoluteBounds="3.8899999999999997, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.875 : 2.44399251302083); (4.875 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.875 : 2.44399251302083); (4.875 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/MyiTestDataDataContext/iFunction/iFunction_iUserPermission" />
       <nodes>
         <classShapeMoniker Id="bf251029-fe71-4844-820e-ab0af5f0f7d8" />
@@ -72,31 +72,38 @@
         <elementListCompartment Id="b06527b5-fb62-451a-879c-c0d3ed7a8085" absoluteBounds="5.015, 7.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="57b3aada-a109-4280-b0c5-60eb51855592" absoluteBounds="3.875, 5, 2, 1.9631982421875">
-      <DataClassMoniker Name="/MyiTestDataDataContext/iUser" />
+    <classShape Id="d2135943-2fbe-423d-81f8-516ce33d66cd" absoluteBounds="2.5, 7.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/MyiTestDataDataContext/iSecurityQuest" />
       <nestedChildShapes>
-        <elementListCompartment Id="3989dd80-6e98-4d85-aadf-e3ab3638b3ba" absoluteBounds="3.8899999999999997, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f33d704-a9b8-4d85-956b-6db26d393c06" absoluteBounds="2.515, 7.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.875 : 5); (4.875 : 4.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="bb1fd3dd-cbd1-4120-8555-acb93d627e98" absoluteBounds="3.625, 4.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/MyiTestDataDataContext/iUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56c6a00a-05cc-4ee3-bd70-6042a05d4c1e" absoluteBounds="3.64, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.75 : 4.875); (4.75 : 4.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/MyiTestDataDataContext/iUser/iUser_iUserPermission" />
       <nodes>
-        <classShapeMoniker Id="57b3aada-a109-4280-b0c5-60eb51855592" />
+        <classShapeMoniker Id="bb1fd3dd-cbd1-4120-8555-acb93d627e98" />
         <classShapeMoniker Id="9ea0ec88-2546-45f1-b713-b5a2c4534b34" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.4375 : 6.9631982421875); (5.4375 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.3125 : 7.03049967447917); (5.3125 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/MyiTestDataDataContext/iUser/iUser_iTestLog" />
       <nodes>
-        <classShapeMoniker Id="57b3aada-a109-4280-b0c5-60eb51855592" />
+        <classShapeMoniker Id="bb1fd3dd-cbd1-4120-8555-acb93d627e98" />
         <classShapeMoniker Id="225cd837-e9f0-4e38-87b6-87c6f4e22278" />
       </nodes>
     </associationConnector>
-    <classShape Id="d2135943-2fbe-423d-81f8-516ce33d66cd" absoluteBounds="3.375, 7.375, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/MyiTestDataDataContext/iSecurityQuest" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1f33d704-a9b8-4d85-956b-6db26d393c06" absoluteBounds="3.39, 7.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
+    <associationConnector edgePoints="[(4.0625 : 7.5); (4.0625 : 7.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyiTestDataDataContext/iSecurityQuest/iSecurityQuest_iUser" />
+      <nodes>
+        <classShapeMoniker Id="d2135943-2fbe-423d-81f8-516ce33d66cd" />
+        <classShapeMoniker Id="bb1fd3dd-cbd1-4120-8555-acb93d627e98" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
