@@ -1,6 +1,6 @@
  a:link 
         {
-            color:Blue;
+            color:#0D75B3;
             text-decoration:none;
         }
         
@@ -136,15 +136,16 @@
         .txtbox_login
         {
             width:129px;
-            height:29px;
-            margin:0;
-            color:#003300;
-            -moz-border-radius: 7px;
-            -webkit-border-radius: 7px;
+            height:25px;            
+            color:#003300;            
             background-color : #FFFFCC;
-            font-size: 14px;
-            border-color: #003300;  
-            border-style:solid;  
+            font-size: 14px;              
+            height:25px;
+             border: thin solid #003000;
+             /*bo tron 4 goc*/
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px; 
+            padding: 0px; margin: 0px; 
               
         }
         .txtbox_nor
@@ -222,7 +223,7 @@
          .div_formular
          {
             background-color:white;
-            height: 75px;
+            height: 100px;
             overflow: auto;
             padding: 10px;
             border: solid 1px #003300;

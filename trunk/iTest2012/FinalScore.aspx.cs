@@ -11,10 +11,11 @@ namespace iTest2012
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbResult.Text = Session["Correct"].ToString();
+            lbResult.Text = Session["Correct"].ToString() + "/" + Session["Num"].ToString();
             lbDate.Text = Session["Date"].ToString();
             lbScore.Text = Session["Score"].ToString();
             lbBonus.Text = Session["Bonus"].ToString();
+           
         }
     }
 }

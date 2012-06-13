@@ -76,13 +76,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test1;
         
         /// <summary>
-        /// rd10Test1 control.
+        /// rd10Test1a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test1;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test1a;
+        
+        /// <summary>
+        /// rd10Test1b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test1b;
+        
+        /// <summary>
+        /// rd10Test1c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test1c;
+        
+        /// <summary>
+        /// rd10Test1d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test1d;
         
         /// <summary>
         /// lb10Test2 control.
@@ -103,13 +130,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test2;
         
         /// <summary>
-        /// rd10Test2 control.
+        /// rd10Test2a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test2;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test2a;
+        
+        /// <summary>
+        /// rd10Test2b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test2b;
+        
+        /// <summary>
+        /// rd10Test2c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test2c;
+        
+        /// <summary>
+        /// rd10Test2d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test2d;
         
         /// <summary>
         /// lb10Test3 control.
@@ -130,13 +184,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test3;
         
         /// <summary>
-        /// rd10Test3 control.
+        /// rd10Test3a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test3;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test3a;
+        
+        /// <summary>
+        /// rd10Test3b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test3b;
+        
+        /// <summary>
+        /// rd10Test3c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test3c;
+        
+        /// <summary>
+        /// rd10Test3d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test3d;
         
         /// <summary>
         /// lb10Test4 control.
@@ -157,13 +238,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test4;
         
         /// <summary>
-        /// rd10Test4 control.
+        /// rd10Test4a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test4;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test4a;
+        
+        /// <summary>
+        /// rd10Test4b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test4b;
+        
+        /// <summary>
+        /// rd10Test4c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test4c;
+        
+        /// <summary>
+        /// rd10Test4d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test4d;
         
         /// <summary>
         /// lb10Test5 control.
@@ -184,13 +292,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test5;
         
         /// <summary>
-        /// rd10Test5 control.
+        /// rd10Test5a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test5;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test5a;
+        
+        /// <summary>
+        /// rd10Test5b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test5b;
+        
+        /// <summary>
+        /// rd10Test5c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test5c;
+        
+        /// <summary>
+        /// rd10Test5d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test5d;
         
         /// <summary>
         /// lb10Test6 control.
@@ -211,13 +346,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test6;
         
         /// <summary>
-        /// rd10Test6 control.
+        /// rd10Test6a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test6;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test6a;
+        
+        /// <summary>
+        /// rd10Test6b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test6b;
+        
+        /// <summary>
+        /// rd10Test6c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test6c;
+        
+        /// <summary>
+        /// rd10Test6d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test6d;
         
         /// <summary>
         /// lb10Test7 control.
@@ -238,13 +400,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test7;
         
         /// <summary>
-        /// rd10Test7 control.
+        /// rd10Test7a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test7;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test7a;
+        
+        /// <summary>
+        /// rd10Test7b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test7b;
+        
+        /// <summary>
+        /// rd10Test7c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test7c;
+        
+        /// <summary>
+        /// rd10Test7d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test7d;
         
         /// <summary>
         /// lb10Test8 control.
@@ -265,13 +454,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test8;
         
         /// <summary>
-        /// rd10Test8 control.
+        /// rd10Test8a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test8;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test8a;
+        
+        /// <summary>
+        /// rd10Test8b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test8b;
+        
+        /// <summary>
+        /// rd10Test8c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test8c;
+        
+        /// <summary>
+        /// rd10Test8d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test8d;
         
         /// <summary>
         /// lb10Test9 control.
@@ -292,13 +508,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test9;
         
         /// <summary>
-        /// rd10Test9 control.
+        /// rd10Test9a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test9;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test9a;
+        
+        /// <summary>
+        /// rd10Test9b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test9b;
+        
+        /// <summary>
+        /// rd10Test9c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test9c;
+        
+        /// <summary>
+        /// rd10Test9d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test9d;
         
         /// <summary>
         /// lb10Test10 control.
@@ -319,13 +562,40 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Image img10Test10;
         
         /// <summary>
-        /// rd10Test10 control.
+        /// rd10Test10a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rd10Test10;
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test10a;
+        
+        /// <summary>
+        /// rd10Test10b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test10b;
+        
+        /// <summary>
+        /// rd10Test10c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test10c;
+        
+        /// <summary>
+        /// rd10Test10d control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rd10Test10d;
         
         /// <summary>
         /// btn10Test control.
@@ -1435,13 +1705,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// panel1 control.
+        /// panel60Test control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panel1;
+        protected global::System.Web.UI.WebControls.Panel panel60Test;
         
         /// <summary>
         /// lb60Test1 control.

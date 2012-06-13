@@ -3,39 +3,54 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div align="center">
-    <table class="border_tableheadline" style="width:300px">
+    <table class="border_tableheadline" style="width:350px">
         <tr>
             <td>
                 Kết quả
             </td>
         </tr>
     </table>
-    <table class="border_alltable" style="width:300px; color:#003300 ">
+    <table class="border_alltable" style="width:350px; color:#003300 ">
         <tr align="left">
+            <td style="width:150px;">
+                Tổng số câu đúng : 
+            </td>
             <td>
-                Tổng số câu đúng : <asp:Label ID="lbResult" runat="server" ></asp:Label>
+                <asp:Label ID="lbResult" runat="server" ></asp:Label>
             </td>
         </tr>        
         <tr align="left">
+            <td style="width:150px;">
+                Thời gian hoàn thành : 
+            </td>
             <td>
-                Thời gian hoàn thành : <asp:Label ID="lbTime" runat="server" ></asp:Label>
+                <asp:Label ID="lbTime" runat="server" ></asp:Label>
             </td>
         </tr>
         <tr align="left">
+            <td style="width:150px;">
+                Ngày test : 
+            </td>
             <td>
-                Ngày test : <asp:Label ID="lbDate" runat="server" ></asp:Label>
+                <asp:Label ID="lbDate" runat="server" ></asp:Label>
             </td>
         </tr>
         <tr align="left" style="font-size:large; font-weight:bold">
+            <td style="width:150px;">
+                Tổng điểm : 
+            </td>
             <td>
-                Tổng điểm : <asp:Label ID="lbScore" runat="server" style="color:Red; font-weight:bold" ></asp:Label>
+                <asp:Label ID="lbScore" runat="server" style="color:Red; font-weight:bold" ></asp:Label>
             </td>
         </tr>
         <tr align="left" style="font-size:larger; font-weight:bold">
-            <td>
-                Điểm bonus : <asp:Label ID="lbBonus" runat="server" style="font-weight:bolder" ></asp:Label>
+            <td style="width:150px;">
+                Điểm bonus : 
             </td>
-        </tr>
+            <td>
+                <asp:Label ID="lbBonus" runat="server" style="font-weight:bolder" ></asp:Label>
+            </td>
+        </tr>        
     </table>
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Test.aspx">Làm bài test khác</asp:HyperLink>
 </div>

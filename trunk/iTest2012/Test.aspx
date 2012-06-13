@@ -5,11 +5,7 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div align="center">
-        <br />
-        <br />
-        <br />        
-        <div>
+    <div align="center"> 
                 <table class="border_tableheadline">
                     <tr>
                         <td>
@@ -73,7 +69,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>          
+              
     </div>
     <br />
     <br />
