@@ -145,9 +145,7 @@ namespace iTest2012
                         rd10Test8.Items[p].Text = gridLoadAns.Rows[p+28].Cells[2].Text;
                         rd10Test9.Items[p].Text = gridLoadAns.Rows[p+32].Cells[2].Text;
                         rd10Test10.Items[p].Text = gridLoadAns.Rows[p+36].Cells[2].Text;
-                    }
-
-                    
+                    }                    
                 }
                 else if (numq == 30)
                 { }
@@ -167,6 +165,50 @@ namespace iTest2012
                 strScript += "</script>";
                 Page.RegisterClientScriptBlock("strScript", strScript);
             }
+        }
+        protected void btn10Test_Click(object sender, EventArgs e)
+        {
+            //dem so radio dc check, neu thieu thi thong bao thieu            
+            float score = 0; int correct = 0;
+            for (int p = 0; p < 4; p++)
+            {
+                if (rd10Test1.Items[p].Selected ==true && gridLoadAns.Rows[p].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test2.Items[p].Selected == true && gridLoadAns.Rows[p + 4].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test3.Items[p].Selected == true && gridLoadAns.Rows[p + 8].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test4.Items[p].Selected == true && gridLoadAns.Rows[p + 12].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test5.Items[p].Selected == true && gridLoadAns.Rows[p + 16].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test6.Items[p].Selected == true && gridLoadAns.Rows[p + 20].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test7.Items[p].Selected == true && gridLoadAns.Rows[p + 24].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test8.Items[p].Selected == true && gridLoadAns.Rows[p + 28].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test9.Items[p].Selected == true && gridLoadAns.Rows[p + 32].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }
+                if (rd10Test10.Items[p].Selected == true && gridLoadAns.Rows[p + 36].Cells[3].Text == "1")
+                { score += (float)(10 / (float)numq); correct += 1; }                
+            }            
+            //score = (float)Math.Round(score, 2);          
+            
+            DateTime date = DateTime.Now;
+            
+            int rate=0;
+            if(score>=8.00 && score<9.00){ rate=1;}
+            else if(score>=9.00 && score<10.00){rate=2;}
+            else if(score==10.00){rate=4;}
+
+            score = 10; score = 10; rate = 10; correct = 10;
+            Session["Correct"] = correct;
+            Session["Date"] = date;
+            Session["Score"] = score;
+            Session["Bonus"] = rate;
+            Response.Redirect("FinalScore.aspx");
+            
         }
     }
 }
