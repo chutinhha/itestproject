@@ -23,8 +23,8 @@ namespace iTest2012
 
             if (chk_DongY.Checked == true)
             {
-                if (txtUsername.Text.Length > 0 && txtUsername.Text.Length < 12
-                    && txtPass.Text.Length > 0 && txtPass.Text.Length < 20
+                if (txtUsername.Text.Length > 0 && txtUsername.Text.Length <= 12
+                    && txtPass.Text.Length > 0 && txtPass.Text.Length <= 20
                     && txtReEnterPass.Text.Length > 0 && txtEmail.Text.Length > 0 && txtAnswer.Text.Length > 0
                     && dropCauHoiBiMat.SelectedValue != "-1")
                 {
