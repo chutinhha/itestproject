@@ -24,6 +24,7 @@
       <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
       <Association Name="iUser_iSecurityQuest" Member="iSecurityQuests" ThisKey="iUserID" OtherKey="iSUserID" Type="iSecurityQuest" />
+      <Association Name="iUser_iTestLog" Member="iTestLogs" ThisKey="iUserID" OtherKey="iUserID" Type="iTestLog" />
     </Type>
   </Table>
   <Table Name="dbo.iSubject" Member="iSubjects">
@@ -70,6 +71,19 @@
       <Column Name="iSAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iSUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="iUser_iSecurityQuest" Member="iUser" ThisKey="iSUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iTestLog" Member="iTestLogs">
+    <Type Name="iTestLog">
+      <Column Name="iTestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iListQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="iListAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="iScore" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="iScoreRate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iDateTest" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="iTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="iUser_iTestLog" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">

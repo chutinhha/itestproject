@@ -643,6 +643,7 @@
     <Content Include="DeleteUser.aspx" />
     <Content Include="demo.aspx" />
     <Content Include="EditSubject.aspx" />
+    <Content Include="FinalScore.aspx" />
     <Content Include="Global.asax" />
     <Content Include="image\background\back69.jpg" />
     <Content Include="image\background\bg001.png" />
@@ -860,6 +861,13 @@
     <Compile Include="EditSubject.aspx.designer.cs">
       <DependentUpon>EditSubject.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FinalScore.aspx.cs">
+      <DependentUpon>FinalScore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinalScore.aspx.designer.cs">
+      <DependentUpon>FinalScore.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1014,7 +1022,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51522</DevelopmentServerPort>
+          <DevelopmentServerPort>54468</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

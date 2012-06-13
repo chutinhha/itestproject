@@ -121,13 +121,13 @@
                     <br />                 
                 </td>
             </tr> 
-            <tr>
+            <tr align="center">
                 <td>
-                    <asp:Button ID="btn10Test" runat="server" Text="Hoàn thành" />
+                    <asp:Button ID="btn10Test" runat="server" Text="Hoàn thành"  OnClick="btn10Test_Click"/>
                 </td>
             </tr>
         </asp:Panel>
-                  
+                 
           
               
     </table>
