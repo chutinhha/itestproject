@@ -20,13 +20,12 @@ namespace iTest2012
 
             MyiTestDataDataContext db = new MyiTestDataDataContext();
             iUser ius = new iUser();
-            //iSercurityQuestion isq = new iSercurityQuestion();
-           
+
             if (chk_DongY.Checked == true)
             {
                 if (txtUsername.Text.Length > 0 && txtUsername.Text.Length < 12
                     && txtPass.Text.Length > 0 && txtPass.Text.Length < 20
-                    && txtReEnterPass.Text.Length > 0 && txtEmail.Text.Length > 0)
+                    && txtReEnterPass.Text.Length > 0 && txtEmail.Text.Length > 0 && txtAnswer.Text.Length > 0)
                 {
                     int user = db.st_CheckAvailableUser(txtUsername.Text.Trim());
                     int email = db.st_CheckAvailableEmail(txtEmail.Text.Trim());
@@ -37,7 +36,7 @@ namespace iTest2012
                         labRePass.Text = "";
                         labEmail.Text = "";
 
-                        labUser.Text = "This name is exist ! Please enter other name";
+                        labUser.Text = "Tên đăng nhập đã tồn tại!";
                         txtUsername.Text = string.Empty;
 
                     }
@@ -47,7 +46,7 @@ namespace iTest2012
                         labRePass.Text = "";
                         labEmail.Text = "";
 
-                        labEmail.Text = "This email is exist ! Please enter other email address";
+                        labEmail.Text = "Email đã được sử dụng!";
                         txtEmail.Text = string.Empty;
                         //btnSignUp.Enabled = false;
                     }
@@ -57,7 +56,7 @@ namespace iTest2012
                         labRePass.Text = "";
                         labEmail.Text = "";
 
-                        labRePass.Text = "Tài khoản bạn vừa đăng nhập không đúng, vui lòng nhập lại.";
+                        labRePass.Text = "Mật khẩu nhập lần 2 không trùng, vui lòng nhập lại.";
                         txtReEnterPass.Text = string.Empty;
                     }
                     else
@@ -66,27 +65,22 @@ namespace iTest2012
                         ius.iUserName = txtUsername.Text.ToString();
                         ius.iPass = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPass.Text.Trim(), "MD5");
                         ius.iEmailUser = txtEmail.Text.ToString();
-                       // ius.iSQuestionAnswer = txtAnswer.Text;
-                        //isq.iSQuestionContent = dropCauHoiBiMat.Text;
+                        ius.iSID = db.st_GetSID(dropCauHoiBiMat.SelectedValue);
+                        ius.iSAns = txtAnswer.Text;
 
                         db.iUsers.InsertOnSubmit(ius);
-                        //db.iSercurityQuestions.InsertOnSubmit(isq);
                         db.SubmitChanges();
 
                         string strScript = "<script>";
-                        strScript += "alert('Created New Account');";
+                        strScript += "alert('Chúc mừng bạn đã tạo Tài khoản thành công !');";
                         strScript += "window.location='Login.aspx';";
                         strScript += "</script>";
                         Page.RegisterClientScriptBlock("strScript", strScript);
-
-                        Response.Redirect("~/itestproject/iTest2012/LogIn.aspx");
-
                     }
                 }
                 else
                 {
                     Response.Write("<script>alert('Vui lòng điền đầy đủ thông tin. ')</script>");
-
                 }
             }
             else
@@ -96,17 +90,6 @@ namespace iTest2012
 
         }
 
-        protected void dropCauHoiBiMat_SelectedIndexChanged(object sender, EventArgs e)
-        {/*
-            MyiTestDataDataContext data = new MyiTestDataDataContext();
-            DropDownList dd = (DropDownList)sender;
-            if (dd.SelectedValue == "-1")
-                return;
-            int value = int.Parse(dd.SelectedValue);
-            var currentChapter = (from c in data.iSercurityQuestions
-                                  where c.iSQuestionID == value
-                                  select c).Single();
-            TextBox1.Text = currentChapter.iSQuestionContent;*/
-        }
     }
+
 }
