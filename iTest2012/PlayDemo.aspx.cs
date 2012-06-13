@@ -407,6 +407,12 @@ namespace iTest2012
                 listQuest = listQuest + gridLoadAns.Rows[39].Cells[1].Text + ";";
             }
 
+            listQuest ="";
+            for (int p = 0; p < 10; p++)
+            {
+                listQuest = listQuest + gridLoadAns.Rows[p*4].Cells[1].Text + ";";
+            }
+
             score = (float)Math.Round(score, 2);          
             
             DateTime date = DateTime.Now;
