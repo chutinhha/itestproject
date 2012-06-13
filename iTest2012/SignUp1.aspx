@@ -203,7 +203,7 @@
             </td>
             </tr>
             <tr align="left" style="padding: 0 15px;">
-                <td style="width: 200px; padding: 0 15px;">
+                <td style="width: 150px; padding: 0 15px;">
                     Tên đăng nhập<br />
                     <br />
                 </td>
@@ -219,21 +219,21 @@
                 </td>
             </tr>
             <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 200px; padding: 0 15px;">
+                <td style="width: 150px; padding: 0 15px;">
                     Mật khẩu<br />
                     <br />
                 </td>
                 <td>
                     <asp:TextBox ID="txtPass" runat="server" Width="200px" CssClass="boder_textbox" TextMode="Password" BackColor="White"></asp:TextBox>
-                    <span style="color: Red">&nbsp;*&nbsp;</span> <span style="color: Gray">Mật khẩu từ 6-20 ký tự, phân biệt Hoa, thường</span>
+                    <span style="color: Red">&nbsp;*&nbsp;</span> <span style="color: Gray">Mật khẩu từ 6-20 ký tự, phân biệt chữ Hoa, thường</span>
                     <br />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="6-20 char"
                         ControlToValidate="txtPass" ValidationExpression=".{6,20}" ForeColor="Red"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 200px; padding: 0 15px;">
-                    Nhập lại Mật khẩu<br />
+                <td style="width: 150px; padding: 0 15px;">
+                    Nhập lại mật khẩu<br />
                     <br />
                 </td>
                 <td>
@@ -245,7 +245,7 @@
                 </td>
             </tr>
             <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 200px; padding: 0 15px;">
+                <td style="width: 150px; padding: 0 15px;">
                     Email của bạn<br />
                     <br />
                 </td>
@@ -258,12 +258,12 @@
                 </td>
             </tr>
             <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 200px; padding: 0 15px;">
+                <td style="width: 150px; padding: 0 15px;">
                     Câu hỏi bí mật<br />
                     <br />
                 </td>
                 <td>
-                    <asp:DropDownList ID="dropCauHoiBiMat" runat="server" Width="205px">
+                    <asp:DropDownList ID="dropCauHoiBiMat" runat="server" Width="400px" CssClass="boder_textbox">
                         <asp:ListItem Value="-1">---- Chọn câu hỏi bí mật ----</asp:ListItem>
                         <asp:ListItem Value="1">Tên nhạc sĩ bạn yêu thích ?</asp:ListItem>
                     </asp:DropDownList>
@@ -272,13 +272,13 @@
                 </td>
             </tr>
             <tr align="left" style="padding: 0 15px;">
-                <td style="width: 200px; padding: 0 15px;">
+                <td style="width: 150px; padding: 0 15px;">
                     Câu trả lời<br />
                     <br />
                 </td>
             
                 <td>
-                    <asp:TextBox ID="txtAnswer" runat="server" CssClass="boder_textbox" Width="200px" BackColor="White"></asp:TextBox>
+                    <asp:TextBox ID="txtAnswer" runat="server" CssClass="boder_textbox" Width="400px" BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span>
                     <br />
                     <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
@@ -324,11 +324,9 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
-                    &nbsp;<asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" Style="text-align: center;
-                         color: #003300;" Text="Đăng ký"  />
+                    &nbsp;<asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" CssClass="btn_body" Text="Đăng ký"  />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnReEnter" runat="server" Style="text-align: center;
-                         color: #003300;" Text="Nhập lại" onclick="btnReEnter_Click" />
+                    <asp:Button ID="btnReEnter" runat="server" CssClass="btn_body" Text="Nhập lại" onclick="btnReEnter_Click" />
                     <br />
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/LogIn.aspx">Bạn đã có Tài khoản? Mời Đăng nhập</asp:HyperLink>
                     <br />

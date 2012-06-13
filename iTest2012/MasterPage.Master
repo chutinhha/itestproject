@@ -37,10 +37,11 @@
                             <asp:Label ID="lbUserName" runat="server" 
                                 style="color: white; font-weight: 700"></asp:Label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:HyperLink ID="trangCaNhan" style=" font-weight:700;" runat="server" 
-                                NavigateUrl="~/TrangCaNhan.aspx">Trang Cá Nhân</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%--Thanh 07/06.12--%>
-                            <asp:HyperLink ID="hplSignOut" style=" font-weight:700;" runat="server" 
-                                NavigateUrl="~/LogOut.aspx">Thoát</asp:HyperLink>&nbsp;
+                            <asp:HyperLink ID="trangCaNhan" 
+                                style=" font-weight:700; background-repeat:repeat-x;" runat="server" 
+                                NavigateUrl="~/TrangCaNhan.aspx" ForeColor="#FFFFCC">Trang Cá Nhân</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%--Thanh 07/06.12--%><asp:HyperLink 
+                                ID="hplSignOut" style=" font-weight:700;" runat="server" 
+                                NavigateUrl="~/LogOut.aspx" ForeColor="#FFFF99">Thoát</asp:HyperLink>&nbsp;
                             </div>
                     </asp:Panel> 
             </td>           
@@ -48,10 +49,10 @@
      </table>   
      </div>
      <div align="center">
-     <table class="border_alltable" style="height:200px">
+     <table class="border_alltable" style="height:200px; border-bottom-style:inherit; border-top-style:inherit">
         <tr>
             <td>
-                Đây là banner or slide ảnh</td>
+                Đây là banner or slide ảnh  Đây là banner or slide ảnh</td>
         </tr>
     </table>
     <table class="border_menuheadline">
