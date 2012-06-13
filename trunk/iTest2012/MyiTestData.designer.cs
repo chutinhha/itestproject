@@ -51,12 +51,12 @@ namespace iTest2012
     partial void InsertiTestLog(iTestLog instance);
     partial void UpdateiTestLog(iTestLog instance);
     partial void DeleteiTestLog(iTestLog instance);
-    partial void InsertiUser(iUser instance);
-    partial void UpdateiUser(iUser instance);
-    partial void DeleteiUser(iUser instance);
     partial void InsertiSecurityQuest(iSecurityQuest instance);
     partial void UpdateiSecurityQuest(iSecurityQuest instance);
     partial void DeleteiSecurityQuest(iSecurityQuest instance);
+    partial void InsertiUser(iUser instance);
+    partial void UpdateiUser(iUser instance);
+    partial void DeleteiUser(iUser instance);
     #endregion
 		
 		public MyiTestDataDataContext() : 
@@ -145,19 +145,19 @@ namespace iTest2012
 			}
 		}
 		
-		public System.Data.Linq.Table<iUser> iUsers
-		{
-			get
-			{
-				return this.GetTable<iUser>();
-			}
-		}
-		
 		public System.Data.Linq.Table<iSecurityQuest> iSecurityQuests
 		{
 			get
 			{
 				return this.GetTable<iSecurityQuest>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iUser> iUsers
+		{
+			get
+			{
+				return this.GetTable<iUser>();
 			}
 		}
 		
@@ -1804,6 +1804,120 @@ namespace iTest2012
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSecurityQuest")]
+	public partial class iSecurityQuest : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iSID;
+		
+		private string _iSQuest;
+		
+		private EntitySet<iUser> _iUsers;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniSIDChanging(int value);
+    partial void OniSIDChanged();
+    partial void OniSQuestChanging(string value);
+    partial void OniSQuestChanged();
+    #endregion
+		
+		public iSecurityQuest()
+		{
+			this._iUsers = new EntitySet<iUser>(new Action<iUser>(this.attach_iUsers), new Action<iUser>(this.detach_iUsers));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iSID
+		{
+			get
+			{
+				return this._iSID;
+			}
+			set
+			{
+				if ((this._iSID != value))
+				{
+					this.OniSIDChanging(value);
+					this.SendPropertyChanging();
+					this._iSID = value;
+					this.SendPropertyChanged("iSID");
+					this.OniSIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSQuest", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string iSQuest
+		{
+			get
+			{
+				return this._iSQuest;
+			}
+			set
+			{
+				if ((this._iSQuest != value))
+				{
+					this.OniSQuestChanging(value);
+					this.SendPropertyChanging();
+					this._iSQuest = value;
+					this.SendPropertyChanged("iSQuest");
+					this.OniSQuestChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSecurityQuest_iUser", Storage="_iUsers", ThisKey="iSID", OtherKey="iSID")]
+		public EntitySet<iUser> iUsers
+		{
+			get
+			{
+				return this._iUsers;
+			}
+			set
+			{
+				this._iUsers.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iUsers(iUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSecurityQuest = this;
+		}
+		
+		private void detach_iUsers(iUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSecurityQuest = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iUser")]
 	public partial class iUser : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1822,9 +1936,13 @@ namespace iTest2012
 		
 		private string _iSAns;
 		
+		private System.Nullable<System.DateTime> _iCreatedDate;
+		
 		private EntitySet<iUserPermission> _iUserPermissions;
 		
 		private EntitySet<iTestLog> _iTestLogs;
+		
+		private EntityRef<iSecurityQuest> _iSecurityQuest;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1842,12 +1960,15 @@ namespace iTest2012
     partial void OniSIDChanged();
     partial void OniSAnsChanging(string value);
     partial void OniSAnsChanged();
+    partial void OniCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OniCreatedDateChanged();
     #endregion
 		
 		public iUser()
 		{
 			this._iUserPermissions = new EntitySet<iUserPermission>(new Action<iUserPermission>(this.attach_iUserPermissions), new Action<iUserPermission>(this.detach_iUserPermissions));
 			this._iTestLogs = new EntitySet<iTestLog>(new Action<iTestLog>(this.attach_iTestLogs), new Action<iTestLog>(this.detach_iTestLogs));
+			this._iSecurityQuest = default(EntityRef<iSecurityQuest>);
 			OnCreated();
 		}
 		
@@ -1942,6 +2063,10 @@ namespace iTest2012
 			{
 				if ((this._iSID != value))
 				{
+					if (this._iSecurityQuest.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OniSIDChanging(value);
 					this.SendPropertyChanging();
 					this._iSID = value;
@@ -1971,6 +2096,26 @@ namespace iTest2012
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iCreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> iCreatedDate
+		{
+			get
+			{
+				return this._iCreatedDate;
+			}
+			set
+			{
+				if ((this._iCreatedDate != value))
+				{
+					this.OniCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._iCreatedDate = value;
+					this.SendPropertyChanged("iCreatedDate");
+					this.OniCreatedDateChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iUser_iUserPermission", Storage="_iUserPermissions", ThisKey="iUserID", OtherKey="iUserID")]
 		public EntitySet<iUserPermission> iUserPermissions
 		{
@@ -1994,6 +2139,40 @@ namespace iTest2012
 			set
 			{
 				this._iTestLogs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSecurityQuest_iUser", Storage="_iSecurityQuest", ThisKey="iSID", OtherKey="iSID", IsForeignKey=true)]
+		public iSecurityQuest iSecurityQuest
+		{
+			get
+			{
+				return this._iSecurityQuest.Entity;
+			}
+			set
+			{
+				iSecurityQuest previousValue = this._iSecurityQuest.Entity;
+				if (((previousValue != value) 
+							|| (this._iSecurityQuest.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._iSecurityQuest.Entity = null;
+						previousValue.iUsers.Remove(this);
+					}
+					this._iSecurityQuest.Entity = value;
+					if ((value != null))
+					{
+						value.iUsers.Add(this);
+						this._iSID = value.iSID;
+					}
+					else
+					{
+						this._iSID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("iSecurityQuest");
+				}
 			}
 		}
 		
@@ -2039,92 +2218,6 @@ namespace iTest2012
 		{
 			this.SendPropertyChanging();
 			entity.iUser = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSecurityQuest")]
-	public partial class iSecurityQuest : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iSID;
-		
-		private string _iSQuest;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniSIDChanging(int value);
-    partial void OniSIDChanged();
-    partial void OniSQuestChanging(string value);
-    partial void OniSQuestChanged();
-    #endregion
-		
-		public iSecurityQuest()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iSID
-		{
-			get
-			{
-				return this._iSID;
-			}
-			set
-			{
-				if ((this._iSID != value))
-				{
-					this.OniSIDChanging(value);
-					this.SendPropertyChanging();
-					this._iSID = value;
-					this.SendPropertyChanged("iSID");
-					this.OniSIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSQuest", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string iSQuest
-		{
-			get
-			{
-				return this._iSQuest;
-			}
-			set
-			{
-				if ((this._iSQuest != value))
-				{
-					this.OniSQuestChanging(value);
-					this.SendPropertyChanging();
-					this._iSQuest = value;
-					this.SendPropertyChanged("iSQuest");
-					this.OniSQuestChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
