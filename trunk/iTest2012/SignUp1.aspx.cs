@@ -65,8 +65,9 @@ namespace iTest2012
                         ius.iUserName = txtUsername.Text.ToString();
                         ius.iPass = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPass.Text.Trim(), "MD5");
                         ius.iEmailUser = txtEmail.Text.ToString();
-                        ius.iSID = db.st_GetSID(dropCauHoiBiMat.SelectedValue);
+                        ius.iSID = db.st_GetSID(dropCauHoiBiMat.SelectedItem.Text);
                         ius.iSAns = txtAnswer.Text;
+                        ius.iCreatedDate = DateTime.Now;
 
                         db.iUsers.InsertOnSubmit(ius);
                         db.SubmitChanges();

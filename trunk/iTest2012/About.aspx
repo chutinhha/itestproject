@@ -11,7 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <p style="text-align: center; background-color: #FFFFFF;">
+    <p style="text-align: center; width:800px; background-color: #FFFFFF;">
         <br />
         <strong><span class="style1">Design by the student of Ho Chi Minh University of 
         Industry</span></strong></p>
