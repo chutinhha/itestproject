@@ -25,7 +25,8 @@ namespace iTest2012
             {
                 if (txtUsername.Text.Length > 0 && txtUsername.Text.Length < 12
                     && txtPass.Text.Length > 0 && txtPass.Text.Length < 20
-                    && txtReEnterPass.Text.Length > 0 && txtEmail.Text.Length > 0 && txtAnswer.Text.Length > 0)
+                    && txtReEnterPass.Text.Length > 0 && txtEmail.Text.Length > 0 && txtAnswer.Text.Length > 0
+                    && dropCauHoiBiMat.SelectedValue != "-1")
                 {
                     int user = db.st_CheckAvailableUser(txtUsername.Text.Trim());
                     int email = db.st_CheckAvailableEmail(txtEmail.Text.Trim());
@@ -58,7 +59,7 @@ namespace iTest2012
 
                         labRePass.Text = "Mật khẩu nhập lần 2 không trùng, vui lòng nhập lại.";
                         txtReEnterPass.Text = string.Empty;
-                    }
+                    }                    
                     else
                     {
 
@@ -89,6 +90,17 @@ namespace iTest2012
                 Response.Write("<script>alert('Bạn phải đánh dấu vào ô để chấp nhận các điều khoản của e-iTest')</script>");
             }
 
+        }
+
+        protected void btnReEnter_Click(object sender, EventArgs e)
+        {
+            txtAnswer.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtPass.Text = string.Empty;
+            txtReEnterPass.Text = string.Empty;
+            txtUsername.Text = string.Empty;
+            dropCauHoiBiMat.SelectedValue = "-1";
+            txtUsername.Focus();
         }
 
     }
