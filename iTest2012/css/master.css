@@ -211,6 +211,31 @@
             border-color: #999999;
             border-style:solid;            
         }
+        .border_headtittle
+        {
+            font-weight: bold;
+            color:#3E3E3E;
+            background:#E9E9E9 none repeat-x;
+            padding: 4px 10px 4px 10px; margin:0px;
+            border-top: 1px solid #CECECE;
+         }
+         .div_formular
+         {
+            background-color:white;
+            height: 75px;
+            overflow: auto;
+            padding: 10px;
+            border: solid 1px #003300;
+         }
+         .boder_textbox
+         {
+             height:25px;
+             border: thin solid #003000;
+             /*bo tron 4 goc*/
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px; 
+            padding: 0px; margin: 0px; 
+         }
             
             
           
