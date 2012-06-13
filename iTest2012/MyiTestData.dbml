@@ -16,17 +16,6 @@
       <Association Name="iFunction_iUserPermission" Member="iUserPermissions" ThisKey="iFuncID" OtherKey="iFuncID" Type="iUserPermission" />
     </Type>
   </Table>
-  <Table Name="dbo.iUser" Member="iUsers">
-    <Type Name="iUser">
-      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
-      <Association Name="iUser_iSecurityQuest" Member="iSecurityQuests" ThisKey="iUserID" OtherKey="iSUserID" Type="iSecurityQuest" />
-      <Association Name="iUser_iTestLog" Member="iTestLogs" ThisKey="iUserID" OtherKey="iUserID" Type="iTestLog" />
-    </Type>
-  </Table>
   <Table Name="dbo.iSubject" Member="iSubjects">
     <Type Name="iSubject">
       <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -64,15 +53,6 @@
       <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.iSecurityQuest" Member="iSecurityQuests">
-    <Type Name="iSecurityQuest">
-      <Column Name="iSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iSQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="iSAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="iSUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="iUser_iSecurityQuest" Member="iUser" ThisKey="iSUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.iTestLog" Member="iTestLogs">
     <Type Name="iTestLog">
       <Column Name="iTestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -84,6 +64,24 @@
       <Column Name="iDateTest" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="iTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="iUser_iTestLog" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iUser" Member="iUsers">
+    <Type Name="iUser">
+      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="iSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iSAns" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
+      <Association Name="iUser_iTestLog" Member="iTestLogs" ThisKey="iUserID" OtherKey="iUserID" Type="iTestLog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iSecurityQuest" Member="iSecurityQuests">
+    <Type Name="iSecurityQuest">
+      <Column Name="iSID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iSQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">
@@ -381,5 +379,9 @@
       <Column Name="Body" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.st_GetSID" Method="st_GetSID">
+    <Parameter Name="quest" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

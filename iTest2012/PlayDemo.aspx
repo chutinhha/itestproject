@@ -32,91 +32,91 @@
                     <br />
                     <asp:Image ID="img10Test1" runat="server" />
                     <asp:RadioButtonList ID="rd10Test1" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test2" runat="server" />
                     <asp:RadioButtonList ID="rd10Test2" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test3" runat="server" />
                     <asp:RadioButtonList ID="rd10Test3" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test4" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test4" runat="server" />
                     <asp:RadioButtonList ID="rd10Test4" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test5" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test5" runat="server" />
                     <asp:RadioButtonList ID="rd10Test5" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test6" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test6" runat="server" />
                     <asp:RadioButtonList ID="rd10Test6" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test7" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test7" runat="server" />
                     <asp:RadioButtonList ID="rd10Test7" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test8" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test8" runat="server" />
                     <asp:RadioButtonList ID="rd10Test8" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test9" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test9" runat="server" />
                     <asp:RadioButtonList ID="rd10Test9" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <asp:Label ID="lb10Test10" runat="server" Text=""></asp:Label>
                     <br />
                     <asp:Image ID="img10Test10" runat="server" />
                     <asp:RadioButtonList ID="rd10Test10" runat="server">
-                        <asp:ListItem Value="A"></asp:ListItem>
-                        <asp:ListItem Value="B"></asp:ListItem>
-                        <asp:ListItem Value="C"></asp:ListItem>
-                        <asp:ListItem Value="D"></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
+                        <asp:ListItem ></asp:ListItem>
                     </asp:RadioButtonList>
                     <br />                 
                 </td>
