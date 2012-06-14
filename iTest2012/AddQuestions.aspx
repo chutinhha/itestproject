@@ -2,9 +2,9 @@
     CodeBehind="AddQuestions.aspx.cs" Inherits="iTest2012.AddQuestions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta http-equiv="Content-Type" id="meta" runat="server" content="text/html; charset=utf-8" />
-    <%--<script src="ckeditor/ckeditor.js" type="text/javascript"></script>--%>
-    <script src="~/ckeditor/ckeditor.js" type="text/javascript"></script>    
+    <meta http-equiv="Content-Type" id="meta" content="text/html; charset=utf-8" />
+    <script src="ckeditor/ckeditor_source.js" type="text/javascript"></script>
+   
     <script type="text/javascript">        // tao script chi cho nhap so
         function valid(o, w) {
             o.value = o.value.replace(valid.r[w], '');
@@ -29,11 +29,11 @@
             </tr>
         </table>
         <table class="border_alltable">
-            <tr >
-                <td >
+            <tr>
+                <td>
                     Môn học
                 </td>
-                <td >
+                <td>
                     <asp:DropDownList ID="ddlSubName" runat="server" BackColor="White" Style="margin-left: 0px"
                         Width="350px" DataSourceID="LinqDataSource1" DataTextField="iSubjectName" DataValueField="iSubjectName"
                         AppendDataBoundItems="True" OnSelectedIndexChanged="ddlSubName_SelectedIndexChanged"
@@ -47,14 +47,14 @@
                 </td>
             </tr>
             <tr>
-                <td >
+                <td>
                     Mức độ câu hỏi
                 </td>
                 <td c>
                     <asp:DropDownList ID="ddlLevel" runat="server" BackColor="White" Style="margin-left: 0px"
                         Width="350px">
                         <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
-                        <asp:ListItem Value="1">Dễ</asp:ListItem>                       
+                        <asp:ListItem Value="1">Dễ</asp:ListItem>
                         <asp:ListItem Value="2">Bình thường</asp:ListItem>
                         <asp:ListItem Value="3">Khó</asp:ListItem>
                         <asp:ListItem Value="4">Thông minh</asp:ListItem>
@@ -62,10 +62,10 @@
                 </td>
             </tr>
             <tr>
-                <td >
+                <td>
                     Chọn chương
                 </td>
-                <td >
+                <td>
                     <asp:DropDownList ID="ddlChapNum" runat="server" AppendDataBoundItems="True" Width="350px"
                         OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem Value="-1">---- Chọn Chương ---- </asp:ListItem>
@@ -73,18 +73,18 @@
                 </td>
             </tr>
             <tr>
-                <td >
+                <td>
                     Tên chương
                 </td>
-                <td >
+                <td>
                     <asp:TextBox ID="TextBox1" runat="server" Enabled="False" Width="350px" ForeColor="Blue"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td >
+                <td>
                     &nbsp;
                 </td>
-                <td >
+                <td>
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AddNewChap.aspx">Thêm Chương mới ? Nhấn vào đây</asp:HyperLink>
                 </td>
             </tr>
@@ -92,7 +92,13 @@
                 <td>
                     Nội dung : 
                 </td>
+<<<<<<< .mine
+                <td>
+                    <textarea name="txt_noidung" id="txtnoidung" runat="server" rows="10" cols="40"></textarea>
+                </td>
+=======
                 <td><textarea name="txtnoidung" id="txtnoidung" runat="server" rows="10" cols="50" style="width:350px; height:200px;"></textarea></td>
+>>>>>>> .r44
             </tr>
             <script type="text/javascript" language="javascript">
 
@@ -100,18 +106,27 @@
  
             </script>
             <tr>
-                <td >
-                   Chèn hình ảnh</td>
-                <td >
+                <td>
+                    Chèn hình ảnh
+                </td>
+                <td>
                     <asp:FileUpload ID="FileUploadQuest" runat="server" Width="245px" />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FileUploadQuest"
                         ErrorMessage="Incorrect Image !" ValidationExpression="^([0-9a-zA-Z_\-~ :\\])+(.jpg|.JPG|.jpeg|.JPEG|.bmp|.BMP|.gif|.GIF|.png|.PNG)$"
                         ForeColor="Red"></asp:RegularExpressionValidator>
                     <br />
-                    *<span style="color:'#999999';">Chỉ cho phép chèn 01 hình ảnh vào câu hỏi</span><br />
+                    <span style="color: Gray">* Chỉ cho phép chèn 01 hình ảnh vào câu hỏi</span><br />
                 </td>
-            </tr>            
+            </tr>
             <tr>
+<<<<<<< .mine
+                <td>
+                    &nbsp; Đáp án
+                </td>
+                <td>
+                    <strong>Câu A</strong><br />
+                    <asp:TextBox ID="txtAns5" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+=======
                 <td >
                     &nbsp;
                     Đáp án</td>
@@ -144,17 +159,42 @@
                         &nbsp;<br />
                         <br />
                     
+>>>>>>> .r44
+                    <br />
+                    <asp:RadioButton ID="rbA" runat="server" GroupName="radioans" />
+                    &nbsp;Đây là câu trả lời đúng.<br />
+                    <strong>Câu B</strong><br />
+                    <asp:TextBox ID="txtAns6" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                    <br />
+                    <asp:RadioButton ID="rbB" runat="server" GroupName="radioans" />
+                    &nbsp;Đây là câu trả lời đúng.<br />
+                    <strong>Câu C</strong><br />
+                    <asp:TextBox ID="txtAns7" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                    <br />
+                    <asp:RadioButton ID="rbC" runat="server" GroupName="radioans" />
+                    &nbsp;Đây là câu trả lời đúng.<br />
+                    <strong>Câu D</strong><br />
+                    <asp:TextBox ID="txtAns8" runat="server" BackColor="White" TextMode="MultiLine" Width="330px"></asp:TextBox>
+                    <br />
+                    <asp:RadioButton ID="rbD" runat="server" GroupName="radioans" />
+                    &nbsp;Đây là câu trả lời đúng.<br />
+                    <br />
                     <br />
                 </td>
             </tr>
-            <tr >
+            <tr>
                 <td colspan="2" style="text-align: center;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnAddQuest" runat="server" CssClass="btn_body" style="width:100px; height:25px" Text="Thêm" 
+<%--<<<<<<< .mine--%>
+                    <asp:Button ID="btnAddQuest" runat="server" CssClass="btn_master" Text="Thêm" OnClick="btnAddQuest_Click" />
+                    <asp:Button ID="btnEnterAgain" runat="server" CssClass="btn_master" Text="Nhập lại" />
+<%--=======--%>
+                  <%--  <asp:Button ID="btnAddQuest" runat="server" CssClass="btn_body" style="width:100px; height:25px" Text="Thêm" 
                         OnClick="btnAddQuest_Click" />
                     
                     <asp:Button ID="btnEnterAgain" runat="server" CssClass="btn_body" style="width:100px; height:25px" Text="Nhập lại" 
-                        OnClick="btnEnterAgain_Click" />
+>>>>>>> .r32
+                        OnClick="btnEnterAgain_Click" />--%>
                     <br />
                     <br />
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Default.aspx">Quay về Trang chủ</asp:HyperLink>
