@@ -60,16 +60,16 @@ namespace iTest2012
                     {
                         panel10Test.Visible = true; panel40Test.Visible = false; panel60Test.Visible = false;
                         //load noi dung cau hoi
-                        lb10Test1.Text = "<b>Câu 1 :</b> " + gridRandom.Rows[0].Cells[1].Text;
-                        lb10Test2.Text = "<b>Câu 2 :</b> " + gridRandom.Rows[1].Cells[1].Text;
-                        lb10Test3.Text = "<b>Câu 3 :</b> " + gridRandom.Rows[2].Cells[1].Text;
-                        lb10Test4.Text = "<b>Câu 4 :</b> " + gridRandom.Rows[3].Cells[1].Text;
-                        lb10Test5.Text = "<b>Câu 5 :</b> " + gridRandom.Rows[4].Cells[1].Text;
-                        lb10Test6.Text = "<b>Câu 6 :</b> " + gridRandom.Rows[5].Cells[1].Text;
-                        lb10Test7.Text = "<b>Câu 7 :</b> " + gridRandom.Rows[6].Cells[1].Text;
-                        lb10Test8.Text = "<b>Câu 8 :</b> " + gridRandom.Rows[7].Cells[1].Text;
-                        lb10Test9.Text = "<b>Câu 9 :</b> " + gridRandom.Rows[8].Cells[1].Text;
-                        lb10Test10.Text = "<b>Câu 10 :</b> " + gridRandom.Rows[9].Cells[1].Text;
+                        lb10Test1.Text =gridRandom.Rows[0].Cells[1].Text;
+                        lb10Test2.Text =gridRandom.Rows[1].Cells[1].Text;
+                        lb10Test3.Text =gridRandom.Rows[2].Cells[1].Text;
+                        lb10Test4.Text =gridRandom.Rows[3].Cells[1].Text;
+                        lb10Test5.Text =gridRandom.Rows[4].Cells[1].Text;
+                        lb10Test6.Text =gridRandom.Rows[5].Cells[1].Text;
+                        lb10Test7.Text =gridRandom.Rows[6].Cells[1].Text;
+                        lb10Test8.Text =gridRandom.Rows[7].Cells[1].Text;
+                        lb10Test9.Text =gridRandom.Rows[8].Cells[1].Text;
+                        lb10Test10.Text =gridRandom.Rows[9].Cells[1].Text;
 
                         //load hinh anh neu co
                         if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))

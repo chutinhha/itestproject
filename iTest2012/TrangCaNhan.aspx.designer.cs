@@ -13,15 +13,6 @@ namespace iTest2012 {
     public partial class TrangCaNhan {
         
         /// <summary>
-        /// Image_AddUser_Icon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image_AddUser_Icon;
-        
-        /// <summary>
         /// lblUserName control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Label lblSumMark;
         
         /// <summary>
+        /// lblAvgMark control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAvgMark;
+        
+        /// <summary>
         /// lblSumBuonus control.
         /// </summary>
         /// <remarks>
@@ -83,6 +83,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSumBuonus;
+        
+        /// <summary>
+        /// lbXepHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbXepHang;
         
         /// <summary>
         /// HyperLink1 control.

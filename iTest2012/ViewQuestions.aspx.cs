@@ -27,7 +27,11 @@ namespace iTest2012
                 }
                 return;
             }
-            panelView.Visible = false;
+            if (GridQuestion.Rows.Count <= 0)
+            {
+                panelView.Visible = false;
+            }
+            
         }
 
         protected void ddlChooseSub_SelectedIndexChanged(object sender, EventArgs e)
@@ -215,6 +219,7 @@ namespace iTest2012
 
             GridQuestion.DataSource = data.st_ViewQuestOfAllSub();
             GridQuestion.DataBind();
+            panelView.Visible = true;
 
         }
     }

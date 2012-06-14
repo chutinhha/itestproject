@@ -16,22 +16,22 @@
             </tr>
         </table>
         <table class="border_alltable" style=" width: 800px">
-            <tr>
+            <tr align="left">
                 <td colspan="2" class="border_headtittle" >
                 Thông tin cần thiết
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px;">
-            <td colspan="2" align="left" style="padding: 0 15px;">
+            <tr align="left" >
+            <td colspan="2" class="td_style_Nowid">
             <span style="color: Red">*&nbsp;</span> <span style="color:#999999; font-size:smaller">Là những thông tin bắt buộc phải điền đầy đủ.</span>
             </td>
             </tr>
-            <tr align="left" style="padding: 0 15px;">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left" >
+                <td class="td_style_wid">
                     Tên đăng nhập<br />
                     <br />
                 </td>
-                <td>
+                <td class="td_style_Nowid">
                     <asp:TextBox ID="txtUsername" runat="server" CssClass="boder_textbox" Width="200px" BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span> <span style="color: Gray">Tên đăng nhập
                         từ 6-12 ký tự.</span>
@@ -42,12 +42,12 @@
                     <asp:Label ID="labUser" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left" >
+                <td class="td_style_wid">
                     Mật khẩu<br />
                     <br />
                 </td>
-                <td>
+                <td class="td_style_Nowid">
                     <asp:TextBox ID="txtPass" runat="server" Width="200px" CssClass="boder_textbox" TextMode="Password" BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span> <span style="color: Gray">Mật khẩu từ 6-20 ký tự, phân biệt chữ Hoa, thường</span>
                     <br />
@@ -55,12 +55,12 @@
                         ControlToValidate="txtPass" ValidationExpression=".{6,20}" ForeColor="Red"></asp:RegularExpressionValidator>
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left" >
+                <td class="td_style_wid">
                     Nhập lại mật khẩu<br />
                     <br />
                 </td>
-                <td>
+                <td class="td_style_Nowid">
                     <asp:TextBox ID="txtReEnterPass" runat="server" CssClass="boder_textbox" Width="200px" TextMode="Password"
                         BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span>
@@ -68,12 +68,12 @@
                     <br />
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left">
+                <td class="td_style_wid">
                     Email của bạn<br />
                     <br />
                 </td>
-                <td>
+                <td class="td_style_Nowid">
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="boder_textbox" Width="200px" BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span> <span style="color: Gray">Nhập E-mail của
                         bạn.</span>
@@ -81,12 +81,12 @@
                     <asp:Label ID="labEmail" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px; ">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left">
+                <td class="td_style_wid">
                     Câu hỏi bí mật<br />
                     <br />
                 </td>
-                <td>
+                <td class="td_style_Nowid">
                     <asp:DropDownList ID="dropCauHoiBiMat" runat="server" Width="400px" CssClass="boder_textbox">
                         <asp:ListItem Value="-1">---- Chọn câu hỏi bí mật ----</asp:ListItem>
                         <asp:ListItem Value="1">Tên nhạc sĩ bạn yêu thích ?</asp:ListItem>
@@ -95,26 +95,26 @@
                     <asp:Label ID="lbdrop" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>
-            <tr align="left" style="padding: 0 15px;">
-                <td style="width: 150px; padding: 0 15px;">
+            <tr align="left" >
+                <td class="td_style_wid">
                     Câu trả lời<br />
                     <br />
                 </td>
             
-                <td>
+                <td class="td_style_Nowid">
                     <asp:TextBox ID="txtAnswer" runat="server" CssClass="boder_textbox" Width="400px" BackColor="White"></asp:TextBox>
                     <span style="color: Red">&nbsp;*&nbsp;</span>
                     <br />
                     <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                 </td>
             </tr>            
-            <tr>
+            <tr align="left">
                 <td colspan="2" class="border_headtittle" >
                 Điều khoản sử dụng
                 </td>
             </tr>
             <tr align="left">
-                <td colspan="2" style="padding: 0 15px; margin:0px">                   
+                <td colspan="2" class="td_style_Nowid">                   
                     <%--<asp:Panel runat="server" BackColor="#F3F3F3" BorderStyle="Solid" 
                         BorderWidth="1px">
                      ákhgls<br />ákhgls<br />ákhgls<br />ákhgls<br />ákhgls<br />ákhgls<br />ákhgls<br />
@@ -142,19 +142,22 @@
                 </td>
             </tr>
             <tr align="left">                
-                <td colspan="2">
+                <td colspan="2" >
                     <asp:CheckBox ID="chk_DongY" runat="server" Text="Tôi đã đọc và đồng ý với các điều khoản của iTest" />
                 </td>
             </tr>
-            <tr>
-                <td colspan="2" style="text-align: center">
-                    &nbsp;<asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" CssClass="btn_body" Text="Đăng ký"  />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <tr class="border_headtittle">
+                <td colspan="2" align="right" class="td_style_Nowid" >
+                    <asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" CssClass="btn_body" Text="Đăng ký"  />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnReEnter" runat="server" CssClass="btn_body" Text="Nhập lại" onclick="btnReEnter_Click" />
-                    <br />
+                 </td>
+            </tr>
+            <tr>
+            <td colspan="2" align="right" class="td_style_Nowid">   
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/LogIn.aspx">Bạn đã có Tài khoản? Mời Đăng nhập</asp:HyperLink>
-                    <br />
-                </td>
+                    
+            </td>
             </tr>
         </table>
     </div>

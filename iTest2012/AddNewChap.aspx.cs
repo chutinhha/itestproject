@@ -15,6 +15,7 @@ namespace iTest2012
         }
         protected void btnAgain_Click(object sender, EventArgs e)
         {
+            
             txtIndex.Text = string.Empty;
             txtName.Text = string.Empty;
             txtIndex.Focus();

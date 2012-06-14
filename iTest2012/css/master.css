@@ -219,6 +219,7 @@
             background:#E9E9E9 none repeat-x;
             padding: 4px 10px 4px 10px; margin:0px;
             border-top: 1px solid #CECECE;
+            text-align:left;
          }
          .div_formular
          {
@@ -237,6 +238,18 @@
             -webkit-border-radius: 3px; 
             padding: 0px; margin: 0px; 
          }
+         .td_style_wid
+         {
+             padding: 0 15px; margin:0px; 
+             width:200px;
+         }
+         .td_style_Nowid
+         {
+             padding: 0 15px; margin:0px; 
+             
+         }
+         
+        
             
             
           

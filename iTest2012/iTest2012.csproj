@@ -639,10 +639,6 @@
     <Content Include="css\taoxanh01.css" />
     <Content Include="css\taoxanh02.css" />
     <Content Include="Default.aspx" />
-    <Content Include="DeleteSubject.aspx" />
-    <Content Include="DeleteUser.aspx" />
-    <Content Include="demo.aspx" />
-    <Content Include="EditSubject.aspx" />
     <Content Include="FinalScore.aspx" />
     <Content Include="Global.asax" />
     <Content Include="image\background\back69.jpg" />
@@ -839,34 +835,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteSubject.aspx.cs">
-      <DependentUpon>DeleteSubject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteSubject.aspx.designer.cs">
-      <DependentUpon>DeleteSubject.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteUser.aspx.cs">
-      <DependentUpon>DeleteUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteUser.aspx.designer.cs">
-      <DependentUpon>DeleteUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="demo.aspx.cs">
-      <DependentUpon>demo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="demo.aspx.designer.cs">
-      <DependentUpon>demo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditSubject.aspx.cs">
-      <DependentUpon>EditSubject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditSubject.aspx.designer.cs">
-      <DependentUpon>EditSubject.aspx</DependentUpon>
     </Compile>
     <Compile Include="FinalScore.aspx.cs">
       <DependentUpon>FinalScore.aspx</DependentUpon>
