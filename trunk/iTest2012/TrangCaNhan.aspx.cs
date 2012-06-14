@@ -20,10 +20,17 @@ namespace iTest2012
 
                 lblUserName.Text = gdv_User.Rows[0].Cells[1].Text;
                 lblCreatedDate.Text = gdv_User.Rows[0].Cells[6].Text;
-                lblEmail.Text = gdv_User.Rows[0].Cells[3].Text;
-                lblSumTest.Text = db.st_GetSumTest(Convert.ToInt32(Session["idlogin"])).ToString();
+                lblEmail.Text = gdv_User.Rows[0].Cells[3].Text;                
                 lblSumBuonus.Text = db.st_GetBonus(Convert.ToInt32(Session["idlogin"])).ToString();
-                lblSumMark.Text = db.st_GetMark(Convert.ToInt32(Session["idlogin"])).ToString();
+                
+                float sumtest = (float)db.st_GetSumTest(Convert.ToInt32(Session["idlogin"]));
+                float summark = (float)db.st_GetMark(Convert.ToInt32(Session["idlogin"]));
+
+                lblSumMark.Text = summark.ToString();
+                lblSumTest.Text = sumtest.ToString();
+
+                double avg = Math.Round((double)(summark/sumtest),2);
+                lblAvgMark.Text = avg.ToString();
             }
         }
     }

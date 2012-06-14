@@ -13,14 +13,14 @@
                         </td>
                     </tr>
                 </table>
-                <table class="border_alltable">                
-                    <tr>                    
-                        <td >
+                <table  class="border_alltable">                
+                    <tr align="left" >                    
+                        <td class="td_style_wid">
                             Chọn Môn/Lĩnh vực :
                         </td>
-                        <td >
+                        <td class="td_style_Nowid">
                             <asp:DropDownList ID="ddlSubject" runat="server" DataSourceID="LinqDataSource1" DataTextField="iSubjectName"
-                                DataValueField="iSubjectName" Width="200px"  AppendDataBoundItems="True">
+                                DataValueField="iSubjectName" Width="200px" CssClass="boder_textbox"  AppendDataBoundItems="True">
                                 <asp:ListItem Selected="True" Value="-1">Tất cả</asp:ListItem>
                             </asp:DropDownList>
                             <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="iTest2012.MyiTestDataDataContext"
@@ -29,13 +29,13 @@
                             </asp:LinqDataSource>
                         </td>
                     </tr> 
-                    <tr>
-                        <td>
+                    <tr align="left">
+                        <td class="td_style_wid">
                             Chọn mức độ khó :
                         </td>
-                        <td>
+                        <td class="td_style_Nowid">
                             
-                            <asp:DropDownList ID="ddlLevel" runat="server" Height="22px" Width="199px">
+                            <asp:DropDownList ID="ddlLevel" runat="server" Width="200px" CssClass="boder_textbox" >
                                 <asp:ListItem Value="-1" Selected="True">Ngẫu nhiên</asp:ListItem>
                                 <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
                                 <asp:ListItem Value="1">Dễ</asp:ListItem>
@@ -46,29 +46,32 @@
                             
                         </td>
                     </tr>                   
-                    <tr>
-                        <td >
+                    <tr align="left">
+                        <td class="td_style_wid" >
                             Số câu hỏi :
                         </td>
-                        <td >
-                            <asp:DropDownList ID="ddlNumberofQuests" runat="server" Width="200px" AppendDataBoundItems="True">
+                        <td class="td_style_Nowid">
+                            <asp:DropDownList ID="ddlNumberofQuests" Width="50px" runat="server" CssClass="boder_textbox"  AppendDataBoundItems="True">
                                 <asp:ListItem Selected="True">10</asp:ListItem>
                                 <asp:ListItem>40</asp:ListItem>
                                 <asp:ListItem>60</asp:ListItem>
                             </asp:DropDownList>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center">
-                            <br />
-                            &nbsp;<asp:Button ID="btnLetsGo" runat="server" Style="font-weight: 700; color: #003300;
-                                text-align: center;" Text="Bắt đầu !" OnClick="btnLetsGo_Click" Height="26px"
+                    <tr align="right" >
+                        <td colspan="2" class="border_headtittle" style="padding:0 15px; margin:0px; text-align:right;" >
+                            <asp:Button ID="btnLetsGo" runat="server" CssClass="btn_body" Text="Bắt đầu !" OnClick="btnLetsGo_Click" Height="26px"
                                 Width="85px" />
-                            <br />
+                         </td>
+                    </tr>
+                    <tr align="right">
+                         <td colspan="2" class="td_style_Nowid">                            
                             <asp:Label ID="lbError" runat="server" Style="color: #FF0000"></asp:Label>
                         </td>
                     </tr>
                 </table>
+                <p> </p>
+                <p> </p>
               
     </div>
     <br />

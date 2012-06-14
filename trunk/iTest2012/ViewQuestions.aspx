@@ -12,27 +12,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div align="center">    
-        <br />
-        <br />
+        
         <asp:Image ID="Image_View_Icon" runat="server" 
             ImageUrl="~/image/icon/search-icon.jpg" />
         <br />
         <br />
         <table class="border_tableheadline">
-            <tr>
-                <td>
+            <tr align="left">
+                <td class="td_style_wid">
                     Danh Sách Câu Hỏi
                 </td>
             </tr>
         </table>
         <table class="border_alltable">
-            <tr>
-                <td class="style5">
+            <tr align="left">
+                <td  class="td_style_wid">
                     Chọn Môn/Lĩnh vực :</td>
-                <td class="style7">
+                <td  class="td_style_Nowid">
                     <asp:DropDownList ID="ddlChooseSub" runat="server" DataSourceID="LinqDataSub" 
-                        DataTextField="iSubjectName" DataValueField="iSubjectName" Width="400px" 
-                        AppendDataBoundItems="True" AutoPostBack="True" 
+                        DataTextField="iSubjectName" DataValueField="iSubjectName" Width="300px" 
+                        AppendDataBoundItems="True" AutoPostBack="True"  CssClass="boder_textbox"
                         onselectedindexchanged="ddlChooseSub_SelectedIndexChanged">
                         <asp:ListItem Value="-1">---- Choose a subject ----</asp:ListItem>
                     </asp:DropDownList>
@@ -43,11 +42,11 @@
                     </asp:LinqDataSource>
                 </td>
             </tr>
-            <tr>
-                <td >
+            <tr  align="left">
+                <td  class="td_style_wid">
                     Chọn mức độ :</td>
-                <td class="style7">
-                    <asp:DropDownList ID="ddlLevel" runat="server" Width="400px" 
+                <td  class="td_style_Nowid">
+                    <asp:DropDownList ID="ddlLevel" runat="server" Width="300px" CssClass="boder_textbox" 
                         AutoPostBack="True">
                         <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
                         <asp:ListItem Value="1">Dễ</asp:ListItem>
@@ -57,39 +56,39 @@
                     </asp:DropDownList>
                 </td>
             </tr>
-            <tr>
-                <td >
+            <tr align="left">
+                <td  class="td_style_wid">
                     Chọn chương :</td>
-                <td >
+                <td  class="td_style_Nowid" >
                     <asp:DropDownList ID="ddlChapIndex" runat="server" AppendDataBoundItems="True" 
-                        AutoPostBack="True" onselectedindexchanged="ddlChapIndex_SelectedIndexChanged" 
-                        Width="400px">
+                        AutoPostBack="True" CssClass="boder_textbox" onselectedindexchanged="ddlChapIndex_SelectedIndexChanged" 
+                        Width="300px">
                         <asp:ListItem Value="-1">-- Chọn chương --</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     </td>
             </tr>
-            <tr>
-                <td >
-                    &nbsp;</td>
-                <td >
+            <tr align="left">
+                <td  class="td_style_wid">
+                    </td>
+                <td  class="td_style_Nowid">
                     <asp:TextBox ID="TextBox1" runat="server" Enabled="False" ForeColor="Blue" 
-                        Width="400px"></asp:TextBox>
+                      BorderWidth="0px"   Width="300px"></asp:TextBox>
                 </td>
             </tr>
-            <tr>
-                <td colspan="2" align="center">
+            <tr align="right">
+                <td colspan="2" style="text-align:right"  class="border_headtittle">
                     <asp:Button ID="btnView" runat="server"  CssClass="btn_body" 
-                        onclick="btnView_Click" style="font-weight: 700; " 
-                        Text="Xem" Width="100px" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnViewAll" runat="server"  CssClass="btn_body" onclick="btnViewAll_Click" style="font-weight: 700" 
-                        Text="Xem tất cả" Width="100px" />
+                        onclick="btnView_Click" 
+                        Text="Xem"  />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnViewAll" runat="server"  CssClass="btn_body" onclick="btnViewAll_Click" 
+                        Text="Xem tất cả"  />
                 </td>
             </tr>
             </table>
-    <div>
-        <asp:Panel ID="panelView" runat="server">
+    <div align="center">
+        
             <table align="center" style="width: 550px;">
                 <tr>
                     <td class="style2" colspan="2">
@@ -128,15 +127,18 @@
                         </asp:GridView>                        
                     </td>
                 </tr>
+                </table>
+                <asp:Panel ID="panelView" runat="server">
+                <table>
                 <tr>
-                    <td class="style1" style="width: 275px; text-align: center;">
+                    <td style="width: 275px; text-align: center;">
                         <asp:Button ID="btnUpdate" runat="server" CssClass="btn_body"
-                        Text="Cập nhật" Width="100px" style="text-align: center" />
+                        Text="Cập nhật"   />
                     </td>
-                    <td class="style1" style="width: 275px; text-align: center;">
+                    <td  style="width: 275px; text-align: center;">
                         <asp:Button ID="btnDelete" runat="server" CssClass="btn_body" 
-                        onclick="btnDelete_Click" style="font-weight: 700" Text="Xoá" 
-                        Width="100px" />
+                        onclick="btnDelete_Click"  Text="Xoá" 
+                         />
                         <br />
                     </td>
                 </tr>                
@@ -147,5 +149,5 @@
         </div>       
     </div>    
     </div>
-    <br /><br /><br />
+    
 </asp:Content>

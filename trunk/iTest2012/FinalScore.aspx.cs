@@ -11,11 +11,30 @@ namespace iTest2012
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbResult.Text = Session["Correct"].ToString() + "/" + Session["Num"].ToString();
-            lbDate.Text = Session["Date"].ToString();
-            lbScore.Text = Session["Score"].ToString();
-            lbBonus.Text = Session["Bonus"].ToString();
-           
+            if (Session["Correct"] != null && Session["Date"] != null && Session["Score"] != null &&
+                Session["Bonus"] != null && Session["Num"] != null)
+            {
+                lbResult.Text = Session["Correct"].ToString() + "/" + Session["Num"].ToString();
+                lbDate.Text = Session["Date"].ToString();
+                lbScore.Text = Session["Score"].ToString();
+                lbBonus.Text = Session["Bonus"].ToString();
+
+
+            }
+            else
+            {
+                string strScript = "<script>";
+                strScript += "alert('Không đủ dữ liệu khởi tạo, vui lòng thực hiện bài Test');";
+                strScript += "window.location='Test.aspx';";
+                strScript += "</script>";
+                Page.RegisterClientScriptBlock("strScript", strScript);
+            }
+            //xoa session di
+            Session["Correct"] = null;
+            Session["Date"] = null;
+            Session["Score"] = null;
+            Session["Bonus"] = null;
+            Session["Num"] = null;
         }
     }
 }

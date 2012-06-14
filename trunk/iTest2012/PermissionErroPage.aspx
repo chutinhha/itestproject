@@ -10,7 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div style="background-color: #FFFFFF">
+<div align="center">
     <p>
         <br />
     </p>

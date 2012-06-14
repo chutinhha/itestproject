@@ -69,5 +69,14 @@ namespace iTest2012
                 }
             }
         }
+        protected void btnDel_Click(object sender, EventArgs e)
+        {
+            int result = data.st_DelUser(ddlUserName02.Text.Trim());
+            if (result == 1)
+                Response.Write("<script>alert('Deleted Successful !');</script>");
+            else
+                Response.Write("<script>alert('Can't Delete Now !');</script>");
+            ddlUserName02.DataBind();
+        }
     }
 }

@@ -28,73 +28,73 @@
         <%--panel 10 câu--%>
         <asp:Panel ID="panel10Test" runat="server" >
             <tr align="left" style="padding: 0 15px;">            
-                <td>
-                    <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test1" runat="server" />                    
+                <td class="td_style_Nowid">
+                    <div class="border_headtittle">Câu 1</div> 
+                    <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>                   
+                    <br /><asp:Image ID="img10Test1" runat="server" />                    
                     <br /><asp:RadioButton ID="rd10Test1a" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1b" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1c" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1d" runat="server" GroupName="10Test1"/>
-                    <br /><asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test2" runat="server" /> 
+                    <div class="border_headtittle">Câu 2</div> 
+                    <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test2" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test2a" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2b" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2c" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2d" runat="server" GroupName="10Test2"/>
-                    <br /><asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test3" runat="server" /> 
+                    <div class="border_headtittle">Câu 3</div> 
+                    <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test3" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test3a" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3b" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3c" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3d" runat="server" GroupName="10Test3"/>
-                    <br /><asp:Label ID="lb10Test4" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test4" runat="server" /> 
+                    <div class="border_headtittle">Câu 4</div> 
+                    <asp:Label ID="lb10Test4" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test4" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test4a" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4b" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4c" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4d" runat="server" GroupName="10Test4"/>
-                    <br /><asp:Label ID="lb10Test5" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test5" runat="server" /> 
+                    <div class="border_headtittle">Câu 5</div> 
+                    <asp:Label ID="lb10Test5" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test5" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test5a" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5b" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5c" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5d" runat="server" GroupName="10Test5"/>
-                    <br /><asp:Label ID="lb10Test6" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test6" runat="server" /> 
+                    <div class="border_headtittle">Câu 6</div> 
+                    <asp:Label ID="lb10Test6" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test6" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test6a" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6b" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6c" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6d" runat="server" GroupName="10Test6"/>
-                    <br /><asp:Label ID="lb10Test7" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test7" runat="server" /> 
+                    <div class="border_headtittle">Câu 7</div> 
+                    <asp:Label ID="lb10Test7" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test7" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test7a" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7b" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7c" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7d" runat="server" GroupName="10Test7"/>
-                    <br /><asp:Label ID="lb10Test8" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test8" runat="server" /> 
+                    <div class="border_headtittle">Câu 8</div> 
+                    <asp:Label ID="lb10Test8" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test8" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test8a" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8b" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8c" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8d" runat="server" GroupName="10Test8"/>
-                    <br /><asp:Label ID="lb10Test9" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test9" runat="server" /> 
+                    <div class="border_headtittle">Câu 9</div> 
+                    <asp:Label ID="lb10Test9" runat="server" Text=""></asp:Label>                    
+                    <br /><asp:Image ID="img10Test9" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test9a" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9b" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9c" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9d" runat="server" GroupName="10Test9"/>
-                    <br /><asp:Label ID="lb10Test10" runat="server" Text=""></asp:Label>
-                    <br />
-                    <asp:Image ID="img10Test10" runat="server" /> 
+                    <div class="border_headtittle">Câu 10</div> 
+                    <asp:Label ID="lb10Test10" runat="server" Text=""></asp:Label>                   
+                    <br /><asp:Image ID="img10Test10" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test10a" runat="server" GroupName="10Test10"/>
                     <br /><asp:RadioButton ID="rd10Test10b" runat="server" GroupName="10Test10"/>
                     <br /><asp:RadioButton ID="rd10Test10c" runat="server" GroupName="10Test10"/>
