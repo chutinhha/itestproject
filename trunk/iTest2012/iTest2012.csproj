@@ -819,6 +819,13 @@
     <Compile Include="AddQuestions.aspx.designer.cs">
       <DependentUpon>AddQuestions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="ChangePass.aspx.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -984,6 +991,7 @@
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.Master" />
     <None Include="ckeditor\.htaccess" />
     <None Include="ckeditor\ckeditor.pack" />
     <None Include="ckeditor\ckeditor.php" />

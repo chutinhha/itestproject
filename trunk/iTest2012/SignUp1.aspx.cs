@@ -68,7 +68,7 @@ namespace iTest2012
                         ius.iEmailUser = txtEmail.Text.ToString();
                         ius.iSID = db.st_GetSID(dropCauHoiBiMat.SelectedItem.Text);
                         ius.iSAns = txtAnswer.Text;
-                        ius.iCreatedDate = DateTime.Now;
+                        ius.iCreatedDate = DateTime.UtcNow;
 
                         db.iUsers.InsertOnSubmit(ius);
                         db.SubmitChanges();
