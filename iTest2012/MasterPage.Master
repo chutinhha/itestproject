@@ -39,7 +39,8 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:HyperLink ID="trangCaNhan" 
                                 style=" font-weight:700; background-repeat:repeat-x;" runat="server" 
-                                NavigateUrl="~/TrangCaNhan.aspx" ForeColor="#FFFFCC">Trang Cá Nhân</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%--Thanh 07/06.12--%><asp:HyperLink 
+                                NavigateUrl="~/TrangCaNhan.aspx" ForeColor="#FFFFCC">Trang Cá Nhân</asp:HyperLink>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%--Thanh 07/06.12--%>
+                                <asp:HyperLink
                                 ID="hplSignOut" style=" font-weight:700;" runat="server" 
                                 NavigateUrl="~/LogOut.aspx" ForeColor="#FFFF99">Thoát</asp:HyperLink>&nbsp;
                             </div>
