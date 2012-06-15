@@ -56,6 +56,7 @@
     <Content Include="AddNewSubject.aspx" />
     <Content Include="AddQuestion01.aspx" />
     <Content Include="AddQuestions.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="ChangePass.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\CHANGES.html" />
@@ -768,6 +769,7 @@
     <Content Include="SignUp.aspx" />
     <Content Include="SignUp1.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="testscript.aspx" />
     <Content Include="TrangCaNhan.aspx" />
     <Content Include="UploadFiles\8122009OngHutXiTinCanh_S.gif" />
     <Content Include="UploadFiles\bi.png" />
@@ -820,6 +822,13 @@
     </Compile>
     <Compile Include="AddQuestions.aspx.designer.cs">
       <DependentUpon>AddQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -945,6 +954,13 @@
     </Compile>
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testscript.aspx.cs">
+      <DependentUpon>testscript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testscript.aspx.designer.cs">
+      <DependentUpon>testscript.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrangCaNhan.aspx.cs">
       <DependentUpon>TrangCaNhan.aspx</DependentUpon>
