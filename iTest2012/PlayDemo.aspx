@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PlayDemo.aspx.cs" Inherits="iTest2012.PlayDemo" %>
 <%@ Register src="QuestControl.ascx" tagname="QuestControl" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>
-<script src="js/jquery.countdown.js" type="text/javascript"></script>
-<script type="text/javascript">
+<!---<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>--->
+<!---<script src="js/jquery.countdown.js" type="text/javascript"></script>--->
+<!--<script type="text/javascript">
     $(function () {
         $('#counter').countdown({
             image: 'js/img/digits.png',
@@ -13,7 +13,7 @@
         $('#counter_2').countdown({
             image: 'js/img/digits.png',
             startTime: '00:10',
-            timerEnd:  $('btn_10Test').click(),
+            timerEnd: function(){alert('Đã hết thời gian làm bài'); $('btn_10Test').click();},
             format: 'mm:ss'
         });
     });
@@ -25,13 +25,13 @@
         margin: 10px 7px;
         color: #000;
       }
-      </style>
+      </style>--->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div align="center">
+<%--<div align="center">
     <div id="counter_2" style="height: 77px; overflow: hidden; text-align:center " align="center"></div>    
   </div>
-  <br />
+  <br />--%>
   <div align="center">    
     <table class="border_tableheadline">
         <tr>
