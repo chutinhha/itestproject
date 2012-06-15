@@ -641,6 +641,8 @@
     <Content Include="Default.aspx" />
     <Content Include="FinalScore.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="image\Adv\adv.jpg" />
+    <Content Include="image\Adv\adv2.jpg" />
     <Content Include="image\background\back69.jpg" />
     <Content Include="image\background\bg001.png" />
     <Content Include="image\background\bg01-a.jpg" />
@@ -706,6 +708,10 @@
     <Content Include="image\icon\test-1.jpg" />
     <Content Include="image\icon\warning-icon.jpg" />
     <Content Include="image\logo\logo01.png" />
+    <Content Include="js\img\digits.png" />
+    <Content Include="js\jquery.countdown.js" />
+    <Content Include="js\time.js" />
+    <Content Include="js\topbottom.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="LogOut.aspx" />
     <Content Include="ManagePermission.aspx" />
