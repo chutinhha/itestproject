@@ -1,9 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PlayDemo.aspx.cs" Inherits="iTest2012.PlayDemo" %>
 <%@ Register src="QuestControl.ascx" tagname="QuestControl" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<!---<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>--->
-<!---<script src="js/jquery.countdown.js" type="text/javascript"></script>--->
-<!--<script type="text/javascript">
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>
+<script src="js/jquery.countdown.js" type="text/javascript"></script>
+
+<style type="text/css">
+      br { clear: both; }
+      .cntSeparator {
+        font-size: 54px;
+        margin: 10px 7px;
+        color: #000;
+      }
+      </style>
+      
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<script type="text/javascript">
     $(function () {
         $('#counter').countdown({
             image: 'js/img/digits.png',
@@ -12,28 +24,25 @@
 
         $('#counter_2').countdown({
             image: 'js/img/digits.png',
-            startTime: '00:10',
-            timerEnd: function(){alert('Đã hết thời gian làm bài'); $('btn_10Test').click();},
+            startTime: '01:00',
+            timerEnd: function (event) {
+                alert('Đã hết thời gian làm bài!');
+                $('#ContentPlaceHolder1_btn10Test').click();
+            },
             format: 'mm:ss'
         });
     });
     </script>
-<style type="text/css">
-      br { clear: both; }
-      .cntSeparator {
-        font-size: 54px;
-        margin: 10px 7px;
-        color: #000;
-      }
-      </style>--->
-      
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<%--<div align="center">
-    <div id="counter_2" style="height: 77px; overflow: hidden; text-align:center " align="center"></div>    
-  </div>
-  <br />--%>
-  
+  <div align="center">
+  <table>
+    <tr>
+        <td>
+            <div id="counter_2" style="height: 77px; overflow: hidden; text-align:center " align="center"></div>
+        </td>
+    </tr>
+  </table>
+  </div>    
+  <br />
   <div align="center">   
    
     <table class="border_tableheadline">
@@ -61,7 +70,7 @@
         <asp:Panel ID="panel10Test" runat="server" >
             <tr align="left" style="padding: 0 15px;">            
                 <td class="td_style_Nowid">
-                    <input type="checkbox" value="Câu 1" name="cks"><div class="border_headtittle">
+                    <input type="checkbox" value="Câu 1" name="cks"/><div class="border_headtittle">
                         Câu 1</div> 
                     <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test1" runat="server" />                    
@@ -70,7 +79,7 @@
                     <br /><asp:RadioButton ID="rd10Test1c" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1d" runat="server" GroupName="10Test1"/>
                     <div class="border_headtittle">
-                    <input type="checkbox" value="Câu 2" name="cks"></div> 
+                    <input type="checkbox" value="Câu 2" name="cks"/></div> 
                     <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test2" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test2a" runat="server" GroupName="10Test2"/>
@@ -78,7 +87,7 @@
                     <br /><asp:RadioButton ID="rd10Test2c" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2d" runat="server" GroupName="10Test2"/>
                     <div class="border_headtittle">
-                    <input type="checkbox" value="Câu 3" name="cks"></div> 
+                    <input type="checkbox" value="Câu 3" name="cks"/></div> 
                     <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test3" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test3a" runat="server" GroupName="10Test3"/>

@@ -12,14 +12,14 @@ namespace iTest2012
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Correct"] != null && Session["Date"] != null && Session["Score"] != null &&
-                Session["Bonus"] != null && Session["Num"] != null)
+                Session["Bonus"] != null && Session["Num"] != null 
+                && Session["Minute"] !=null &&  Session["Second"] != null)
             {
                 lbResult.Text = Session["Correct"].ToString() + "/" + Session["Num"].ToString();
                 lbDate.Text = Session["Date"].ToString();
                 lbScore.Text = Session["Score"].ToString();
                 lbBonus.Text = Session["Bonus"].ToString();
-
-
+                lbTime.Text = Session["Minute"].ToString() + " phút " + Session["Second"].ToString() + " giây";
             }
             else
             {
@@ -35,6 +35,8 @@ namespace iTest2012
             Session["Score"] = null;
             Session["Bonus"] = null;
             Session["Num"] = null;
+            Session["Minute"] =null;
+            Session["Second"] = null;
         }
     }
 }

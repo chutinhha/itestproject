@@ -12,25 +12,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div>
   
-  <script type="text/javascript">
-      $(document).ready(function () {
-          jQuery("[name='cks']").change(function () {
-              var str = "";
-              $("input[name='cks']:checked").each(function (i, val) {
-                  str += jQuery(this).val() + " duoc checked, ";
-              });
-              $("#cks_div").html(str);
-          });
-          $("[name='rds']").change(function () {
-              var str = "";
-              $("input[name='rds']:checked").each(function (i, val) {
-                  str += jQuery(this).val() + " duoc checked, ";
-              });
-              $("#rds_div").html(str);
-          });
-      });
-  </script>
   
+  <script src="js/checkbox.js" type="text/javascript"></script>
   <table id="change_table"><tr>
     <td>
    

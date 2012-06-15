@@ -709,6 +709,7 @@
     <Content Include="image\icon\test-1.jpg" />
     <Content Include="image\icon\warning-icon.jpg" />
     <Content Include="image\logo\logo01.png" />
+    <Content Include="js\checkbox.js" />
     <Content Include="js\img\digits.png" />
     <Content Include="js\jquery.countdown.js" />
     <Content Include="js\time.js" />
