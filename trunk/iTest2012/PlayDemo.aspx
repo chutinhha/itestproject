@@ -26,13 +26,16 @@
         color: #000;
       }
       </style>--->
+      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <%--<div align="center">
     <div id="counter_2" style="height: 77px; overflow: hidden; text-align:center " align="center"></div>    
   </div>
   <br />--%>
-  <div align="center">    
+  
+  <div align="center">   
+   
     <table class="border_tableheadline">
         <tr>
             <td>
@@ -58,21 +61,24 @@
         <asp:Panel ID="panel10Test" runat="server" >
             <tr align="left" style="padding: 0 15px;">            
                 <td class="td_style_Nowid">
-                    <div class="border_headtittle">Câu 1</div> 
+                    <input type="checkbox" value="Câu 1" name="cks"><div class="border_headtittle">
+                        Câu 1</div> 
                     <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test1" runat="server" />                    
                     <br /><asp:RadioButton ID="rd10Test1a" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1b" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1c" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1d" runat="server" GroupName="10Test1"/>
-                    <div class="border_headtittle">Câu 2</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 2" name="cks"></div> 
                     <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test2" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test2a" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2b" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2c" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2d" runat="server" GroupName="10Test2"/>
-                    <div class="border_headtittle">Câu 3</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 3" name="cks"></div> 
                     <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test3" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test3a" runat="server" GroupName="10Test3"/>
@@ -1069,4 +1075,7 @@
               
     </table>
 </div>  
+<div id="cks_div" class="divOnTop" style="height:200px; width:200px;">
+Không có câu nào được chọn
+</div>
 </asp:Content>
