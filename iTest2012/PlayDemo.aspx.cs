@@ -11,18 +11,20 @@ namespace iTest2012
     public partial class PlayDemo : System.Web.UI.Page
     {
         MyiTestDataDataContext data = new MyiTestDataDataContext();
-       
+        DateTime timebegin = DateTime.UtcNow;
         int subid, level, numq;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //tao 1 bien luu thoi gian bat dau
+            
             if (Session["Subject"] != null && Session["Level"] != null && Session["Num"] != null)
             {
                 //load toan bo cau hoi phu hop dieu kien
                 subid = data.st_LoadSubjectID(Session["Subject"].ToString());
                 level = Convert.ToInt32(Session["Level"].ToString());
-                numq = Convert.ToInt32(Session["Num"].ToString());
+                numq = Convert.ToInt32(Session["Num"].ToString());                
                 if (!Page.IsPostBack) // post back la grid bi thay doi ngay
-                {
+                {             
                     gridLoadQuest.DataSource = data.st_LoadListQuestID(subid, level);
                     gridLoadQuest.DataBind();
                     // thuc hien load random, ket thuc dc mang arr xao tron vi tri cau hoi
@@ -124,6 +126,12 @@ namespace iTest2012
                         //10
                         rd10Test10a.Text = gridLoadAns.Rows[36].Cells[2].Text; rd10Test10b.Text = gridLoadAns.Rows[37].Cells[2].Text;
                         rd10Test10c.Text = gridLoadAns.Rows[38].Cells[2].Text; rd10Test10d.Text = gridLoadAns.Rows[39].Cells[2].Text;
+                    
+                        // xoá session subject, lv, de user k the hack time, session num k xoa cung dc
+                        Session["Subject"] = null;
+                        Session["Level"] = null;
+                        //Session["Num"] = null;
+ 
                     }
                     else if (numq == 30)
                     { }
@@ -145,7 +153,9 @@ namespace iTest2012
         {
             //dem so radio dc check, neu thieu thi thong bao thieu            
             float score = 0; int correct = 0;
-            string listAns="", listQuest="";          
+            string listAns="", listQuest="";
+            //tao 1 bien luu thoi gian khi nhan vao button hoan thanh
+            DateTime timeend = DateTime.UtcNow;
 
             //q1
             if (rd10Test1a.Checked && gridLoadAns.Rows[0].Cells[3].Text == "1")
@@ -415,8 +425,26 @@ namespace iTest2012
 
             score = (float)Math.Round(score, 2);          
             
-            DateTime date = DateTime.Now;
+            DateTime date = DateTime.Now; // day la ngay lam bai test
+
+            TimeSpan t = timeend - timebegin;
+
+            int timetest = (int)t.TotalSeconds; // thoi gian test
+            int ss = 0, mm = 0;
+            if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
+            {
+                mm = (int)(timetest / 60);
+                ss = timetest - (mm * 60);
+            }
+            else
+            {
+                mm = 0;
+                ss = timetest;
+            }
+            if (mm >= 15) // Day la goi de 10 cau, 15p. set max mm = 15
+            { mm = 15; ss=0; }
             
+
             int rate=0;
             if (score >= 8.00 && score < 9.00) { rate = 1; }
             else if (score >= 9.00 && score < 10.00) { rate = 2; }
@@ -431,7 +459,7 @@ namespace iTest2012
             log.iScore = score;
             log.iScoreRate = rate;
             log.iDateTest = date;
-            //log.iTime ???
+            log.iTime = timetest.ToString();
             data.iTestLogs.InsertOnSubmit(log);
             data.SubmitChanges();
             
@@ -439,6 +467,8 @@ namespace iTest2012
             Session["Correct"] = correct;
             Session["Num"] = 10;
             Session["Date"] = date;
+            Session["Minute"] = mm.ToString();
+            Session["Second"] = ss.ToString();
             Session["Score"] = score;
             Session["Bonus"] = rate;
             Response.Redirect("FinalScore.aspx");
