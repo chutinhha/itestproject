@@ -15,7 +15,7 @@ namespace iTest2012
         int correct, choice1, choice2, choice3, choice4;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Subject"].ToString().Length > 0)
+            if (Session["Subject"]!=null)
                 subid = data.st_LoadSubjectID(Session["Subject"].ToString());
             else subid = 111111;
             questid = data.st_RandomIDofSubByLevel(subid, Convert.ToInt32(Session["Level"]));

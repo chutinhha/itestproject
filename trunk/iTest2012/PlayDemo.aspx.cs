@@ -11,7 +11,7 @@ namespace iTest2012
     public partial class PlayDemo : System.Web.UI.Page
     {
         MyiTestDataDataContext data = new MyiTestDataDataContext();
-        DateTime timebegin = new DateTime();
+        
         int subid, level, numq;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace iTest2012
                 numq = Convert.ToInt32(Session["Num"].ToString());                
                 if (!Page.IsPostBack) // post back la grid bi thay doi ngay
                 {
-                    timebegin = DateTime.Now;
+                    
                     gridLoadQuest.DataSource = data.st_LoadListQuestID(subid, level);
                     gridLoadQuest.DataBind();
                     // thuc hien load random, ket thuc dc mang arr xao tron vi tri cau hoi
@@ -154,9 +154,7 @@ namespace iTest2012
         {
             //dem so radio dc check, neu thieu thi thong bao thieu            
             float score = 0; int correct = 0;
-            string listAns="", listQuest="";
-            //tao 1 bien luu thoi gian khi nhan vao button hoan thanh
-            DateTime timeend = DateTime.Now;
+            string listAns="", listQuest="";            
 
             //q1
             if (rd10Test1a.Checked && gridLoadAns.Rows[0].Cells[3].Text == "1")
@@ -426,24 +424,24 @@ namespace iTest2012
 
             score = (float)Math.Round(score, 2);          
             
-            DateTime date = DateTime.Now; // day la ngay lam bai test
+            DateTime date = DateTime.Now; // day la ngay lam bai test, cung la time khi ket thuc bai test
+            DateTime timebegin = DateTime.Parse(Session["timebegin"].ToString());
+            TimeSpan t = date - timebegin;
 
-            TimeSpan t = timeend - timebegin;
-
-            double timetest = t.Seconds; // thoi gian test
-            //int ss = 0, mm = 0;
-            //if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
-            //{
-            //    mm = (int)(timetest / 60);
-            //    ss = timetest - (mm * 60);
-            //}
-            //else
-            //{
-            //    mm = 0;
-            //    ss = timetest;
-            //}
-            //if (mm >= 15) // Day la goi de 10 cau, 15p. set max mm = 15
-            //{ mm = 15; ss=0; }
+            int timetest = Convert.ToInt32(t.TotalSeconds); // thoi gian test
+            int ss = 0, mm = 0;
+            if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
+            {
+                mm = (int)(timetest / 60);
+                ss = timetest - (mm * 60);
+            }
+            else
+            {
+                mm = 0;
+                ss = timetest;
+            }
+            if (mm >= 1) // Day la goi de 10 cau, 15p. set max mm = 15, tam thoi demo la 1p
+            { mm = 1; ss = 0; }
             
 
             int rate=0;
@@ -468,8 +466,8 @@ namespace iTest2012
             Session["Correct"] = correct;
             Session["Num"] = 10;
             Session["Date"] = date;
-            Session["Minute"] = timebegin;
-            Session["Second"] = timeend;
+            Session["Minute"] = mm;
+            Session["Second"] = ss;
             Session["Score"] = score;
             Session["Bonus"] = rate;
             Response.Redirect("FinalScore.aspx");

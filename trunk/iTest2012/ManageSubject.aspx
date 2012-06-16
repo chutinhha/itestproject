@@ -103,7 +103,7 @@
                     <td style="height:20px" colspan="2">
                         </td>
                 </tr>
-                <tr align="left">
+                <%--<tr align="left">
                     <td class="td_style_wid">
                         Mã chủ đề</td>
                     <td "td_style_Nowid">
@@ -111,7 +111,7 @@
                                 onkeyup="valid(this,'numbers')" onblur="valid(this,'numbers')" 
                                 MaxLength="7"></asp:TextBox>
                         &nbsp;</td>
-                </tr>
+                </tr>--%>
                 <tr align="left">
                     <td class="td_style_wid">
                         Tên chủ đề :</td>
