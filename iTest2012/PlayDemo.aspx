@@ -33,6 +33,18 @@
         });
     });
     </script>
+    <script type="text/jscript">
+        $(document).ready(function () {
+            $("input[name='cks']").change(function () {                
+                var str = "";                
+                $("input[name='cks']:checked").each(function (i, val) {
+                    str += $(this).val() + "<br />";
+                });               
+                $("#cks_div").html(str);
+
+            });
+        });  
+</script> 
   <div align="center">
   <table>
     <tr>
@@ -69,9 +81,9 @@
         <%--panel 10 câu--%>
         <asp:Panel ID="panel10Test" runat="server" >
             <tr align="left" style="padding: 0 15px;">            
-                <td class="td_style_Nowid">
-                    <input type="checkbox" value="Câu 1" name="cks"/><div class="border_headtittle">
-                        Câu 1</div> 
+                <td class="td_style_Nowid">                    
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 1" name="cks"/>Câu 1</div> 
                     <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test1" runat="server" />                    
                     <br /><asp:RadioButton ID="rd10Test1a" runat="server" GroupName="10Test1"/>
@@ -79,7 +91,7 @@
                     <br /><asp:RadioButton ID="rd10Test1c" runat="server" GroupName="10Test1"/>
                     <br /><asp:RadioButton ID="rd10Test1d" runat="server" GroupName="10Test1"/>
                     <div class="border_headtittle">
-                    <input type="checkbox" value="Câu 2" name="cks"/></div> 
+                    <input type="checkbox" value="Câu 2" name="cks"/>Câu 2</div> 
                     <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test2" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test2a" runat="server" GroupName="10Test2"/>
@@ -87,56 +99,63 @@
                     <br /><asp:RadioButton ID="rd10Test2c" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2d" runat="server" GroupName="10Test2"/>
                     <div class="border_headtittle">
-                    <input type="checkbox" value="Câu 3" name="cks"/></div> 
+                    <input type="checkbox" value="Câu 3" name="cks"/>Câu 3</div> 
                     <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test3" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test3a" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3b" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3c" runat="server" GroupName="10Test3"/>
                     <br /><asp:RadioButton ID="rd10Test3d" runat="server" GroupName="10Test3"/>
-                    <div class="border_headtittle">Câu 4</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 4" name="cks"/>Câu 4</div> 
                     <asp:Label ID="lb10Test4" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test4" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test4a" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4b" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4c" runat="server" GroupName="10Test4"/>
                     <br /><asp:RadioButton ID="rd10Test4d" runat="server" GroupName="10Test4"/>
-                    <div class="border_headtittle">Câu 5</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 5" name="cks"/>Câu 5</div> 
                     <asp:Label ID="lb10Test5" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test5" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test5a" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5b" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5c" runat="server" GroupName="10Test5"/>
                     <br /><asp:RadioButton ID="rd10Test5d" runat="server" GroupName="10Test5"/>
-                    <div class="border_headtittle">Câu 6</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 6" name="cks"/>Câu 6</div> 
                     <asp:Label ID="lb10Test6" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test6" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test6a" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6b" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6c" runat="server" GroupName="10Test6"/>
                     <br /><asp:RadioButton ID="rd10Test6d" runat="server" GroupName="10Test6"/>
-                    <div class="border_headtittle">Câu 7</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 7" name="cks"/>Câu 7</div> 
                     <asp:Label ID="lb10Test7" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test7" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test7a" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7b" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7c" runat="server" GroupName="10Test7"/>
                     <br /><asp:RadioButton ID="rd10Test7d" runat="server" GroupName="10Test7"/>
-                    <div class="border_headtittle">Câu 8</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 8" name="cks"/>Câu 8</div> 
                     <asp:Label ID="lb10Test8" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test8" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test8a" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8b" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8c" runat="server" GroupName="10Test8"/>
                     <br /><asp:RadioButton ID="rd10Test8d" runat="server" GroupName="10Test8"/>
-                    <div class="border_headtittle">Câu 9</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 9" name="cks"/>Câu 9</div> 
                     <asp:Label ID="lb10Test9" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test9" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test9a" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9b" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9c" runat="server" GroupName="10Test9"/>
                     <br /><asp:RadioButton ID="rd10Test9d" runat="server" GroupName="10Test9"/>
-                    <div class="border_headtittle">Câu 10</div> 
+                    <div class="border_headtittle">
+                    <input type="checkbox" value="Câu 10" name="cks"/>Câu 10</div> 
                     <asp:Label ID="lb10Test10" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test10" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test10a" runat="server" GroupName="10Test10"/>
@@ -1084,7 +1103,20 @@
               
     </table>
 </div>  
-<div id="cks_div" class="divOnTop" style="height:200px; width:200px;">
-Không có câu nào được chọn
+<div style="position: fixed; z-index: 100; left:0px; color:#FFFFFF; background-color: transparent; bottom: 0px;">
+<table class="border_tableheadline" style ="width:100px; height:20px">
+    <tr>
+        <td>Ghi nhớ</td>
+    </tr>
+</table>
+<table class="border_alltable" style ="width:100px; height:150px">
+    <tr>
+        <td>
+            <div id="cks_div" class="divOnTop" style="height:150px; width:100px; overflow:scroll">
+                Chưa ghi nhớ
+            </div>
+        </td>
+    </tr>
+</table>
 </div>
 </asp:Content>

@@ -250,9 +250,8 @@
          }
          .divOnTop 
          { 
-             color:#FFFFFF; left:0px; 
-             height:26px; width:100%; 
-             background-color:Blue; 
+             color:#003300; left:0px;              
+             background-color: #ffffcc; 
              /* Text Always Center */ 
              line-height:26px; 
              /* position on bottom */ 
