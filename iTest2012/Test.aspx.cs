@@ -46,45 +46,50 @@ namespace iTest2012
                     {
                         Session["Correct"] = 0;
                     }
+                    if (Session["timebegin"] == null)
+                    {
+                        Session["timebegin"] = DateTime.Now;
+                    }
 
                     Response.Redirect("PlayDemo.aspx");
 
                 }
                 else
                 {
-                    lbError.Text = "Not Enough Questions";
+                    lbError.Text = "Không đủ câu hỏi trong chủ đề đã chọn";
                 }
             }
             else
             {
-                int num;
-                num = Convert.ToInt32(ddlNumberofQuests.Text.Trim());
-                int result = data.st_Check_AllSub_aLevel_Num(Convert.ToInt32(ddlLevel.SelectedValue), num);
+            //    int num;
+            //    num = Convert.ToInt32(ddlNumberofQuests.Text.Trim());
+            //    int result = data.st_Check_AllSub_aLevel_Num(Convert.ToInt32(ddlLevel.SelectedValue), num);
 
-                if (result == 1)
-                {
-                    lbError.Text = "";
-                    Session["Num"] = ddlNumberofQuests.SelectedValue;
-                    //Session["Type"] = ddlQuestType.SelectedValue;
-                    Session["Level"] = ddlLevel.SelectedValue;
-                    if (Session["Question"] == null)
-                    {
-                        Session["Question"] = 1;
-                    }
+            //    if (result == 1)
+            //    {
+            //        lbError.Text = "";
+            //        Session["Num"] = ddlNumberofQuests.SelectedValue;
+            //        //Session["Type"] = ddlQuestType.SelectedValue;
+            //        Session["Level"] = ddlLevel.SelectedValue;
+            //        if (Session["Question"] == null)
+            //        {
+            //            Session["Question"] = 1;
+            //        }
 
-                    if (Session["Correct"] == null)
-                    {
-                        Session["Correct"] = 0;
-                    }
+            //        if (Session["Correct"] == null)
+            //        {
+            //            Session["Correct"] = 0;
+            //        }
 
-                    Response.Redirect("PlayTestOne.aspx");
+            //        Response.Redirect("PlayTestOne.aspx");
 
-                }
-                else
-                {
+            //    }
+            //    else
+            //    {
 
-                    lbError.Text = "Not Enough Questions";
-                }
+            //        lbError.Text = "Không đủ câu hỏi trong chủ đề đã chọn";
+            //    }
+                lbError.Text = "Chủ để chưa mở";
             }
         }
     }

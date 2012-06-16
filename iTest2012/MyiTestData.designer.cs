@@ -45,9 +45,6 @@ namespace iTest2012
     partial void InsertiSecurityQuest(iSecurityQuest instance);
     partial void UpdateiSecurityQuest(iSecurityQuest instance);
     partial void DeleteiSecurityQuest(iSecurityQuest instance);
-    partial void InsertiSubject(iSubject instance);
-    partial void UpdateiSubject(iSubject instance);
-    partial void DeleteiSubject(iSubject instance);
     partial void InsertiTestLog(iTestLog instance);
     partial void UpdateiTestLog(iTestLog instance);
     partial void DeleteiTestLog(iTestLog instance);
@@ -57,6 +54,9 @@ namespace iTest2012
     partial void InsertiUserPermission(iUserPermission instance);
     partial void UpdateiUserPermission(iUserPermission instance);
     partial void DeleteiUserPermission(iUserPermission instance);
+    partial void InsertiSubject(iSubject instance);
+    partial void UpdateiSubject(iSubject instance);
+    partial void DeleteiSubject(iSubject instance);
     #endregion
 		
 		public MyiTestDataDataContext() : 
@@ -129,14 +129,6 @@ namespace iTest2012
 			}
 		}
 		
-		public System.Data.Linq.Table<iSubject> iSubjects
-		{
-			get
-			{
-				return this.GetTable<iSubject>();
-			}
-		}
-		
 		public System.Data.Linq.Table<iTestLog> iTestLogs
 		{
 			get
@@ -161,6 +153,14 @@ namespace iTest2012
 			}
 		}
 		
+		public System.Data.Linq.Table<iSubject> iSubjects
+		{
+			get
+			{
+				return this.GetTable<iSubject>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_ChangePassword")]
 		public int st_ChangePassword([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string newpassword)
 		{
@@ -182,10 +182,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_AllSub_Type_Num")]
-		public void st_Check_AllSub_Type_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_AllSub_Type_Num", IsComposable=true)]
+		public object st_Check_AllSub_Type_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, num);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, num).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_aSub_aLevel_Num")]
@@ -195,10 +195,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_aSub_aType_Num")]
-		public void st_Check_aSub_aType_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Check_aSub_aType_Num", IsComposable=true)]
+		public object st_Check_aSub_aType_Num([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> num)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub, type, num);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub, type, num).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckAdmin")]
@@ -264,10 +264,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CountQuestofSub")]
-		public void st_CountQuestofSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CountQuestofSub", IsComposable=true)]
+		public object st_CountQuestofSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub, type);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sub, type).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_DelQuest")]
@@ -305,10 +305,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetImageByID")]
-		public void st_GetImageByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_pk)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_GetImageByID", IsComposable=true)]
+		public object st_GetImageByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_pk)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_pk);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_pk).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_getImageQuest")]
@@ -472,10 +472,10 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_RandomIDofSub")]
-		public void st_RandomIDofSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> subid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_RandomIDofSub", IsComposable=true)]
+		public object st_RandomIDofSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> subid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, type);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, type).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_RandomIDofSubByLevel")]
@@ -492,16 +492,16 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllChapter")]
-		public void st_SelectAllChapter([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllChapter", IsComposable=true)]
+		public object st_SelectAllChapter([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel")]
-		public void st_SelectAllLevel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllLevel", IsComposable=true)]
+		public object st_SelectAllLevel([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string chapter)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter);
+			return ((object)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, chapter).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectAllQuest")]
@@ -1359,120 +1359,6 @@ namespace iTest2012
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSubject")]
-	public partial class iSubject : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iSubjectID;
-		
-		private string _iSubjectName;
-		
-		private EntitySet<iChapter> _iChapters;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniSubjectIDChanging(int value);
-    partial void OniSubjectIDChanged();
-    partial void OniSubjectNameChanging(string value);
-    partial void OniSubjectNameChanged();
-    #endregion
-		
-		public iSubject()
-		{
-			this._iChapters = new EntitySet<iChapter>(new Action<iChapter>(this.attach_iChapters), new Action<iChapter>(this.detach_iChapters));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int iSubjectID
-		{
-			get
-			{
-				return this._iSubjectID;
-			}
-			set
-			{
-				if ((this._iSubjectID != value))
-				{
-					this.OniSubjectIDChanging(value);
-					this.SendPropertyChanging();
-					this._iSubjectID = value;
-					this.SendPropertyChanged("iSubjectID");
-					this.OniSubjectIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string iSubjectName
-		{
-			get
-			{
-				return this._iSubjectName;
-			}
-			set
-			{
-				if ((this._iSubjectName != value))
-				{
-					this.OniSubjectNameChanging(value);
-					this.SendPropertyChanging();
-					this._iSubjectName = value;
-					this.SendPropertyChanged("iSubjectName");
-					this.OniSubjectNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSubject_iChapter", Storage="_iChapters", ThisKey="iSubjectID", OtherKey="iSubjectID")]
-		public EntitySet<iChapter> iChapters
-		{
-			get
-			{
-				return this._iChapters;
-			}
-			set
-			{
-				this._iChapters.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_iChapters(iChapter entity)
-		{
-			this.SendPropertyChanging();
-			entity.iSubject = this;
-		}
-		
-		private void detach_iChapters(iChapter entity)
-		{
-			this.SendPropertyChanging();
-			entity.iSubject = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iTestLog")]
 	public partial class iTestLog : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2236,6 +2122,120 @@ namespace iTest2012
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iSubject")]
+	public partial class iSubject : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iSubjectID;
+		
+		private string _iSubjectName;
+		
+		private EntitySet<iChapter> _iChapters;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniSubjectIDChanging(int value);
+    partial void OniSubjectIDChanged();
+    partial void OniSubjectNameChanging(string value);
+    partial void OniSubjectNameChanged();
+    #endregion
+		
+		public iSubject()
+		{
+			this._iChapters = new EntitySet<iChapter>(new Action<iChapter>(this.attach_iChapters), new Action<iChapter>(this.detach_iChapters));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iSubjectID
+		{
+			get
+			{
+				return this._iSubjectID;
+			}
+			set
+			{
+				if ((this._iSubjectID != value))
+				{
+					this.OniSubjectIDChanging(value);
+					this.SendPropertyChanging();
+					this._iSubjectID = value;
+					this.SendPropertyChanged("iSubjectID");
+					this.OniSubjectIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iSubjectName", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string iSubjectName
+		{
+			get
+			{
+				return this._iSubjectName;
+			}
+			set
+			{
+				if ((this._iSubjectName != value))
+				{
+					this.OniSubjectNameChanging(value);
+					this.SendPropertyChanging();
+					this._iSubjectName = value;
+					this.SendPropertyChanged("iSubjectName");
+					this.OniSubjectNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iSubject_iChapter", Storage="_iChapters", ThisKey="iSubjectID", OtherKey="iSubjectID")]
+		public EntitySet<iChapter> iChapters
+		{
+			get
+			{
+				return this._iChapters;
+			}
+			set
+			{
+				this._iChapters.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iChapters(iChapter entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSubject = this;
+		}
+		
+		private void detach_iChapters(iChapter entity)
+		{
+			this.SendPropertyChanging();
+			entity.iSubject = null;
 		}
 	}
 	

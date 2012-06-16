@@ -44,13 +44,6 @@
       <Association Name="iSecurityQuest_iUser" Member="iUsers" ThisKey="iSID" OtherKey="iSID" Type="iUser" />
     </Type>
   </Table>
-  <Table Name="dbo.iSubject" Member="iSubjects">
-    <Type Name="iSubject">
-      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
-    </Type>
-  </Table>
   <Table Name="dbo.iTestLog" Member="iTestLogs">
     <Type Name="iTestLog">
       <Column Name="iTestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -87,6 +80,13 @@
       <Association Name="iUser_iUserPermission" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.iSubject" Member="iSubjects">
+    <Type Name="iSubject">
+      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
+    </Type>
+  </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="password" Type="System.String" DbType="NVarChar(50)" />
@@ -108,9 +108,10 @@
     <Parameter Name="num" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_Check_AllSub_Type_Num" Method="st_Check_AllSub_Type_Num">
+  <Function Name="dbo.st_Check_AllSub_Type_Num" Method="st_Check_AllSub_Type_Num" IsComposable="true">
     <Parameter Name="type" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="num" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_Check_aSub_aLevel_Num" Method="st_Check_aSub_aLevel_Num">
     <Parameter Name="sub" Type="System.Int32" DbType="Int" />
@@ -118,10 +119,11 @@
     <Parameter Name="num" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_Check_aSub_aType_Num" Method="st_Check_aSub_aType_Num">
+  <Function Name="dbo.st_Check_aSub_aType_Num" Method="st_Check_aSub_aType_Num" IsComposable="true">
     <Parameter Name="sub" Type="System.Int32" DbType="Int" />
     <Parameter Name="type" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="num" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_CheckAdmin" Method="st_CheckAdmin">
     <Parameter Name="iduser" Type="System.Int32" DbType="Int" />
@@ -163,9 +165,10 @@
     <Parameter Name="FuncName" Parameter="funcName" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_CountQuestofSub" Method="st_CountQuestofSub">
+  <Function Name="dbo.st_CountQuestofSub" Method="st_CountQuestofSub" IsComposable="true">
     <Parameter Name="sub" Type="System.Int32" DbType="Int" />
     <Parameter Name="type" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_DelQuest" Method="st_DelQuest">
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
@@ -197,8 +200,9 @@
     <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_GetImageByID" Method="st_GetImageByID">
+  <Function Name="dbo.st_GetImageByID" Method="st_GetImageByID" IsComposable="true">
     <Parameter Name="img_pk" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_getImageQuest" Method="st_getImageQuest">
     <Parameter Name="idquest" Type="System.Int32" DbType="Int" />
@@ -353,9 +357,10 @@
     <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_RandomIDofSub" Method="st_RandomIDofSub">
+  <Function Name="dbo.st_RandomIDofSub" Method="st_RandomIDofSub" IsComposable="true">
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
     <Parameter Name="type" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_RandomIDofSubByLevel" Method="st_RandomIDofSubByLevel">
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
@@ -368,13 +373,15 @@
     <Parameter Name="newpass" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_SelectAllChapter" Method="st_SelectAllChapter">
+  <Function Name="dbo.st_SelectAllChapter" Method="st_SelectAllChapter" IsComposable="true">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
     <Parameter Name="level" Type="System.String" DbType="Char(10)" />
+    <Return Type="object" />
   </Function>
-  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel">
+  <Function Name="dbo.st_SelectAllLevel" Method="st_SelectAllLevel" IsComposable="true">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
     <Parameter Name="chapter" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="object" />
   </Function>
   <Function Name="dbo.st_SelectAllQuest" Method="st_SelectAllQuest">
     <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
