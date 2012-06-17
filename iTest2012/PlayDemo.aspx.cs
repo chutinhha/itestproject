@@ -132,6 +132,8 @@ namespace iTest2012
                         Session["Subject"] = null;
                         Session["Level"] = null;
                         //Session["Num"] = null;
+                        Session["valid"] = "1";// session kiem tra user co back trang hay ko
+                        
  
                     }
                     else if (numq == 30)
@@ -152,326 +154,346 @@ namespace iTest2012
            
         protected void btn10Test_Click(object sender, EventArgs e)
         {
-            //dem so radio dc check, neu thieu thi thong bao thieu            
-            float score = 0; int correct = 0;
-            string listAns="", listQuest="";            
-
-            //q1
-            if (rd10Test1a.Checked && gridLoadAns.Rows[0].Cells[3].Text == "1")
+            if (Session["valid"] == null) // dung session nay de kiem tra user co back trang hay ko
             {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[0].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[0].Cells[1].Text + ";";
-            }
-            else if (rd10Test1b.Checked && gridLoadAns.Rows[1].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[1].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[1].Cells[1].Text + ";";
-            }
-            else if (rd10Test1c.Checked && gridLoadAns.Rows[2].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[2].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[2].Cells[1].Text + ";";
-            }
-            else if (rd10Test1d.Checked && gridLoadAns.Rows[3].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[3].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[3].Cells[1].Text + ";";
-            }
-
-            //q2
-            if (rd10Test2a.Checked && gridLoadAns.Rows[4].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[4].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[4].Cells[1].Text + ";";
-            }
-            else if (rd10Test2b.Checked && gridLoadAns.Rows[5].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[5].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[5].Cells[1].Text + ";";
-            }
-            else if (rd10Test2c.Checked && gridLoadAns.Rows[6].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[6].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[6].Cells[1].Text + ";";
-            }
-            else if (rd10Test2d.Checked && gridLoadAns.Rows[7].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[7].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[7].Cells[1].Text + ";";
-            }
-
-            //q3
-            if (rd10Test3a.Checked && gridLoadAns.Rows[8].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[8].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[8].Cells[1].Text + ";";
-            }
-            else if (rd10Test3b.Checked && gridLoadAns.Rows[9].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[9].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[9].Cells[1].Text + ";";
-            }
-            else if (rd10Test3c.Checked && gridLoadAns.Rows[10].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[10].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[10].Cells[1].Text + ";";
-            }
-            else if (rd10Test3d.Checked && gridLoadAns.Rows[11].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[11].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[11].Cells[1].Text + ";";
-            }
-
-            //q4
-            if (rd10Test4a.Checked && gridLoadAns.Rows[12].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[12].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[12].Cells[1].Text + ";";
-            }
-            else if (rd10Test4b.Checked && gridLoadAns.Rows[13].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[13].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[13].Cells[1].Text + ";";
-            }
-            else if (rd10Test4c.Checked && gridLoadAns.Rows[14].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[14].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[14].Cells[1].Text + ";";
-            }
-            else if (rd10Test4d.Checked && gridLoadAns.Rows[15].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[15].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[15].Cells[1].Text + ";";
-            }
-
-            //q5
-            if (rd10Test5a.Checked && gridLoadAns.Rows[16].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[16].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[16].Cells[1].Text + ";";
-            }
-            else if (rd10Test5b.Checked && gridLoadAns.Rows[17].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[17].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[17].Cells[1].Text + ";";
-            }
-            else if (rd10Test5c.Checked && gridLoadAns.Rows[18].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[18].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[18].Cells[1].Text + ";";
-            }
-            else if (rd10Test5d.Checked && gridLoadAns.Rows[19].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[19].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[19].Cells[1].Text + ";";
-            }
-
-            //q6
-            if (rd10Test6a.Checked && gridLoadAns.Rows[20].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[20].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[20].Cells[1].Text + ";";
-            }
-            else if (rd10Test6b.Checked && gridLoadAns.Rows[21].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[21].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[21].Cells[1].Text + ";";
-            }
-            else if (rd10Test6c.Checked && gridLoadAns.Rows[22].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[22].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[22].Cells[1].Text + ";";
-            }
-            else if (rd10Test6d.Checked && gridLoadAns.Rows[23].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[23].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[23].Cells[1].Text + ";";
-            }
-
-            //q7
-            if (rd10Test7a.Checked && gridLoadAns.Rows[24].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[24].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[24].Cells[1].Text + ";";
-            }
-            else if (rd10Test7b.Checked && gridLoadAns.Rows[25].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[25].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[25].Cells[1].Text + ";";
-            }
-            else if (rd10Test7c.Checked && gridLoadAns.Rows[26].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[26].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[26].Cells[1].Text + ";";
-            }
-            else if (rd10Test7d.Checked && gridLoadAns.Rows[27].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[27].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[27].Cells[1].Text + ";";
-            }
-
-            //q8
-            if (rd10Test8a.Checked && gridLoadAns.Rows[28].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[28].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[28].Cells[1].Text + ";";
-            }
-            else if (rd10Test8b.Checked && gridLoadAns.Rows[29].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[29].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[29].Cells[1].Text + ";";
-            }
-            else if (rd10Test8c.Checked && gridLoadAns.Rows[30].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[30].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[30].Cells[1].Text + ";";
-            }
-            else if (rd10Test8d.Checked && gridLoadAns.Rows[31].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[31].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[31].Cells[1].Text + ";";
-            }
-
-            //q9
-            if (rd10Test9a.Checked && gridLoadAns.Rows[32].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[32].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[32].Cells[1].Text + ";";
-            }
-            else if (rd10Test9b.Checked && gridLoadAns.Rows[33].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[33].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[33].Cells[1].Text + ";";
-            }
-            else if (rd10Test9c.Checked && gridLoadAns.Rows[34].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[34].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[34].Cells[1].Text + ";";
-            }
-            else if (rd10Test9d.Checked && gridLoadAns.Rows[35].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[35].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[35].Cells[1].Text + ";";
-            }
-
-            //q10
-            if (rd10Test10a.Checked && gridLoadAns.Rows[36].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[36].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[36].Cells[1].Text + ";";
-            }
-            else if (rd10Test10b.Checked && gridLoadAns.Rows[37].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[37].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[37].Cells[1].Text + ";";
-            }
-            else if (rd10Test10c.Checked && gridLoadAns.Rows[38].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[38].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[38].Cells[1].Text + ";";
-            }
-            else if (rd10Test10d.Checked && gridLoadAns.Rows[39].Cells[3].Text == "1")
-            {
-                score += 1; correct += 1;
-                listAns = listAns + gridLoadAns.Rows[39].Cells[0].Text + ";";
-                listQuest = listQuest + gridLoadAns.Rows[39].Cells[1].Text + ";";
-            }
-
-            listQuest ="";
-            for (int p = 0; p < 10; p++)
-            {
-                listQuest = listQuest + gridLoadAns.Rows[p*4].Cells[1].Text + ";";
-            }
-
-            score = (float)Math.Round(score, 2);          
-            
-            DateTime date = DateTime.Now; // day la ngay lam bai test, cung la time khi ket thuc bai test
-            DateTime timebegin = DateTime.Parse(Session["timebegin"].ToString());
-            TimeSpan t = date - timebegin;
-
-            int timetest = Convert.ToInt32(t.TotalSeconds); // thoi gian test
-            int ss = 0, mm = 0;
-            if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
-            {
-                mm = (int)(timetest / 60);
-                ss = timetest - (mm * 60);
+                Session["Correct"] = null;
+                Session["Date"] = null;
+                Session["Score"] = null;
+                Session["Bonus"] = null;
+                Session["Num"] = null;
+                Session["Minute"] = null;
+                Session["Second"] = null;
+                Session["timebegin"] = null;
+                string strScript2 = "<script>";
+                strScript2 += "alert('Bài thi không hợp lệ !');";
+                strScript2 += "window.location='Test.aspx';";
+                strScript2 += "</script>";
+                Page.RegisterClientScriptBlock("strScript2", strScript2);
             }
             else
             {
-                mm = 0;
-                ss = timetest;
+                //dem so radio dc check, neu thieu thi thong bao thieu            
+                float score = 0; int correct = 0;
+                string listAns = "", listQuest = "";
+
+                //q1
+                if (rd10Test1a.Checked && gridLoadAns.Rows[0].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[0].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[0].Cells[1].Text + ";";
+                }
+                else if (rd10Test1b.Checked && gridLoadAns.Rows[1].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[1].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[1].Cells[1].Text + ";";
+                }
+                else if (rd10Test1c.Checked && gridLoadAns.Rows[2].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[2].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[2].Cells[1].Text + ";";
+                }
+                else if (rd10Test1d.Checked && gridLoadAns.Rows[3].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[3].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[3].Cells[1].Text + ";";
+                }
+
+                //q2
+                if (rd10Test2a.Checked && gridLoadAns.Rows[4].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[4].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[4].Cells[1].Text + ";";
+                }
+                else if (rd10Test2b.Checked && gridLoadAns.Rows[5].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[5].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[5].Cells[1].Text + ";";
+                }
+                else if (rd10Test2c.Checked && gridLoadAns.Rows[6].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[6].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[6].Cells[1].Text + ";";
+                }
+                else if (rd10Test2d.Checked && gridLoadAns.Rows[7].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[7].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[7].Cells[1].Text + ";";
+                }
+
+                //q3
+                if (rd10Test3a.Checked && gridLoadAns.Rows[8].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[8].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[8].Cells[1].Text + ";";
+                }
+                else if (rd10Test3b.Checked && gridLoadAns.Rows[9].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[9].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[9].Cells[1].Text + ";";
+                }
+                else if (rd10Test3c.Checked && gridLoadAns.Rows[10].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[10].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[10].Cells[1].Text + ";";
+                }
+                else if (rd10Test3d.Checked && gridLoadAns.Rows[11].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[11].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[11].Cells[1].Text + ";";
+                }
+
+                //q4
+                if (rd10Test4a.Checked && gridLoadAns.Rows[12].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[12].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[12].Cells[1].Text + ";";
+                }
+                else if (rd10Test4b.Checked && gridLoadAns.Rows[13].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[13].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[13].Cells[1].Text + ";";
+                }
+                else if (rd10Test4c.Checked && gridLoadAns.Rows[14].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[14].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[14].Cells[1].Text + ";";
+                }
+                else if (rd10Test4d.Checked && gridLoadAns.Rows[15].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[15].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[15].Cells[1].Text + ";";
+                }
+
+                //q5
+                if (rd10Test5a.Checked && gridLoadAns.Rows[16].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[16].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[16].Cells[1].Text + ";";
+                }
+                else if (rd10Test5b.Checked && gridLoadAns.Rows[17].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[17].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[17].Cells[1].Text + ";";
+                }
+                else if (rd10Test5c.Checked && gridLoadAns.Rows[18].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[18].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[18].Cells[1].Text + ";";
+                }
+                else if (rd10Test5d.Checked && gridLoadAns.Rows[19].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[19].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[19].Cells[1].Text + ";";
+                }
+
+                //q6
+                if (rd10Test6a.Checked && gridLoadAns.Rows[20].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[20].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[20].Cells[1].Text + ";";
+                }
+                else if (rd10Test6b.Checked && gridLoadAns.Rows[21].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[21].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[21].Cells[1].Text + ";";
+                }
+                else if (rd10Test6c.Checked && gridLoadAns.Rows[22].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[22].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[22].Cells[1].Text + ";";
+                }
+                else if (rd10Test6d.Checked && gridLoadAns.Rows[23].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[23].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[23].Cells[1].Text + ";";
+                }
+
+                //q7
+                if (rd10Test7a.Checked && gridLoadAns.Rows[24].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[24].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[24].Cells[1].Text + ";";
+                }
+                else if (rd10Test7b.Checked && gridLoadAns.Rows[25].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[25].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[25].Cells[1].Text + ";";
+                }
+                else if (rd10Test7c.Checked && gridLoadAns.Rows[26].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[26].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[26].Cells[1].Text + ";";
+                }
+                else if (rd10Test7d.Checked && gridLoadAns.Rows[27].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[27].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[27].Cells[1].Text + ";";
+                }
+
+                //q8
+                if (rd10Test8a.Checked && gridLoadAns.Rows[28].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[28].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[28].Cells[1].Text + ";";
+                }
+                else if (rd10Test8b.Checked && gridLoadAns.Rows[29].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[29].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[29].Cells[1].Text + ";";
+                }
+                else if (rd10Test8c.Checked && gridLoadAns.Rows[30].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[30].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[30].Cells[1].Text + ";";
+                }
+                else if (rd10Test8d.Checked && gridLoadAns.Rows[31].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[31].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[31].Cells[1].Text + ";";
+                }
+
+                //q9
+                if (rd10Test9a.Checked && gridLoadAns.Rows[32].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[32].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[32].Cells[1].Text + ";";
+                }
+                else if (rd10Test9b.Checked && gridLoadAns.Rows[33].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[33].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[33].Cells[1].Text + ";";
+                }
+                else if (rd10Test9c.Checked && gridLoadAns.Rows[34].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[34].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[34].Cells[1].Text + ";";
+                }
+                else if (rd10Test9d.Checked && gridLoadAns.Rows[35].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[35].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[35].Cells[1].Text + ";";
+                }
+
+                //q10
+                if (rd10Test10a.Checked && gridLoadAns.Rows[36].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[36].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[36].Cells[1].Text + ";";
+                }
+                else if (rd10Test10b.Checked && gridLoadAns.Rows[37].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[37].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[37].Cells[1].Text + ";";
+                }
+                else if (rd10Test10c.Checked && gridLoadAns.Rows[38].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[38].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[38].Cells[1].Text + ";";
+                }
+                else if (rd10Test10d.Checked && gridLoadAns.Rows[39].Cells[3].Text == "1")
+                {
+                    score += 1; correct += 1;
+                    listAns = listAns + gridLoadAns.Rows[39].Cells[0].Text + ";";
+                    listQuest = listQuest + gridLoadAns.Rows[39].Cells[1].Text + ";";
+                }
+
+                listQuest = "";
+                for (int p = 0; p < 10; p++)
+                {
+                    listQuest = listQuest + gridLoadAns.Rows[p * 4].Cells[1].Text + ";";
+                }
+
+                score = (float)Math.Round(score, 2);
+
+                DateTime date = DateTime.Now; // day la ngay lam bai test, cung la time khi ket thuc bai test
+                DateTime timebegin = DateTime.Parse(Session["timebegin"].ToString());
+                TimeSpan t = date - timebegin;
+
+                int timetest = Convert.ToInt32(t.TotalSeconds); // thoi gian test
+                int ss = 0, mm = 0;
+                if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
+                {
+                    mm = (int)(timetest / 60);
+                    ss = timetest - (mm * 60);
+                }
+                else
+                {
+                    mm = 0;
+                    ss = timetest;
+                }
+                if (mm >= 1) // Day la goi de 10 cau, 15p. set max mm = 15, tam thoi demo la 1p
+                { mm = 1; ss = 0; }
+
+
+                int rate = 0;
+                if (score >= 8.00 && score < 9.00) { rate = 1; }
+                else if (score >= 9.00 && score < 10.00) { rate = 2; }
+                else if (score == 10.00) { rate = 4; }
+
+                int iduser = Convert.ToInt32(Session["idlogin"]);
+                //Luu bai test vao database
+                iTestLog log = new iTestLog();
+                log.iUserID = iduser;
+                log.iListQuest = listQuest;
+                log.iListAns = listAns;
+                log.iScore = score;
+                log.iScoreRate = rate;
+                log.iDateTest = date;
+                log.iTime = timetest.ToString();
+                data.iTestLogs.InsertOnSubmit(log);
+                data.SubmitChanges();
+
+                //truyen wa trang thong bao
+                Session["Correct"] = correct;
+                Session["Num"] = 10;
+                Session["Date"] = date;
+                Session["Minute"] = mm;
+                Session["Second"] = ss;
+                Session["Score"] = score;
+                Session["Bonus"] = rate;
+                Session["timebegin"] = null;
+                Session["valid"] = null;// xoa seesion nay de tiep tuc lam bai test khac
+                Response.Redirect("FinalScore.aspx");
             }
-            if (mm >= 1) // Day la goi de 10 cau, 15p. set max mm = 15, tam thoi demo la 1p
-            { mm = 1; ss = 0; }
-            
-
-            int rate=0;
-            if (score >= 8.00 && score < 9.00) { rate = 1; }
-            else if (score >= 9.00 && score < 10.00) { rate = 2; }
-            else if (score == 10.00) { rate = 4; }
-
-            int iduser = Convert.ToInt32(Session["idlogin"]);
-            //Luu bai test vao database
-            iTestLog log = new iTestLog();
-            log.iUserID = iduser;
-            log.iListQuest = listQuest;
-            log.iListAns = listAns;
-            log.iScore = score;
-            log.iScoreRate = rate;
-            log.iDateTest = date;
-            log.iTime = timetest.ToString();
-            data.iTestLogs.InsertOnSubmit(log);
-            data.SubmitChanges();
-            
-            //truyen wa trang thong bao
-            Session["Correct"] = correct;
-            Session["Num"] = 10;
-            Session["Date"] = date;
-            Session["Minute"] = mm;
-            Session["Second"] = ss;
-            Session["Score"] = score;
-            Session["Bonus"] = rate;
-            Response.Redirect("FinalScore.aspx");
-            
         }
 
 

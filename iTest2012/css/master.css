@@ -252,10 +252,11 @@
          { 
              color:red; left:0px;              
              background-color: #ffffff; 
+             font-weight:bold;
              /* Text Always Center */ 
              line-height:26px; 
              /* position on bottom */ 
-             bottom: 0px; 
+             bottom: 80px; 
              /* Thay: bottom: 0px; = top: 0px; neu muon o tren dau trang */ 
              position: fixed; z-index: 100; 
              	 
