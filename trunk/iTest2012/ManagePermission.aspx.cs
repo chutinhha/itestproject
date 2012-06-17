@@ -34,7 +34,7 @@ namespace iTest2012
             {
                 iUserPermission func = new iUserPermission();
                 func.iUserID = data.st_LoadUserID(ddlUsername.Text.Trim());
-                func.iFuncID = data.st_LoadFuncID(ddlFunction.Text.Trim());
+                func.iFuncID = data.st_LoadFuncID(ddlFunction.SelectedValue);
                 func.iPermission = 1;
 
                 data.iUserPermissions.InsertOnSubmit(func);

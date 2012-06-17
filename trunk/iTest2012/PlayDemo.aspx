@@ -1104,7 +1104,7 @@
     </table>
 </div>  
 <div style="position: fixed; z-index: 100; left:0px; color:#FFFFFF; background-color: transparent; bottom: 0px;">
-<table class="border_tableheadline" style ="width:100px; height:20px">
+<table class="border_tableheadline" style ="width:100px; height:20px; bottom:80px">
     <tr>
         <td>Ghi nhớ</td>
     </tr>
