@@ -39,7 +39,7 @@ namespace iTest2012
             {
                 ddlChapNum.Items.RemoveAt(1); //index 0 cant remove because it's title of Dropdownlist
             }
-            TextBox1.Text = "";
+            //TextBox1.Text = "";
             //----- select sub index when user choice -----------------------------------------------------------
             MyiTestDataDataContext db = new MyiTestDataDataContext();
             int subid = db.st_LoadSubjectID(ddlSubName.Text.Trim());
@@ -49,7 +49,7 @@ namespace iTest2012
                         where c.iSubjectID == subid
                         select new { c.iChapID, c.iChapterName, c.iChapterNum };
             ddlChapNum.DataSource = query;
-            ddlChapNum.DataTextField = "iChapterNum";
+            ddlChapNum.DataTextField = "iChapterName";
             ddlChapNum.DataValueField = "iChapID";
             ddlChapNum.DataBind();
 
@@ -58,17 +58,17 @@ namespace iTest2012
         /** end edit by lightmoon7 */
 
         /** edit by lightmoon7 - 20/10/2011 */
-        protected void ddlChapNum_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList dd = (DropDownList)sender;
-            if (dd.SelectedValue == "-1")
-                return;
-            int value = int.Parse(dd.SelectedValue);
-            var currentChapter = (from c in data.iChapters
-                                  where c.iChapID == value
-                                  select c).Single();
-            TextBox1.Text = currentChapter.iChapterName;
-        }
+        //protected void ddlChapNum_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    DropDownList dd = (DropDownList)sender;
+        //    if (dd.SelectedValue == "-1")
+        //        return;
+        //    int value = int.Parse(dd.SelectedValue);
+        //    var currentChapter = (from c in data.iChapters
+        //                          where c.iChapID == value
+        //                          select c).Single();
+        //    //TextBox1.Text = currentChapter.iChapterName;
+        //}
         /** end edit by lightmoon7 */
 
         protected void btnEnterAgain_Click(object sender, EventArgs e)
@@ -259,7 +259,7 @@ namespace iTest2012
                     // add question and answers into database
 
                     int subid = db.st_LoadSubjectID(ddlSubName.Text.Trim());
-                    int chapid = data.st_LoadChapID(TextBox1.Text.Trim(), subid);
+                    int chapid = int.Parse(ddlChapNum.SelectedValue);
 
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
                     //qs.iType = Convert.ToInt32(ddlLevel.SelectedValue);
