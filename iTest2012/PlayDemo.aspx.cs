@@ -445,54 +445,65 @@ namespace iTest2012
                 score = (float)Math.Round(score, 2);
 
                 DateTime date = DateTime.Now; // day la ngay lam bai test, cung la time khi ket thuc bai test
-                DateTime timebegin = DateTime.Parse(Session["timebegin"].ToString());
-                TimeSpan t = date - timebegin;
-
-                int timetest = Convert.ToInt32(t.TotalSeconds); // thoi gian test
-                int ss = 0, mm = 0;
-                if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
+                if (Session["timebegin"] != null)
                 {
-                    mm = (int)(timetest / 60);
-                    ss = timetest - (mm * 60);
+                    DateTime timebegin = DateTime.Parse(Session["timebegin"].ToString());
+
+                    TimeSpan t = date - timebegin;
+
+                    int timetest = Convert.ToInt32(t.TotalSeconds); // thoi gian test
+                    int ss = 0, mm = 0;
+                    if (timetest >= 60) // day la de 10 cau, max time 15p , khong can tinh ra hour, chi doi sang minute
+                    {
+                        mm = (int)(timetest / 60);
+                        ss = timetest - (mm * 60);
+                    }
+                    else
+                    {
+                        mm = 0;
+                        ss = timetest;
+                    }
+                    if (mm >= 1) // Day la goi de 10 cau, 15p. set max mm = 15, tam thoi demo la 1p
+                    { mm = 1; ss = 0; }
+
+                    int rate = 0;
+                    if (score >= 8.00 && score < 9.00) { rate = 1; }
+                    else if (score >= 9.00 && score < 10.00) { rate = 2; }
+                    else if (score == 10.00) { rate = 4; }
+
+                    int iduser = Convert.ToInt32(Session["idlogin"]);
+                    //Luu bai test vao database
+                    iTestLog log = new iTestLog();
+                    log.iUserID = iduser;
+                    log.iListQuest = listQuest;
+                    log.iListAns = listAns;
+                    log.iScore = score;
+                    log.iScoreRate = rate;
+                    log.iDateTest = date;
+                    log.iTime = timetest.ToString();
+                    data.iTestLogs.InsertOnSubmit(log);
+                    data.SubmitChanges();
+
+                    //truyen wa trang thong bao
+                    Session["Correct"] = correct;
+                    Session["Num"] = 10;
+                    Session["Date"] = date;
+                    Session["Minute"] = mm;
+                    Session["Second"] = ss;
+                    Session["Score"] = score;
+                    Session["Bonus"] = rate;
+                    Session["timebegin"] = null;
+                    Session["valid"] = null;// xoa seesion nay de tiep tuc lam bai test khac
+                    Response.Redirect("FinalScore.aspx");
                 }
                 else
                 {
-                    mm = 0;
-                    ss = timetest;
+                    string strScript3 = "<script>";
+                    strScript3 += "alert('Bài thi không hợp lệ !');";
+                    strScript3 += "window.location='Test.aspx';";
+                    strScript3 += "</script>";
+                    Page.RegisterClientScriptBlock("strScript3", strScript3);
                 }
-                if (mm >= 1) // Day la goi de 10 cau, 15p. set max mm = 15, tam thoi demo la 1p
-                { mm = 1; ss = 0; }
-
-
-                int rate = 0;
-                if (score >= 8.00 && score < 9.00) { rate = 1; }
-                else if (score >= 9.00 && score < 10.00) { rate = 2; }
-                else if (score == 10.00) { rate = 4; }
-
-                int iduser = Convert.ToInt32(Session["idlogin"]);
-                //Luu bai test vao database
-                iTestLog log = new iTestLog();
-                log.iUserID = iduser;
-                log.iListQuest = listQuest;
-                log.iListAns = listAns;
-                log.iScore = score;
-                log.iScoreRate = rate;
-                log.iDateTest = date;
-                log.iTime = timetest.ToString();
-                data.iTestLogs.InsertOnSubmit(log);
-                data.SubmitChanges();
-
-                //truyen wa trang thong bao
-                Session["Correct"] = correct;
-                Session["Num"] = 10;
-                Session["Date"] = date;
-                Session["Minute"] = mm;
-                Session["Second"] = ss;
-                Session["Score"] = score;
-                Session["Bonus"] = rate;
-                Session["timebegin"] = null;
-                Session["valid"] = null;// xoa seesion nay de tiep tuc lam bai test khac
-                Response.Redirect("FinalScore.aspx");
             }
         }
 
