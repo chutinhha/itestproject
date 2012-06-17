@@ -71,20 +71,30 @@
                     Chọn chương
                 </td>
                 <td  class="td_style_Nowid">
-                    <asp:DropDownList ID="ddlChapNum" CssClass="boder_textbox" runat="server" AppendDataBoundItems="True" Width="350px"
-                        OnSelectedIndexChanged="ddlChapNum_SelectedIndexChanged" AutoPostBack="True">
-                        <asp:ListItem Value="-1">---- Chọn Chương ---- </asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList ID="ddlChapNum" CssClass="boder_textbox" runat="server" AppendDataBoundItems="True" Width="350px"
+                             AutoPostBack="True">
+                            <asp:ListItem Value="-1">---- Chọn Chương ---- </asp:ListItem>
+                            </asp:DropDownList>                            
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="ddlSubName" EventName="SelectedIndexChanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                    
                 </td>
             </tr>
-            <tr align="left">
+            <%--<tr align="left">
                 <td  class="td_style_wid">
                     Tên chương
                 </td>
                 <td  class="td_style_Nowid">
                     <asp:TextBox ID="TextBox1" runat="server" Enabled="False" Width="350px" ForeColor="Blue" BorderWidth="0px"></asp:TextBox>
                 </td>
-            </tr>
+            </tr>--%>
             <tr align="left">
                 <td  class="td_style_wid">
                     
