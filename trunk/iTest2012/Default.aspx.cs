@@ -13,8 +13,9 @@ namespace iTest2012
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string url = "http://kenhtuyensinh.vn/rss/tuyen-sinh.rss";
-            XmlTextReader reader = new XmlTextReader(url);
+            //string url = "http://kenhtuyensinh.vn/rss/tuyen-sinh.rss"; link dom?
+            string url2 = "http://www.24h.com.vn/upload/rss/giaoducduhoc.rss";
+            XmlTextReader reader = new XmlTextReader(url2);
 
             DataSet ds = new DataSet();
             ds.ReadXml(reader);
