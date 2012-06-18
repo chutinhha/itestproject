@@ -145,6 +145,8 @@
              /*bo tron 4 goc*/
             -moz-border-radius: 3px;
             -webkit-border-radius: 3px; 
+            -border-radius: 3px; 
+            border-radius: 3px; 
             padding: 0px; margin: 0px; 
               
         }
@@ -158,6 +160,8 @@
             border-style:solid;
             -moz-border-radius: 3px;
             -webkit-border-radius: 3px;
+            -border-radius: 3px;
+            border-radius: 3px;
         }
         .btn_master
         {
@@ -190,10 +194,14 @@
             color:white; 
             /*bo tron goc trai tren*/
             -moz-border-radius-topleft:5px;
-            -webkit-border-top-left-radius:5px;      
+            -webkit-border-top-left-radius:5px;
+            -border-top-left-radius:5px; 
+            border-top-left-radius:5px;      
             /*bo tron goc phai tren*/   
             -moz-border-radius-topright:5px;
-            -webkit-border-top-right-radius:5px;  
+            -webkit-border-top-right-radius:5px; 
+            -border-top-right-radius:5px;  
+            border-top-right-radius:5px;  
             padding: 0px; margin: 0px;                 
         }
         .border_menuheadline
@@ -236,6 +244,8 @@
              /*bo tron 4 goc*/
             -moz-border-radius: 3px;
             -webkit-border-radius: 3px; 
+            -border-radius: 3px;
+            border-radius: 3px;
             padding: 0px; margin: 0px; 
          }
          .td_style_wid
@@ -256,7 +266,7 @@
              /* Text Always Center */ 
              line-height:26px; 
              /* position on bottom */ 
-             bottom: 80px; 
+             bottom: 40px; 
              /* Thay: bottom: 0px; = top: 0px; neu muon o tren dau trang */ 
              position: fixed; z-index: 100; 
              	 

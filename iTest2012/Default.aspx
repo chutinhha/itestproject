@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">  
 <style type="text/css">
-    .tittle
+    .title
     {
         font-weight:bold;
     }
@@ -49,22 +49,27 @@
                             Tin Tức Đó Đây</td>
                     </tr>
                 </table>
-                <table class="border_alltable" style="width:550px">
+                
+                <table class="border_alltable" style="width:550px" align="left">
                     <tr>
                         <td class="border_headtittle">
-                            >> Từ kenhtuyensinh.vn
-                        </td>
-                        <td>
-                            <asp:Repeater ID="rptRSS" runat="server">
-                                <ItemTemplate>
-                                    <div class="tittle"><asp:HyperLink ID="tittle" runat="server" NavigateUrl='<%# Eval("link") %>' Text='<%# Eval("title") %>'></asp:HyperLink></div>
-                                    <div class="description"><asp:Label ID="description" runat="server" Text='<%# Eval("description")%>' ></asp:Label></div>
-                                    <div class="pubdate">Ngày đăng tin : '<%# Eval("pubDate")%>' - Sửa lần cuối : '<%# Eval("lastBuildDate")%>'</div>
-                                </ItemTemplate>
-                            </asp:Repeater>
+                            >> Từ 24h.com.vn
                         </td>
                     </tr>
-                </table>
+                    <tr align="left">
+                        <td  align="left" style="padding:0 0 0 15px">
+                        <div style="overflow:scroll; height:400px; padding:0 15px 0 0">
+                            <asp:Repeater ID="rptRSS" runat="server">
+                                <ItemTemplate>
+                                    <div class="title"><asp:HyperLink ID="title" runat="server" NavigateUrl='<%# Eval("link")%>' Text='<%# Eval("title")%>' Target="_blank"></asp:HyperLink></div>
+                                    <div class="description"><asp:Label ID="description" runat="server" Text='<%# Eval("description")%>'></asp:Label></div>
+                                    <div class="pubdate">Ngày đăng tin : <%# Eval("pubDate")%></div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+                        </td>
+                    </tr>
+                </table>                
                 </div>
            
             <div style="float:right">
