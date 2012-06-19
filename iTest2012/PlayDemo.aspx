@@ -33,7 +33,7 @@
         });
     });
     </script>
-    <script type="text/jscript">
+    <script type="text/javascript">
         $(document).ready(function () {
             $("input[name='cks']").change(function () {                
                 var str = "";                
