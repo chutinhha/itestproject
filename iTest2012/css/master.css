@@ -12,7 +12,7 @@
         
         a:hover 
         {
-            color:#003300;
+            color:Orange;
             text-decoration:none;                       
         }  
           
@@ -260,7 +260,7 @@
          }
          .divOnTop 
          { 
-             color:red; left:0px;              
+             left:0px; color:#0D75B3;             
              background-color: #ffffff; 
              font-weight:bold;
              /* Text Always Center */ 
@@ -269,6 +269,7 @@
              bottom: 40px; 
              /* Thay: bottom: 0px; = top: 0px; neu muon o tren dau trang */ 
              position: fixed; z-index: 100; 
+             border: thin solid #003000;
              	 
          }
 

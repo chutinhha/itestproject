@@ -14,9 +14,22 @@
     {
         color:#999999;    
     }
-</style>  
+    
+    
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $("#flip24").click(function () {
+             $(".panel24").slideToggle("slow");
+         });
+         $("#flipVN").click(function () {
+             $(".panelVn").slideToggle("slow");
+         });
+     });
+</script>   
     <div align="center">
    <div  align="center" style="width:800px">  
                 <div style="float:left">
@@ -40,7 +53,7 @@
                 <table class="border_alltable" style =" width:550px; border-width:0px; border-color:inherit;">
                     <tr>
                         <td style ="height:20px">
-                        </td>
+                            &nbsp;</td>
                     </tr>
                 </table>   
                 <table class="border_tableheadline" style="width:550px">
@@ -53,13 +66,33 @@
                 <table class="border_alltable" style="width:550px" align="left">
                     <tr>
                         <td class="border_headtittle">
-                            >> Từ 24h.com.vn
+                            <div style=" width:100%">
+                                <img alt="(Ẩn / hiện)" id="flip24" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ 24h.com.vn</div>                            
                         </td>
                     </tr>
                     <tr align="left">
                         <td  align="left" style="padding:0 0 0 15px">
-                        <div style="overflow:scroll; height:400px; padding:0 15px 0 0">
-                            <asp:Repeater ID="rptRSS" runat="server">
+                        <div class="panel24" style="overflow:scroll; height:400px; padding:0 15px 0 0">
+                            <asp:Repeater ID="rptRSS24" runat="server">
+                                <ItemTemplate>
+                                    <div class="title"><asp:HyperLink ID="title" runat="server" NavigateUrl='<%# Eval("link")%>' Text='<%# Eval("title")%>' Target="_blank"></asp:HyperLink></div>
+                                    <div class="description"><asp:Label ID="description" runat="server" Text='<%# Eval("description")%>'></asp:Label></div>
+                                    <div class="pubdate">Ngày đăng tin : <%# Eval("pubDate")%></div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border_headtittle">
+                            <div style=" width:100%">
+                                <img alt="(Ẩn / hiện)" id="flipVN" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ VnExpress </div>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td  align="left" style="padding:0 0 0 15px">
+                        <div class="panelVn" style="overflow:scroll; height:400px; padding:0 15px 0 0">
+                            <asp:Repeater ID="rptRSSVN" runat="server">
                                 <ItemTemplate>
                                     <div class="title"><asp:HyperLink ID="title" runat="server" NavigateUrl='<%# Eval("link")%>' Text='<%# Eval("title")%>' Target="_blank"></asp:HyperLink></div>
                                     <div class="description"><asp:Label ID="description" runat="server" Text='<%# Eval("description")%>'></asp:Label></div>
@@ -98,7 +131,7 @@
                 </table>
             </div>                     
    </div>
-     
+    
 </div>
 </asp:Content>
 

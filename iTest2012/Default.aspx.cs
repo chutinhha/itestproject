@@ -13,15 +13,19 @@ namespace iTest2012
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string url = "http://kenhtuyensinh.vn/rss/tuyen-sinh.rss"; link dom?
+            string url = "http://vnexpress.net/rss/gl/xa-hoi.rss";
             string url2 = "http://www.24h.com.vn/upload/rss/giaoducduhoc.rss";
-            XmlTextReader reader = new XmlTextReader(url2);
-
+            XmlTextReader reader = new XmlTextReader(url);
+            XmlTextReader reader2 = new XmlTextReader(url2);
             DataSet ds = new DataSet();
+            DataSet ds2 = new DataSet();
             ds.ReadXml(reader);
-
-            rptRSS.DataSource = ds.Tables["item"];
-            rptRSS.DataBind();
+            ds2.ReadXml(reader2);
+            rptRSSVN.DataSource = ds.Tables["item"];
+            rptRSSVN.DataBind();
+            rptRSS24.DataSource = ds2.Tables["item"];
+            rptRSS24.DataBind();
+            //Session["valid"] = "0";
         }
     }
 }

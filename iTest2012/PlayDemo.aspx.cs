@@ -22,10 +22,10 @@ namespace iTest2012
                 //load toan bo cau hoi phu hop dieu kien
                 subid = data.st_LoadSubjectID(Session["Subject"].ToString());
                 level = Convert.ToInt32(Session["Level"].ToString());
-                numq = Convert.ToInt32(Session["Num"].ToString());                
+                numq = Convert.ToInt32(Session["Num"].ToString());
                 if (!Page.IsPostBack) // post back la grid bi thay doi ngay
                 {
-                    
+
                     gridLoadQuest.DataSource = data.st_LoadListQuestID(subid, level);
                     gridLoadQuest.DataBind();
                     // thuc hien load random, ket thuc dc mang arr xao tron vi tri cau hoi
@@ -45,7 +45,7 @@ namespace iTest2012
                     //string listquest="";
                     for (int k = 0; k < numq; k++)
                     { arrQ.Add(gridLoadQuest.Rows[Convert.ToInt32(arr[k].ToString())].Cells[0].Text); }
-                                                 
+
                     //grid cau hoi
                     gridRandom.DataSource = data.st_LoadList10QuestsRandom(Convert.ToInt32(arrQ[0]),
                         Convert.ToInt32(arrQ[1]), Convert.ToInt32(arrQ[2]), Convert.ToInt32(arrQ[3]),
@@ -63,16 +63,16 @@ namespace iTest2012
                     {
                         panel10Test.Visible = true; panel40Test.Visible = false; panel60Test.Visible = false;
                         //load noi dung cau hoi
-                        lb10Test1.Text =gridRandom.Rows[0].Cells[1].Text;
-                        lb10Test2.Text =gridRandom.Rows[1].Cells[1].Text;
-                        lb10Test3.Text =gridRandom.Rows[2].Cells[1].Text;
-                        lb10Test4.Text =gridRandom.Rows[3].Cells[1].Text;
-                        lb10Test5.Text =gridRandom.Rows[4].Cells[1].Text;
-                        lb10Test6.Text =gridRandom.Rows[5].Cells[1].Text;
-                        lb10Test7.Text =gridRandom.Rows[6].Cells[1].Text;
-                        lb10Test8.Text =gridRandom.Rows[7].Cells[1].Text;
-                        lb10Test9.Text =gridRandom.Rows[8].Cells[1].Text;
-                        lb10Test10.Text =gridRandom.Rows[9].Cells[1].Text;
+                        lb10Test1.Text = gridRandom.Rows[0].Cells[1].Text;
+                        lb10Test2.Text = gridRandom.Rows[1].Cells[1].Text;
+                        lb10Test3.Text = gridRandom.Rows[2].Cells[1].Text;
+                        lb10Test4.Text = gridRandom.Rows[3].Cells[1].Text;
+                        lb10Test5.Text = gridRandom.Rows[4].Cells[1].Text;
+                        lb10Test6.Text = gridRandom.Rows[5].Cells[1].Text;
+                        lb10Test7.Text = gridRandom.Rows[6].Cells[1].Text;
+                        lb10Test8.Text = gridRandom.Rows[7].Cells[1].Text;
+                        lb10Test9.Text = gridRandom.Rows[8].Cells[1].Text;
+                        lb10Test10.Text = gridRandom.Rows[9].Cells[1].Text;
 
                         //load hinh anh neu co
                         if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))
@@ -127,20 +127,22 @@ namespace iTest2012
                         //10
                         rd10Test10a.Text = gridLoadAns.Rows[36].Cells[2].Text; rd10Test10b.Text = gridLoadAns.Rows[37].Cells[2].Text;
                         rd10Test10c.Text = gridLoadAns.Rows[38].Cells[2].Text; rd10Test10d.Text = gridLoadAns.Rows[39].Cells[2].Text;
-                    
+
                         // xoá session subject, lv, de user k the hack time, session num k xoa cung dc
                         Session["Subject"] = null;
                         Session["Level"] = null;
-                        //Session["Num"] = null;
+                        Session["Num"] = null;
                         Session["valid"] = "1";// session kiem tra user co back trang hay ko
-                        
- 
+
+
                     }
                     else if (numq == 30)
                     { }
                     else
                     { }
+
                 }
+                
             }
             else
             {
@@ -154,21 +156,9 @@ namespace iTest2012
            
         protected void btn10Test_Click(object sender, EventArgs e)
         {
-            if (Session["valid"] == null) // dung session nay de kiem tra user co back trang hay ko
+            if(Session["valid"].ToString()=="0")
             {
-                Session["Correct"] = null;
-                Session["Date"] = null;
-                Session["Score"] = null;
-                Session["Bonus"] = null;
-                Session["Num"] = null;
-                Session["Minute"] = null;
-                Session["Second"] = null;
-                Session["timebegin"] = null;
-                string strScript2 = "<script>";
-                strScript2 += "alert('Bài thi không hợp lệ !');";
-                strScript2 += "window.location='Test.aspx';";
-                strScript2 += "</script>";
-                Page.RegisterClientScriptBlock("strScript2", strScript2);
+                Response.Redirect("default.aspx");
             }
             else
             {

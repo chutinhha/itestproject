@@ -13,12 +13,21 @@ namespace iTest2012 {
     public partial class Default {
         
         /// <summary>
-        /// rptRSS control.
+        /// rptRSS24 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRSS;
+        protected global::System.Web.UI.WebControls.Repeater rptRSS24;
+        
+        /// <summary>
+        /// rptRSSVN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptRSSVN;
     }
 }

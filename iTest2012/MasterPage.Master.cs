@@ -13,6 +13,11 @@ namespace iTest2012
         MyiTestDataDataContext data = new MyiTestDataDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string b = Request.ServerVariables["URL"];
+            if (b.IndexOf("PlayDemo.aspx") < 0)
+            {
+                Session["valid"] = "0";
+            }
             txtUsername.Focus();
             int test = (int)Session["idlogin"];
             string a = Request.ServerVariables["URL"];
