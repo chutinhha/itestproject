@@ -37,20 +37,18 @@ namespace iTest2012
                     //Session["Type"] = ddlQuestType.SelectedValue;
                     Session["Level"] = ddlLevel.SelectedValue;
 
-                    if (Session["Question"] == null)
-                    {
-                        Session["Question"] = 1;
-                    }
+                    //if (Session["Question"] == null)
+                    //{
+                    //    Session["Question"] = 1;
+                    //}
 
-                    if (Session["Correct"] == null)
-                    {
-                        Session["Correct"] = 0;
-                    }
-                    if (Session["timebegin"] == null)
-                    {
-                        Session["timebegin"] = DateTime.Now;
-                    }
-
+                    //if (Session["Correct"] == null)
+                    //{
+                    //    Session["Correct"] = 0;
+                    //}
+                    
+                    Session["timebegin"] = DateTime.Now;
+                    
                     Response.Redirect("PlayDemo.aspx");
 
                 }

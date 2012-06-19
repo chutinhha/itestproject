@@ -637,6 +637,7 @@
     <Content Include="ckeditor\_source\skins\v2\templates.css" />
     <Content Include="ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="ckeditor\_source\themes\default\theme.js" />
+    <Content Include="content\toggle.aspx" />
     <Content Include="css\taoxanh01.css" />
     <Content Include="css\taoxanh02.css" />
     <Content Include="Default.aspx" />
@@ -702,6 +703,8 @@
     <Content Include="image\etc\timxanh.gif" />
     <Content Include="image\icon\add-quest-icon.jpg" />
     <Content Include="image\icon\add-user-icon.jpg" />
+    <Content Include="image\icon\arrow_updown.jpg" />
+    <Content Include="image\icon\arrow_updown.png" />
     <Content Include="image\icon\edit-icon.jpg" />
     <Content Include="image\icon\key-icon.jpg" />
     <Content Include="image\icon\login-icon.jpg" />
@@ -711,6 +714,7 @@
     <Content Include="image\logo\logo01.png" />
     <Content Include="js\checkbox.js" />
     <Content Include="js\img\digits.png" />
+    <Content Include="js\jquery-1.4.2.min.js" />
     <Content Include="js\jquery.countdown.js" />
     <Content Include="js\time.js" />
     <Content Include="js\topbottom.js" />
@@ -844,6 +848,13 @@
     </Compile>
     <Compile Include="ChangePass.aspx.designer.cs">
       <DependentUpon>ChangePass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="content\toggle.aspx.cs">
+      <DependentUpon>toggle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="content\toggle.aspx.designer.cs">
+      <DependentUpon>toggle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

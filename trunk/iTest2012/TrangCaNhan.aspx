@@ -18,7 +18,7 @@
                     </td>                    
                 </tr>
                 <tr align="left">
-                    <td class="td_style_wid">
+                    <td class="td_style_wid" style="font-weight:bold">
                         Tên đăng nhập<br />
                         
                     </td>
@@ -29,7 +29,7 @@
                     </td>
                 </tr>
                 <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Email của bạn<br />
                         
                     </td>
@@ -39,7 +39,7 @@
                     </td>
                 </tr>
                 <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Ngày Đăng ký<br />
                         
                     </td  >
@@ -49,7 +49,7 @@
                     </td>
                 </tr>
                  <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Số bài đã làm<br />
                         
                     </td>
@@ -58,18 +58,18 @@
                     </td>
                 </tr>
                 <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Tổng điểm đã làm<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
                         <asp:Label ID="lblSumMark" runat="server" Width="200px"></asp:Label>
-                        Trung bình : <asp:Label ID="lblAvgMark" runat="server" Width="200px"></asp:Label>
+                        <span style="font-weight:bold">Trung bình : </span><asp:Label ID="lblAvgMark" runat="server" Width="200px"></asp:Label>
                      </td>
                 </tr>
                 
                  <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Tổng điểm thưởng<br />
                         
                     </td>
@@ -79,7 +79,7 @@
                     </td>
                 </tr>
                 <tr align="left">
-                    <td  class="td_style_wid">
+                    <td  class="td_style_wid" style="font-weight:bold">
                         Xếp hạng<br />
                         
                     </td>
