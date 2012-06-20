@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="AddQuestions.aspx.cs" Inherits="iTest2012.AddQuestions" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor"
+    TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" id="meta" content="text/html; charset=utf-8" />
     <script src="ckeditor/ckeditor_source.js" type="text/javascript"></script>   
@@ -109,6 +111,7 @@
                 </td>
 
                 <td  class="td_style_Nowid">
+                    <cc1:Editor runat="server"></cc1:Editor>
                     <textarea name="txt_noidung" id="txtnoidung" runat="server" rows="10" cols="60" style="height:150px" class="boder_textbox"></textarea>
                 </td>
             </tr>
