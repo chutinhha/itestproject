@@ -85,13 +85,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
         
         /// <summary>
-        /// txtnoidung control.
+        /// edtQuest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtnoidung;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor edtQuest;
         
         /// <summary>
         /// FileUploadQuest control.
@@ -112,13 +112,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// txtAns5 control.
+        /// edtAns1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAns5;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor edtAns1;
         
         /// <summary>
         /// rbA control.
@@ -130,13 +130,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rbA;
         
         /// <summary>
-        /// txtAns6 control.
+        /// edtAns2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAns6;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor edtAns2;
         
         /// <summary>
         /// rbB control.
@@ -148,13 +148,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rbB;
         
         /// <summary>
-        /// txtAns7 control.
+        /// edtAns3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAns7;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor edtAns3;
         
         /// <summary>
         /// rbC control.
@@ -166,13 +166,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rbC;
         
         /// <summary>
-        /// txtAns8 control.
+        /// edtAns4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAns8;
+        protected global::AjaxControlToolkit.HTMLEditor.Editor edtAns4;
         
         /// <summary>
         /// rbD control.
