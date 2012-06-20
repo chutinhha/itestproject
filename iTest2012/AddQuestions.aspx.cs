@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Data;
 
 namespace iTest2012
 {
@@ -74,13 +75,13 @@ namespace iTest2012
         protected void btnEnterAgain_Click(object sender, EventArgs e)
         {
 
-            txtnoidung.Value = string.Empty;
-            txtAns5.Text = string.Empty;
-            txtAns6.Text = string.Empty;
-            txtAns7.Text = string.Empty;
-            txtAns8.Text = string.Empty;
+            edtQuest.Content = string.Empty;
+            edtAns1.Content = string.Empty;
+            edtAns2.Content = string.Empty;
+            edtAns3.Content = string.Empty;
+            edtAns4.Content = string.Empty;
 
-            txtnoidung.Focus();
+            edtQuest.Focus();
         }
 
         protected void btnAddQuest_Click(object sender, EventArgs e)
@@ -237,9 +238,9 @@ namespace iTest2012
                 //else if (DropDownList1.SelectedValue == "1")
                 //{
                 if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
-            && txtnoidung.Value.Length > 0
-            && txtAns5.Text.Length > 0 && txtAns6.Text.Length > 0
-            && txtAns7.Text.Length > 0 && txtAns8.Text.Length > 0)
+            && edtQuest.Content.Length > 0
+            && edtAns1.Content.Length > 0 && edtAns2.Content.Length > 0
+            && edtAns3.Content.Length > 0 && edtAns4.Content.Length > 0)
                 {
                     iAnswer ans5 = new iAnswer();
                     iAnswer ans6 = new iAnswer();
@@ -264,7 +265,7 @@ namespace iTest2012
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
                     //qs.iType = Convert.ToInt32(ddlLevel.SelectedValue);
                     qs.iLevel = Convert.ToInt32(ddlLevel.SelectedValue);
-                    qs.iBodyQuest = txtnoidung.Value.ToString();
+                    qs.iBodyQuest = edtQuest.Content;
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
                     else
@@ -283,19 +284,19 @@ namespace iTest2012
 
                     }
                     ans5.iQuestID = qsid;
-                    ans5.iBodyAns = txtAns5.Text.ToString();
+                    ans5.iBodyAns = edtAns1.Content;
                     
                     //////ans2
                     ans6.iQuestID = qsid;
-                    ans6.iBodyAns = txtAns6.Text.ToString();
+                    ans6.iBodyAns = edtAns2.Content;
                     
                     /////ans3
                     ans7.iQuestID = qsid;
-                    ans7.iBodyAns = txtAns7.Text.ToString();
+                    ans7.iBodyAns = edtAns3.Content;
                     
                     /////ans4
                     ans8.iQuestID = qsid;
-                    ans8.iBodyAns = txtAns8.Text.ToString();
+                    ans8.iBodyAns = edtAns4.Content;
                     
                     /// xet default dap an dung
                     ans5.iProperty = '1';
@@ -342,18 +343,18 @@ namespace iTest2012
                     Response.Write("<script>alert('This question was added');</script>");
 
                     // Tra form ve gia tri mac dinh
-                    txtnoidung.Value = string.Empty;
-                    txtAns5.Text = string.Empty;
-                    txtAns6.Text = string.Empty;
-                    txtAns7.Text = string.Empty;
-                    txtAns8.Text = string.Empty;
+                    edtQuest.Content = string.Empty;
+                    edtAns1.Content = string.Empty;
+                    edtAns1.Content = string.Empty;
+                    edtAns1.Content = string.Empty;
+                    edtAns1.Content = string.Empty;
                     
                     rbA.Checked = true;
                     rbB.Checked = false;
                     rbC.Checked = false;
                     rbD.Checked = false;
 
-                    txtnoidung.Focus();
+                    edtQuest.Focus();
                     //DropDownList1.SelectedValue = "-1";
                 }
                 //}

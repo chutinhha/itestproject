@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PlayDemo.aspx.cs" Inherits="iTest2012.PlayDemo" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register src="QuestControl.ascx" tagname="QuestControl" tagprefix="uc1" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js' type='text/javascript'></script>
 <script src="js/jquery.countdown.js" type="text/javascript"></script>
 
 <style type="text/css">
@@ -15,7 +18,8 @@
       
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script type="text/javascript">
+    
+    <script type="text/javascript">
     $(function () {
         $('#counter').countdown({
             image: 'js/img/digits.png',
@@ -84,7 +88,8 @@
                 <td class="td_style_Nowid">   
                 Đánh dấu vào ô trước câu hỏi để ghi nhớ.                 
                     <div id="Câu 1" class="border_headtittle">
-                    <input type="checkbox" value="Câu 1" name="cks"/>Câu 1</div> 
+                    <input type="checkbox" value="Câu 1" name="cks"/>Câu 1</div>
+                    <asp:Literal ID="Literal1" runat="server" Mode="Transform" ></asp:Literal> 
                     <asp:Label ID="lb10Test1" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test1" runat="server" />                    
                     <br /><asp:RadioButton ID="rd10Test1a" runat="server" GroupName="10Test1"/>
@@ -93,6 +98,7 @@
                     <br /><asp:RadioButton ID="rd10Test1d" runat="server" GroupName="10Test1"/>
                     <div id="Câu 2" class="border_headtittle">
                     <input type="checkbox" value="Câu 2" name="cks"/>Câu 2</div> 
+                    <asp:Literal ID="Literal2" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test2" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test2" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test2a" runat="server" GroupName="10Test2"/>
@@ -100,7 +106,8 @@
                     <br /><asp:RadioButton ID="rd10Test2c" runat="server" GroupName="10Test2"/>
                     <br /><asp:RadioButton ID="rd10Test2d" runat="server" GroupName="10Test2"/>
                     <div id="Câu 3" class="border_headtittle">
-                    <input type="checkbox" value="Câu 3" name="cks"/>Câu 3</div> 
+                    <input type="checkbox" value="Câu 3" name="cks"/>Câu 3</div>
+                    <asp:Literal ID="Literal3" runat="server" Mode="Transform"></asp:Literal> 
                     <asp:Label ID="lb10Test3" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test3" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test3a" runat="server" GroupName="10Test3"/>
@@ -109,6 +116,7 @@
                     <br /><asp:RadioButton ID="rd10Test3d" runat="server" GroupName="10Test3"/>
                     <div id="Câu 4" class="border_headtittle">
                     <input type="checkbox" value="Câu 4" name="cks"/>Câu 4</div> 
+                    <asp:Literal ID="Literal4" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test4" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test4" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test4a" runat="server" GroupName="10Test4"/>
@@ -117,6 +125,7 @@
                     <br /><asp:RadioButton ID="rd10Test4d" runat="server" GroupName="10Test4"/>
                     <div id="Câu 5" class="border_headtittle">
                     <input type="checkbox" value="Câu 5" name="cks"/>Câu 5</div> 
+                    <asp:Literal ID="Literal5" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test5" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test5" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test5a" runat="server" GroupName="10Test5"/>
@@ -125,6 +134,7 @@
                     <br /><asp:RadioButton ID="rd10Test5d" runat="server" GroupName="10Test5"/>
                     <div id="Câu 6" class="border_headtittle">
                     <input type="checkbox" value="Câu 6" name="cks"/>Câu 6</div> 
+                    <asp:Literal ID="Literal6" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test6" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test6" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test6a" runat="server" GroupName="10Test6"/>
@@ -133,6 +143,7 @@
                     <br /><asp:RadioButton ID="rd10Test6d" runat="server" GroupName="10Test6"/>
                     <div  id="Câu 7" class="border_headtittle">
                     <input type="checkbox" value="Câu 7" name="cks"/>Câu 7</div> 
+                    <asp:Literal ID="Literal7" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test7" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test7" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test7a" runat="server" GroupName="10Test7"/>
@@ -141,6 +152,7 @@
                     <br /><asp:RadioButton ID="rd10Test7d" runat="server" GroupName="10Test7"/>
                     <div id="Câu 8" class="border_headtittle">
                     <input type="checkbox" value="Câu 8" name="cks"/>Câu 8</div> 
+                    <asp:Literal ID="Literal8" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test8" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test8" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test8a" runat="server" GroupName="10Test8"/>
@@ -149,6 +161,7 @@
                     <br /><asp:RadioButton ID="rd10Test8d" runat="server" GroupName="10Test8"/>
                     <div id="Câu 9" class="border_headtittle">
                     <input type="checkbox" value="Câu 9" name="cks"/>Câu 9</div> 
+                    <asp:Literal ID="Literal9" runat="server" Mode="Transform"></asp:Literal>
                     <asp:Label ID="lb10Test9" runat="server" Text=""></asp:Label>                    
                     <br /><asp:Image ID="img10Test9" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test9a" runat="server" GroupName="10Test9"/>
@@ -157,6 +170,8 @@
                     <br /><asp:RadioButton ID="rd10Test9d" runat="server" GroupName="10Test9"/>
                     <div id="Câu 10" class="border_headtittle">
                     <input type="checkbox" value="Câu 10" name="cks"/>Câu 10</div> 
+                    <div><asp:Literal ID="Literal10" runat="server" Mode="Transform"></asp:Literal>
+                    </div>
                     <asp:Label ID="lb10Test10" runat="server" Text=""></asp:Label>                   
                     <br /><asp:Image ID="img10Test10" runat="server" /> 
                     <br /><asp:RadioButton ID="rd10Test10a" runat="server" GroupName="10Test10"/>

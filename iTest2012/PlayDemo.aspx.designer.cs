@@ -58,6 +58,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.Panel panel10Test;
         
         /// <summary>
+        /// Literal1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal1;
+        
+        /// <summary>
         /// lb10Test1 control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rd10Test1d;
+        
+        /// <summary>
+        /// Literal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal2;
         
         /// <summary>
         /// lb10Test2 control.
@@ -166,6 +184,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rd10Test2d;
         
         /// <summary>
+        /// Literal3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal3;
+        
+        /// <summary>
         /// lb10Test3 control.
         /// </summary>
         /// <remarks>
@@ -218,6 +245,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rd10Test3d;
+        
+        /// <summary>
+        /// Literal4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal4;
         
         /// <summary>
         /// lb10Test4 control.
@@ -274,6 +310,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rd10Test4d;
         
         /// <summary>
+        /// Literal5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal5;
+        
+        /// <summary>
         /// lb10Test5 control.
         /// </summary>
         /// <remarks>
@@ -326,6 +371,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rd10Test5d;
+        
+        /// <summary>
+        /// Literal6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal6;
         
         /// <summary>
         /// lb10Test6 control.
@@ -382,6 +436,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rd10Test6d;
         
         /// <summary>
+        /// Literal7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal7;
+        
+        /// <summary>
         /// lb10Test7 control.
         /// </summary>
         /// <remarks>
@@ -434,6 +497,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rd10Test7d;
+        
+        /// <summary>
+        /// Literal8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal8;
         
         /// <summary>
         /// lb10Test8 control.
@@ -490,6 +562,15 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rd10Test8d;
         
         /// <summary>
+        /// Literal9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal9;
+        
+        /// <summary>
         /// lb10Test9 control.
         /// </summary>
         /// <remarks>
@@ -542,6 +623,15 @@ namespace iTest2012 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton rd10Test9d;
+        
+        /// <summary>
+        /// Literal10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal10;
         
         /// <summary>
         /// lb10Test10 control.
