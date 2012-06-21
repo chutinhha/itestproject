@@ -36,13 +36,13 @@
                 <table class="border_tableheadline" style="width:550px">
                     <tr>
                         <td>
-                            Thông Báo - Hướng Dẫn</td>
+                            THÔNG BÁO - HƯỚNG DẪN</td>
                     </tr>
                 </table>
                 <table class="border_alltable" style="width:550px">
                     <tr>
                         <td>
-                            Đây là phần thân khung, edit tuỳ ý<br />
+                            Đây là phần thông báo<br />
                             <br />
                             <br />
                             <br />
@@ -59,7 +59,7 @@
                 <table class="border_tableheadline" style="width:550px">
                     <tr>
                         <td>
-                            Tin Tức Đó Đây</td>
+                            TIN TỨC ĐÓ ĐÂY</td>
                     </tr>
                 </table>
                 
@@ -67,7 +67,7 @@
                     <tr>
                         <td class="border_headtittle">
                             <div style=" width:100%">
-                                <img alt="(Ẩn / hiện)" id="flip24" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ 24h.com.vn</div>                            
+                                <img alt="(Ẩn/hiện)" id="flip24" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ 24h.com.vn</div>                            
                         </td>
                     </tr>
                     <tr align="left">
@@ -86,7 +86,7 @@
                     <tr>
                         <td class="border_headtittle">
                             <div style=" width:100%">
-                                <img alt="(Ẩn / hiện)" id="flipVN" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ VnExpress </div>
+                                <img alt="(Ẩn/hiện)" id="flipVN" src="image/icon/arrow_updown.png" title="Ẩn hiện tin tức" style="float: right" />Từ VnExpress </div>
                         </td>
                     </tr>
                     <tr align="left">
@@ -109,13 +109,13 @@
                 <table class="border_tableheadline" style=" width:230px; top:0px">
                     <tr>
                         <td>
-                            Xếp Hạng Hàng Tuần</td>
+                            NO TITLE</td>
                     </tr>
                 </table>
                 <table class="border_alltable" style="width:230px">
                     <tr>
                         <td>
-                            Đây là phần thân khung, edit tuỳ ý<br />
+                            <br />
                             <br />
                             <br />
                             <br />

@@ -24,7 +24,7 @@ namespace iTest2012
             else
             {
                 string strScript = "<script>";
-                strScript += "alert('Không đủ dữ liệu khởi tạo, vui lòng thực hiện bài Test');";
+                strScript += "alert('Không đủ dữ liệu khởi tạo, vui lòng thực hiện bài test.');";
                 strScript += "window.location='Test.aspx';";
                 strScript += "</script>";
                 Page.RegisterClientScriptBlock("strScript", strScript);

@@ -16,18 +16,18 @@
             <table class="border_alltable">
             <tr>
                     <td colspan="2" class="border_headtittle">
-                        Thông tin Chương :
+                        Thông tin chương :
                     </td>
                 </tr>
                 <tr align="left">
                     <td  class="td_style_wid">
-                        Tiêu đề
+                        Môn / Lĩnh vực :
                     </td>
                     <td class="td_style_Nowid">
                         <asp:DropDownList ID="ddlSubject" runat="server" AppendDataBoundItems="True"
                             DataSourceID="LinqDataSource1" DataTextField="iSubjectName" DataValueField="iSubjectName"
                              Width="200px" CssClass="boder_textbox">
-                            <asp:ListItem Value="-1">---- Chọn môn học ----</asp:ListItem>
+                            <asp:ListItem Value="-1">--- Chọn môn / lĩnh vực ---</asp:ListItem>
                         </asp:DropDownList>
                         <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="iTest2012.MyiTestDataDataContext"
                             EntityTypeName="" GroupBy="iSubjectName" Select="new (key as iSubjectName, it as iSubjects)"
@@ -37,7 +37,7 @@
                 </tr>
                 <tr align="left">
                     <td class="td_style_wid">
-                        Chapter Index
+                        Mã Index :
                     </td>
                     <td class="td_style_Nowid">
                         <asp:TextBox ID="txtIndex" runat="server" Width="200px" CssClass="boder_textbox"></asp:TextBox>
@@ -47,7 +47,7 @@
                 </tr>
                 <tr align="left">
                     <td class="td_style_wid">
-                        Tên chương
+                        Tên chương :
                     </td>
                     <td class="td_style_Nowid">
                         <asp:TextBox ID="txtName" runat="server" Width="200px" CssClass="boder_textbox"></asp:TextBox>
@@ -65,7 +65,7 @@
                 </tr>
                  <tr align="right">
                      <td colspan="2">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Quay về Trang chủ</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Quay về trang chủ</asp:HyperLink>
                     </td>
                 </tr>
             </table>

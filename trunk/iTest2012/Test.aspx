@@ -9,14 +9,14 @@
                 <table class="border_tableheadline">
                     <tr>
                         <td>
-                            Thông tin cho đề thi
+                            THÔNG TIN CHO ĐỀ THI
                         </td>
                     </tr>
                 </table>
                 <table  class="border_alltable">                
                     <tr align="left" >                    
                         <td class="td_style_wid">
-                            Chọn Môn/Lĩnh vực :
+                            Chọn môn / lĩnh vực :
                         </td>
                         <td class="td_style_Nowid">
                             <asp:DropDownList ID="ddlSubject" runat="server" DataSourceID="LinqDataSource1" DataTextField="iSubjectName"
@@ -31,16 +31,16 @@
                     </tr> 
                     <tr align="left">
                         <td class="td_style_wid">
-                            Chọn mức độ khó :
+                            Chọn mức độ khó :
                         </td>
                         <td class="td_style_Nowid">
                             
                             <asp:DropDownList ID="ddlLevel" runat="server" Width="200px" CssClass="boder_textbox" >
-                                <asp:ListItem Value="-1" Selected="True">Ngẫu nhiên</asp:ListItem>
-                                <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
-                                <asp:ListItem Value="1">Dễ</asp:ListItem>
-                                <asp:ListItem Value="2">Bình thường</asp:ListItem>
-                                <asp:ListItem Value="3">Khó</asp:ListItem>
+                                <asp:ListItem Value="-1" Selected="True">Ngẫu nhiên</asp:ListItem>
+                                <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
+                                <asp:ListItem Value="1">Dễ</asp:ListItem>
+                                <asp:ListItem Value="2">Bình thường</asp:ListItem>
+                                <asp:ListItem Value="3">Khó</asp:ListItem>
                                 <asp:ListItem Value="4">Thông minh</asp:ListItem>
                             </asp:DropDownList>
                             

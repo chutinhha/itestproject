@@ -180,11 +180,11 @@ namespace iTest2012
 
                 //Refresh GridView
                 GridQuestion.DataBind();
-                Response.Write("<script>alert('Deleted Successful !');</script>");
+                Response.Write("<script>alert('Xoá câu hỏi thành công');</script>");
             }
             else
             {
-                Response.Write("<script>alert('Please check row(s) !');</script>");
+                Response.Write("<script>alert('Vui lòng chọn câu hỏi!');</script>");
             }
         }
 

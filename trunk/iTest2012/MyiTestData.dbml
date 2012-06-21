@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="MyiTestDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=myitest.mssql.somee.com;Persist Security Info=True;User ID=itestdata" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.iAnswer" Member="iAnswers">
-    <Type Name="iAnswer">
-      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="iBodyAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.iChapter" Member="iChapters">
     <Type Name="iChapter">
       <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,17 +15,6 @@
       <Column Name="iFuncID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="iFuncName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Association Name="iFunction_iUserPermission" Member="iUserPermissions" ThisKey="iFuncID" OtherKey="iFuncID" Type="iUserPermission" />
-    </Type>
-  </Table>
-  <Table Name="dbo.iQuestion" Member="iQuestions">
-    <Type Name="iQuestion">
-      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iBodyQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="iQuestion_iAnswer" Member="iAnswers" ThisKey="iQuestID" OtherKey="iQuestID" Type="iAnswer" />
-      <Association Name="iChapter_iQuestion" Member="iChapter" ThisKey="iChapID" OtherKey="iChapID" Type="iChapter" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.iSecurityQuest" Member="iSecurityQuests">
@@ -85,6 +65,26 @@
       <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iQuestion" Member="iQuestions">
+    <Type Name="iQuestion">
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iBodyQuest" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="iQuestion_iAnswer" Member="iAnswers" ThisKey="iQuestID" OtherKey="iQuestID" Type="iAnswer" />
+      <Association Name="iChapter_iQuestion" Member="iChapter" ThisKey="iChapID" OtherKey="iChapID" Type="iChapter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.iAnswer" Member="iAnswers">
+    <Type Name="iAnswer">
+      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="iBodyAns" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">
@@ -275,24 +275,6 @@
     <Parameter Name="idquest" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.st_LoadList10Ans" Method="st_LoadList10Ans">
-    <Parameter Name="q1" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q2" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q3" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q4" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q5" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q6" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q7" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q8" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q9" Type="System.Int32" DbType="Int" />
-    <Parameter Name="q10" Type="System.Int32" DbType="Int" />
-    <ElementType Name="st_LoadList10AnsResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="QID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="AnsBody" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Pro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.st_LoadList10QuestsRandom" Method="st_LoadList10QuestsRandom">
     <Parameter Name="q1" Type="System.Int32" DbType="Int" />
     <Parameter Name="q2" Type="System.Int32" DbType="Int" />
@@ -409,5 +391,40 @@
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
     <Parameter Name="bodyans" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.st_LoadList10QuestsRandom2" Method="st_LoadList10QuestsRandom2">
+    <Parameter Name="q1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q6" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q7" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q8" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q9" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q10" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadList10QuestsRandom2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadList10Ans" Method="st_LoadList10Ans">
+    <Parameter Name="q1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q3" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q4" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q5" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q6" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q7" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q8" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q9" Type="System.Int32" DbType="Int" />
+    <Parameter Name="q10" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadList10AnsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnsBody" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Pro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

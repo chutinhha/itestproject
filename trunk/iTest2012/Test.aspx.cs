@@ -54,7 +54,7 @@ namespace iTest2012
                 }
                 else
                 {
-                    lbError.Text = "Không đủ câu hỏi trong chủ đề đã chọn";
+                    lbError.Text = "Không đủ câu hỏi trong chủ đề đã chọn";
                 }
             }
             else
@@ -87,7 +87,7 @@ namespace iTest2012
 
             //        lbError.Text = "Không đủ câu hỏi trong chủ đề đã chọn";
             //    }
-                lbError.Text = "Chủ để chưa mở";
+                lbError.Text = "Chủ đề chưa mở";
             }
         }
     }

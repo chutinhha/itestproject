@@ -12,7 +12,7 @@
         <table class="border_tableheadline">
             <tr>
                 <td >
-                    <strong>Quản lý quyền hạn</strong></td>
+                    <strong>QUẢN LÝ QUYỀN HẠN</strong></td>
             </tr>
             </table>
         <table class="border_alltable">
@@ -22,7 +22,7 @@
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
-                   Tên tài khoản : </td>
+                   Tên tài khoản : </td>
                 <td  class="td_style_Nowid">
                     <asp:DropDownList ID="ddlUsername" runat="server" Width="250px" 
                         DataSourceID="LinqDataSource1" DataTextField="iUserName"  CssClass="boder_textbox"
@@ -36,7 +36,7 @@
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
-                    Quyền hạn</td>
+                    Quyền hạn :</td>
                 <td  class="td_style_Nowid">
                     <asp:DropDownList ID="ddlFunction" runat="server" Width="250px"  CssClass="boder_textbox"
                         DataSourceID="LinqDataSource2" DataTextField="iFuncName" 
@@ -55,10 +55,10 @@
             
             <tr align="right">
                 <td colspan="2" class="border_headtittle" style="text-align:right">
-                    <asp:Button ID="btnAdd" runat="server" Text="Set"  
+                    <asp:Button ID="btnAdd" runat="server" Text="Thêm quyền"  
                          CssClass="btn_body" onclick="btnAdd_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                    <asp:Button ID="btnRemove" runat="server" Text="Remove"  
+                    <asp:Button ID="btnRemove" runat="server" Text="Huỷ quyền"  
                         CssClass="btn_body" onclick="btnRemove_Click" />
                 </td>
            </tr>
@@ -69,7 +69,7 @@
     <table class="border_tableheadline">
         <tr>
             <td>
-                Xoá tài khoản
+                XOÁ TÀI KHOẢN
             </td>
         </tr>
     </table>
@@ -80,7 +80,7 @@
         </tr>        
         <tr align="left">
             <td class="td_style_wid">
-                Tên tài khoản muốn xoá :</td>
+                Tên tài khoản muốn xoá :</td>
             <td class="td_style_Nowid">
                 <asp:DropDownList ID="ddlUserName02" runat="server" 
                     DataSourceID="LinqDataSource3" DataTextField="iUserName" 
@@ -99,7 +99,7 @@
         </tr>
         <tr >
             <td colspan="2" class="border_headtittle" style="text-align:right">
-                <asp:Button ID="btnDel" runat="server" onclick="btnDel_Click" Text="Thực hiện"  CssClass="btn_body" />
+                <asp:Button ID="btnDel" runat="server" onclick="btnDel_Click" Text="Xoá"  CssClass="btn_body" />
             </td>
         </tr>
     </table>

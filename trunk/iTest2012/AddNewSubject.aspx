@@ -1,17 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddNewSubject.aspx.cs" Inherits="iTest2012.AddNewSubject" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-        .style1
-        {
-            font-size: x-large;
-            color: #0000FF;
-        }
-        .style2
-        {
-            color: #0000FF;
-        }
-    </style>
+
     <script type="text/javascript">
         function valid(o, w) {
             o.value = o.value.replace(valid.r[w], '');
@@ -29,11 +19,11 @@
                 <table style="width: 350px;" align="center">
                     <tr>
                         <td class="style1" colspan="2">
-                            <strong>Thêm môn học</strong></td>
+                            <strong>Thêm Môn / Lĩnh vực</strong></td>
                     </tr>
                     <tr>
                         <td class="style2">
-                            Mã môn học</td>
+                            Mã</td>
                         <td>
                             <asp:TextBox ID="txtSubID" runat="server" Width="200px" 
                                 onkeyup="valid(this,'numbers')" onblur="valid(this,'numbers')" MaxLength="7"></asp:TextBox>
