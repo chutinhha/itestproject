@@ -57,7 +57,7 @@ namespace iTest2012
                         labRePass.Text = "";
                         labEmail.Text = "";
 
-                        labRePass.Text = "Mật khẩu nhập lần 2 không trùng, vui lòng nhập lại.";
+                        labRePass.Text = "Xác nhận mật khẩu không chính xác!";
                         txtReEnterPass.Text = string.Empty;
                     }                    
                     else
@@ -74,7 +74,7 @@ namespace iTest2012
                         db.SubmitChanges();
 
                         string strScript = "<script>";
-                        strScript += "alert('Chúc mừng bạn đã tạo Tài khoản thành công !');";
+                        strScript += "alert('Chào mừng bạn đến với iTest');";
                         strScript += "window.location='Login.aspx';";
                         strScript += "</script>";
                         Page.RegisterClientScriptBlock("strScript", strScript);
@@ -82,12 +82,12 @@ namespace iTest2012
                 }
                 else
                 {
-                    Response.Write("<script>alert('Vui lòng điền đầy đủ thông tin. ')</script>");
+                    Response.Write("<script>alert('Vui lòng điền đầy đủ thông tin ! ')</script>");
                 }
             }
             else
             {
-                Response.Write("<script>alert('Bạn phải đánh dấu vào ô để chấp nhận các điều khoản của e-iTest')</script>");
+                Response.Write("<script>alert('Bạn phải đánh dấu vào ô chấp nhận các điều khoản của iTest.')</script>");
             }
 
         }

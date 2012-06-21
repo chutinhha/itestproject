@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Welcome to iTest Website</title>
+    <title>Welcome to iTest</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" type="text/css" href="/css/master.css" />    
@@ -21,7 +21,7 @@
            <td>     
             <asp:Panel ID="Panel_UnLogin" runat="server">                       
                    <div class="stylem10">
-                       Tên thành viên :
+                       Tên đăng nhập :
                        <asp:TextBox ID="txtUsername" runat="server" class="txtbox_login"></asp:TextBox>
                        &nbsp;Mật khẩu :
                        <asp:TextBox ID="txtPass" runat="server" class="txtbox_login" 
@@ -57,15 +57,16 @@
      <table class="border_alltable" style="height:200px; border-bottom-style:inherit; border-top-style:inherit">
         <tr>
             <td>
-                Đây là banner or slide ảnh  Đây là banner or slide ảnh</td>
+                Đây là banner hoặc slide ảnh
+               </td>
         </tr>
     </table>
     <table class="border_menuheadline">
         <tr>
             <td id="awm_menu" align="right">                         
                     <ul id="awmULLI-menu"  style="display:none; "  >
-                        <li title='Đến trang chủ'><a href="/Default.aspx">Trang chủ</a></li>
-                        <li title='Bắt đầu làm bài trắc nghiệm'><a href="/Test.aspx">Test Now</a></li>
+                        <li title='Đến trang chủ'><a href="/Default.aspx">Trang Chủ</a></li>
+                        <li title='Bắt đầu làm bài trắc nghiệm'><a href="/Test.aspx">Test Now</a></li>
                     </ul>                       
             </td>
         </tr>
@@ -164,9 +165,7 @@
                 -webkit-border-bottom-left-radius:10px; -border-bottom-left-radius:10px;border-bottom-left-radius:10px;
                 -moz-border-radius-bottomright:10px;
                 -webkit-border-bottom-right-radius:10px;-border-bottom-right-radius:10px;border-bottom-right-radius:10px;">
-                <span style="font-family:Book Antiqua; font-size:smaller">Design by Kenvin
-                <br />Liên hệ : bao56320@yahoo.com</span>
-            </td>
+                <span style="font-family:Book Antiqua; font-size:smaller">Design by Kenvin<br />Contact : bao56320@yahoo.com</td>
         </tr>
     </table>
     </div>

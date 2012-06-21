@@ -75,13 +75,15 @@ namespace iTest2012
         protected void btnEnterAgain_Click(object sender, EventArgs e)
         {
 
-            edtQuest.Content = string.Empty;
-            edtAns1.Content = string.Empty;
-            edtAns2.Content = string.Empty;
-            edtAns3.Content = string.Empty;
-            edtAns4.Content = string.Empty;
+            //edtQuest.Content = string.Empty;
+            txtQuest.Value = "";
+            //txtNoidung.Text = string.Empty;
+            txtAns1.Value = "";
+            txtAns2.Value = "";
+            txtAns3.Value = "";
+            txtAns4.Value = "";
 
-            edtQuest.Focus();
+            txtQuest.Focus();
         }
 
         protected void btnAddQuest_Click(object sender, EventArgs e)
@@ -237,10 +239,10 @@ namespace iTest2012
                 //}
                 //else if (DropDownList1.SelectedValue == "1")
                 //{
-                if (ddlSubName.SelectedValue != null && ddlChapNum.SelectedValue != null
-            && edtQuest.Content.Length > 0
-            && edtAns1.Content.Length > 0 && edtAns2.Content.Length > 0
-            && edtAns3.Content.Length > 0 && edtAns4.Content.Length > 0)
+                if (ddlSubName.SelectedValue != "-1" && ddlChapNum.SelectedValue != "0"
+            && /*edtQuest.Content.Length > 0*/ txtQuest.Value.Length > 0
+            && txtAns1.Value.Length > 0 && txtAns2.Value.Length > 0
+            && txtAns3.Value.Length > 0 && txtAns4.Value.Length > 0)
                 {
                     iAnswer ans5 = new iAnswer();
                     iAnswer ans6 = new iAnswer();
@@ -265,7 +267,7 @@ namespace iTest2012
                     qs.iChapID = chapid;//db.st_LoadChapID(ddlChapNum.Text.Trim(), subid);
                     //qs.iType = Convert.ToInt32(ddlLevel.SelectedValue);
                     qs.iLevel = Convert.ToInt32(ddlLevel.SelectedValue);
-                    qs.iBodyQuest = edtQuest.Content;
+                    qs.iBodyQuest = /*edtQuest.Content*/ txtQuest.Value;
                     if (!FileUploadQuest.HasFile)
                         qs.iImageQName = null;
                     else
@@ -284,19 +286,19 @@ namespace iTest2012
 
                     }
                     ans5.iQuestID = qsid;
-                    ans5.iBodyAns = edtAns1.Content;
+                    ans5.iBodyAns = txtAns1.Value;
                     
                     //////ans2
                     ans6.iQuestID = qsid;
-                    ans6.iBodyAns = edtAns2.Content;
+                    ans6.iBodyAns = txtAns2.Value;
                     
                     /////ans3
                     ans7.iQuestID = qsid;
-                    ans7.iBodyAns = edtAns3.Content;
+                    ans7.iBodyAns = txtAns3.Value;
                     
                     /////ans4
                     ans8.iQuestID = qsid;
-                    ans8.iBodyAns = edtAns4.Content;
+                    ans8.iBodyAns = txtAns4.Value;
                     
                     /// xet default dap an dung
                     ans5.iProperty = '1';
@@ -340,27 +342,28 @@ namespace iTest2012
                     db.SubmitChanges();
 
                     // Thong bao thanh cong
-                    Response.Write("<script>alert('This question was added');</script>");
+                    Response.Write("<script>alert('Thêm câu  hỏi thành công');</script>");
 
                     // Tra form ve gia tri mac dinh
-                    edtQuest.Content = string.Empty;
-                    edtAns1.Content = string.Empty;
-                    edtAns1.Content = string.Empty;
-                    edtAns1.Content = string.Empty;
-                    edtAns1.Content = string.Empty;
+                    txtQuest.Value = "";
+                    //edtQuest.Content = string.Empty;
+                    txtAns1.Value = "";
+                    txtAns2.Value = "";
+                    txtAns3.Value = "";
+                    txtAns4.Value = "";
                     
                     rbA.Checked = true;
                     rbB.Checked = false;
                     rbC.Checked = false;
                     rbD.Checked = false;
 
-                    edtQuest.Focus();
+                    //edtQuest.Focus();
                     //DropDownList1.SelectedValue = "-1";
                 }
                 //}
                 else // Chua nhap du thong tin
                 {
-                    Response.Write("<script>alert('Vui lòng nhập thông tin đầy đủ');</script>");
+                    Response.Write("<script>alert('Vui lòng nhập thông tin đầy đủ');</script>");
                     //DropDownList1.SelectedValue = "-1";
                 }
             }

@@ -66,7 +66,7 @@ namespace iTest2012
                     //else 
                     if (resultName != 1)
                     {
-                        lbError.Text = "Chủ đề đã tồn tại !";
+                        lbError.Text = "Tên chủ đề đã tồn tại !";
                     }
                     //else if (resultID != 1)
                     //    lbError.Text = "This Subject ID Had Exits";
@@ -76,7 +76,7 @@ namespace iTest2012
                         sj.iSubjectName = txtSubName.Text.Trim();
                         data.iSubjects.InsertOnSubmit(sj);
                         data.SubmitChanges();
-                        Response.Write("<script>alert('Thêm chủ đề thành công');</script>");
+                        Response.Write("<script>alert('Thêm chủ đề thành công !');</script>");
                     }
                 }
                 //else
@@ -84,7 +84,7 @@ namespace iTest2012
 
             }
             else
-                lbError.Text = "Vui lòng nhập tên chủ đề !";
+                lbError.Text = "Vui lòng nhập tên chủ đề !";
         }
     }
 }

@@ -27,13 +27,13 @@ namespace iTest2012
         {
             if (txtNewPass.Text.Trim() != txtReEnterNewPass.Text.Trim())
             {
-                Response.Write("<script>alert('Xác nhận Mật khẩu mới không chính xác!');</script>");
+                Response.Write("<script>alert('Xác nhận mật khẩu mới không chính xác');</script>");
                 txtOldPass.Focus();
             }
             else
                 if (txtNewPass.Text == "")
                 {
-                    Response.Write("<script>alert('Chưa nhập Mật khẩu mới!');</script>");
+                    Response.Write("<script>alert('Chưa nhập mật khẩu mới');</script>");
                     txtOldPass.Focus();
                 }
                 else
@@ -43,19 +43,19 @@ namespace iTest2012
                     int result = db.st_ChangePassword(iduser, FormsAuthentication.HashPasswordForStoringInConfigFile(txtOldPass.Text.Trim(), "MD5"), FormsAuthentication.HashPasswordForStoringInConfigFile(txtNewPass.Text.Trim(), "MD5"));
                     if (result == -1)
                     {
-                        Response.Write("<script>alert('Mật khẩu cũ không đúng, Vui lòng nhập lại !');</script>");
+                        Response.Write("<script>alert('Mật khẩu cũ không đúng');</script>");
                         txtOldPass.Focus();
                         return;
                     }
                     if (result == 0)
                     {
-                        Response.Write("<script>alert('Mật khẩu không được thay đổi, Vui lòng thử lại !');</script>");
+                        Response.Write("<script>alert('Không thể thay đổi mật khẩu, vui lòng thử lại');</script>");
                         txtOldPass.Focus();
                         return;
                     }
                     else
                     {
-                        Response.Write("<script>alert('Đổi Mật khẩu thành công !');</script>");
+                        Response.Write("<script>alert('Đổi mật khẩu thành công !');</script>");
                         txtOldPass.Text = string.Empty;
                         txtNewPass.Text = string.Empty;
                         txtReEnterNewPass.Text = string.Empty;

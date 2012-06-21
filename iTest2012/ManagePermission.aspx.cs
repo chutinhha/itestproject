@@ -28,7 +28,7 @@ namespace iTest2012
             result = data.st_CheckAvailablePermission(ddlUsername.Text.Trim(), ddlFunction.Text.Trim());
             if (result != 1)
             {
-                Response.Write("<script>alert('Set unsuccessful ! This user had that permission');</script>");
+                Response.Write("<script>alert('Không thể thêm quyền ! Tài khoản này đã có quyền tương tự.');</script>");
             }
             else
             {
@@ -40,7 +40,7 @@ namespace iTest2012
                 data.iUserPermissions.InsertOnSubmit(func);
                 data.SubmitChanges();
 
-                Response.Write("<script>alert('Set Successful');</script>");
+                Response.Write("<script>alert('Thêm quyền thành công !');</script>");
             }
 
         }
@@ -50,7 +50,7 @@ namespace iTest2012
             result = data.st_CheckAvailablePermission(ddlUsername.Text.Trim(), ddlFunction.Text.Trim());
             if (result == 1)
             {
-                Response.Write("<script>alert('Remove unsuccessful ! This user had not that permission');</script>");
+                Response.Write("<script>alert('Huỷ quyền không thành công ! Tài khoản chưa có quyền này.');</script>");
                 return;
             }
             else
@@ -59,12 +59,12 @@ namespace iTest2012
                 del = data.st_DelUserFunction(ddlUsername.Text.Trim(), ddlFunction.Text.Trim());
                 if (del == 1)
                 {
-                    Response.Write("<script>alert('Remove Successful !');</script>");
+                    Response.Write("<script>alert('Huỷ quyền thành công!');</script>");
                     return;
                 }
                 else
                 {
-                    Response.Write("<script>alert('Can't Remove !);</script>");
+                    Response.Write("<script>alert('Không thể huỷ quyền!);</script>");
                     return;
                 }
             }
@@ -73,9 +73,9 @@ namespace iTest2012
         {
             int result = data.st_DelUser(ddlUserName02.Text.Trim());
             if (result == 1)
-                Response.Write("<script>alert('Deleted Successful !');</script>");
+                Response.Write("<script>alert('Xoá tài khoản thành công !');</script>");
             else
-                Response.Write("<script>alert('Can't Delete Now !');</script>");
+                Response.Write("<script>alert('Không thể xoá !');</script>");
             ddlUserName02.DataBind();
         }
     }

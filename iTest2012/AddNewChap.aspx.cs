@@ -37,7 +37,7 @@ namespace iTest2012
                     lbName.Text = "";
 
 
-                    lbIndex.Text = "This index is exist ! Please enter other name";
+                    lbIndex.Text = "Mã index đã tồn tại !";
                     txtIndex.Text = string.Empty;
                     //btnSignUp.Enabled = false;
                 }
@@ -46,7 +46,7 @@ namespace iTest2012
                     lbIndex.Text = "";
                     lbName.Text = "";
 
-                    lbName.Text = "This chapter name is exist ! Please enter other name";
+                    lbName.Text = "Tên chương đã tồn tại !";
                     txtName.Text = string.Empty;
                     //btnSignUp.Enabled = false;
                 }
@@ -59,7 +59,7 @@ namespace iTest2012
                     db.iChapters.InsertOnSubmit(ch);
                     db.SubmitChanges();
 
-                    Response.Write("<script>alert('Added Successful')</script>");
+                    Response.Write("<script>alert('Thêm chương mới thành công !')</script>");
                     txtIndex.Text = string.Empty;
                     txtName.Text = string.Empty;
                     lbIndex.Text = "";
@@ -69,7 +69,7 @@ namespace iTest2012
             }
             else if (ddlSubject.SelectedValue == "-1" | txtIndex.Text.Trim().Length <= 0 | txtName.Text.Trim().Length <= 0)
             {
-                Response.Write("<script>alert('Please enter full information')</script>");
+                Response.Write("<script>alert('Vui lòng nhập đầy đủ thông tin')</script>");
             }
 
         }

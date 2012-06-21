@@ -8,7 +8,7 @@
             <table class="border_tableheadline">
                 <tr>
                     <td>
-                        Thông tin tài khoản
+                        THÔNG TIN TÀI KHOẢN
                     </td>
                 </tr>
             </table>
@@ -19,7 +19,7 @@
                 </tr>
                 <tr align="left">
                     <td class="td_style_wid" style="font-weight:bold">
-                        Tên đăng nhập<br />
+                        Tên đăng nhập :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
@@ -30,7 +30,7 @@
                 </tr>
                 <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Email của bạn<br />
+                        Email đăng ký :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
@@ -40,7 +40,7 @@
                 </tr>
                 <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Ngày Đăng ký<br />
+                        Ngày đăng ký :<br />
                         
                     </td  >
                     <td class="td_style_Nowid">
@@ -50,7 +50,7 @@
                 </tr>
                  <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Số bài đã làm<br />
+                        Số bài test đã làm :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
@@ -59,18 +59,18 @@
                 </tr>
                 <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Tổng điểm đã làm<br />
+                        Tổng điểm đã làm :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
                         <asp:Label ID="lblSumMark" runat="server" Width="200px"></asp:Label>
-                        <span style="font-weight:bold">Trung bình : </span><asp:Label ID="lblAvgMark" runat="server" Width="200px"></asp:Label>
+                        <span style="font-weight:bold">Trung bình : </span><asp:Label ID="lblAvgMark" runat="server" Width="200px"></asp:Label>
                      </td>
                 </tr>
                 
                  <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Tổng điểm thưởng<br />
+                        Tổng điểm thưởng :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
@@ -80,7 +80,7 @@
                 </tr>
                 <tr align="left">
                     <td  class="td_style_wid" style="font-weight:bold">
-                        Xếp hạng<br />
+                        Xếp hạng :<br />
                         
                     </td>
                     <td  class="td_style_Nowid">
@@ -91,7 +91,7 @@
                 <tr align="right" >
                     <td colspan="2" >
                         
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Default.aspx">Quay lại Trang chủ</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Default.aspx">Quay lại trang chủ</asp:HyperLink>
                         
                     </td>
                 </tr>

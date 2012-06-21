@@ -30,18 +30,12 @@ namespace iTest2012
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertiAnswer(iAnswer instance);
-    partial void UpdateiAnswer(iAnswer instance);
-    partial void DeleteiAnswer(iAnswer instance);
     partial void InsertiChapter(iChapter instance);
     partial void UpdateiChapter(iChapter instance);
     partial void DeleteiChapter(iChapter instance);
     partial void InsertiFunction(iFunction instance);
     partial void UpdateiFunction(iFunction instance);
     partial void DeleteiFunction(iFunction instance);
-    partial void InsertiQuestion(iQuestion instance);
-    partial void UpdateiQuestion(iQuestion instance);
-    partial void DeleteiQuestion(iQuestion instance);
     partial void InsertiSecurityQuest(iSecurityQuest instance);
     partial void UpdateiSecurityQuest(iSecurityQuest instance);
     partial void DeleteiSecurityQuest(iSecurityQuest instance);
@@ -57,6 +51,12 @@ namespace iTest2012
     partial void InsertiSubject(iSubject instance);
     partial void UpdateiSubject(iSubject instance);
     partial void DeleteiSubject(iSubject instance);
+    partial void InsertiQuestion(iQuestion instance);
+    partial void UpdateiQuestion(iQuestion instance);
+    partial void DeleteiQuestion(iQuestion instance);
+    partial void InsertiAnswer(iAnswer instance);
+    partial void UpdateiAnswer(iAnswer instance);
+    partial void DeleteiAnswer(iAnswer instance);
     #endregion
 		
 		public MyiTestDataDataContext() : 
@@ -89,14 +89,6 @@ namespace iTest2012
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<iAnswer> iAnswers
-		{
-			get
-			{
-				return this.GetTable<iAnswer>();
-			}
-		}
-		
 		public System.Data.Linq.Table<iChapter> iChapters
 		{
 			get
@@ -110,14 +102,6 @@ namespace iTest2012
 			get
 			{
 				return this.GetTable<iFunction>();
-			}
-		}
-		
-		public System.Data.Linq.Table<iQuestion> iQuestions
-		{
-			get
-			{
-				return this.GetTable<iQuestion>();
 			}
 		}
 		
@@ -158,6 +142,22 @@ namespace iTest2012
 			get
 			{
 				return this.GetTable<iSubject>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iQuestion> iQuestions
+		{
+			get
+			{
+				return this.GetTable<iQuestion>();
+			}
+		}
+		
+		public System.Data.Linq.Table<iAnswer> iAnswers
+		{
+			get
+			{
+				return this.GetTable<iAnswer>();
 			}
 		}
 		
@@ -402,13 +402,6 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10Ans")]
-		public ISingleResult<st_LoadList10AnsResult> st_LoadList10Ans([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
-			return ((ISingleResult<st_LoadList10AnsResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10QuestsRandom")]
 		public ISingleResult<st_LoadList10QuestsRandomResult> st_LoadList10QuestsRandom([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
 		{
@@ -524,180 +517,19 @@ namespace iTest2012
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), questid, bodyans);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iAnswer")]
-	public partial class iAnswer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iAnsID;
-		
-		private int _iQuestID;
-		
-		private char _iProperty;
-		
-		private string _iBodyAns;
-		
-		private EntityRef<iQuestion> _iQuestion;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniAnsIDChanging(int value);
-    partial void OniAnsIDChanged();
-    partial void OniQuestIDChanging(int value);
-    partial void OniQuestIDChanged();
-    partial void OniPropertyChanging(char value);
-    partial void OniPropertyChanged();
-    partial void OniBodyAnsChanging(string value);
-    partial void OniBodyAnsChanged();
-    #endregion
-		
-		public iAnswer()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10QuestsRandom2")]
+		public ISingleResult<st_LoadList10QuestsRandom2Result> st_LoadList10QuestsRandom2([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
 		{
-			this._iQuestion = default(EntityRef<iQuestion>);
-			OnCreated();
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+			return ((ISingleResult<st_LoadList10QuestsRandom2Result>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iAnsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iAnsID
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadList10Ans")]
+		public ISingleResult<st_LoadList10AnsResult> st_LoadList10Ans([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q3, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q4, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q5, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q6, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q7, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q8, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q9, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> q10)
 		{
-			get
-			{
-				return this._iAnsID;
-			}
-			set
-			{
-				if ((this._iAnsID != value))
-				{
-					this.OniAnsIDChanging(value);
-					this.SendPropertyChanging();
-					this._iAnsID = value;
-					this.SendPropertyChanged("iAnsID");
-					this.OniAnsIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int iQuestID
-		{
-			get
-			{
-				return this._iQuestID;
-			}
-			set
-			{
-				if ((this._iQuestID != value))
-				{
-					if (this._iQuestion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OniQuestIDChanging(value);
-					this.SendPropertyChanging();
-					this._iQuestID = value;
-					this.SendPropertyChanged("iQuestID");
-					this.OniQuestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iProperty", DbType="Char(1) NOT NULL")]
-		public char iProperty
-		{
-			get
-			{
-				return this._iProperty;
-			}
-			set
-			{
-				if ((this._iProperty != value))
-				{
-					this.OniPropertyChanging(value);
-					this.SendPropertyChanging();
-					this._iProperty = value;
-					this.SendPropertyChanged("iProperty");
-					this.OniPropertyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string iBodyAns
-		{
-			get
-			{
-				return this._iBodyAns;
-			}
-			set
-			{
-				if ((this._iBodyAns != value))
-				{
-					this.OniBodyAnsChanging(value);
-					this.SendPropertyChanging();
-					this._iBodyAns = value;
-					this.SendPropertyChanged("iBodyAns");
-					this.OniBodyAnsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iQuestion", ThisKey="iQuestID", OtherKey="iQuestID", IsForeignKey=true)]
-		public iQuestion iQuestion
-		{
-			get
-			{
-				return this._iQuestion.Entity;
-			}
-			set
-			{
-				iQuestion previousValue = this._iQuestion.Entity;
-				if (((previousValue != value) 
-							|| (this._iQuestion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._iQuestion.Entity = null;
-						previousValue.iAnswers.Remove(this);
-					}
-					this._iQuestion.Entity = value;
-					if ((value != null))
-					{
-						value.iAnswers.Add(this);
-						this._iQuestID = value.iQuestID;
-					}
-					else
-					{
-						this._iQuestID = default(int);
-					}
-					this.SendPropertyChanged("iQuestion");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+			return ((ISingleResult<st_LoadList10AnsResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1015,233 +847,6 @@ namespace iTest2012
 		{
 			this.SendPropertyChanging();
 			entity.iFunction = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iQuestion")]
-	public partial class iQuestion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _iQuestID;
-		
-		private int _iLevel;
-		
-		private int _iChapID;
-		
-		private string _iBodyQuest;
-		
-		private string _iImageQName;
-		
-		private EntitySet<iAnswer> _iAnswers;
-		
-		private EntityRef<iChapter> _iChapter;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OniQuestIDChanging(int value);
-    partial void OniQuestIDChanged();
-    partial void OniLevelChanging(int value);
-    partial void OniLevelChanged();
-    partial void OniChapIDChanging(int value);
-    partial void OniChapIDChanged();
-    partial void OniBodyQuestChanging(string value);
-    partial void OniBodyQuestChanged();
-    partial void OniImageQNameChanging(string value);
-    partial void OniImageQNameChanged();
-    #endregion
-		
-		public iQuestion()
-		{
-			this._iAnswers = new EntitySet<iAnswer>(new Action<iAnswer>(this.attach_iAnswers), new Action<iAnswer>(this.detach_iAnswers));
-			this._iChapter = default(EntityRef<iChapter>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int iQuestID
-		{
-			get
-			{
-				return this._iQuestID;
-			}
-			set
-			{
-				if ((this._iQuestID != value))
-				{
-					this.OniQuestIDChanging(value);
-					this.SendPropertyChanging();
-					this._iQuestID = value;
-					this.SendPropertyChanged("iQuestID");
-					this.OniQuestIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iLevel", DbType="Int NOT NULL")]
-		public int iLevel
-		{
-			get
-			{
-				return this._iLevel;
-			}
-			set
-			{
-				if ((this._iLevel != value))
-				{
-					this.OniLevelChanging(value);
-					this.SendPropertyChanging();
-					this._iLevel = value;
-					this.SendPropertyChanged("iLevel");
-					this.OniLevelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iChapID", DbType="Int NOT NULL")]
-		public int iChapID
-		{
-			get
-			{
-				return this._iChapID;
-			}
-			set
-			{
-				if ((this._iChapID != value))
-				{
-					if (this._iChapter.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OniChapIDChanging(value);
-					this.SendPropertyChanging();
-					this._iChapID = value;
-					this.SendPropertyChanged("iChapID");
-					this.OniChapIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyQuest", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string iBodyQuest
-		{
-			get
-			{
-				return this._iBodyQuest;
-			}
-			set
-			{
-				if ((this._iBodyQuest != value))
-				{
-					this.OniBodyQuestChanging(value);
-					this.SendPropertyChanging();
-					this._iBodyQuest = value;
-					this.SendPropertyChanged("iBodyQuest");
-					this.OniBodyQuestChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iImageQName", DbType="NVarChar(MAX)")]
-		public string iImageQName
-		{
-			get
-			{
-				return this._iImageQName;
-			}
-			set
-			{
-				if ((this._iImageQName != value))
-				{
-					this.OniImageQNameChanging(value);
-					this.SendPropertyChanging();
-					this._iImageQName = value;
-					this.SendPropertyChanged("iImageQName");
-					this.OniImageQNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iAnswers", ThisKey="iQuestID", OtherKey="iQuestID")]
-		public EntitySet<iAnswer> iAnswers
-		{
-			get
-			{
-				return this._iAnswers;
-			}
-			set
-			{
-				this._iAnswers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iChapter_iQuestion", Storage="_iChapter", ThisKey="iChapID", OtherKey="iChapID", IsForeignKey=true)]
-		public iChapter iChapter
-		{
-			get
-			{
-				return this._iChapter.Entity;
-			}
-			set
-			{
-				iChapter previousValue = this._iChapter.Entity;
-				if (((previousValue != value) 
-							|| (this._iChapter.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._iChapter.Entity = null;
-						previousValue.iQuestions.Remove(this);
-					}
-					this._iChapter.Entity = value;
-					if ((value != null))
-					{
-						value.iQuestions.Add(this);
-						this._iChapID = value.iChapID;
-					}
-					else
-					{
-						this._iChapID = default(int);
-					}
-					this.SendPropertyChanged("iChapter");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_iAnswers(iAnswer entity)
-		{
-			this.SendPropertyChanging();
-			entity.iQuestion = this;
-		}
-		
-		private void detach_iAnswers(iAnswer entity)
-		{
-			this.SendPropertyChanging();
-			entity.iQuestion = null;
 		}
 	}
 	
@@ -2239,6 +1844,408 @@ namespace iTest2012
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iQuestion")]
+	public partial class iQuestion : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iQuestID;
+		
+		private int _iLevel;
+		
+		private int _iChapID;
+		
+		private string _iBodyQuest;
+		
+		private string _iImageQName;
+		
+		private EntitySet<iAnswer> _iAnswers;
+		
+		private EntityRef<iChapter> _iChapter;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniQuestIDChanging(int value);
+    partial void OniQuestIDChanged();
+    partial void OniLevelChanging(int value);
+    partial void OniLevelChanged();
+    partial void OniChapIDChanging(int value);
+    partial void OniChapIDChanged();
+    partial void OniBodyQuestChanging(string value);
+    partial void OniBodyQuestChanged();
+    partial void OniImageQNameChanging(string value);
+    partial void OniImageQNameChanged();
+    #endregion
+		
+		public iQuestion()
+		{
+			this._iAnswers = new EntitySet<iAnswer>(new Action<iAnswer>(this.attach_iAnswers), new Action<iAnswer>(this.detach_iAnswers));
+			this._iChapter = default(EntityRef<iChapter>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iQuestID
+		{
+			get
+			{
+				return this._iQuestID;
+			}
+			set
+			{
+				if ((this._iQuestID != value))
+				{
+					this.OniQuestIDChanging(value);
+					this.SendPropertyChanging();
+					this._iQuestID = value;
+					this.SendPropertyChanged("iQuestID");
+					this.OniQuestIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iLevel", DbType="Int NOT NULL")]
+		public int iLevel
+		{
+			get
+			{
+				return this._iLevel;
+			}
+			set
+			{
+				if ((this._iLevel != value))
+				{
+					this.OniLevelChanging(value);
+					this.SendPropertyChanging();
+					this._iLevel = value;
+					this.SendPropertyChanged("iLevel");
+					this.OniLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iChapID", DbType="Int NOT NULL")]
+		public int iChapID
+		{
+			get
+			{
+				return this._iChapID;
+			}
+			set
+			{
+				if ((this._iChapID != value))
+				{
+					if (this._iChapter.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OniChapIDChanging(value);
+					this.SendPropertyChanging();
+					this._iChapID = value;
+					this.SendPropertyChanged("iChapID");
+					this.OniChapIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyQuest", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string iBodyQuest
+		{
+			get
+			{
+				return this._iBodyQuest;
+			}
+			set
+			{
+				if ((this._iBodyQuest != value))
+				{
+					this.OniBodyQuestChanging(value);
+					this.SendPropertyChanging();
+					this._iBodyQuest = value;
+					this.SendPropertyChanged("iBodyQuest");
+					this.OniBodyQuestChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iImageQName", DbType="NVarChar(MAX)")]
+		public string iImageQName
+		{
+			get
+			{
+				return this._iImageQName;
+			}
+			set
+			{
+				if ((this._iImageQName != value))
+				{
+					this.OniImageQNameChanging(value);
+					this.SendPropertyChanging();
+					this._iImageQName = value;
+					this.SendPropertyChanged("iImageQName");
+					this.OniImageQNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iAnswers", ThisKey="iQuestID", OtherKey="iQuestID")]
+		public EntitySet<iAnswer> iAnswers
+		{
+			get
+			{
+				return this._iAnswers;
+			}
+			set
+			{
+				this._iAnswers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iChapter_iQuestion", Storage="_iChapter", ThisKey="iChapID", OtherKey="iChapID", IsForeignKey=true)]
+		public iChapter iChapter
+		{
+			get
+			{
+				return this._iChapter.Entity;
+			}
+			set
+			{
+				iChapter previousValue = this._iChapter.Entity;
+				if (((previousValue != value) 
+							|| (this._iChapter.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._iChapter.Entity = null;
+						previousValue.iQuestions.Remove(this);
+					}
+					this._iChapter.Entity = value;
+					if ((value != null))
+					{
+						value.iQuestions.Add(this);
+						this._iChapID = value.iChapID;
+					}
+					else
+					{
+						this._iChapID = default(int);
+					}
+					this.SendPropertyChanged("iChapter");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_iAnswers(iAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.iQuestion = this;
+		}
+		
+		private void detach_iAnswers(iAnswer entity)
+		{
+			this.SendPropertyChanging();
+			entity.iQuestion = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.iAnswer")]
+	public partial class iAnswer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _iAnsID;
+		
+		private int _iQuestID;
+		
+		private char _iProperty;
+		
+		private string _iBodyAns;
+		
+		private EntityRef<iQuestion> _iQuestion;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OniAnsIDChanging(int value);
+    partial void OniAnsIDChanged();
+    partial void OniQuestIDChanging(int value);
+    partial void OniQuestIDChanged();
+    partial void OniPropertyChanging(char value);
+    partial void OniPropertyChanged();
+    partial void OniBodyAnsChanging(string value);
+    partial void OniBodyAnsChanged();
+    #endregion
+		
+		public iAnswer()
+		{
+			this._iQuestion = default(EntityRef<iQuestion>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iAnsID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int iAnsID
+		{
+			get
+			{
+				return this._iAnsID;
+			}
+			set
+			{
+				if ((this._iAnsID != value))
+				{
+					this.OniAnsIDChanging(value);
+					this.SendPropertyChanging();
+					this._iAnsID = value;
+					this.SendPropertyChanged("iAnsID");
+					this.OniAnsIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iQuestID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int iQuestID
+		{
+			get
+			{
+				return this._iQuestID;
+			}
+			set
+			{
+				if ((this._iQuestID != value))
+				{
+					if (this._iQuestion.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OniQuestIDChanging(value);
+					this.SendPropertyChanging();
+					this._iQuestID = value;
+					this.SendPropertyChanged("iQuestID");
+					this.OniQuestIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iProperty", DbType="Char(1) NOT NULL")]
+		public char iProperty
+		{
+			get
+			{
+				return this._iProperty;
+			}
+			set
+			{
+				if ((this._iProperty != value))
+				{
+					this.OniPropertyChanging(value);
+					this.SendPropertyChanging();
+					this._iProperty = value;
+					this.SendPropertyChanged("iProperty");
+					this.OniPropertyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iBodyAns", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string iBodyAns
+		{
+			get
+			{
+				return this._iBodyAns;
+			}
+			set
+			{
+				if ((this._iBodyAns != value))
+				{
+					this.OniBodyAnsChanging(value);
+					this.SendPropertyChanging();
+					this._iBodyAns = value;
+					this.SendPropertyChanged("iBodyAns");
+					this.OniBodyAnsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="iQuestion_iAnswer", Storage="_iQuestion", ThisKey="iQuestID", OtherKey="iQuestID", IsForeignKey=true)]
+		public iQuestion iQuestion
+		{
+			get
+			{
+				return this._iQuestion.Entity;
+			}
+			set
+			{
+				iQuestion previousValue = this._iQuestion.Entity;
+				if (((previousValue != value) 
+							|| (this._iQuestion.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._iQuestion.Entity = null;
+						previousValue.iAnswers.Remove(this);
+					}
+					this._iQuestion.Entity = value;
+					if ((value != null))
+					{
+						value.iAnswers.Add(this);
+						this._iQuestID = value.iQuestID;
+					}
+					else
+					{
+						this._iQuestID = default(int);
+					}
+					this.SendPropertyChanged("iQuestion");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class st_ViewQuestOfAllSubResult
 	{
 		
@@ -2745,86 +2752,6 @@ namespace iTest2012
 		}
 	}
 	
-	public partial class st_LoadList10AnsResult
-	{
-		
-		private int _ID;
-		
-		private int _QID;
-		
-		private string _AnsBody;
-		
-		private char _Pro;
-		
-		public st_LoadList10AnsResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QID", DbType="Int NOT NULL")]
-		public int QID
-		{
-			get
-			{
-				return this._QID;
-			}
-			set
-			{
-				if ((this._QID != value))
-				{
-					this._QID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnsBody", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string AnsBody
-		{
-			get
-			{
-				return this._AnsBody;
-			}
-			set
-			{
-				if ((this._AnsBody != value))
-				{
-					this._AnsBody = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pro", DbType="Char(1) NOT NULL")]
-		public char Pro
-		{
-			get
-			{
-				return this._Pro;
-			}
-			set
-			{
-				if ((this._Pro != value))
-				{
-					this._Pro = value;
-				}
-			}
-		}
-	}
-	
 	public partial class st_LoadList10QuestsRandomResult
 	{
 		
@@ -3228,6 +3155,148 @@ namespace iTest2012
 				if ((this._Image != value))
 				{
 					this._Image = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadList10QuestsRandom2Result
+	{
+		
+		private int _ID;
+		
+		private string _Body;
+		
+		private string _Img;
+		
+		public st_LoadList10QuestsRandom2Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Body", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Body
+		{
+			get
+			{
+				return this._Body;
+			}
+			set
+			{
+				if ((this._Body != value))
+				{
+					this._Body = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="NVarChar(MAX)")]
+		public string Img
+		{
+			get
+			{
+				return this._Img;
+			}
+			set
+			{
+				if ((this._Img != value))
+				{
+					this._Img = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadList10AnsResult
+	{
+		
+		private int _ID;
+		
+		private int _QID;
+		
+		private string _AnsBody;
+		
+		private char _Pro;
+		
+		public st_LoadList10AnsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QID", DbType="Int NOT NULL")]
+		public int QID
+		{
+			get
+			{
+				return this._QID;
+			}
+			set
+			{
+				if ((this._QID != value))
+				{
+					this._QID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnsBody", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string AnsBody
+		{
+			get
+			{
+				return this._AnsBody;
+			}
+			set
+			{
+				if ((this._AnsBody != value))
+				{
+					this._AnsBody = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pro", DbType="Char(1) NOT NULL")]
+		public char Pro
+		{
+			get
+			{
+				return this._Pro;
+			}
+			set
+			{
+				if ((this._Pro != value))
+				{
+					this._Pro = value;
 				}
 			}
 		}

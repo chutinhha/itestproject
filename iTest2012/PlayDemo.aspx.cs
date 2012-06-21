@@ -47,7 +47,7 @@ namespace iTest2012
                     { arrQ.Add(gridLoadQuest.Rows[Convert.ToInt32(arr[k].ToString())].Cells[0].Text); }
 
                     //grid cau hoi
-                    gridRandom.DataSource = data.st_LoadList10QuestsRandom(Convert.ToInt32(arrQ[0]),
+                    gridRandom.DataSource = data.st_LoadList10QuestsRandom2(Convert.ToInt32(arrQ[0]),
                         Convert.ToInt32(arrQ[1]), Convert.ToInt32(arrQ[2]), Convert.ToInt32(arrQ[3]),
                         Convert.ToInt32(arrQ[4]), Convert.ToInt32(arrQ[5]), Convert.ToInt32(arrQ[6]),
                         Convert.ToInt32(arrQ[7]), Convert.ToInt32(arrQ[8]), Convert.ToInt32(arrQ[9]));
@@ -84,7 +84,8 @@ namespace iTest2012
                         Literal9.Text = gridRandom.Rows[8].Cells[1].Text;
                         lb10Test10.Text = gridRandom.Rows[9].Cells[1].Text;
                         Literal10.Text = gridRandom.Rows[9].Cells[1].Text;
-                       
+                        Label1.Text = (gridRandom.Rows[9].Cells[1].Text).ToString().Replace("\n","<br>");
+                        
                         //load hinh anh neu co
                         if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))
                         { img10Test1.ImageUrl = "/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text; }

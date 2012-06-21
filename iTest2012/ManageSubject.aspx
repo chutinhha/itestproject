@@ -8,7 +8,7 @@
     <table class="border_tableheadline">
         <tr>
             <td>
-                Quản Lý Chủ Đề
+                QUẢN LÝ CHỦ ĐỀ
             </td>
         </tr>
     </table>
@@ -19,12 +19,12 @@
             </tr>
          <tr align="center">
             <td>
-                <asp:Button ID="btnView" runat="server" CssClass="btn_body" Text="Danh sách chủ đề" 
+                <asp:Button ID="btnView" runat="server" CssClass="btn_body" Text="Danh sách chủ đề" 
                     Width="150px"  onclick="btnView_Click" />
            
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            
-                <asp:Button ID="btnAdd" runat="server" CssClass="btn_body" Text="Thêm chủ đề" 
+                <asp:Button ID="btnAdd" runat="server" CssClass="btn_body" Text="Thêm chủ đề" 
                      Width="150px" onclick="btnAdd_Click" />
             </td>
         </tr>
@@ -36,7 +36,7 @@
         
         <asp:Panel ID="Panel_View" runat="server" style="text-align: center" 
             Visible="False">
-            <span class="style1"><strong>Danh sách các chủ đề</strong></span><br />
+            <span ><strong>Danh sách các chủ đề</strong></span><br />
             <table style="width:100%; text-align:center">
                 <tr align="center">
                     <td align="center">
@@ -94,7 +94,7 @@
             <table class="border_tableheadline">
                 <tr>
                     <td>
-                            Thêm chủ đề
+                            THÊM CHỦ ĐỀ
                     </td>
                 </tr>
             </table>
@@ -114,7 +114,7 @@
                 </tr>--%>
                 <tr align="left">
                     <td class="td_style_wid">
-                        Tên chủ đề :</td>
+                        Tên chủ đề : </td>
                     <td "td_style_Nowid">
                         <asp:TextBox ID="txtSubName" runat="server" Width="200px" CssClass="boder_textbox" MaxLength="250"></asp:TextBox>
                     </td>
@@ -127,7 +127,7 @@
                 <tr align="right">
                     <td colspan="2" class="border_headtittle" style="text-align:right">
                         <asp:Button ID="btnAddNewSub" runat="server" 
-                                    Text="Add" onclick="btnAddNewSub_Click"  CssClass="btn_body"
+                                    Text="Thêm" onclick="btnAddNewSub_Click"  CssClass="btn_body"
                                  />
                     </td>
                 </tr>
