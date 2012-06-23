@@ -1,11 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="AddQuestions.aspx.cs" Inherits="iTest2012.AddQuestions" %>
 
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit.HTMLEditor"
     TagPrefix="cc1" %>
-
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            CKEDITOR.replace('ContentPlaceHolder1_areaQuest');
+            CKEDITOR.replace('ContentPlaceHolder1_areaAns1');
+            CKEDITOR.replace('ContentPlaceHolder1_areaAns2');
+            CKEDITOR.replace('ContentPlaceHolder1_areaAns3');
+            CKEDITOR.replace('ContentPlaceHolder1_areaAns4');
+        }
+    </script>  
     <meta http-equiv="Content-Type" id="meta" content="text/html; charset=utf-8" />      
     <script type="text/javascript">        // tao script chi cho nhap so
         function valid(o, w) {
@@ -17,8 +27,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--<asp:TextBox ID="txtNoidung" runat="server" Height="200px" TextMode="MultiLine" 
-                        Width="500px"></asp:TextBox>--%>
+    
     <div align="center">        
         <asp:Image ID="Image_Add_Icon" runat="server" ImageUrl="~/image/icon/add-quest-icon.jpg" />
         <table class="border_tableheadline">
@@ -109,13 +118,8 @@
             <tr align="left">
                 <td  class="td_style_wid">
                     &nbsp;</td>
-                <td  class="td_style_Nowid">
-
-                    <%--<asp:TextBox ID="txtNoidung" runat="server" Height="200px" TextMode="MultiLine" 
-                        Width="500px"></asp:TextBox>--%>
-                    <%--<asp:TextBox ID="txtNoidung" runat="server" Height="200px" TextMode="MultiLine" 
-                        Width="500px"></asp:TextBox>--%>
-                    <textarea id="txtQuest" runat="server" cols="10" rows="2" style="height:200px; width:450px"></textarea>
+                <td  class="td_style_Nowid">                    
+                    <textarea id="areaQuest" cols="50" rows="10" runat="server"></textarea>                                      
                 </td>
             </tr>            
             <tr align="left">
@@ -126,7 +130,8 @@
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FileUploadQuest"
                         ErrorMessage="Sai định dạng ảnh !!!" ValidationExpression="^([0-9a-zA-Z_\-~ :\\])+(.jpg|.JPG|.jpeg|.JPEG|.bmp|.BMP|.gif|.GIF|.png|.PNG)$"
                         ForeColor="Red"></asp:RegularExpressionValidator>
-                        </td>
+                        <br />
+                    Hỗ trợ các định dạng :&nbsp; *.jpg|.jpeg|.bmp|.gif|.png</td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid" style=" background-color:#E9E9E9 ">
@@ -138,8 +143,7 @@
                 <td  class="td_style_wid">
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
-                    <textarea id="txtAns1" runat="server" cols="10" rows="2" 
-                        style="height:100px; width:450px" name="S1"></textarea><br />
+                    <textarea id="areaAns1" cols="50" rows="5" runat="server"></textarea>  <br />
                     <asp:RadioButton ID="rbA" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" Checked="True" />
                 </td>
@@ -155,9 +159,8 @@
                 <td  class="td_style_wid">
                      
                     &nbsp;</td>
-                <td  class="td_style_Nowid">
-                    <textarea id="txtAns2" runat="server" cols="10" rows="2" 
-                        style="height:100px; width:450px" name="S2"></textarea><br />
+                <td  class="td_style_Nowid" >
+                    <textarea id="areaAns2" cols="50" rows="5" runat="server"></textarea> <br />
                     <asp:RadioButton ID="rbB" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
                 </td>
@@ -174,8 +177,7 @@
                      
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
-                    <textarea id="txtAns3" runat="server" cols="10" rows="2" 
-                        style="height:100px; width:450px" name="S3"></textarea><br />
+                    <textarea id="areaAns3" cols="50" rows="5" runat="server"></textarea><br />
                     <asp:RadioButton ID="rbC" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
                 </td>
@@ -194,8 +196,7 @@
                      
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
-                    <textarea id="txtAns4" runat="server" cols="10" rows="2" 
-                        style="height:100px; width:450px" name="S4"></textarea><br />
+                    <textarea id="areaAns4" cols="50" rows="5" runat="server"></textarea><br />
                     <asp:RadioButton ID="rbD" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
                 </td>

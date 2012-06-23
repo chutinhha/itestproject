@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
+using System.Data;
 
 namespace iTest2012
 {
@@ -83,9 +84,9 @@ namespace iTest2012
                         lb10Test9.Text = gridRandom.Rows[8].Cells[1].Text;
                         Literal9.Text = gridRandom.Rows[8].Cells[1].Text;
                         lb10Test10.Text = gridRandom.Rows[9].Cells[1].Text;
-                        Literal10.Text = gridRandom.Rows[9].Cells[1].Text;
-                        Label1.Text = (gridRandom.Rows[9].Cells[1].Text).ToString().Replace("\n","<br>");
-                        
+                         
+                        //Label1.Text = (gridRandom.Rows[9].Cells[1].Text).ToString().Replace("\n","<br>");
+                        Label1.Text = HttpUtility.HtmlDecode(gridRandom.Rows[9].Cells[1].Text);
                         //load hinh anh neu co
                         if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))
                         { img10Test1.ImageUrl = "/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text; }

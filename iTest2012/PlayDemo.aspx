@@ -70,7 +70,7 @@
     </table>
     <table class="border_alltable">
         <tr style="padding: 0 15px;">
-            <td align="center">
+            <td>
                 <asp:Label ID="Label1" runat="server" ></asp:Label>
                 <asp:Panel ID="panelLoad" runat="server">
                     <asp:GridView ID="gridLoadQuest" runat="server" Visible="False">
