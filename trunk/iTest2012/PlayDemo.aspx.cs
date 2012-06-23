@@ -481,7 +481,7 @@ namespace iTest2012
                     log.iListQuest = listQuest;
                     log.iListAns = listAns;
                     log.iScore = score;
-                    log.iScoreRate = rate;
+                    //log.iScoreRate = rate;
                     log.iDateTest = date;
                     log.iTime = timetest.ToString();
                     data.iTestLogs.InsertOnSubmit(log);

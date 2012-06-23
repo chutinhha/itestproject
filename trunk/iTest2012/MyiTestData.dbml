@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="MyiTestDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=myitest.mssql.somee.com;Persist Security Info=True;User ID=itestdata" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.iAnswer" Member="iAnswers">
+    <Type Name="iAnswer">
+      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="iBodyAns" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.iChapter" Member="iChapters">
     <Type Name="iChapter">
       <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iChapterNum" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="iChapterName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="iChapter_iQuestion" Member="iQuestions" ThisKey="iChapID" OtherKey="iChapID" Type="iQuestion" />
@@ -17,6 +25,21 @@
       <Association Name="iFunction_iUserPermission" Member="iUserPermissions" ThisKey="iFuncID" OtherKey="iFuncID" Type="iUserPermission" />
     </Type>
   </Table>
+  <Table Name="dbo.iQuestion" Member="iQuestions">
+    <Type Name="iQuestion">
+      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iBodyQuest" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iLastModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="iStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="iQuestion_iAnswer" Member="iAnswers" ThisKey="iQuestID" OtherKey="iQuestID" Type="iAnswer" />
+      <Association Name="iChapter_iQuestion" Member="iChapter" ThisKey="iChapID" OtherKey="iChapID" Type="iChapter" IsForeignKey="true" />
+      <Association Name="iUser_iQuestion" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.iSecurityQuest" Member="iSecurityQuests">
     <Type Name="iSecurityQuest">
       <Column Name="iSID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,15 +47,22 @@
       <Association Name="iSecurityQuest_iUser" Member="iUsers" ThisKey="iSID" OtherKey="iSID" Type="iUser" />
     </Type>
   </Table>
+  <Table Name="dbo.iSubject" Member="iSubjects">
+    <Type Name="iSubject">
+      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
+    </Type>
+  </Table>
   <Table Name="dbo.iTestLog" Member="iTestLogs">
     <Type Name="iTestLog">
       <Column Name="iTestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="iListQuest" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iListAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iScore" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="iScoreRate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iDateTest" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="iDateTest" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="iTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="iUser_iTestLog" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
     </Type>
@@ -43,9 +73,11 @@
       <Column Name="iUserName" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
       <Column Name="iPass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="iEmailUser" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="iSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="iSAns" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iBirthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="iSID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="iSAns" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="iCreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="iUser_iQuestion" Member="iQuestions" ThisKey="iUserID" OtherKey="iUserID" Type="iQuestion" />
       <Association Name="iUser_iTestLog" Member="iTestLogs" ThisKey="iUserID" OtherKey="iUserID" Type="iTestLog" />
       <Association Name="iUser_iUserPermission" Member="iUserPermissions" ThisKey="iUserID" OtherKey="iUserID" Type="iUserPermission" />
       <Association Name="iSecurityQuest_iUser" Member="iSecurityQuest" ThisKey="iSID" OtherKey="iSID" Type="iSecurityQuest" IsForeignKey="true" />
@@ -58,33 +90,6 @@
       <Column Name="iPermission" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="iFunction_iUserPermission" Member="iFunction" ThisKey="iFuncID" OtherKey="iFuncID" Type="iFunction" IsForeignKey="true" />
       <Association Name="iUser_iUserPermission" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.iSubject" Member="iSubjects">
-    <Type Name="iSubject">
-      <Column Name="iSubjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iSubjectName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Association Name="iSubject_iChapter" Member="iChapters" ThisKey="iSubjectID" OtherKey="iSubjectID" Type="iChapter" />
-    </Type>
-  </Table>
-  <Table Name="dbo.iQuestion" Member="iQuestions">
-    <Type Name="iQuestion">
-      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iChapID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="iBodyQuest" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="iImageQName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="iQuestion_iAnswer" Member="iAnswers" ThisKey="iQuestID" OtherKey="iQuestID" Type="iAnswer" />
-      <Association Name="iChapter_iQuestion" Member="iChapter" ThisKey="iChapID" OtherKey="iChapID" Type="iChapter" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.iAnswer" Member="iAnswers">
-    <Type Name="iAnswer">
-      <Column Name="iAnsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="iQuestID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iProperty" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="iBodyAns" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Association Name="iQuestion_iAnswer" Member="iQuestion" ThisKey="iQuestID" OtherKey="iQuestID" Type="iQuestion" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.st_ChangePassword" Method="st_ChangePassword">

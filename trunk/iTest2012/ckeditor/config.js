@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function (config) {
    ['Undo', 'Redo', 'Format', 'Font', 'FontSize', 'TextColor', 'BGColor'], ['Cut', 'Copy', 'Paste', 'SelectAll', 'RemoveFormat'],
    '/',
    ['Bold', 'Italic', 'Underline', 'StrikeThrough'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'], ['Outdent', 'Indent'],
-   ['NumberedList', 'BulletedList', 'SpecialChar'], ['Table', '-', 'Link', 'Smiley'], ['Blockquote']
+   ['NumberedList', 'BulletedList', 'SpecialChar'], ['Table', '-', 'Link'], ['Blockquote']
     ];
     //CKEDITOR.config.uiColor = '#d3dd15';
     config.width = 550;

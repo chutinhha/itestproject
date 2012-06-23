@@ -25,9 +25,26 @@
             'numbers': /[^\d]/g
         }
     </script>
+      
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Ans1").click(function () {
+                $(".divAns1").slideToggle("normal");
+            });
+            $("#Ans2").click(function () {
+                $(".divAns2").slideToggle("normal");
+            });
+            $("#Ans3").click(function () {
+                $(".divAns3").slideToggle("normal");
+            });
+            $("#Ans4").click(function () {
+                $(".divAns4").slideToggle("normal");
+            });
+        });
+    </script> 
     <div align="center">        
         <asp:Image ID="Image_Add_Icon" runat="server" ImageUrl="~/image/icon/add-quest-icon.jpg" />
         <table class="border_tableheadline">
@@ -136,50 +153,56 @@
             <tr align="left">
                 <td  class="td_style_wid" style=" background-color:#E9E9E9 ">
                     Đáp án 1 :</td>
-                <td  class="td_style_Nowid" style=" background-color:#E9E9E9 ">
-                    &nbsp;</td>
+                <td id="Ans1"  class="td_style_Nowid" style=" background-color:#E9E9E9;  color:#0D75B3 ">
+                    (Ẩn/hiện đáp án)</td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
+                <div class="divAns1">
                     <textarea id="areaAns1" cols="50" rows="5" runat="server"></textarea>  <br />
                     <asp:RadioButton ID="rbA" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" Checked="True" />
+                </div>
                 </td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid" style=" background-color:#E9E9E9 ">
                      
                     Đáp án 2 :</td>
-                <td  class="td_style_Nowid" style=" background-color:#E9E9E9 ">
-                    &nbsp;</td>
+                <td id="Ans2" class="td_style_Nowid" style=" background-color:#E9E9E9; color:#0D75B3 ">
+                    (Ẩn/hiện đáp án)</td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
                      
                     &nbsp;</td>
                 <td  class="td_style_Nowid" >
+                <div class="divAns2">
                     <textarea id="areaAns2" cols="50" rows="5" runat="server"></textarea> <br />
                     <asp:RadioButton ID="rbB" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
+                </div>
                 </td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid" style=" background-color:#E9E9E9 ">
                      
                     Đáp án 3 :</td>
-                <td  class="td_style_Nowid" style=" background-color:#E9E9E9 ">
-                    &nbsp;</td>
+                <td id="Ans3" class="td_style_Nowid" style=" background-color:#E9E9E9;  color:#0D75B3 ">
+                    (Ẩn/hiện đáp án)</td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
                      
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
+                <div class="divAns3">
                     <textarea id="areaAns3" cols="50" rows="5" runat="server"></textarea><br />
                     <asp:RadioButton ID="rbC" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
+                </div>
                 </td>
             </tr>
             <tr align="left">
@@ -188,18 +211,42 @@
                     Đáp án 4 :
                      
                 </td>
-                <td  class="td_style_Nowid" style=" background-color:#E9E9E9 ">
-                    &nbsp;</td>
+                <td id="Ans4" class="td_style_Nowid" style=" background-color:#E9E9E9 ; color:#0D75B3">
+                    (Ẩn/hiện đáp án)</td>
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
                      
                     &nbsp;</td>
                 <td  class="td_style_Nowid">
+                <div class="divAns4">
                     <textarea id="areaAns4" cols="50" rows="5" runat="server"></textarea><br />
                     <asp:RadioButton ID="rbD" runat="server" GroupName="Ans" 
                         Text="Đây là đáp án đúng" />
+                </div>
                 </td>
+            </tr>
+            <tr align="left">
+                <td  class="td_style_wid" style=" background-color:#E9E9E9 ">
+                     
+                    Trạng thái :
+                     
+                </td>
+                <td  class="td_style_Nowid" style=" background-color:#E9E9E9 ">
+                    
+                    <asp:RadioButton ID="rdOK" runat="server" ForeColor="Red" GroupName="status" 
+                        Text="Có hiệu lực ngay" Visible="False" />
+                    <asp:RadioButton ID="rdTemp" runat="server" Checked="True" ForeColor="Red" 
+                        GroupName="status" Text="Chờ duyệt" />
+                    
+                </td>
+            </tr>
+            <tr align="left">
+                <td  class="td_style_wid" >
+                     
+                    &nbsp;</td>
+                <td  class="td_style_Nowid">
+                    &nbsp;</td>
             </tr>
             <tr align="right" class="border_headtittle">
                 <td colspan="2" style="text-align: right;">

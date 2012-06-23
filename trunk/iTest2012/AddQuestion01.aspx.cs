@@ -30,7 +30,7 @@ namespace iTest2012
 
             var query = from c in data.iChapters
                         where c.iSubjectID == subid
-                        select new { c.iChapID, c.iChapterName, c.iChapterNum };
+                        select new { c.iChapID, c.iChapterName };
             ddlChap.DataSource = query;
             ddlChap.DataTextField = "iChapterName";
             ddlChap.DataValueField = "iChapID";
