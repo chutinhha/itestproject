@@ -66,16 +66,17 @@ namespace iTest2012
                         ius.iUserName = txtUsername.Text.ToString();
                         ius.iPass = FormsAuthentication.HashPasswordForStoringInConfigFile(txtPass.Text.Trim(), "MD5");
                         ius.iEmailUser = txtEmail.Text.ToString();
-                        ius.iSID = db.st_GetSID(dropCauHoiBiMat.SelectedItem.Text);
+                        ius.iBirthday =Convert.ToDateTime(ddlNgay.SelectedValue + "-" + ddlThang.SelectedValue + "-" + ddlNam.SelectedValue);
+                        ius.iSID = Convert.ToInt32(dropCauHoiBiMat.SelectedItem.Value);
                         ius.iSAns = txtAnswer.Text;
-                        ius.iCreatedDate = DateTime.UtcNow;
+                        ius.iCreatedDate = DateTime.Now;
 
                         db.iUsers.InsertOnSubmit(ius);
                         db.SubmitChanges();
 
                         string strScript = "<script>";
                         strScript += "alert('Chào mừng bạn đến với iTest');";
-                        strScript += "window.location='Login.aspx';";
+                        strScript += "window.location='Default.aspx';";
                         strScript += "</script>";
                         Page.RegisterClientScriptBlock("strScript", strScript);
                     }

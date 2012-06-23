@@ -28,8 +28,12 @@ namespace iTest2012
                 }
                 return;
             }
-            //Panel_MutiChoices.Visible = false;
-            //Panel_OneChoice.Visible = true;
+            if (ad == 1)
+            {
+                rdOK.Visible = true;
+                rdOK.Checked = true;
+            }
+
         }
 
         /** edit by lightmoon7 - 20/10/2011 */
@@ -48,7 +52,7 @@ namespace iTest2012
 
             var query = from c in data.iChapters
                         where c.iSubjectID == subid
-                        select new { c.iChapID, c.iChapterName, c.iChapterNum };
+                        select new { c.iChapID, c.iChapterName };
             ddlChapNum.DataSource = query;
             ddlChapNum.DataTextField = "iChapterName";
             ddlChapNum.DataValueField = "iChapID";
@@ -273,6 +277,17 @@ namespace iTest2012
                     else
                         qs.iImageQName = FileUploadQuest.FileName.ToString();
 
+                    // trang thai
+                    qs.iStatus = 0;
+                    if (rdOK.Checked == true)
+                        qs.iStatus = 1;
+                    else
+                        qs.iStatus = 0;
+                    //user add
+                    qs.iUserID = (int)Session["idlogin"];
+                    // date add
+                    qs.iLastModified = DateTime.Now;
+                    //submit
                     db.iQuestions.InsertOnSubmit(qs);
                     db.SubmitChanges();
 
@@ -329,6 +344,9 @@ namespace iTest2012
                         ans8.iProperty = '1';
                     }
                     else ans8.iProperty = '0';
+
+                   
+
 
                     // insert vao database
                     db.iAnswers.InsertOnSubmit(ans5);

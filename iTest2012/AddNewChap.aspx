@@ -35,7 +35,7 @@
                         </asp:LinqDataSource>
                     </td>
                 </tr>
-                <tr align="left">
+                <%--<tr align="left">
                     <td class="td_style_wid">
                         Mã Index :
                     </td>
@@ -44,7 +44,7 @@
                         <br />
                         <asp:Label ID="lbIndex" runat="server" ForeColor="Red"></asp:Label>
                     </td>
-                </tr>
+                </tr>--%>
                 <tr align="left">
                     <td class="td_style_wid">
                         Tên chương :

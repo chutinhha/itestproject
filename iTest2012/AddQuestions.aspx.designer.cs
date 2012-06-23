@@ -184,6 +184,24 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.RadioButton rbD;
         
         /// <summary>
+        /// rdOK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdOK;
+        
+        /// <summary>
+        /// rdTemp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdTemp;
+        
+        /// <summary>
         /// btnAddQuest control.
         /// </summary>
         /// <remarks>
