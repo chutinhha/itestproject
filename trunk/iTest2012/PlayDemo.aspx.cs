@@ -26,8 +26,7 @@ namespace iTest2012
                 numq = Convert.ToInt32(Session["Num"].ToString());
                 if (!Page.IsPostBack) // post back la grid bi thay doi ngay
                 {
-
-                    gridLoadQuest.DataSource = data.st_LoadListQuestID(subid, level);
+                    gridLoadQuest.DataSource = data.st_LoadListQuestID2(subid, level);
                     gridLoadQuest.DataBind();
                     // thuc hien load random, ket thuc dc mang arr xao tron vi tri cau hoi
                     ArrayList arr = new ArrayList();
@@ -62,92 +61,7 @@ namespace iTest2012
 
                     if (numq == 10)// goi 10 cau
                     {
-                        panel10Test.Visible = true; panel40Test.Visible = false; panel60Test.Visible = false;
-                        //load noi dung cau hoi
-                        
-                        lb10Test1.Text = gridRandom.Rows[0].Cells[1].Text;
-                        Literal1.Text = gridRandom.Rows[0].Cells[1].Text;
-                        lb10Test2.Text = gridRandom.Rows[1].Cells[1].Text;
-                        Literal2.Text = gridRandom.Rows[1].Cells[1].Text;
-                        lb10Test3.Text = gridRandom.Rows[2].Cells[1].Text;
-                        Literal3.Text = gridRandom.Rows[2].Cells[1].Text;
-                        lb10Test4.Text = gridRandom.Rows[3].Cells[1].Text;
-                        Literal4.Text = gridRandom.Rows[3].Cells[1].Text;
-                        lb10Test5.Text = gridRandom.Rows[4].Cells[1].Text;
-                        Literal5.Text = gridRandom.Rows[4].Cells[1].Text;
-                        lb10Test6.Text = gridRandom.Rows[5].Cells[1].Text;
-                        Literal6.Text = gridRandom.Rows[5].Cells[1].Text;
-                        lb10Test7.Text = gridRandom.Rows[6].Cells[1].Text;
-                        Literal7.Text = gridRandom.Rows[6].Cells[1].Text;
-                        lb10Test8.Text = gridRandom.Rows[7].Cells[1].Text;
-                        Literal8.Text = gridRandom.Rows[7].Cells[1].Text;
-                        lb10Test9.Text = gridRandom.Rows[8].Cells[1].Text;
-                        Literal9.Text = gridRandom.Rows[8].Cells[1].Text;
-                        lb10Test10.Text = gridRandom.Rows[9].Cells[1].Text;
-                         
-                        //Label1.Text = (gridRandom.Rows[9].Cells[1].Text).ToString().Replace("\n","<br>");
-                        Label1.Text = HttpUtility.HtmlDecode(gridRandom.Rows[9].Cells[1].Text);
-                        //load hinh anh neu co
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))
-                        { img10Test1.ImageUrl = "/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[1].Cells[0].Text + gridRandom.Rows[1].Cells[2].Text)))
-                        { img10Test2.ImageUrl = "/UploadFiles/" + gridRandom.Rows[1].Cells[0].Text + gridRandom.Rows[1].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[2].Cells[0].Text + gridRandom.Rows[2].Cells[2].Text)))
-                        { img10Test3.ImageUrl = "/UploadFiles/" + gridRandom.Rows[2].Cells[0].Text + gridRandom.Rows[2].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[3].Cells[0].Text + gridRandom.Rows[3].Cells[2].Text)))
-                        { img10Test4.ImageUrl = "/UploadFiles/" + gridRandom.Rows[3].Cells[0].Text + gridRandom.Rows[3].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[4].Cells[0].Text + gridRandom.Rows[4].Cells[2].Text)))
-                        { img10Test5.ImageUrl = "/UploadFiles/" + gridRandom.Rows[4].Cells[0].Text + gridRandom.Rows[4].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[5].Cells[0].Text + gridRandom.Rows[5].Cells[2].Text)))
-                        { img10Test6.ImageUrl = "/UploadFiles/" + gridRandom.Rows[5].Cells[0].Text + gridRandom.Rows[5].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[6].Cells[0].Text + gridRandom.Rows[6].Cells[2].Text)))
-                        { img10Test7.ImageUrl = "/UploadFiles/" + gridRandom.Rows[6].Cells[0].Text + gridRandom.Rows[6].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[7].Cells[0].Text + gridRandom.Rows[7].Cells[2].Text)))
-                        { img10Test8.ImageUrl = "/UploadFiles/" + gridRandom.Rows[7].Cells[0].Text + gridRandom.Rows[7].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[8].Cells[0].Text + gridRandom.Rows[8].Cells[2].Text)))
-                        { img10Test9.ImageUrl = "/UploadFiles/" + gridRandom.Rows[8].Cells[0].Text + gridRandom.Rows[8].Cells[2].Text; }
-                        if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[9].Cells[0].Text + gridRandom.Rows[9].Cells[2].Text)))
-                        { img10Test10.ImageUrl = "/UploadFiles/" + gridRandom.Rows[9].Cells[0].Text + gridRandom.Rows[9].Cells[2].Text; }
-
-                        //load cau tra loi
-                        //1
-                        rd10Test1a.Text = gridLoadAns.Rows[0].Cells[2].Text; rd10Test1b.Text = gridLoadAns.Rows[1].Cells[2].Text;
-                        rd10Test1c.Text = gridLoadAns.Rows[2].Cells[2].Text; rd10Test1d.Text = gridLoadAns.Rows[3].Cells[2].Text;
-                        //2
-                        rd10Test2a.Text = gridLoadAns.Rows[4].Cells[2].Text; rd10Test2b.Text = gridLoadAns.Rows[5].Cells[2].Text;
-                        rd10Test2c.Text = gridLoadAns.Rows[6].Cells[2].Text; rd10Test2d.Text = gridLoadAns.Rows[7].Cells[2].Text;
-                        //3
-                        rd10Test3a.Text = gridLoadAns.Rows[8].Cells[2].Text; rd10Test3b.Text = gridLoadAns.Rows[9].Cells[2].Text;
-                        rd10Test3c.Text = gridLoadAns.Rows[10].Cells[2].Text; rd10Test3d.Text = gridLoadAns.Rows[11].Cells[2].Text;
-                        //4
-                        rd10Test4a.Text = gridLoadAns.Rows[12].Cells[2].Text; rd10Test4b.Text = gridLoadAns.Rows[13].Cells[2].Text;
-                        rd10Test4c.Text = gridLoadAns.Rows[14].Cells[2].Text; rd10Test4d.Text = gridLoadAns.Rows[15].Cells[2].Text;
-                        //5
-                        rd10Test5a.Text = gridLoadAns.Rows[16].Cells[2].Text; rd10Test5b.Text = gridLoadAns.Rows[17].Cells[2].Text;
-                        rd10Test5c.Text = gridLoadAns.Rows[18].Cells[2].Text; rd10Test5d.Text = gridLoadAns.Rows[19].Cells[2].Text;
-                        //6
-                        rd10Test6a.Text = gridLoadAns.Rows[20].Cells[2].Text; rd10Test6b.Text = gridLoadAns.Rows[21].Cells[2].Text;
-                        rd10Test6c.Text = gridLoadAns.Rows[22].Cells[2].Text; rd10Test6d.Text = gridLoadAns.Rows[23].Cells[2].Text;
-                        //7
-                        rd10Test7a.Text = gridLoadAns.Rows[24].Cells[2].Text; rd10Test7b.Text = gridLoadAns.Rows[25].Cells[2].Text;
-                        rd10Test7c.Text = gridLoadAns.Rows[26].Cells[2].Text; rd10Test7d.Text = gridLoadAns.Rows[27].Cells[2].Text;
-                        //8
-                        rd10Test8a.Text = gridLoadAns.Rows[28].Cells[2].Text; rd10Test8b.Text = gridLoadAns.Rows[29].Cells[2].Text;
-                        rd10Test8c.Text = gridLoadAns.Rows[30].Cells[2].Text; rd10Test8d.Text = gridLoadAns.Rows[31].Cells[2].Text;
-                        //9
-                        rd10Test9a.Text = gridLoadAns.Rows[32].Cells[2].Text; rd10Test9b.Text = gridLoadAns.Rows[33].Cells[2].Text;
-                        rd10Test9c.Text = gridLoadAns.Rows[34].Cells[2].Text; rd10Test9d.Text = gridLoadAns.Rows[35].Cells[2].Text;
-                        //10
-                        rd10Test10a.Text = gridLoadAns.Rows[36].Cells[2].Text; rd10Test10b.Text = gridLoadAns.Rows[37].Cells[2].Text;
-                        rd10Test10c.Text = gridLoadAns.Rows[38].Cells[2].Text; rd10Test10d.Text = gridLoadAns.Rows[39].Cells[2].Text;
-
-                        // xoá session subject, lv, de user k the hack time, session num k xoa cung dc
-                        Session["Subject"] = null;
-                        Session["Level"] = null;
-                        Session["Num"] = null;
-                        Session["valid"] = "1";// session kiem tra user co back trang hay ko
-
-
+                        LoadTest10();
                     }
                     else if (numq == 30)
                     { }
@@ -510,6 +424,83 @@ namespace iTest2012
             }
         }
 
+        public void LoadTest10()
+        {
+            panel10Test.Visible = true; panel40Test.Visible = false; panel60Test.Visible = false;
+            //load noi dung cau hoi
+
+            lb10Test1.Text = HttpUtility.HtmlDecode(gridRandom.Rows[0].Cells[1].Text);
+            lb10Test2.Text = HttpUtility.HtmlDecode(gridRandom.Rows[1].Cells[1].Text);
+            lb10Test3.Text = HttpUtility.HtmlDecode(gridRandom.Rows[2].Cells[1].Text);
+            lb10Test4.Text = HttpUtility.HtmlDecode(gridRandom.Rows[3].Cells[1].Text);
+            lb10Test5.Text = HttpUtility.HtmlDecode(gridRandom.Rows[4].Cells[1].Text);
+            lb10Test6.Text = HttpUtility.HtmlDecode(gridRandom.Rows[5].Cells[1].Text);
+            lb10Test7.Text = HttpUtility.HtmlDecode(gridRandom.Rows[6].Cells[1].Text);
+            lb10Test8.Text = HttpUtility.HtmlDecode(gridRandom.Rows[7].Cells[1].Text);
+            lb10Test9.Text = HttpUtility.HtmlDecode(gridRandom.Rows[8].Cells[1].Text);
+            lb10Test10.Text = HttpUtility.HtmlDecode(gridRandom.Rows[9].Cells[1].Text);
+            //Label1.Text = (gridRandom.Rows[9].Cells[1].Text).ToString().Replace("\n","<br>");
+            //load hinh anh neu co
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text)))
+            { img10Test1.ImageUrl = "/UploadFiles/" + gridRandom.Rows[0].Cells[0].Text + gridRandom.Rows[0].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[1].Cells[0].Text + gridRandom.Rows[1].Cells[2].Text)))
+            { img10Test2.ImageUrl = "/UploadFiles/" + gridRandom.Rows[1].Cells[0].Text + gridRandom.Rows[1].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[2].Cells[0].Text + gridRandom.Rows[2].Cells[2].Text)))
+            { img10Test3.ImageUrl = "/UploadFiles/" + gridRandom.Rows[2].Cells[0].Text + gridRandom.Rows[2].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[3].Cells[0].Text + gridRandom.Rows[3].Cells[2].Text)))
+            { img10Test4.ImageUrl = "/UploadFiles/" + gridRandom.Rows[3].Cells[0].Text + gridRandom.Rows[3].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[4].Cells[0].Text + gridRandom.Rows[4].Cells[2].Text)))
+            { img10Test5.ImageUrl = "/UploadFiles/" + gridRandom.Rows[4].Cells[0].Text + gridRandom.Rows[4].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[5].Cells[0].Text + gridRandom.Rows[5].Cells[2].Text)))
+            { img10Test6.ImageUrl = "/UploadFiles/" + gridRandom.Rows[5].Cells[0].Text + gridRandom.Rows[5].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[6].Cells[0].Text + gridRandom.Rows[6].Cells[2].Text)))
+            { img10Test7.ImageUrl = "/UploadFiles/" + gridRandom.Rows[6].Cells[0].Text + gridRandom.Rows[6].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[7].Cells[0].Text + gridRandom.Rows[7].Cells[2].Text)))
+            { img10Test8.ImageUrl = "/UploadFiles/" + gridRandom.Rows[7].Cells[0].Text + gridRandom.Rows[7].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[8].Cells[0].Text + gridRandom.Rows[8].Cells[2].Text)))
+            { img10Test9.ImageUrl = "/UploadFiles/" + gridRandom.Rows[8].Cells[0].Text + gridRandom.Rows[8].Cells[2].Text; }
+            if (System.IO.File.Exists(Server.MapPath("~/UploadFiles/" + gridRandom.Rows[9].Cells[0].Text + gridRandom.Rows[9].Cells[2].Text)))
+            { img10Test10.ImageUrl = "/UploadFiles/" + gridRandom.Rows[9].Cells[0].Text + gridRandom.Rows[9].Cells[2].Text; }
+
+            //load cau tra loi
+            //1
+            rd10Test1a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[0].Cells[2].Text); rd10Test1b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[1].Cells[2].Text);
+            rd10Test1c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[2].Cells[2].Text); rd10Test1d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[3].Cells[2].Text);
+            //2
+            rd10Test2a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[4].Cells[2].Text); rd10Test2b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[5].Cells[2].Text);
+            rd10Test2c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[6].Cells[2].Text); rd10Test2d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[7].Cells[2].Text);
+            //3
+            rd10Test3a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[8].Cells[2].Text); rd10Test3b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[9].Cells[2].Text);
+            rd10Test3c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[10].Cells[2].Text); rd10Test3d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[11].Cells[2].Text);
+            //4
+            rd10Test4a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[12].Cells[2].Text); rd10Test4b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[13].Cells[2].Text);
+            rd10Test4c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[14].Cells[2].Text); rd10Test4d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[15].Cells[2].Text);
+            //5
+            rd10Test5a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[16].Cells[2].Text); rd10Test5b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[17].Cells[2].Text);
+            rd10Test5c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[18].Cells[2].Text); rd10Test5d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[19].Cells[2].Text);
+            //6
+            rd10Test6a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[20].Cells[2].Text); rd10Test6b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[21].Cells[2].Text);
+            rd10Test6c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[22].Cells[2].Text); rd10Test6d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[23].Cells[2].Text);
+            //7
+            rd10Test7a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[24].Cells[2].Text); rd10Test7b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[25].Cells[2].Text);
+            rd10Test7c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[26].Cells[2].Text); rd10Test7d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[27].Cells[2].Text);
+            //8
+            rd10Test8a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[28].Cells[2].Text); rd10Test8b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[29].Cells[2].Text);
+            rd10Test8c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[30].Cells[2].Text); rd10Test8d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[31].Cells[2].Text);
+            //9
+            rd10Test9a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[32].Cells[2].Text); rd10Test9b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[33].Cells[2].Text);
+            rd10Test9c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[34].Cells[2].Text); rd10Test9d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[35].Cells[2].Text);
+            //10
+            rd10Test10a.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[36].Cells[2].Text); rd10Test10b.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[37].Cells[2].Text);
+            rd10Test10c.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[38].Cells[2].Text); rd10Test10d.Text = HttpUtility.HtmlDecode(gridLoadAns.Rows[39].Cells[2].Text);
+
+            // xoá session subject, lv, de user k the hack time, session num k xoa cung dc
+            Session["Subject"] = null;
+            Session["Level"] = null;
+            Session["Num"] = null;
+            Session["valid"] = "1";// session kiem tra user co back trang hay ko
+
+        }
 
     }
 }

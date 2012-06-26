@@ -257,13 +257,6 @@ namespace iTest2012
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckPermission")]
-		public int st_CheckPermission([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> iduser, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FuncName", DbType="NVarChar(250)")] string funcName)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iduser, funcName);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CountQuestofSub", IsComposable=true)]
 		public object st_CountQuestofSub([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type)
 		{
@@ -504,13 +497,6 @@ namespace iTest2012
 			return ((ISingleResult<st_SelectAllQuestResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectQuest")]
-		public ISingleResult<st_SelectQuestResult> st_SelectQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> chapter)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level, chapter);
-			return ((ISingleResult<st_SelectQuestResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_Test")]
 		public int st_Test([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> questid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string bodyans)
 		{
@@ -530,6 +516,27 @@ namespace iTest2012
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
 			return ((ISingleResult<st_LoadList10AnsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_LoadListQuestID2")]
+		public ISingleResult<st_LoadListQuestID2Result> st_LoadListQuestID2([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> subid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> level)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), subid, level);
+			return ((ISingleResult<st_LoadListQuestID2Result>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_SelectQuest")]
+		public ISingleResult<st_SelectQuestResult> st_SelectQuest([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idSub, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(10)")] string level, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> chapter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idSub, level, chapter);
+			return ((ISingleResult<st_SelectQuestResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.st_CheckPermission")]
+		public int st_CheckPermission([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> iduser, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FuncName", DbType="NVarChar(250)")] string funcName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iduser, funcName);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -2205,8 +2212,6 @@ namespace iTest2012
 		
 		private int _iFuncID;
 		
-		private System.Nullable<int> _iPermission;
-		
 		private EntityRef<iFunction> _iFunction;
 		
 		private EntityRef<iUser> _iUser;
@@ -2219,8 +2224,6 @@ namespace iTest2012
     partial void OniUserIDChanged();
     partial void OniFuncIDChanging(int value);
     partial void OniFuncIDChanged();
-    partial void OniPermissionChanging(System.Nullable<int> value);
-    partial void OniPermissionChanged();
     #endregion
 		
 		public iUserPermission()
@@ -2274,26 +2277,6 @@ namespace iTest2012
 					this._iFuncID = value;
 					this.SendPropertyChanged("iFuncID");
 					this.OniFuncIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iPermission", DbType="Int")]
-		public System.Nullable<int> iPermission
-		{
-			get
-			{
-				return this._iPermission;
-			}
-			set
-			{
-				if ((this._iPermission != value))
-				{
-					this.OniPermissionChanging(value);
-					this.SendPropertyChanging();
-					this._iPermission = value;
-					this.SendPropertyChanged("iPermission");
-					this.OniPermissionChanged();
 				}
 			}
 		}
@@ -3185,122 +3168,6 @@ namespace iTest2012
 		}
 	}
 	
-	public partial class st_SelectQuestResult
-	{
-		
-		private string _Questions;
-		
-		private string _Subject;
-		
-		private string _Chapter_Number;
-		
-		private string _Chapter_Name;
-		
-		private int _Level;
-		
-		private string _Image;
-		
-		public st_SelectQuestResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Questions", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Questions
-		{
-			get
-			{
-				return this._Questions;
-			}
-			set
-			{
-				if ((this._Questions != value))
-				{
-					this._Questions = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this._Subject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Number]", Storage="_Chapter_Number", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Chapter_Number
-		{
-			get
-			{
-				return this._Chapter_Number;
-			}
-			set
-			{
-				if ((this._Chapter_Number != value))
-				{
-					this._Chapter_Number = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Name]", Storage="_Chapter_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Chapter_Name
-		{
-			get
-			{
-				return this._Chapter_Name;
-			}
-			set
-			{
-				if ((this._Chapter_Name != value))
-				{
-					this._Chapter_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
-		public int Level
-		{
-			get
-			{
-				return this._Level;
-			}
-			set
-			{
-				if ((this._Level != value))
-				{
-					this._Level = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(MAX)")]
-		public string Image
-		{
-			get
-			{
-				return this._Image;
-			}
-			set
-			{
-				if ((this._Image != value))
-				{
-					this._Image = value;
-				}
-			}
-		}
-	}
-	
 	public partial class st_LoadList10QuestsRandom2Result
 	{
 		
@@ -3438,6 +3305,130 @@ namespace iTest2012
 				if ((this._Pro != value))
 				{
 					this._Pro = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_LoadListQuestID2Result
+	{
+		
+		private int _ID;
+		
+		public st_LoadListQuestID2Result()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class st_SelectQuestResult
+	{
+		
+		private string _Questions;
+		
+		private string _Subject;
+		
+		private string _Chapter_Name;
+		
+		private int _Level;
+		
+		private string _Image;
+		
+		public st_SelectQuestResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Questions", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Questions
+		{
+			get
+			{
+				return this._Questions;
+			}
+			set
+			{
+				if ((this._Questions != value))
+				{
+					this._Questions = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string Subject
+		{
+			get
+			{
+				return this._Subject;
+			}
+			set
+			{
+				if ((this._Subject != value))
+				{
+					this._Subject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Chapter Name]", Storage="_Chapter_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Chapter_Name
+		{
+			get
+			{
+				return this._Chapter_Name;
+			}
+			set
+			{
+				if ((this._Chapter_Name != value))
+				{
+					this._Chapter_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Level]", Storage="_Level", DbType="Int NOT NULL")]
+		public int Level
+		{
+			get
+			{
+				return this._Level;
+			}
+			set
+			{
+				if ((this._Level != value))
+				{
+					this._Level = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="NVarChar(MAX)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this._Image = value;
 				}
 			}
 		}

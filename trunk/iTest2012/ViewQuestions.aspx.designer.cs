@@ -40,15 +40,6 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.LinqDataSource LinqDataSub;
         
         /// <summary>
-        /// ddlLevel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlLevel;
-        
-        /// <summary>
         /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
@@ -76,22 +67,13 @@ namespace iTest2012 {
         protected global::System.Web.UI.WebControls.DropDownList ddlChapIndex;
         
         /// <summary>
-        /// UpdatePanel2 control.
+        /// ddlLevel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLevel;
         
         /// <summary>
         /// btnView control.

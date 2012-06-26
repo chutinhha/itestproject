@@ -7,7 +7,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
     <script type="text/javascript">
-
         window.onload = function () {
             CKEDITOR.replace('ContentPlaceHolder1_areaQuest');
             CKEDITOR.replace('ContentPlaceHolder1_areaAns1');

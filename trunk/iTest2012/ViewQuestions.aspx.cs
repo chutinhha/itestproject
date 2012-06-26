@@ -12,6 +12,7 @@ namespace iTest2012
     public partial class ViewQuestions : System.Web.UI.Page
     {
         MyiTestDataDataContext data = new MyiTestDataDataContext();
+        int type = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             int result, ad, id;
@@ -41,7 +42,7 @@ namespace iTest2012
             {
                 ddlChapIndex.Items.RemoveAt(1); //index 0 cant remove because it's title of Dropdownlist
             }
-            TextBox1.Text = "";
+            
             //----- select sub index when user choice -----------------------------------------------------------
             MyiTestDataDataContext db = new MyiTestDataDataContext();
             int subid = db.st_LoadSubjectID(ddlChooseSub.Text.Trim());
@@ -51,32 +52,35 @@ namespace iTest2012
                         where c.iSubjectID == subid
                         select new { c.iChapID, c.iChapterName };
             ddlChapIndex.DataSource = query;
-            ddlChapIndex.DataTextField = "iChapterNum";
+            ddlChapIndex.DataTextField = "iChapterName";
             ddlChapIndex.DataValueField = "iChapID";
             ddlChapIndex.DataBind();
 
         }
 
-        protected void ddlChapIndex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList dd = (DropDownList)sender;
-            if (dd.SelectedValue == "-1")
-                return;
-            int value = int.Parse(dd.SelectedValue);
-            var currentChapter = (from c in data.iChapters
-                                  where c.iChapID == value
-                                  select c).Single();
-            TextBox1.Text = currentChapter.iChapterName;
-        }
+        //protected void ddlChapIndex_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    DropDownList dd = (DropDownList)sender;
+        //    if (dd.SelectedValue == "-1")
+        //        return;
+        //    int value = int.Parse(dd.SelectedValue);
+        //    var currentChapter = (from c in data.iChapters
+        //                          where c.iChapID == value
+        //                          select c).Single();
+        //    TextBox1.Text = currentChapter.iChapterName;
+        //}
 
         protected void btnView_Click(object sender, EventArgs e)
         {
-            if (ddlLevel.Text.Trim() != "All" && ddlLevel.Text.Trim() != "All" && TextBox1.Text.Trim() != "All")// chạy mỗi cái nỳ
+            if (ddlChooseSub.SelectedValue!="-1" && ddlLevel.SelectedValue != "-1" && ddlChapIndex.SelectedValue!="-1")// chạy mỗi cái nỳ
             {
+                type = 1;
                 lbGridLoad.Text = "No Result !";
                 int subid = data.st_LoadSubjectID(ddlChooseSub.Text.Trim());
-                int chapid = data.st_LoadChapID(TextBox1.Text.Trim(), subid);
-                GridQuestion.DataSource = data.st_SelectQuest(subid, ddlLevel.Text.Trim(), chapid);
+                int chapid = Convert.ToInt32(ddlChapIndex.SelectedValue);
+                Session["subid"] = subid;
+                Session["chapid"] = chapid;
+                GridQuestion.DataSource = data.st_SelectQuest(subid, ddlLevel.SelectedValue, chapid);
                 GridQuestion.DataBind();
                 panelView.Visible = true;
                 if (GridQuestion.Rows.Count == 0)
@@ -216,8 +220,8 @@ namespace iTest2012
         protected void GridQuestion_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridQuestion.PageIndex = e.NewPageIndex;
-
-            GridQuestion.DataSource = data.st_ViewQuestOfAllSub();
+            if(type==1)
+            GridQuestion.DataSource = data.st_SelectQuest((int)Session["subid"], ddlLevel.SelectedValue,(int)Session["chapid"]);
             GridQuestion.DataBind();
             panelView.Visible = true;
 
