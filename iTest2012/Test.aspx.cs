@@ -19,6 +19,26 @@ namespace iTest2012
              Random random = new Random();
              return random.Next(min, max);
          }*/
+        protected void ddlSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            while (ddlChap.Items.Count >= 2)
+            {
+                ddlChap.Items.RemoveAt(1); //index 0 cant remove because it's title of Dropdownlist
+            }
+            
+            //----- select sub index when user choice -----------------------------------------------------------
+            MyiTestDataDataContext db = new MyiTestDataDataContext();
+            int subid = db.st_LoadSubjectID(ddlSubject.Text.Trim());
+            //----------------------------------------------------------------
+
+            var query = from c in data.iChapters
+                        where c.iSubjectID == subid
+                        select new { c.iChapID, c.iChapterName };
+            ddlChap.DataSource = query;
+            ddlChap.DataTextField = "iChapterName";
+            ddlChap.DataValueField = "iChapID";
+            ddlChap.DataBind();
+        }
         protected void btnLetsGo_Click(object sender, EventArgs e)
         {
             if (ddlSubject.SelectedValue != "-1")
@@ -48,7 +68,7 @@ namespace iTest2012
                     //}
                     
                     Session["timebegin"] = DateTime.Now;
-                    
+                    Session["type"] = ddlNumberofQuests.SelectedValue;
                     Response.Redirect("PlayDemo.aspx");
 
                 }
@@ -90,5 +110,7 @@ namespace iTest2012
                 lbError.Text = "Chủ đề chưa mở";
             }
         }
+
+        
     }
 }

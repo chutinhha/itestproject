@@ -87,7 +87,6 @@
     <Type Name="iUserPermission">
       <Column Name="iUserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="iFuncID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="iPermission" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="iFunction_iUserPermission" Member="iFunction" ThisKey="iFuncID" OtherKey="iFuncID" Type="iFunction" IsForeignKey="true" />
       <Association Name="iUser_iUserPermission" Member="iUser" ThisKey="iUserID" OtherKey="iUserID" Type="iUser" IsForeignKey="true" />
     </Type>
@@ -163,11 +162,6 @@
   <Function Name="dbo.st_CheckChapName" Method="st_CheckChapName">
     <Parameter Name="chapname" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="subid" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.st_CheckPermission" Method="st_CheckPermission">
-    <Parameter Name="iduser" Type="System.Int32" DbType="Int" />
-    <Parameter Name="FuncName" Parameter="funcName" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.st_CountQuestofSub" Method="st_CountQuestofSub" IsComposable="true">
@@ -379,19 +373,6 @@
       <Column Name="[Chapter Name]" Member="Chapter_Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.st_SelectQuest" Method="st_SelectQuest">
-    <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
-    <Parameter Name="level" Type="System.String" DbType="Char(10)" />
-    <Parameter Name="chapter" Type="System.Int32" DbType="Int" />
-    <ElementType Name="st_SelectQuestResult">
-      <Column Name="Questions" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Subject" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="[Chapter Number]" Member="Chapter_Number" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Chapter Name]" Member="Chapter_Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.st_Test" Method="st_Test">
     <Parameter Name="questid" Type="System.Int32" DbType="Int" />
     <Parameter Name="bodyans" Type="System.String" DbType="NVarChar(MAX)" />
@@ -431,5 +412,29 @@
       <Column Name="AnsBody" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="Pro" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.st_LoadListQuestID2" Method="st_LoadListQuestID2">
+    <Parameter Name="subid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="level" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_LoadListQuestID2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_SelectQuest" Method="st_SelectQuest">
+    <Parameter Name="idSub" Type="System.Int32" DbType="Int" />
+    <Parameter Name="level" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="chapter" Type="System.Int32" DbType="Int" />
+    <ElementType Name="st_SelectQuestResult">
+      <Column Name="Questions" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="[Chapter Name]" Member="Chapter_Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.st_CheckPermission" Method="st_CheckPermission">
+    <Parameter Name="iduser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FuncName" Parameter="funcName" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -27,13 +27,13 @@
         <table class="border_alltable">
             <tr align="left">
                 <td  class="td_style_wid">
-                    Chọn môn / lĩnh vực :</td>
+                    Chọn chủ đề</td>
                 <td  class="td_style_Nowid">
                     <asp:DropDownList ID="ddlChooseSub" runat="server" DataSourceID="LinqDataSub" 
                         DataTextField="iSubjectName" DataValueField="iSubjectName" Width="300px" 
                         AppendDataBoundItems="True" AutoPostBack="True"  CssClass="boder_textbox"
                         onselectedindexchanged="ddlChooseSub_SelectedIndexChanged">
-                        <asp:ListItem Value="-1">--- Chọn ---</asp:ListItem>
+                        <asp:ListItem Value="-1">Tất cả</asp:ListItem>
                     </asp:DropDownList>
                     <asp:LinqDataSource ID="LinqDataSub" runat="server" 
                         ContextTypeName="iTest2012.MyiTestDataDataContext" EntityTypeName="" 
@@ -41,13 +41,34 @@
                         Select="new (key as iSubjectName, it as iSubjects)" TableName="iSubjects">
                     </asp:LinqDataSource>
                 </td>
+            </tr>            
+            <tr align="left">
+                <td  class="td_style_wid">
+                    Chọn chủ đề con :</td>
+                <td  class="td_style_Nowid" >
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:DropDownList ID="ddlChapIndex" runat="server" AppendDataBoundItems="True" 
+                                AutoPostBack="True" CssClass="boder_textbox"  
+                                Width="300px">
+                            <asp:ListItem Value="-1">Tất cả</asp:ListItem>
+                            </asp:DropDownList>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="ddlChooseSub"  EventName="SelectedIndexChanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>              
+                </td>
             </tr>
             <tr  align="left">
                 <td  class="td_style_wid">
                     Chọn mức độ : </td>
                 <td  class="td_style_Nowid">
-                    <asp:DropDownList ID="ddlLevel" runat="server" Width="300px" CssClass="boder_textbox" 
-                        AutoPostBack="True">
+                    <asp:DropDownList ID="ddlLevel" runat="server" Width="300px" 
+                        CssClass="boder_textbox">
+                        <asp:ListItem Value="-1">Tất cả</asp:ListItem>
                         <asp:ListItem Value="0">Chưa xác định</asp:ListItem>
                         <asp:ListItem Value="1">Dễ</asp:ListItem>
                         <asp:ListItem Value="2">Bình thường</asp:ListItem>
@@ -58,38 +79,9 @@
             </tr>
             <tr align="left">
                 <td  class="td_style_wid">
-                    Chọn chương :</td>
-                <td  class="td_style_Nowid" >
-                    <asp:ScriptManager ID="ScriptManager1" runat="server">
-                    </asp:ScriptManager>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <asp:DropDownList ID="ddlChapIndex" runat="server" AppendDataBoundItems="True" 
-                                AutoPostBack="True" CssClass="boder_textbox" onselectedindexchanged="ddlChapIndex_SelectedIndexChanged" 
-                                Width="300px">
-                            <asp:ListItem Value="-1">-- Chọn --</asp:ListItem>
-                            </asp:DropDownList>
-                        </ContentTemplate>
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="ddlChooseSub"  EventName="SelectedIndexChanged" />
-                        </Triggers>
-                    </asp:UpdatePanel>              
-                </td>
-            </tr>
-            <tr align="left">
-                <td  class="td_style_wid">
                     </td>
                 <td  class="td_style_Nowid">
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                        <ContentTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Enabled="False" ForeColor="Blue" 
-                                BorderWidth="0px"   Width="300px"></asp:TextBox>
-                        </ContentTemplate>
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="ddlChapIndex" EventName="SelectedIndexChanged" />
-                        </Triggers>
-                    </asp:UpdatePanel>                    
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr align="right">
                 <td colspan="2" style="text-align:right"  class="border_headtittle">
