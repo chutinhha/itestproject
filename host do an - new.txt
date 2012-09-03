@@ -8,11 +8,19 @@ host : www.e-itest.somee.com
 user : ngthebao
 pass : BaoBao0703
 
+host :  www.itestonline.somee.com
+user : bao56320
+pass : BaoBao0703
+
  
 *** acc sql server (SQL server)
 
-host : 			myitest.mssql.somee.com
+host : 			itestdata.mssql.somee.com
 Login name:		itestdata
+Login password:		BaoBao0703
+
+host : 			myitestdata2.mssql.somee.com
+Login name:		itestdata2
 Login password:		BaoBao0703
 
 
